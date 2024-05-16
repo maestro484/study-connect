@@ -16,7 +16,7 @@ class ConfiguracionFragment : Fragment() {
     lateinit var flecha: ImageView
     lateinit var adm_cuenta: Button
     lateinit var notificaciones: Button
-    lateinit var tema: Button
+    lateinit var theme: Button
 
     companion object {
         fun newInstance() = ConfiguracionFragment()
@@ -38,21 +38,29 @@ class ConfiguracionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         flecha = view.findViewById(R.id.flecha)
-        adm_cuenta = view.findViewById(R.id.adm_cuenta)
+        adm_cuenta = view.findViewById(R.id.cerrar_sesion)
         notificaciones = view.findViewById(R.id.notificaciones)
-        tema = view.findViewById(R.id.tema)
+        theme = view.findViewById(R.id.cambiar_tlf)
 
         adm_cuenta.setOnClickListener {
        //     (activity as MainActivity).abrirAdmFragment()
         }
 
         notificaciones.setOnClickListener {
+            (activity as MainActivity).abrirNotiFragment()
 
         }
 
-        tema.setOnClickListener {
+        theme.setOnClickListener {
+            (activity as MainActivity).abrirThemeFragment()
 
         }
+
+        flecha.setOnClickListener{
+
+        }
+
+
     }
 
     }

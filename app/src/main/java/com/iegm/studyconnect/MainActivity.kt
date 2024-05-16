@@ -1,24 +1,15 @@
 package com.iegm.studyconnect
 
-import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
-import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AdmFragment
-import com.iegm.studyconnect.ui.fragments.PeriodoFragment
-import com.iegm.studyconnect.ui.fragments.apuntesFragment
+import com.iegm.studyconnect.ui.fragments.NotiFragment
+import com.iegm.studyconnect.ui.fragments.ThemeFragment
 
 class MainActivity : AppCompatActivity() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,78 +22,30 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-
-        permisoAlmacenamiento()
+    fun abrirAdmFragment() {
+        val admFragment: AdmFragment = AdmFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, admFragment)
+            .commitAllowingStateLoss()
     }
 
-
-        fun abrirAdmFragment() {
-            val admFragment: AdmFragment = AdmFragment()
-            supportFragmentManager.beginTransaction().add(R.id.root_layout, admFragment)
-                .commitAllowingStateLoss()
-        }
-
-        fun abrirApuntesFragment() {
-
-            val apuntesFragment: apuntesFragment = apuntesFragment()
-            supportFragmentManager.beginTransaction().add(R.id.root_layout, apuntesFragment)
-                .commitAllowingStateLoss()
-
-        }
-
-        fun abrirHomeFragment() {
-
-           /* val homeFragment: HomeFragment = HomeFragment()
-            supportFragmentManager.beginTransaction().add(R.id.root_layout, homeFragment)
-                .commitAllowingStateLoss()*/
-        }
-
-        fun abrirPeriodoFragment() {
-            val periodoFragment: PeriodoFragment = PeriodoFragment()
-            supportFragmentManager.beginTransaction().add(R.id.root_layout, periodoFragment)
-                .commitAllowingStateLoss()
-
-        }
-
-    /*fun abrirAvatarsFragment() {
-        val avatarsFragment: AvatarsFragment = AvatarsFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, avatarsFragment)
+    fun abrirNotiFragment() {
+        val notiFragment: NotiFragment = NotiFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, notiFragment)
             .commitAllowingStateLoss()
 
-    } */
-    fun abrirApunteFragment() {
-        /*val apunteFragment: ApunteFragment = ApunteFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
-            .commitAllowingStateLoss()*/
+    }
 
+    fun abrirThemeFragment() {
+        val themeFragment: ThemeFragment = ThemeFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, themeFragment)
+            .commitAllowingStateLoss()
+
+
+    }
+
+    fun abrirhomeFragment() {
+
+    }
+    /*
+    * */
 }
-
-    private fun permisoAlmacenamiento() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
-                READ_MEDIA_AUDIO_PERMISSION_REQUEST_CODE
-
-            )
-        } else {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                READ_EXTERNAL_STORAGE_IMAGES_PERMISSION_REQUEST_CODE
-            )
-
-
-        }
-
-        }
-
-}
-
-
-
-
-const val READ_MEDIA_AUDIO_PERMISSION_REQUEST_CODE = 2001
-const val READ_EXTERNAL_STORAGE_IMAGES_PERMISSION_REQUEST_CODE = 207
