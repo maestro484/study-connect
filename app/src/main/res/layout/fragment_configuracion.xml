@@ -13,7 +13,7 @@
         android:layout_marginBottom="50dp"
         android:background="@android:color/holo_purple"
         android:scrollbarSize="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/adm_cuenta"
+        app:layout_constraintBottom_toTopOf="@+id/cerrar_sesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/adm_cuenta"
+        android:id="@+id/cerrar_sesion"
         android:layout_width="163dp"
         android:layout_height="66dp"
         android:text="Administrar Cuenta"
@@ -60,10 +60,10 @@
         android:text="Notificaciones"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/adm_cuenta" />
+        app:layout_constraintTop_toBottomOf="@id/cerrar_sesion" />
 
     <Button
-        android:id="@+id/tema"
+        android:id="@+id/cambiar_tlf"
         android:layout_width="164dp"
         android:layout_height="54dp"
         android:text="Tema"
