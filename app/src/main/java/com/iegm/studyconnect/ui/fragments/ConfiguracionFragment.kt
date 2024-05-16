@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
 class ConfiguracionFragment : Fragment() {
@@ -42,8 +43,7 @@ class ConfiguracionFragment : Fragment() {
         tema = view.findViewById(R.id.tema)
 
         adm_cuenta.setOnClickListener {
-            val admFragment : AdmFragment =
-            requireActivity().supportFragmentManager.
+            (activity as MainActivity).abrirAdmFragment()
         }
 
         notificaciones.setOnClickListener {
