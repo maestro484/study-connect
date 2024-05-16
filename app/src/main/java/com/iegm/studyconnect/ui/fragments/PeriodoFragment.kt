@@ -48,16 +48,18 @@ class PeriodoFragment : Fragment() {
         volver1 = view.findViewById(R.id.volver1)
 
         volver1.setOnClickListener {
-            (activity as MainActivity).abrirApuntesFragment()
         }
 
         periodo1.setOnClickListener {
+            (activity as MainActivity).abrirApuntesFragment()
 
         }
         periodo2.setOnClickListener {
+            (activity as MainActivity).abrirApuntesFragment()
 
         }
         periodo3.setOnClickListener {
+            (activity as MainActivity).abrirApuntesFragment()
 
         }
 
