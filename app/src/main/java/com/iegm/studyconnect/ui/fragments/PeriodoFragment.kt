@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
 class PeriodoFragment : Fragment() {
@@ -47,6 +48,7 @@ class PeriodoFragment : Fragment() {
         volver1 = view.findViewById(R.id.volver1)
 
         volver1.setOnClickListener {
+            (activity as MainActivity).abrirApuntesFragment()
         }
 
         periodo1.setOnClickListener {
