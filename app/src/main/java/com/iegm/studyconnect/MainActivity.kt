@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AdmFragment
+import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 import com.iegm.studyconnect.ui.fragments.apuntesFragment
 
 class MainActivity : AppCompatActivity() {
@@ -28,10 +29,21 @@ class MainActivity : AppCompatActivity() {
     }
     fun abrirApuntesFragment() {
 
-        val apuntesFragment:apuntesFragment = apuntesFragment()
+        val apuntesFragment: apuntesFragment = apuntesFragment()
         supportFragmentManager.beginTransaction().add(R.id.root_layout, apuntesFragment)
             .commitAllowingStateLoss()
 
+    }
+    fun abrirHomeFragment(){
+
+        val homeFragment : HomeFragment = HomeFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout,homeFragment)
+            .commitAllowingStateLoss()
+    }
+    fun abrirPeriodoFragment(){
+        val periodoFragment : PeriodoFragment = PeriodoFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout,periodoFragment)
+            .commitAllowingStateLoss()
     }
 
 
