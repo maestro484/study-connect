@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AdmFragment
+import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
+import com.iegm.studyconnect.ui.fragments.TerminosCondicionesFragment
 import com.iegm.studyconnect.ui.fragments.ThemeFragment
 
 class MainActivity : AppCompatActivity() {
@@ -40,10 +42,24 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().add(R.id.root_layout, themeFragment)
             .commitAllowingStateLoss()
 
+    }
+
+
+    fun abrirhomeFragment() {
 
     }
 
-    fun abrirhomeFragment() {
+    fun abrirTerminosCondicionesFragment(){
+        val terminosCondicionesFragment : TerminosCondicionesFragment =
+            TerminosCondicionesFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, terminosCondicionesFragment)
+            .commitAllowingStateLoss()
+    }
+
+    fun abrirConfigurationFragment(){
+        val configuracionFragment : ConfiguracionFragment = ConfiguracionFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, configuracionFragment)
+            .commitAllowingStateLoss()
 
     }
     /*

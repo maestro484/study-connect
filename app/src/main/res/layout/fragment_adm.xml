@@ -17,7 +17,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <Button
-        android:id="@+id/cambiar_tlf"
+        android:id="@+id/theme"
         android:layout_width="178dp"
         android:layout_height="85dp"
         android:layout_marginTop="84dp"
@@ -41,6 +41,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.166">
 
+        <TextView
+            android:id="@+id/terminos_y_condiciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADMINISTRADOR DE CUENTA"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.434" />
+
         <ImageView
             android:id="@+id/flecha"
             android:layout_width="wrap_content"
@@ -52,17 +64,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ADMINISTRADOR DE CUENTA"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.434" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
