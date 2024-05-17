@@ -2,6 +2,10 @@ package com.iegm.studyconnect.model
 
 import com.google.gson.annotations.SerializedName
 
+
+data class SchoolData(
+    val grados: List<Grado>
+)
 data class Grado(val grado: Int = 0, val materias: ArrayList<Materia> = ArrayList())
 
 data class Materia(

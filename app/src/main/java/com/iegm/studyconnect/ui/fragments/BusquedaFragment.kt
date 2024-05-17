@@ -1,19 +1,30 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.content.Context
 import androidx.fragment.app.viewModels
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.SearchView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.Grado
+import com.iegm.studyconnect.model.SchoolData
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.File
+import java.io.InputStream
+import java.io.InputStreamReader
 
 class BusquedaFragment : Fragment() {
 
-    lateinit var devolver: Button
+    lateinit var devolver: ImageView
     lateinit var materia: Button
     lateinit var profesor: Button
     lateinit var fecha: Button
@@ -72,10 +83,21 @@ class BusquedaFragment : Fragment() {
          var filtro : String =  "apunte"
         }
 
+       val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
+        var jsonObject = JSONObject(jsonString)
 
-        val grupo : Grado = Grado()
+        val gson = Gson()
 
+        val data: SchoolData = gson.fromJson(jsonString, object : TypeToken<SchoolData>() {}.type)
 
-
+        Log.d("BusquedaFragment", data.grados[0].materias[0].nombre)
     }
+
+    private fun readJsonFromRaw(context: Context, resourceId: Int): String {
+        val inputStream : InputStream = context.resources.openRawResource(resourceId)
+        return inputStream.bufferedReader().use{ it.readText() }
+    }
+
+
+
 }
