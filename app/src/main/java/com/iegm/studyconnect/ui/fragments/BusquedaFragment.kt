@@ -11,16 +11,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.SearchView
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.iegm.studyconnect.R
-import com.iegm.studyconnect.model.Grado
 import com.iegm.studyconnect.model.SchoolData
 import org.json.JSONObject
-import java.io.BufferedReader
-import java.io.File
 import java.io.InputStream
-import java.io.InputStreamReader
 
 class BusquedaFragment : Fragment() {
 
@@ -30,7 +27,7 @@ class BusquedaFragment : Fragment() {
     lateinit var fecha: Button
     lateinit var buscardor:SearchView
     lateinit var apunte:Button
-
+    lateinit var listaDeBusqueda: RecyclerView
 
     companion object {
         fun newInstance() = BusquedaFragment()
@@ -62,6 +59,12 @@ class BusquedaFragment : Fragment() {
         fecha = view.findViewById(R.id.fecha)
         buscardor = view.findViewById(R.id.buscador)
         apunte=view.findViewById(R.id.apunte)
+        listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
+
+
+       buscardor.setOnCloseListener {
+           listaDeBusqueda =
+       }
 
         devolver.setOnClickListener{
 
