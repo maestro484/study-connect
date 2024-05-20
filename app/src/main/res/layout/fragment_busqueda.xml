@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:scrollbarSize="4dp"
     tools:context=".ui.fragments.BusquedaFragment">
@@ -103,8 +103,9 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="@android:color/holo_purple"
-        tools:layout_editor_absoluteX="-57dp"
-        tools:layout_editor_absoluteY="650dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ListaDeBusqueda">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
