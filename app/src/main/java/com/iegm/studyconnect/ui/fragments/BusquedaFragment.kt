@@ -62,8 +62,12 @@ class BusquedaFragment : Fragment() {
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
 
 
-       buscardor.setOnCloseListener {
-           listaDeBusqueda =
+       buscardor.setOnClickListener {
+           profesor.visibility = View.INVISIBLE
+           fecha.visibility = View.INVISIBLE
+           materia.visibility = View.INVISIBLE
+           apunte.visibility = View.INVISIBLE
+           listaDeBusqueda.visibility = View.VISIBLE
        }
 
         devolver.setOnClickListener{
@@ -86,7 +90,9 @@ class BusquedaFragment : Fragment() {
          var filtro : String =  "apunte"
         }
 
-       val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
+
+
+        val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
         var jsonObject = JSONObject(jsonString)
 
         val gson = Gson()
