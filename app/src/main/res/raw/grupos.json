@@ -5,6 +5,7 @@
             "materias": [
                 {
                     "nombre": "Matematicas",
+                    "profesor": "",
                     "periodo": [
                         {
                             "periodo_id" : 1,
@@ -12,6 +13,7 @@
                                 {
                                     "apunte_id" : 1,
                                     "descripcion": "",
+                                    "mes": 0,
                                     "archivo": [
                                         {
                                             "archivo_id" : 1,

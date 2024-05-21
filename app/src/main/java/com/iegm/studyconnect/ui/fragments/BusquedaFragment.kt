@@ -25,7 +25,7 @@ class BusquedaFragment : Fragment() {
     lateinit var materia: Button
     lateinit var profesor: Button
     lateinit var fecha: Button
-    lateinit var buscardor:SearchView
+    lateinit var buscador:SearchView
     lateinit var apunte:Button
     lateinit var listaDeBusqueda: RecyclerView
 
@@ -37,6 +37,8 @@ class BusquedaFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
 
         // TODO: Use the ViewModel
 
@@ -57,12 +59,12 @@ class BusquedaFragment : Fragment() {
         materia = view.findViewById(R.id.materia)
         profesor = view.findViewById(R.id.profesor)
         fecha = view.findViewById(R.id.fecha)
-        buscardor = view.findViewById(R.id.buscador)
+        buscador = view.findViewById(R.id.buscador)
         apunte=view.findViewById(R.id.apunte)
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
 
 
-       buscardor.setOnClickListener {
+       buscador.setOnClickListener {
            profesor.visibility = View.INVISIBLE
            fecha.visibility = View.INVISIBLE
            materia.visibility = View.INVISIBLE
@@ -71,7 +73,7 @@ class BusquedaFragment : Fragment() {
        }
 
         devolver.setOnClickListener{
-
+ //aqui nesesito que cuando se le unda al boton se debuelba a la anterior pajina
         }
 
         materia.setOnClickListener {
