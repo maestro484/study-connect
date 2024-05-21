@@ -5,30 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.iegm.studyconnect.R
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import androidx.core.content.ContextCompat
+import com.iegm.studyconnect.Manifest
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [PerfilDeUsuarioFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PerfilDeUsuarioFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var ir_a_imagenes: Button
+    lateinit var regresar: ImageView
+    lateinit var editar_numero: EditText
+    lateinit var editar_nombre: EditText
+    lateinit var editar_correo: EditText
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +28,16 @@ class PerfilDeUsuarioFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_perfil_de_usuario, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PerfilDeUsuarioFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PerfilDeUsuarioFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        ir_a_imagenes = view.findViewById(R.id.Ir_a_imagenes)
+        regresar = view.findViewById(R.id.regresar)
+        editar_numero = view.findViewById(R.id.editar_numero)
+        editar_nombre = view.findViewById(R.id.editar_nombre)
+        editar_correo = view.findViewById(R.id.editar_correo)
+
+
+
     }
 }

@@ -44,8 +44,9 @@ class apuntesFragment : Fragment() {
             (activity as MainActivity).abrirPeriodoFragment()
         }
 
-        agregar_apunte.setOnClickListener {
 
+        agregar_apunte.setOnClickListener {
+            (activity as MainActivity).abrirApunteFragment
         }
 
     }

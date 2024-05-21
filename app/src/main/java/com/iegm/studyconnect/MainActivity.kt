@@ -33,6 +33,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // Verificar si se tienen los permisos necesarios
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(
@@ -100,4 +115,9 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().add(R.id.root_layout, periodoFragment)
                 .commitAllowingStateLoss()
         }
+fun abrirApunteFragment() {
+    val apunteFragment: ApunteFragment = ApunteFragment()
+    supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
+        .commitAllowingStateLoss()
+}
 
