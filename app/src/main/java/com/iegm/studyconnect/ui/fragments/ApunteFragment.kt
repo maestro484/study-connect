@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
 class ApunteFragment : Fragment() {
@@ -42,6 +43,16 @@ class ApunteFragment : Fragment() {
         archivo = view.findViewById(R.id.Archivo)
         descrepcion = view.findViewById(R.id.Descripción)
         Add = view.findViewById(R.id.add)
+
+        descrepcion.setOnClickListener {
+            (activity as MainActivity).abrirPerfilDeUsuarioFragment()
+
+            if (roll = representante) {
+
+
+            } else if (roll = estudiante)
+
+        }
     }
 
 
