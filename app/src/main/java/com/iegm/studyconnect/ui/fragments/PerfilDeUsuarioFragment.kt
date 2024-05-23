@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.iegm.studyconnect.Manifest
 import com.iegm.studyconnect.R
 
@@ -20,6 +21,9 @@ class PerfilDeUsuarioFragment : Fragment() {
     lateinit var editar_numero: EditText
     lateinit var editar_nombre: EditText
     lateinit var editar_correo: EditText
+
+    private var apuntesMutableList : MutableList<apuntes> =
+        PerfilDeUsuarioFragment.apuntes.toMutableList()
 
 
     companion object {
@@ -53,7 +57,7 @@ class PerfilDeUsuarioFragment : Fragment() {
         editar_nombre = view.findViewById(R.id.editar_nombre)
         editar_correo = view.findViewById(R.id.editar_correo)
 
-
-
     }
+
+
 }
