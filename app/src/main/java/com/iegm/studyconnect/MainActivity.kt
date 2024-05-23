@@ -5,7 +5,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.iegm.studyconnect.ui.fragments.AdmFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,11 +19,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun abrirAdmFragment() {
-        val admFragment: AdmFragment = AdmFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, admFragment)
-            .commitAllowingStateLoss()
-    }
-    /*
-    * */
 }
