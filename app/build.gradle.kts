@@ -25,13 +25,7 @@ android {
                 "proguard-rules.pro"
             )
         }
-
-
-
     }
-
-
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -42,6 +36,7 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -56,5 +51,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
+
+    implementation("com.firebaseui:firebase-ui-auth:7.2.0")
+
 
 }
