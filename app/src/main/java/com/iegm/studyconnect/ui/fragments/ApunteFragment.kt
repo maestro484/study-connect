@@ -18,6 +18,8 @@ class ApunteFragment : Fragment() {
     lateinit var descrepcion : EditText
     lateinit var Add : Button
 
+    val representante : Boolean = true
+
     companion object {
         fun newInstance() = ApunteFragment()
     }
@@ -44,15 +46,16 @@ class ApunteFragment : Fragment() {
         descrepcion = view.findViewById(R.id.Descripción)
         Add = view.findViewById(R.id.add)
 
-        descrepcion.setOnClickListener {
-            (activity as MainActivity).abrirPerfilDeUsuarioFragment()
+        val roll: Boolean = representante
 
-            if (roll = representante) {
+        if (roll == representante) {
+            descrepcion.isEnabled = true
 
-
-            } else if (roll = estudiante)
-
+        } else {
+            descrepcion.isEnabled = false
         }
+
+
     }
 
 
