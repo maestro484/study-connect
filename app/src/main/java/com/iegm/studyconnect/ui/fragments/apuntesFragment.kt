@@ -40,6 +40,11 @@ class apuntesFragment : Fragment() {
         agregar_apunte = view.findViewById(R.id.agregar_apunte)
         regresar = view.findViewById(R.id.regresar)
 
+        agregar_apunte.setOnClickListener {
+            (activity as MainActivity).abrirApunteFragment()
+
+        }
+
         regresar.setOnClickListener {
             (activity as MainActivity).abrirPeriodoFragment()
         }

@@ -9,7 +9,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import com.iegm.studyconnect.Manifest
+import com.iegm.studyconnect.R
 
 class PerfilDeUsuarioFragment : Fragment() {
 
@@ -20,6 +22,19 @@ class PerfilDeUsuarioFragment : Fragment() {
     lateinit var editar_correo: EditText
 
 
+    companion object {
+
+    fun newInstance() = ConfiguracionFragment
+
+}
+
+    private val viewModel: ConfiguracionViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,10 +43,11 @@ class PerfilDeUsuarioFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_perfil_de_usuario, container, false)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+6
 
-        ir_a_imagenes = view.findViewById(R.id.Ir_a_imagenes)
+        ir_a_imagenes = view.findViewById(R.id.ir_a_imagenes)
         regresar = view.findViewById(R.id.regresar)
         editar_numero = view.findViewById(R.id.editar_numero)
         editar_nombre = view.findViewById(R.id.editar_nombre)

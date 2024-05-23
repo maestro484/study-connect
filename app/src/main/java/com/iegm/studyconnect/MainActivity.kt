@@ -1,5 +1,6 @@
 package com.iegm.studyconnect
 
+import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -18,7 +19,6 @@ import com.iegm.studyconnect.ui.fragments.apuntesFragment
 class MainActivity : AppCompatActivity() {
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,65 +29,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
-    private val STORAGE_PERMISSION_CODE = 101
+
+
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
 
+        permisoAlmacenamiento()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // Verificar si se tienen los permisos necesarios
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(
-                    this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                // Si no se tienen los permisos, solicitarlos al usuario
-                ActivityCompat.requestPermissions(
-                    this,
-                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                    STORAGE_PERMISSION_CODE
-                )
-            } else {
-                // Los permisos ya están concedidos
-                // Puedes realizar las operaciones de almacenamiento aquí
-            }
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permiso concedido, puedes proceder con las operaciones de almacenamiento
-            } else {
-                // Permiso denegado, muestra un mensaje o toma alguna acción
-                Toast.makeText(
-                    this,
-                    "Permiso de almacenamiento denegado",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
-    }
-}
 
         fun abrirAdmFragment() {
             val admFragment: AdmFragment = AdmFragment()
@@ -114,10 +62,41 @@ class MainActivity : AppCompatActivity() {
             val periodoFragment: PeriodoFragment = PeriodoFragment()
             supportFragmentManager.beginTransaction().add(R.id.root_layout, periodoFragment)
                 .commitAllowingStateLoss()
+
         }
-fun abrirApunteFragment() {
-    val apunteFragment: ApunteFragment = ApunteFragment()
-    supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
-        .commitAllowingStateLoss()
+
+    }
+
+    private fun permisoAlmacenamiento() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
+                READ_MEDIA_AUDIO_PERMISSION_REQUEST_CODE
+
+            )
+        } else {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                READ_EXTERNAL_STORAGE_IMAGES_PERMISSION_REQUEST_CODE
+            )
+
+
+        }
+
+
+        fun abrirApunteFragment() {
+            val apunteFragment: ApunteFragment = ApunteFragment()
+            supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
+                .commitAllowingStateLoss()
+
+        }
+    }
+
+
+
 }
 
+const val READ_MEDIA_AUDIO_PERMISSION_REQUEST_CODE = 2001
+const val READ_EXTERNAL_STORAGE_IMAGES_PERMISSION_REQUEST_CODE = 207
