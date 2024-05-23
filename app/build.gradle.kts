@@ -52,7 +52,5 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
 
-    implementation("com.firebaseui:firebase-ui-auth:7.2.0")
-
 
 }

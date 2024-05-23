@@ -6,15 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.ApunteFragment">
 
-    <ImageView
-        android:id="@+id/Archivo"
+
+
+    <com.rajat.pdfviewer.PdfRendererView
+        android:id="@+id/pdfView"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/add_box_24dp_fill0_wght400_grad0_opsz24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:pdfView_divider="@drawable/pdf_viewer_divider"
+        app:pdfView_showDivider="false"
         app:layout_constraintTop_toBottomOf="@id/layout2" />
+
 
     <Button
         android:id="@+id/add"
@@ -24,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Archivo" />
+        app:layout_constraintTop_toBottomOf="@id/pdfView" />
 
     <EditText
         android:id="@+id/Descripción"
@@ -34,7 +38,7 @@
         android:ems="10"
         android:inputType="text"
         android:text="Name"
-        app:layout_constraintTop_toBottomOf="@id/Archivo"
+        app:layout_constraintTop_toBottomOf="@id/pdfView"
         tools:layout_editor_absoluteX="100dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

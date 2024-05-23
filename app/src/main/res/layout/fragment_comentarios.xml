@@ -9,20 +9,8 @@
     tools:context=".ui.fragments.ComentariosFragment">
 
 
-    <com.rajat.pdfviewer.PdfRendererView
-        android:id="@+id/pdfView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.5"
-        app:pdfView_divider="@drawable/pdf_viewer_divider"
-        app:pdfView_showDivider="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayout3"
-        app:layout_constraintStart_toStartOf="parent"
-        />
 
-    <!--<ImageView
+    <ImageView
         android:id="@+id/Descargar"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -32,8 +20,7 @@
         android:src="@drawable/download"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/PDF" />-->
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaDeComentarios"

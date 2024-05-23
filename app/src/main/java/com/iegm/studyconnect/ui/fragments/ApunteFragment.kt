@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.graphics.pdf.PdfRenderer
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +15,7 @@ import com.iegm.studyconnect.R
 
 class ApunteFragment : Fragment() {
 
-    lateinit var archivo : ImageView
+    lateinit var PdfView : PdfRenderer
     lateinit var descrepcion : EditText
     lateinit var Add : Button
 
@@ -42,7 +43,7 @@ class ApunteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        archivo = view.findViewById(R.id.Archivo)
+        PdfView = view.findViewById(R.id.pdfView)
         descrepcion = view.findViewById(R.id.Descripción)
         Add = view.findViewById(R.id.add)
 
