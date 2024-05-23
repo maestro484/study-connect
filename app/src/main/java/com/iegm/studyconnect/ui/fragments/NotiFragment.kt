@@ -6,9 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Switch
 import com.iegm.studyconnect.R
 
 class NotiFragment : Fragment() {
+
+    lateinit var notificaciones : Switch
+    lateinit var recientes : Switch
+    lateinit var noti_comentarios : Switch
+
+
+
 
     companion object {
         fun newInstance() = NotiFragment()
@@ -19,7 +27,6 @@ class NotiFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
@@ -28,4 +35,13 @@ class NotiFragment : Fragment() {
     ): View {
         return inflater.inflate(R.layout.fragment_noti, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        notificaciones = view.findViewById(R.id.notificaciones)
+        //recientes = view.findViewById(R.id.rosado)
+        noti_comentarios = view.findViewById(R.id.oscuro)
+    }
+
 }

@@ -38,6 +38,7 @@ class ConfiguracionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         flecha = view.findViewById(R.id.flecha)
         adm_cuenta = view.findViewById(R.id.cerrar_sesion)
         notificaciones = view.findViewById(R.id.notificaciones)

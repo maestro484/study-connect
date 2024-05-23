@@ -1,14 +1,25 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.graphics.Color
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.RadioButton
+import android.widget.Switch
+import com.google.android.material.internal.ClippableRoundedCornerLayout
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
 class ThemeFragment : Fragment() {
+
+    lateinit var predeterminado: RadioButton
+    lateinit var azul: RadioButton
+    lateinit var oscuro: RadioButton
+    lateinit var flecha: ImageView
 
     companion object {
         fun newInstance() = ThemeFragment()
@@ -16,16 +27,36 @@ class ThemeFragment : Fragment() {
 
     private val viewModel: ThemeViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.fragment_theme, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        predeterminado = view.findViewById(R.id.predeterminado)
+        azul = view.findViewById(R.id.azul)
+        oscuro = view.findViewById(R.id.oscuro)
+        flecha = view.findViewById(R.id.flecha)
+
+        val mainActivity = (requireActivity() as MainActivity)
+
+        oscuro.setOnClickListener {
+            mainActivity.cambiarColor("#550363", "#A866CA", "#A0ACEC")
+        }
+
+        predeterminado.setOnClickListener {
+            mainActivity.cambiarColor("#A866CA", "#A0ACEC" , "#550363")
+        }
+
+        azul.setOnClickListener {
+            mainActivity.cambiarColor("#A0ACEC", "#550363", "#A866CA")
+
+        }
+
+    }
+
 }

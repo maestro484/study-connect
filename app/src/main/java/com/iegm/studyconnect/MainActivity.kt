@@ -1,8 +1,12 @@
 package com.iegm.studyconnect
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.TintableBackgroundView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AdmFragment
@@ -21,8 +25,15 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
     }
 
+    fun cambiarColor(primaryDark: String, primary : String, background : String) {
+        window.statusBarColor = Color.parseColor(primaryDark)
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor(primary)))
+        window.setBackgroundDrawable(ColorDrawable(Color.parseColor(background)))
+        window.navigationBarColor = Color.parseColor(primary)
+    }
 
     fun abrirAdmFragment() {
         val admFragment: AdmFragment = AdmFragment()
@@ -62,6 +73,4 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
 
     }
-    /*
-    * */
 }
