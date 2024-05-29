@@ -1,25 +1,24 @@
 package com.iegm.studyconnect.ui.fragments
 
-import android.media.Image
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
+import android.widget.ScrollView
 import android.widget.SearchView
 import android.widget.TextView
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
-import org.w3c.dom.Text
 
 class HomeFragment : Fragment() {
 
     lateinit var ajuste : ImageView
     lateinit var buscador : SearchView
     lateinit var textG : TextView
+    lateinit var listaNueva : ScrollView
 
     companion object {
         fun newInstance() = HomeFragment()
@@ -46,6 +45,7 @@ class HomeFragment : Fragment() {
         ajuste = view.findViewById(R.id.Ajuste)
         buscador = view.findViewById(R.id.buscador)
         textG = view.findViewById(R.id.textView)
+        listaNueva = view.findViewById(R.id.ListaNueva)
 
         ajuste.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()
@@ -55,8 +55,12 @@ class HomeFragment : Fragment() {
             (activity as MainActivity).abrirBusquedaFragment()
         }
 
+        listaNueva.setOnClickListener {
+            (activity as MainActivity).abrirApuntesFragment()
+        }
 
-    val grupo : Grado = Grado()
+
+        val grupo : Grado = Grado()
     }
 
 }

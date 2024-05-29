@@ -9,17 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
-import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
+import com.rajat.pdfviewer.PdfRendererView
 
 class ApunteFragment : Fragment() {
 
-    lateinit var PdfView : PdfRenderer
+    lateinit var pdfView : PdfRendererView
     lateinit var descrepcion : EditText
     lateinit var Add : Button
 
-    val representante : Boolean = true
+    val representante : String = ""
 
     companion object {
         fun newInstance() = ApunteFragment()
@@ -43,18 +42,21 @@ class ApunteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        PdfView = view.findViewById(R.id.pdfView)
+        pdfView = view.findViewById(R.id.pdfView)
         descrepcion = view.findViewById(R.id.Descripción)
         Add = view.findViewById(R.id.add)
 
-        val roll: Boolean = representante
+        val roll : String = "representante"
 
         if (roll == representante) {
             descrepcion.isEnabled = true
+            pdfView.isEnabled = true
 
         } else {
             descrepcion.isEnabled = false
+            pdfView.isEnabled = true
         }
+
 
 
     }
