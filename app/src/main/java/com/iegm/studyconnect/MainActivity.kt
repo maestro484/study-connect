@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor(primary)))
         window.setBackgroundDrawable(ColorDrawable(Color.parseColor(background)))
         window.navigationBarColor = Color.parseColor(primary)
+
     }
 
     fun abrirAdmFragment() {
@@ -73,4 +74,6 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
 
     }
+
+
 }

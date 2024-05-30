@@ -17,7 +17,7 @@ class ConfiguracionFragment : Fragment() {
     lateinit var adm_cuenta: Button
     lateinit var notificaciones: Button
     lateinit var theme: Button
-    lateinit var terminos_condiciones : Button
+    lateinit var terminos_condiciones: Button
 
     companion object {
         fun newInstance() = ConfiguracionFragment()
@@ -41,13 +41,10 @@ class ConfiguracionFragment : Fragment() {
 
         flecha = view.findViewById(R.id.flecha)
         adm_cuenta = view.findViewById(R.id.cerrar_sesion)
-        notificaciones = view.findViewById(R.id.notificaciones)
+        notificaciones = view.findViewById(R.id.notificaciones_2)
         theme = view.findViewById(R.id.theme)
         terminos_condiciones = view.findViewById(R.id.terminos_condiciones)
 
-        adm_cuenta.setOnClickListener {
-            (activity as MainActivity).abrirAdmFragment()
-        }
 
         notificaciones.setOnClickListener {
             (activity as MainActivity).abrirNotiFragment()
@@ -59,7 +56,7 @@ class ConfiguracionFragment : Fragment() {
 
         }
 
-        flecha.setOnClickListener{
+        flecha.setOnClickListener {
 
 
         }
@@ -72,4 +69,5 @@ class ConfiguracionFragment : Fragment() {
 
     }
 
-    }
+}
+

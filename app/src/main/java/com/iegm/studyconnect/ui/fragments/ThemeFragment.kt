@@ -20,6 +20,7 @@ class ThemeFragment : Fragment() {
     lateinit var azul: RadioButton
     lateinit var oscuro: RadioButton
     lateinit var flecha: ImageView
+    lateinit var claro: RadioButton
 
     companion object {
         fun newInstance() = ThemeFragment()
@@ -40,23 +41,30 @@ class ThemeFragment : Fragment() {
         predeterminado = view.findViewById(R.id.predeterminado)
         azul = view.findViewById(R.id.azul)
         oscuro = view.findViewById(R.id.oscuro)
-        flecha = view.findViewById(R.id.flecha)
+        //flecha = view.findViewById(R.id.flecha)
+        claro = view.findViewById(R.id.claro)
 
         val mainActivity = (requireActivity() as MainActivity)
 
         oscuro.setOnClickListener {
-            mainActivity.cambiarColor("#550363", "#A866CA", "#A0ACEC")
+            mainActivity.cambiarColor("#550363", "#550363", "#181819")
         }
 
         predeterminado.setOnClickListener {
-            mainActivity.cambiarColor("#A866CA", "#A0ACEC" , "#550363")
+            mainActivity.cambiarColor("#683781", "#A766C9", "#181819")
+
+
+            azul.setOnClickListener {
+                mainActivity.cambiarColor("#7A8EFA", "#7A8EFA", "#181819")
+
+            }
+
+            claro.setOnClickListener {
+                mainActivity.cambiarColor("#683781", "#A766C9", "#181819")
+
+            }
+
         }
-
-        azul.setOnClickListener {
-            mainActivity.cambiarColor("#A0ACEC", "#550363", "#A866CA")
-
-        }
-
     }
-
 }
+
