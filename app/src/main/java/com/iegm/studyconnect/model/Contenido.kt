@@ -22,6 +22,7 @@ data class Periodo(
 
 data class Apunte(
     @SerializedName("apunte_id") val apunteId: Int = 0,
+    val nombre: String = "",
     val descripcion: String = "",
     val mes : Int = 0,
     val archivos: ArrayList<Archivo> = ArrayList()
