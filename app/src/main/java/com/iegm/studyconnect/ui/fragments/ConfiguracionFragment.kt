@@ -43,7 +43,7 @@ class ConfiguracionFragment : Fragment() {
         tema = view.findViewById(R.id.tema)
 
         adm_cuenta.setOnClickListener {
-            (activity as MainActivity).abrirAdmFragment()
+       //     (activity as MainActivity).abrirAdmFragment()
         }
 
         notificaciones.setOnClickListener {

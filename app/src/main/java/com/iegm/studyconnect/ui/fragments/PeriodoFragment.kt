@@ -49,19 +49,19 @@ class PeriodoFragment : Fragment() {
 
 
         periodo1.setOnClickListener {
-            (activity as MainActivity).abrirApuntesFragment()
+            //(activity as MainActivity).abrirApuntesFragment()
 
         }
         periodo2.setOnClickListener {
-            (activity as MainActivity).abrirApuntesFragment()
+            //(activity as MainActivity).abrirApuntesFragment()
 
         }
         periodo3.setOnClickListener {
-            (activity as MainActivity).abrirApuntesFragment()
+            //(activity as MainActivity).abrirApuntesFragment()
 
         }
         volver1.setOnClickListener {
-            (activity as MainActivity).abrirHomeFragment()
+           // (activity as MainActivity).abrirHomeFragment()
         }
 
     }

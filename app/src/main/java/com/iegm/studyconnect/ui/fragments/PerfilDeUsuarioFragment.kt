@@ -1,17 +1,14 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.iegm.studyconnect.Manifest
 import com.iegm.studyconnect.R
 
 class PerfilDeUsuarioFragment : Fragment() {
@@ -22,21 +19,17 @@ class PerfilDeUsuarioFragment : Fragment() {
     lateinit var editar_nombre: EditText
     lateinit var editar_correo: EditText
 
-    private var apuntesMutableList : MutableList<apuntes> =
-        PerfilDeUsuarioFragment.apuntes.toMutableList()
+    /*private var apuntesMutableList: MutableList<apuntes> =
+        PerfilDeUsuarioFragment.apuntes.toMutableList()*/
 
 
     companion object {
 
-    fun newInstance() = ConfiguracionFragment
+        fun newInstance() = ConfiguracionFragment
 
-}
+    }
 
     private val viewModel: ConfiguracionViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
 
     override fun onCreateView(
@@ -49,7 +42,7 @@ class PerfilDeUsuarioFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-6
+        6
 
         ir_a_imagenes = view.findViewById(R.id.ir_a_imagenes)
         regresar = view.findViewById(R.id.regresar)

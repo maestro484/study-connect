@@ -53,9 +53,9 @@ class MainActivity : AppCompatActivity() {
 
         fun abrirHomeFragment() {
 
-            val homeFragment: HomeFragment = HomeFragment()
+           /* val homeFragment: HomeFragment = HomeFragment()
             supportFragmentManager.beginTransaction().add(R.id.root_layout, homeFragment)
-                .commitAllowingStateLoss()
+                .commitAllowingStateLoss()*/
         }
 
         fun abrirPeriodoFragment() {
@@ -87,9 +87,9 @@ class MainActivity : AppCompatActivity() {
 
 
         fun abrirApunteFragment() {
-            val apunteFragment: ApunteFragment = ApunteFragment()
+            /*val apunteFragment: ApunteFragment = ApunteFragment()
             supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
-                .commitAllowingStateLoss()
+                .commitAllowingStateLoss()*/
 
         }
     }

@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E7D9EA"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-        <LinearLayout
-            android:orientation="vertical"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp"
+        android:background="@android:color/holo_purple"
+        android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/mRecycler"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"  />
-
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/arrow_back_fill0_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mRecycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addingBtn"
-        android:src="@drawable/ic_add"
-        app:tint="@color/white"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="15dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:baselineAlignBottom="true"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_add"
+        app:tint="@color/white" />
 
-</RelativeLayout>
+
+</LinearLayout>

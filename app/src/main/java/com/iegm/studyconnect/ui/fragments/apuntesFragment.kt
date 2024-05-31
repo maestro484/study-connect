@@ -9,13 +9,19 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.model.UserData
+import com.iegm.studyconnect.view.UserAdapter
 
 class apuntesFragment : Fragment() {
-    lateinit var lista_de_apuntes : RecyclerView
-    lateinit var agregar_apunte :  Button
+     lateinit var addsBtn : FloatingActionButton
     lateinit var  regresar : ImageButton
+    lateinit var recy : RecyclerView
+    lateinit var userList: ArrayList<UserData>
+    lateinit var userAdapter: UserAdapter
+
 
     companion object {
         fun newInstance() = apuntesFragment()
@@ -36,22 +42,24 @@ class apuntesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        lista_de_apuntes = view.findViewById(R.id.lista_de_apuntes)
-        agregar_apunte = view.findViewById(R.id.agregar_apunte)
-        regresar = view.findViewById(R.id.regresar)
 
-        agregar_apunte.setOnClickListener {
-            (activity as MainActivity).abrirApunteFragment()
+
+        recy = view.findViewById(R.id.mRecycler)
+        regresar = view.findViewById(R.id.regresar)
+        addsBtn = view.findViewById(R.id.addingBtn)
+
+        addsBtn.setOnClickListener {
+            //(activity as MainActivity).abrirApunteFragment()
 
         }
 
         regresar.setOnClickListener {
-            (activity as MainActivity).abrirPeriodoFragment()
+           // (activity as MainActivity).abrirPeriodoFragment()
         }
 
 
         agregar_apunte.setOnClickListener {
-            (activity as MainActivity).abrirApunteFragment
+            //(activity as MainActivity).abrirApunteFragment
         }
 
     }
