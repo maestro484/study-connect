@@ -43,14 +43,13 @@ class apuntesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+          userList = ArrayList()
         recy = view.findViewById(R.id.mRecycler)
         regresar = view.findViewById(R.id.regresar)
         addsBtn = view.findViewById(R.id.addingBtn)
+        userAdapter = UserAdapter(this,userList)
 
-        addsBtn.setOnClickListener {
-            //(activity as MainActivity).abrirApunteFragment()
-
+        addsBtn.setOnClickListener {addInfo()
         }
 
         regresar.setOnClickListener {
@@ -58,9 +57,8 @@ class apuntesFragment : Fragment() {
         }
 
 
-        agregar_apunte.setOnClickListener {
+        //agregar_apunte.setOnClickListener {
             //(activity as MainActivity).abrirApunteFragment
         }
 
     }
-}
