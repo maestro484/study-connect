@@ -36,11 +36,11 @@
 
   <EditText
       android:id="@+id/userName"
-      android:hint="Name"
+      android:hint="Titulo"
       android:background="@drawable/shape_background"
       android:padding="15dp"
       android:inputType="textPersonName"
-      android:textColor="@color/purple"
+      android:textColor="@color/purple1"
       android:textColorHint="@color/purple1"
       android:textSize="18sp"
       android:textStyle="bold"
@@ -52,9 +52,9 @@
       android:layout_height="wrap_content" />
   <EditText
       android:id="@+id/userNo"
-      android:hint="Mobile No."
+      android:hint="Fecha"
       android:inputType="phone"
-      android:textColor="@color/purple"
+      android:textColor="@color/purple1"
       android:background="@drawable/shape_background"
       android:padding="15dp"
       android:textColorHint="@color/purple1"

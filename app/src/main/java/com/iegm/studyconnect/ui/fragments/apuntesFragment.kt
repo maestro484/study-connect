@@ -1,6 +1,5 @@
 package com.iegm.studyconnect.ui.fragments
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -39,7 +38,7 @@ class apuntesFragment : Fragment() {
         recy = view.findViewById(R.id.mRecycler)
         regresar = view.findViewById(R.id.regresar)
         addsBtn = view.findViewById(R.id.addingBtn)
-        userAdapter = UserAdapter(this, userList) //pasarlo al fragment y no adapter
+        userAdapter = UserAdapter(requireContext(),this, userList) //pasarlo al fragment y no adapter
         recy.layoutManager = LinearLayoutManager(requireContext())
         recy.adapter = userAdapter
 
