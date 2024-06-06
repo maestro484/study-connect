@@ -30,12 +30,11 @@
         android:layout_height="wrap_content"
 
         />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addingBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:baselineAlignBottom="true"
         android:layout_margin="15dp"
         android:src="@drawable/ic_add"
         app:tint="@color/white" />

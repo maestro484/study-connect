@@ -1,41 +1,29 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.app.Activity
 import android.app.AlertDialog
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.view.UserAdapter
 
 class apuntesFragment : Fragment() {
-     lateinit var addsBtn : FloatingActionButton
-    lateinit var  regresar : ImageButton
-    lateinit var recy : RecyclerView
-    lateinit var userList: ArrayList<UserData>
-    lateinit var userAdapter: UserAdapter
+    private lateinit var addsBtn: FloatingActionButton
+    private lateinit var regresar: ImageButton
+    private lateinit var recy: RecyclerView
+    private lateinit var userList: ArrayList<UserData>
+    private lateinit var userAdapter: UserAdapter
 
-
-    companion object {
-        fun newInstance() = apuntesFragment()
-    }
-
-    private val viewModel: PeopleViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,58 +35,77 @@ class apuntesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-          userList = ArrayList()
+        userList = ArrayList()
         recy = view.findViewById(R.id.mRecycler)
         regresar = view.findViewById(R.id.regresar)
         addsBtn = view.findViewById(R.id.addingBtn)
-        userAdapter = UserAdapter(this,userList)
-        recy.layoutManager = LinearLayoutManager(this)
+        userAdapter = UserAdapter(this, userList) //pasarlo al fragment y no adapter
+        recy.layoutManager = LinearLayoutManager(requireContext())
         recy.adapter = userAdapter
 
-      addsBtn.setOnClickListener { addInfo() }
+        addsBtn.setOnClickListener { addInfo() }
 
         regresar.setOnClickListener {
-           // (activity as MainActivity).abrirPeriodoFragment()
+            // (activity as MainActivity).abrirPeriodoFragment()
         }
 
 
         //agregar_apunte.setOnClickListener {
-            //(activity as MainActivity).abrirApunteFragment
-        }
+        //(activity as MainActivity).abrirApunteFragment
+    }
+
 
     private fun addInfo() {
 
-     val inflter = LayoutInflater.from(this)
-        val v = inflter.inflate(R.layout.add_item,null)
+        val inflter = LayoutInflater.from(requireContext())
+        val v = inflter.inflate(R.layout.add_item, null)
         val userName = v.findViewById<EditText>(R.id.userName)
         val userNo = v.findViewById<EditText>(R.id.userNo)
 
-        val addDialog = AlertDialog.Builder(this)
+        val addDialog = AlertDialog.Builder(requireContext())
 
-            addDialog.setView(v)
+        addDialog.setView(v)
 
-        addDialog.setPositiveButton( "Ok"){
+        addDialog.setPositiveButton("Ok") {
 
-            dialog,_ ->
+                dialog, _ ->
             val names = userName.text.toString()
             val number = userNo.text.toString()
             userList.add(UserData("Name: $names", " Mobile No. : $number"))
             userAdapter.notifyDataSetChanged()
 
-            Toast.makeText(this, "Adding User Information Succsess",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Adding User Information Succsess", Toast.LENGTH_SHORT)
+                .show()
 
             dialog.dismiss()
-         }
+        }
 
-       addDialog.setNegativeButton("cancel"){
-           dialog,_->
-           dialog.dismiss()
-          Toast.makeText(this, "cancel",Toast.LENGTH_SHORT).show()
-       }
+        addDialog.setNegativeButton("cancel") { dialog, _ ->
+            dialog.dismiss()
+            Toast.makeText(requireContext(), "cancel", Toast.LENGTH_SHORT).show()
+        }
         addDialog.create()
         addDialog.show()
 
     }
 
+   // fun onApunteClicked(recyclerView: RecyclerView, view: View, position: Int) {
+      // val item = recyclerView.adapter?.getItemId(position) as ApunteFragment
+
+        // Crea la vista de apunte
+      //val vistaApunte = ApunteFragment.newInstance(item)
+
+        // Recupera el FragmentManager
+      // val fragmentManager = (view.context as Activity).abrirApunteFragment
+
+        // Reemplaza el fragmento actual por la vista de apunte
+       // transaction.replace(R.id.contenedor_fragmentos, ApunteFragment)
+
+        // Añade la transacción a la pila de retroceso
+    // transaction.addToBackStack("vista_apunte")
+
+        // Ejecuta la transacción
+        //transaction.commit()
+    //}
 
 }
