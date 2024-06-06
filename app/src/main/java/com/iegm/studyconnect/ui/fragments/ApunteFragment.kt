@@ -1,6 +1,5 @@
 package com.iegm.studyconnect.ui.fragments
 
-import android.graphics.pdf.PdfRenderer
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import com.iegm.studyconnect.R
 import com.rajat.pdfviewer.PdfRendererView
 
@@ -16,7 +17,9 @@ class ApunteFragment : Fragment() {
 
     lateinit var pdfView : PdfRendererView
     lateinit var descrepcion : EditText
-    lateinit var Add : Button
+    lateinit var atras : ImageView
+    lateinit var fileTitleTextView : TextView
+    lateinit var addCommentButton : Button
 
     val representante : String = ""
 
@@ -44,11 +47,18 @@ class ApunteFragment : Fragment() {
 
         pdfView = view.findViewById(R.id.pdfView)
         descrepcion = view.findViewById(R.id.Descripción)
-        Add = view.findViewById(R.id.add)
+        atras = view.findViewById(R.id.Atras)
+        fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
+        addCommentButton = view.findViewById(R.id.addCommentButton)
 
-        val roll : String = "representante"
+        atras.setOnClickListener {
+            (activity as MainActivity).abrirApuntesFragment()
+        }
 
-        if (roll == representante) {
+        val rol : String = "representante"
+
+
+        if (rol == representante) {
             descrepcion.isEnabled = true
             pdfView.isEnabled = true
 

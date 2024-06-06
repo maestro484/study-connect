@@ -43,6 +43,7 @@ class HomeFragment : Fragment() {
         ajuste = view.findViewById(R.id.Ajustes)
         buscador = view.findViewById(R.id.Buscador)
         grado = view.findViewById(R.id.textViewG)
+        listaNueva = view.findViewById(R.id.ListaNueva)
 
         ajuste.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()
