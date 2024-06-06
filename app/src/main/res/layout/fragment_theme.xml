@@ -29,7 +29,7 @@
             android:id="@+id/oscuro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#550363"
+            android:background="#A084A5"
             android:text="Oscuro"
             android:textColor="#FFFCFC"
             android:textColorLink="#EFE2E2" />
