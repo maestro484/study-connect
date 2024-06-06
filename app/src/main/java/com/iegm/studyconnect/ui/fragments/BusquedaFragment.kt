@@ -22,7 +22,7 @@ import java.io.InputStream
 import java.text.Normalizer
 
 class BusquedaFragment : Fragment() {
-
+//aqui declaramos las variables de la vista busqueda
     lateinit var devolver: ImageView
     lateinit var materia: Button
     lateinit var profesor: Button
@@ -55,7 +55,7 @@ class BusquedaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+//aqui llamamos las variables de la lista de busqueda
         devolver = view.findViewById(R.id.devolver)
         materia = view.findViewById(R.id.materia)
         profesor = view.findViewById(R.id.profesor)
@@ -98,7 +98,7 @@ class BusquedaFragment : Fragment() {
         devolver.setOnClickListener {
             //aqui necesito que cuando se le unda al boton se debuelva a la anterior pagina
         }
-
+//aqui se hace el codigo para poder filtar las materias
         materia.setOnClickListener {
             filtrarMateria(data.grados[grado])
         }
@@ -114,7 +114,7 @@ class BusquedaFragment : Fragment() {
             filtrarApunte(data.grados[grado])
         }
     }
-
+//aqui es para que el buscador busque los elementos
     private fun buscar(busqueda: String, data: SchoolData) {
         Log.d("busqueda", "buscar: " + busqueda)
         val grado = data.grados[grado]
@@ -151,7 +151,7 @@ class BusquedaFragment : Fragment() {
 
         Log.d("busqueda", "buscar: " + resultados)
     }
-
+//aqui es para que cuando busque el ususario aparesca enseguida su resultado
     fun String.replaceAccents(): String {
         val chars = Normalizer.normalize(this, Normalizer.Form.NFD)
         return chars.replace("[\\p{InCombiningDiacriticalMarks}]".toRegex(), "")
@@ -161,7 +161,7 @@ class BusquedaFragment : Fragment() {
         val inputStream: InputStream = context.resources.openRawResource(resourceId)
         return inputStream.bufferedReader().use { it.readText() }
     }
-
+//esto es para que los filtros busquen exactamente el lugar y lo que les corresponde
     fun filtrarMateria(grado: Grado) {
         grado.materias.map {
             it.nombre
