@@ -135,6 +135,8 @@ class BusquedaFragment : Fragment() {
         Log.d("busqueda", "buscar: " + busqueda)
         val grado = data.grados[grado]
 
+        objetos.clear()
+
         val resultados = mutableListOf<String>()
 
         grado.materias.map {
@@ -163,6 +165,11 @@ class BusquedaFragment : Fragment() {
                     }
                 }
             }
+        }
+
+        busquedaAdapter.apply {
+            this.resultados.addAll(resultados)
+            notifyDataSetChanged()
         }
 
         Log.d("busqueda", "buscar: " + resultados)

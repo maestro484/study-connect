@@ -9,7 +9,7 @@ import com.iegm.studyconnect.R
 
 class BusquedaAdapter: RecyclerView.Adapter<BusquedaAdapter.BusquedaViewHolder>() {
 
-    val resultados: List<String> = emptyList()
+    val resultados: MutableList<String> = mutableListOf()
     class BusquedaViewHolder(itemView: View):RecyclerView.ViewHolder(itemView)
     {
         val resultadoTV: TextView = itemView.findViewById(R.id.textView4)
