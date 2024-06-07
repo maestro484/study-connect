@@ -1,6 +1,5 @@
 package com.iegm.studyconnect.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
 import de.hdodenhof.circleimageview.CircleImageView
 
-class AvatarsAdapter(val context: Context): RecyclerView.Adapter<AvatarsAdapter.ViewHolder>()  {
+class AvatarsAdapter() : RecyclerView.Adapter<AvatarsAdapter.ViewHolder>() {
 
     val avatars = listOf(
 
@@ -32,14 +31,16 @@ class AvatarsAdapter(val context: Context): RecyclerView.Adapter<AvatarsAdapter.
         R.drawable.tiburon,
         R.drawable.tortuga,
         R.drawable.vaca,
-        R.drawable.zorro,)
+        R.drawable.zorro
+    )
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val profileAvatar : CircleImageView = itemView.findViewById(R.id.profile_image)
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val profileAvatar: CircleImageView = itemView.findViewById(R.id.profile_image)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-       val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_avatar, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_avatar, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -48,8 +49,7 @@ class AvatarsAdapter(val context: Context): RecyclerView.Adapter<AvatarsAdapter.
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val iconResId = context.resources.getIdentifier(avatars[position], "drawable", context.packageName)
-        holder.profileAvatar.setImageResource(iconResId)
+        holder.profileAvatar.setImageResource(avatars[position])
     }
 
 }

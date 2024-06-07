@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
@@ -43,7 +44,7 @@ class AvatarsFragment : Fragment() {
 
         listaAvatars= view.findViewById(R.id.listaAvatars)
 
-        val gridLayoutManager = LinearLayoutManager(requireContext())
+        val gridLayoutManager = GridLayoutManager(requireContext(), 3)
 
         listaAvatars.apply {
             layoutManager = gridLayoutManager
