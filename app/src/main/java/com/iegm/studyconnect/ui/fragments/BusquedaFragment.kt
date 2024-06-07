@@ -11,10 +11,12 @@ import android.widget.ImageView
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.adapter.BusquedaAdapter
 import com.iegm.studyconnect.model.Grado
 import com.iegm.studyconnect.model.SchoolData
 import org.json.JSONObject
@@ -22,6 +24,8 @@ import java.io.InputStream
 import java.text.Normalizer
 
 class BusquedaFragment : Fragment() {
+
+    lateinit var busquedaAdapter: BusquedaAdapter
 //aqui declaramos las variables de la vista busqueda
     lateinit var devolver: ImageView
     lateinit var materia: Button
@@ -31,6 +35,9 @@ class BusquedaFragment : Fragment() {
     lateinit var apunte: Button
     lateinit var listaDeBusqueda: RecyclerView
     var grado: Int = 0
+
+
+
 
     val objetos: MutableList<String> = mutableListOf()
 
@@ -64,6 +71,15 @@ class BusquedaFragment : Fragment() {
         apunte = view.findViewById(R.id.apunte)
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
 
+        val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
+
+        busquedaAdapter = BusquedaAdapter()
+
+
+        listaDeBusqueda.apply {
+            layoutManager = linearLayoutManager
+            adapter = busquedaAdapter
+        }
 
         buscador.setOnClickListener {
             profesor.visibility = View.INVISIBLE
