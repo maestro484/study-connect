@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
@@ -16,6 +17,7 @@ import com.iegm.studyconnect.ui.fragments.apuntesFragment
 
 class UserAdapter(val context: Context, val c: apuntesFragment, val userList: ArrayList<UserData>) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+
 
     inner class UserViewHolder(val v: View) : RecyclerView.ViewHolder(v) {
         var name: TextView
@@ -38,24 +40,47 @@ class UserAdapter(val context: Context, val c: apuntesFragment, val userList: Ar
                 when (it.itemId) {
                     R.id.editText -> {
                         val v = LayoutInflater.from(context).inflate(R.layout.add_item,null)
+                        val name = v.findViewById<EditText>(R.id.userName)
+                        val number = v.findViewById<EditText>(R.id.userNo)
+
                         AlertDialog.Builder(context)
                             .setView(v)
                             .setPositiveButton("Ok"){
                                 dialog,_ ->
+                                position.userName = name.text.toString()
+                                position.userMb = number.text.toString()
+                                notifyDataSetChanged()
+                                Toast.makeText(context, "Estas editando", Toast.LENGTH_SHORT)
+                                dialog.dismiss()
                             }
                             .setNegativeButton( "cancelar"){
                                 dialog,_->
+                                dialog.dismiss()
+
                             }
                             .create()
                             .show()
-                        Toast.makeText(context, "Has hecho click en editar", Toast.LENGTH_SHORT)
-                            .show()
                         true
                     }
-
                     R.id.delete -> {
-                        Toast.makeText(context, "Has hecho click en eliminar", Toast.LENGTH_SHORT)
-                            .show()
+                         AlertDialog.Builder(context)
+                             .setTitle("Eliminar")
+                             .setIcon(R.drawable.ic_warning)
+                             .setMessage("Estás seguro de eliminar esta información?")
+                             .setPositiveButton("Sí"){
+                                     dialog,_->
+                                 userList.removeAt(adapterPosition)
+                                 notifyDataSetChanged()
+                                 Toast.makeText(context, "Eliminar está información", Toast.LENGTH_SHORT)
+                                     .show()
+                                 dialog.dismiss()
+                             }
+                             .setNegativeButton("No"){
+                                 dialog,_ ->
+                                 dialog.dismiss()
+                             }
+                             .create()
+                             .show()
 
                         true
                     }

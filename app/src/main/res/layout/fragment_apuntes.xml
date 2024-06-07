@@ -14,22 +14,28 @@
         android:background="@android:color/holo_purple"
         android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/regresar"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/volver1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/arrow_back_fill0_ic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="360dp"
+
+            android:src="@drawable/arrow_back_fill0_ic" />
+
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mRecycler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addingBtn"
