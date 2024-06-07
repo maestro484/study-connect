@@ -102,6 +102,11 @@ class BusquedaFragment : Fragment() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 busqueda = query.toString()
                 buscar(busqueda.toLowerCase().replaceAccents(), data)
+                profesor.visibility = View.INVISIBLE
+                fecha.visibility = View.INVISIBLE
+                materia.visibility = View.INVISIBLE
+                apunte.visibility = View.INVISIBLE
+                listaDeBusqueda.visibility = View.VISIBLE
                 return true
             }
 
