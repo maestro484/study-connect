@@ -18,7 +18,7 @@ import com.iegm.studyconnect.view.UserAdapter
 
 class apuntesFragment : Fragment() {
     private lateinit var addsBtn: FloatingActionButton
-    private lateinit var regresar: ImageButton
+    private lateinit var volver1: ImageButton
     private lateinit var recy: RecyclerView
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
@@ -36,7 +36,7 @@ class apuntesFragment : Fragment() {
 
         userList = ArrayList()
         recy = view.findViewById(R.id.mRecycler)
-        regresar = view.findViewById(R.id.regresar)
+        volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
         userAdapter = UserAdapter(requireContext(),this, userList) //pasarlo al fragment y no adapter
         recy.layoutManager = LinearLayoutManager(requireContext())
@@ -44,7 +44,7 @@ class apuntesFragment : Fragment() {
 
         addsBtn.setOnClickListener { addInfo() }
 
-        regresar.setOnClickListener {
+        volver1.setOnClickListener {
             // (activity as MainActivity).abrirPeriodoFragment()
         }
 

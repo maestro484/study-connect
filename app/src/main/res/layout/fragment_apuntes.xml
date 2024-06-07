@@ -26,6 +26,14 @@
 
             android:src="@drawable/arrow_back_fill0_ic" />
 
+        <TextView
+            android:id="@+id/titlle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+
+            />
+
     </LinearLayout>
 
     <ScrollView
