@@ -9,10 +9,10 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 class AvatarsAdapter: RecyclerView.Adapter<AvatarsAdapter.ViewHolder>()  {
 
-    val avatars = listOf("león.png", "puma.png", "chita.png", "mapache.png", "búho.png",
-        "hurón.png", "tiburón.png", "vaca.png",
-        "ardilla.png", "oso lunar.png", "oso panda.png", "oso polar.png", "oso rojo.png", "oso grizzly.png",
-    "caballo.png", "tortuga.png", "cocodrilo.png", "oveja.png", "pájaro.png", "zorro.png", "serpiente.png", "kiwi.png",
+    val avatars = listOf("leon.png", "puma.png", "chita.png", "mapache.png", "búho.png",
+        "hurón.png", "tiburon.png", "vaca.png",
+        "ardilla.png", "oso pardo.png", "oso_polar.png", "oso_rojo.png" ,
+    "caballo.png", "tortuga.png", "cocodrilo.png", "oveja.png", "pájaro.png", "zorro.png", "serpiente.png", "ballena.png",
         "capibara.png", "delfin.png")
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
