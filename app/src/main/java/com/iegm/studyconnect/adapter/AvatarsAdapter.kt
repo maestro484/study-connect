@@ -10,11 +10,29 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 class AvatarsAdapter(val context: Context): RecyclerView.Adapter<AvatarsAdapter.ViewHolder>()  {
 
-    val avatars = listOf("leon.png", "puma.png", "chita.png", "mapache.png", "buho.png",
-        "huron.png", "tiburon.png", "vaca.png",
-        "ardilla.png", "oso_pardo.png", "oso_polar.png", "oso_rojo.png" ,
-    "caballo.png", "tortuga.png", "cocodrilo.png", "oveja.png", "pajaro.png", "zorro.png", "serpiente.png", "ballena.png",
-        "capibara.png", "delfin.png")
+    val avatars = listOf(
+
+        R.drawable.ardilla,
+        R.drawable.ballena,
+        R.drawable.buho,
+        R.drawable.caballo,
+        R.drawable.capibara,
+        R.drawable.chita,
+        R.drawable.cocodrilo,
+        R.drawable.delfin,
+        R.drawable.huron,
+        R.drawable.leon,
+        R.drawable.mapache,
+        R.drawable.oso_pardo,
+        R.drawable.oso_polar,
+        R.drawable.oveja,
+        R.drawable.pajaro,
+        R.drawable.puma,
+        R.drawable.serpiente,
+        R.drawable.tiburon,
+        R.drawable.tortuga,
+        R.drawable.vaca,
+        R.drawable.zorro,)
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val profileAvatar : CircleImageView = itemView.findViewById(R.id.profile_image)
