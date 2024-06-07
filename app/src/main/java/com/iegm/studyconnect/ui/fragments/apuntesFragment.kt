@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +19,7 @@ import com.iegm.studyconnect.view.UserAdapter
 
 class apuntesFragment : Fragment() {
     private lateinit var addsBtn: FloatingActionButton
-    private lateinit var volver1: ImageButton
+    private lateinit var volver1: ImageView
     private lateinit var recy: RecyclerView
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
