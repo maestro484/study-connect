@@ -10,6 +10,7 @@ import androidx.core.view.TintableBackgroundView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AdmFragment
+import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
 import com.iegm.studyconnect.ui.fragments.TerminosCondicionesFragment
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun cambiarColor(primaryDark: String, primary : String, background : String) {
+    fun cambiarColor(primaryDark: String, primary: String, background: String) {
         window.statusBarColor = Color.parseColor(primaryDark)
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor(primary)))
         window.setBackgroundDrawable(ColorDrawable(Color.parseColor(background)))
@@ -61,19 +62,24 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun abrirTerminosCondicionesFragment(){
-        val terminosCondicionesFragment : TerminosCondicionesFragment =
+    fun abrirTerminosCondicionesFragment() {
+        val terminosCondicionesFragment: TerminosCondicionesFragment =
             TerminosCondicionesFragment()
         supportFragmentManager.beginTransaction().add(R.id.root_layout, terminosCondicionesFragment)
             .commitAllowingStateLoss()
     }
 
-    fun abrirConfigurationFragment(){
-        val configuracionFragment : ConfiguracionFragment = ConfiguracionFragment()
+    fun abrirConfigurationFragment() {
+        val configuracionFragment: ConfiguracionFragment = ConfiguracionFragment()
         supportFragmentManager.beginTransaction().add(R.id.root_layout, configuracionFragment)
             .commitAllowingStateLoss()
 
     }
 
+    //fun abrirPerfilDeUsuarioFragment() {
+    // val perfilDeUsuario: PerfilDeUsuarioFrangment = PerfildeUsuarioFragmnet()
+        //supportFragmentManager.beginTransaction().add(R.id.root_layout, avatarsFragment)
+            //.commitAllowingStateLoss()
 
-}
+
+    }

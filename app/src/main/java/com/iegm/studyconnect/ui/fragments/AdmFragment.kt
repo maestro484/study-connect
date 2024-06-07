@@ -38,7 +38,7 @@ class AdmFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        flecha = view.findViewById(R.id.flecha)
+        flecha = view.findViewById(R.id.flecha1)
         cambiar_tlf = view.findViewById(R.id.theme)
         cerrar_sesion = view.findViewById(R.id.cerrar_sesion)
     }

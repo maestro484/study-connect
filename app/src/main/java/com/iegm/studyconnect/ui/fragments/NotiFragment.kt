@@ -17,7 +17,7 @@ class NotiFragment : Fragment() {
     lateinit var notificaciones_2: Switch
     lateinit var recientes: Switch
     lateinit var comentarios_noti: Switch
-    lateinit var flecha: ImageView
+    lateinit var flecha3: ImageView
 
 
     companion object {
@@ -44,9 +44,9 @@ class NotiFragment : Fragment() {
         notificaciones_2 = view.findViewById(R.id.notificaciones_2)
         recientes = view.findViewById(R.id.recientes)
         comentarios_noti = view.findViewById(R.id.comentarios_noti)
-        flecha = view.findViewById(R.id.flecha)
+        flecha3 = view.findViewById(R.id.flecha3)
 
-        flecha.setOnClickListener {
+        flecha3.setOnClickListener {
             (activity as MainActivity).abrirConfigurationFragment()
 
 

@@ -12,7 +12,7 @@ import com.iegm.studyconnect.R
 
 class TerminosCondicionesFragment : Fragment() {
 
-    lateinit var flecha: ImageView
+    lateinit var flecha4: ImageView
 
     companion object {
         fun newInstance() = TerminosCondicionesFragment()
@@ -36,9 +36,9 @@ class TerminosCondicionesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        flecha = view.findViewById(R.id.flecha)
+        flecha4 = view.findViewById(R.id.flecha4)
 
-        flecha.setOnClickListener {
+        flecha4.setOnClickListener {
             (activity as MainActivity).abrirConfigurationFragment()
 
         }

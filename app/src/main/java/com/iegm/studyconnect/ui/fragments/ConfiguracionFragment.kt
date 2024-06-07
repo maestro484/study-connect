@@ -13,7 +13,7 @@ import com.iegm.studyconnect.R
 
 class ConfiguracionFragment : Fragment() {
 
-    lateinit var flecha: ImageView
+    lateinit var flecha1: ImageView
     lateinit var adm_cuenta: Button
     lateinit var notificaciones: Button
     lateinit var theme: Button
@@ -39,7 +39,7 @@ class ConfiguracionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        flecha = view.findViewById(R.id.flecha)
+        flecha1 = view.findViewById(R.id.flecha1)
         adm_cuenta = view.findViewById(R.id.cerrar_sesion)
         notificaciones = view.findViewById(R.id.notificaciones_2)
         theme = view.findViewById(R.id.theme)
@@ -56,7 +56,7 @@ class ConfiguracionFragment : Fragment() {
 
         }
 
-        flecha.setOnClickListener {
+        flecha1.setOnClickListener {
 
 
         }
