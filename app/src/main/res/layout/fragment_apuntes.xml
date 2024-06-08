@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     android:background="#E7D9EA"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
 
-    <LinearLayout
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -23,18 +25,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="360dp"
-
-            android:src="@drawable/arrow_back_fill0_ic" />
+            android:src="@drawable/arrow_back_fill0_ic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <TextView
             android:id="@+id/titlle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Apuntes"
+            android:textColor="@color/black"
+            android:textColorHint="@color/purple1"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+           />
 
-            />
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
