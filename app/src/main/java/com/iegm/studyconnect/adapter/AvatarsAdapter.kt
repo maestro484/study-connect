@@ -5,9 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.ui.fragments.OnAvatarSelected
 import de.hdodenhof.circleimageview.CircleImageView
 
-class AvatarsAdapter() : RecyclerView.Adapter<AvatarsAdapter.ViewHolder>() {
+class AvatarsAdapter(val onAvatarSelected: OnAvatarSelected) : RecyclerView.Adapter<AvatarsAdapter.ViewHolder>() {
 
     val avatars = listOf(
 
@@ -50,6 +51,10 @@ class AvatarsAdapter() : RecyclerView.Adapter<AvatarsAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.profileAvatar.setImageResource(avatars[position])
+
+        holder.profileAvatar.setOnClickListener(){
+            onAvatarSelected.onAvatarClick(avatars[position])
+        }
     }
 
 }
