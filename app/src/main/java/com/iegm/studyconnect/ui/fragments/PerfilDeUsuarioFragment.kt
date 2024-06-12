@@ -53,9 +53,9 @@ class PerfilDeUsuarioFragment : Fragment() {
         editar_correo = view.findViewById(R.id.editar_correo)
 
 
-        abriravt.setOnClickListener {
-        (activity as MainActivity).abrirAvatarsFragment
-    }
+        //abriravt.setOnClickListener {
+      //  (activity as MainActivity).abrirAvatarsFragment
+    //}
 
     }
 
