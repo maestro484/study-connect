@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState, persistentState)
 
         permisoAlmacenamiento()
+    }
 
 
         fun abrirAdmFragment() {
@@ -65,7 +66,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-    }
     /*fun abrirAvatarsFragment() {
         val avatarsFragment: AvatarsFragment = AvatarsFragment()
         supportFragmentManager.beginTransaction().add(R.id.root_layout, avatarsFragment)
