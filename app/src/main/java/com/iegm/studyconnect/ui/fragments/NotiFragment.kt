@@ -47,7 +47,7 @@ class NotiFragment : Fragment() {
         flecha3 = view.findViewById(R.id.flecha3)
 
         flecha3.setOnClickListener {
-            (activity as MainActivity).abrirConfigurationFragment()
+            //(activity as MainActivity).abrirConfigurationFragment()
 
 
             notificaciones_2.setOnClickListener {

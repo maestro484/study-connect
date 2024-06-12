@@ -47,12 +47,12 @@ class ConfiguracionFragment : Fragment() {
 
 
         notificaciones.setOnClickListener {
-            (activity as MainActivity).abrirNotiFragment()
+            //(activity as MainActivity).abrirNotiFragment()
 
         }
 
         theme.setOnClickListener {
-            (activity as MainActivity).abrirThemeFragment()
+            //(activity as MainActivity).abrirThemeFragment()
 
         }
 
@@ -62,7 +62,7 @@ class ConfiguracionFragment : Fragment() {
         }
 
         terminos_condiciones.setOnClickListener {
-            (activity as MainActivity).abrirTerminosCondicionesFragment()
+            //(activity as MainActivity).abrirTerminosCondicionesFragment()
 
         }
 

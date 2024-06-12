@@ -134,7 +134,7 @@
         android:layout_marginStart="15dp"
         android:src="@drawable/alternate_email_24dp_fill0_wght400_grad0_opsz24"
         app:layout_constraintBottom_toBottomOf="@id/editar_correo"
-        app:layout_constraintEnd_StartOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
