@@ -9,15 +9,17 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
 class PerfilDeUsuarioFragment : Fragment() {
 
-    lateinit var ir_a_imagenes: Button
     lateinit var regresar: ImageView
     lateinit var editar_numero: EditText
     lateinit var editar_nombre: EditText
     lateinit var editar_correo: EditText
+    lateinit var  cerrar_sesion: Button
+    lateinit var abriravt: ImageView
 
     /*private var apuntesMutableList: MutableList<apuntes> =
         PerfilDeUsuarioFragment.apuntes.toMutableList()*/
@@ -42,13 +44,18 @@ class PerfilDeUsuarioFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        6
 
-        ir_a_imagenes = view.findViewById(R.id.ir_a_imagenes)
+        abriravt = view.findViewById(R.id.abrir_avt)
+        cerrar_sesion = view.findViewById(R.id.cerrar_sesion)
         regresar = view.findViewById(R.id.regresar)
         editar_numero = view.findViewById(R.id.editar_numero)
         editar_nombre = view.findViewById(R.id.editar_nombre)
         editar_correo = view.findViewById(R.id.editar_correo)
+
+
+        abriravt.setOnClickListener {
+        (activity as MainActivity).abrirAvatarsFragment
+    }
 
     }
 

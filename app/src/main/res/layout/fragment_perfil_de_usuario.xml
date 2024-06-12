@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:background="@android:color/holo_purple"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -40,7 +40,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/abrir_avt"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="50dp"
@@ -52,14 +52,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
 
-    <Button
-        android:id="@+id/ir_a_imagenes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintTop_toBottomOf="@id/imageView2"
-        app:layout_constraintEnd_toEndOf="@id/imageView2"/>
-
     <EditText
         android:id="@+id/editar_numero"
         android:layout_width="208dp"
@@ -70,7 +62,7 @@
         android:inputType="text"
         android:text="Editar número"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editar_nombre"/>
+        app:layout_constraintTop_toBottomOf="@id/editar_nombre" />
 
     <EditText
         android:id="@+id/editar_nombre"
@@ -81,7 +73,7 @@
         android:inputType="text"
         android:text="Editar nombre"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@id/abrir_avt" />
 
     <ImageView
         android:id="@+id/imagen_telefono"
@@ -112,15 +104,38 @@
         android:layout_width="208dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="153dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editar_numero"
-        app:layout_constraintVertical_bias="0.48000002" />
+        app:layout_constraintTop_toBottomOf="@id/editar_numero" />
+
+    <Button
+        android:id="@+id/cerrar_sesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_background"
+        android:padding="15dp"
+        android:text="CERRAR SESIÓN"
+        android:textColor="@color/purple1"
+        android:textColorHint="@color/purple1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editar_correo" />
+
+    <ImageView
+        android:id="@+id/image_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/alternate_email_24dp_fill0_wght400_grad0_opsz24"
+        app:layout_constraintBottom_toBottomOf="@id/editar_correo"
+        app:layout_constraintEnd_StartOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

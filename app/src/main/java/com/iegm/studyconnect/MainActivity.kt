@@ -66,6 +66,18 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    /*fun abrirAvatarsFragment() {
+        val avatarsFragment: AvatarsFragment = AvatarsFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, avatarsFragment)
+            .commitAllowingStateLoss()
+
+    } */
+    fun abrirApunteFragment() {
+        /*val apunteFragment: ApunteFragment = ApunteFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
+            .commitAllowingStateLoss()*/
+
+}
 
     private fun permisoAlmacenamiento() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -85,18 +97,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
-        fun abrirApunteFragment() {
-            /*val apunteFragment: ApunteFragment = ApunteFragment()
-            supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
-                .commitAllowingStateLoss()*/
-
         }
-    }
-
-
 
 }
+
+
+
 
 const val READ_MEDIA_AUDIO_PERMISSION_REQUEST_CODE = 2001
 const val READ_EXTERNAL_STORAGE_IMAGES_PERMISSION_REQUEST_CODE = 207
