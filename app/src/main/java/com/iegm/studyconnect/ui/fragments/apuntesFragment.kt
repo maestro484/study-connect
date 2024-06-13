@@ -24,6 +24,7 @@ class apuntesFragment : Fragment() {
     private lateinit var recy: RecyclerView
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
+    private lateinit var mMenus : ImageView
 
 
     override fun onCreateView(
@@ -40,6 +41,8 @@ class apuntesFragment : Fragment() {
         recy = view.findViewById(R.id.mRecycler)
         volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
+        mMenus = view.findViewById(R.id.mMenus)
+
         userAdapter =
             UserAdapter(requireContext(), this, userList) //pasarlo al fragment y no adapter
         recy.layoutManager = LinearLayoutManager(requireContext())
@@ -69,6 +72,8 @@ class apuntesFragment : Fragment() {
 
         val addDialog = AlertDialog.Builder(requireContext())
 
+        val representante : String = ""
+
         addDialog.setView(v)
 
         addDialog.setPositiveButton("Ok") {
@@ -92,5 +97,28 @@ class apuntesFragment : Fragment() {
         addDialog.create()
         addDialog.show()
 
+        val rol : String = "representante"
+
+        if(rol == representante){
+            mMenus.isEnabled = true
+             mMenus.visibility = View.VISIBLE
+
+            addsBtn.isEnabled = true
+            addsBtn.visibility = View.VISIBLE
+
+        }else{
+            mMenus.isEnabled = false
+            mMenus.visibility = View.INVISIBLE
+
+            addsBtn.isEnabled = false
+            addsBtn.visibility = View.INVISIBLE
+
+
+
+
+        }
+
     }
+
 }
+
