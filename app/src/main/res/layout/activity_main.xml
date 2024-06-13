@@ -18,10 +18,10 @@
     </FrameLayout>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.iegm.studyconnect.ui.fragments.apuntesFragment"
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
