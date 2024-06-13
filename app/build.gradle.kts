@@ -53,5 +53,8 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.firebaseui:firebase-ui-auth:7.2.0")
 
+//Onesignal SDK
+    implementation ("com.onesignal:OneSignal:[5.0.0, 5.99.99]")
+
 
 }
