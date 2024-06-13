@@ -10,15 +10,14 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="20dp"
         android:background="@android:color/holo_purple"
         android:scrollbarSize="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/cerrar_sesion"
+        app:layout_constraintBottom_toTopOf="@+id/notificaciones_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/ajustes"
@@ -32,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/flecha"
+            android:id="@+id/flecha1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -44,32 +43,35 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/cerrar_sesion"
-        android:layout_width="163dp"
-        android:layout_height="66dp"
-        android:text="Administrar Cuenta"
-        app:layout_constraintBottom_toTopOf="@id/notificaciones"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
-
-    <Button
-        android:id="@+id/notificaciones"
+        android:id="@+id/notificaciones_2"
         android:layout_width="167dp"
         android:layout_height="68dp"
         android:text="Notificaciones"
+        app:layout_constraintBottom_toTopOf="@+id/theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cerrar_sesion" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/cambiar_tlf"
+        android:id="@+id/theme"
         android:layout_width="164dp"
         android:layout_height="54dp"
         android:text="Tema"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/notificaciones" />
+        app:layout_constraintTop_toBottomOf="@id/notificaciones_2" />
+
+    <Button
+        android:id="@+id/terminos_condiciones"
+        android:layout_width="165dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="56dp"
+        android:text="Términos y Condiciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notificaciones_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

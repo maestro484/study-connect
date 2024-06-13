@@ -13,10 +13,11 @@ import com.iegm.studyconnect.R
 
 class ConfiguracionFragment : Fragment() {
 
-    lateinit var flecha: ImageView
+    lateinit var flecha1: ImageView
     lateinit var adm_cuenta: Button
     lateinit var notificaciones: Button
     lateinit var theme: Button
+    lateinit var terminos_condiciones: Button
 
     companion object {
         fun newInstance() = ConfiguracionFragment()
@@ -37,30 +38,36 @@ class ConfiguracionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        flecha = view.findViewById(R.id.flecha)
-        adm_cuenta = view.findViewById(R.id.cerrar_sesion)
-        notificaciones = view.findViewById(R.id.notificaciones)
-        theme = view.findViewById(R.id.cambiar_tlf)
 
-        adm_cuenta.setOnClickListener {
-       //     (activity as MainActivity).abrirAdmFragment()
-        }
+        flecha1 = view.findViewById(R.id.flecha1)
+        adm_cuenta = view.findViewById(R.id.cerrar_sesion)
+        notificaciones = view.findViewById(R.id.notificaciones_2)
+        theme = view.findViewById(R.id.theme)
+        terminos_condiciones = view.findViewById(R.id.terminos_condiciones)
+
 
         notificaciones.setOnClickListener {
-            (activity as MainActivity).abrirNotiFragment()
+            //(activity as MainActivity).abrirNotiFragment()
 
         }
 
         theme.setOnClickListener {
-            (activity as MainActivity).abrirThemeFragment()
+            //(activity as MainActivity).abrirThemeFragment()
 
         }
 
-        flecha.setOnClickListener{
+        flecha1.setOnClickListener {
+
+
+        }
+
+        terminos_condiciones.setOnClickListener {
+            //(activity as MainActivity).abrirTerminosCondicionesFragment()
 
         }
 
 
     }
 
-    }
+}
+

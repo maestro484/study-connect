@@ -6,6 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.ConfiguracionFragment">
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <RadioButton
+            android:id="@+id/predeterminado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#A866CA"
+            android:text="Prededeterminado por el sistema" />
+
+        <RadioButton
+            android:id="@+id/oscuro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#370640"
+            android:text="Oscuro"
+            android:textColor="#FFFCFC"
+            android:textColorLink="#EFE2E2" />
+
+        <RadioButton
+            android:id="@+id/azul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#A0ACEC"
+            android:text="Azul" />
+
+        <RadioButton
+            android:id="@+id/claro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#A766C9"
+            android:text="Púrpura" />
+
+    </RadioGroup>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -18,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tema_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TEMA"
@@ -29,7 +73,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/flecha"
+            android:id="@+id/flecha1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -39,43 +83,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#673AB7"
-            android:backgroundTint="#9E7ADD"
-            android:text="Morado" />
-
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#CC8DD6"
-            android:text="Rosada" />
-
-        <Switch
-            android:id="@+id/switch3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#370640"
-            android:text="Oscuro"
-            android:textColor="#F4EEEE"
-            android:textColorLink="#E1C9C9" />
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
