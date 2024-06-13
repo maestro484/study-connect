@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.ScrollView
 import android.widget.SearchView
 import android.widget.TextView
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
 class HomeFragment : Fragment() {

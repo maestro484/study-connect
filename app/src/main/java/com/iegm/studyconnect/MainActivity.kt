@@ -1,8 +1,11 @@
 package com.iegm.studyconnect
 
+import android.app.Activity
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AdmFragment
@@ -18,8 +21,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
-
-
     fun abrirAdmFragment() {
         val admFragment: AdmFragment = AdmFragment()
         supportFragmentManager.beginTransaction().add(R.id.root_layout, admFragment)
