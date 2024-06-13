@@ -17,9 +17,9 @@ import com.iegm.studyconnect.adapter.AvatarsAdapter
 
 class AvatarsFragment : BottomSheetDialogFragment(), OnAvatarSelected {
 
-    lateinit var listaAvatars : RecyclerView
-    lateinit var flecha2 : ImageView
-    var avatarsAdapter : AvatarsAdapter? = null
+    lateinit var listaAvatars: RecyclerView
+    lateinit var flecha2: ImageView
+    var avatarsAdapter: AvatarsAdapter? = null
 
     companion object {
         fun newInstance() = AvatarsFragment()
@@ -43,24 +43,26 @@ class AvatarsFragment : BottomSheetDialogFragment(), OnAvatarSelected {
         super.onViewCreated(view, savedInstanceState)
 
         avatarsAdapter = AvatarsAdapter(this)
-        listaAvatars= view.findViewById(R.id.listaAvatars)
+        listaAvatars = view.findViewById(R.id.listaAvatars)
         flecha2 = view.findViewById(R.id.flecha2)
 
-        //flecha2.setOnClickListener {
-//(activity as MainActivity).abrirPerfilDeUsuarioFragment()
+        flecha2.setOnClickListener {
+            (activity as MainActivity).abrirPerfilDeUsuarioFragment()
 
 
-        val gridLayoutManager = GridLayoutManager(requireContext(), 3)
+            val gridLayoutManager = GridLayoutManager(requireContext(), 3)
 
-        listaAvatars.apply {
-            layoutManager = gridLayoutManager
-            adapter = avatarsAdapter
+            listaAvatars.apply {
+                layoutManager = gridLayoutManager
+                adapter = avatarsAdapter
+            }
+
+
         }
-
 
     }
 
     override fun onAvatarClick(avatar: Int) {
-
+        TODO("Not yet implemented")
     }
 }

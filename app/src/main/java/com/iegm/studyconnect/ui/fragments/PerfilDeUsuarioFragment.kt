@@ -54,7 +54,7 @@ class PerfilDeUsuarioFragment : Fragment() {
 
 
         abriravt.setOnClickListener {
-        //(activity as MainActivity).abrirAvatarsFragment
+        (activity as MainActivity).abrirAvatarsFragment()
     }
 
     }
