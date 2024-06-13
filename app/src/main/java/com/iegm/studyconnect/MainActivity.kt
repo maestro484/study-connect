@@ -57,14 +57,14 @@ class MainActivity : AppCompatActivity() {
    val homeFragment: HomeFragment = HomeFragment()
        supportFragmentManager.beginTransaction().add(R.id.root_layout, homeFragment)
            .commitAllowingStateLoss()
-}
+} */
 
 fun abrirPeriodoFragment() {
    val periodoFragment: PeriodoFragment = PeriodoFragment()
    supportFragmentManager.beginTransaction().add(R.id.root_layout, periodoFragment)
        .commitAllowingStateLoss()
 
-} */
+}
 
     fun abrirAvatarsFragment() {
         val avatarsFragment: AvatarsFragment = AvatarsFragment()

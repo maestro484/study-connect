@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.view.UserAdapter
@@ -39,7 +40,8 @@ class apuntesFragment : Fragment() {
         recy = view.findViewById(R.id.mRecycler)
         volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
-        userAdapter = UserAdapter(requireContext(),this, userList) //pasarlo al fragment y no adapter
+        userAdapter =
+            UserAdapter(requireContext(), this, userList) //pasarlo al fragment y no adapter
         recy.layoutManager = LinearLayoutManager(requireContext())
         recy.adapter = userAdapter
 
@@ -50,9 +52,12 @@ class apuntesFragment : Fragment() {
         }
 
 
-        //agregar_apunte.setOnClickListener {
-        //(activity as MainActivity).abrirApunteFragment
+       /* addsBtn.setOnClickListener {
+            (activity as MainActivity).abrirApunteFragment()
+        } */
     }
+
+
 
 
     private fun addInfo() {
@@ -88,24 +93,4 @@ class apuntesFragment : Fragment() {
         addDialog.show()
 
     }
-
-   // fun onApunteClicked(recyclerView: RecyclerView, view: View, position: Int) {
-      // val item = recyclerView.adapter?.getItemId(position) as ApunteFragment
-
-        // Crea la vista de apunte
-      //val vistaApunte = ApunteFragment.newInstance(item)
-
-        // Recupera el FragmentManager
-      // val fragmentManager = (view.context as Activity).abrirApunteFragment
-
-        // Reemplaza el fragmento actual por la vista de apunte
-       // transaction.replace(R.id.contenedor_fragmentos, ApunteFragment)
-
-        // Añade la transacción a la pila de retroceso
-    // transaction.addToBackStack("vista_apunte")
-
-        // Ejecuta la transacción
-        //transaction.commit()
-    //}
-
 }
