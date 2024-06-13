@@ -1,18 +1,15 @@
 package com.iegm.studyconnect
 
-import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
-import android.content.pm.PackageManager
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.iegm.studyconnect.ui.fragments.AdmFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 import com.iegm.studyconnect.ui.fragments.apuntesFragment
 
@@ -30,19 +27,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+        fun cambiarColor(primaryDark: String, primary : String, background : String) {
+            window.statusBarColor = Color.parseColor(primaryDark)
+            supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor(primary)))
+            window.setBackgroundDrawable(ColorDrawable(Color.parseColor(background)))
+            window.navigationBarColor = Color.parseColor(primary)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
 
         permisoAlmacenamiento()
     }
-
-
-        fun abrirAdmFragment() {
-            val admFragment: AdmFragment = AdmFragment()
-            supportFragmentManager.beginTransaction().add(R.id.root_layout, admFragment)
-                .commitAllowingStateLoss()
-        }
 
         fun abrirApuntesFragment() {
 
@@ -96,6 +93,8 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
+
 
         }
 

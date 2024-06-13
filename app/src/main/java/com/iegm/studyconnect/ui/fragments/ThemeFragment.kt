@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RadioButton
-import android.widget.Switch
 import com.google.android.material.internal.ClippableRoundedCornerLayout
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
