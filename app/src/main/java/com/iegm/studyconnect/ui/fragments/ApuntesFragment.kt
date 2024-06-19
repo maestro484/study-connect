@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +16,7 @@ import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.view.UserAdapter
 
-class apuntesFragment : Fragment() {
+class ApuntesFragment : Fragment() {
     private lateinit var addsBtn: FloatingActionButton
     private lateinit var volver1: ImageView
     private lateinit var recy: RecyclerView

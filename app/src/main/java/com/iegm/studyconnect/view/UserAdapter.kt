@@ -13,9 +13,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
-import com.iegm.studyconnect.ui.fragments.apuntesFragment
+import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 
-class UserAdapter(val context: Context, val c: apuntesFragment, val userList: ArrayList<UserData>) :
+class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: ArrayList<UserData>) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
 

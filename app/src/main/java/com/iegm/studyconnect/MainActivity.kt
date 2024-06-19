@@ -12,8 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
-import com.iegm.studyconnect.ui.fragments.PeriodoFragment
-import com.iegm.studyconnect.ui.fragments.apuntesFragment
+import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     fun abrirApuntesFragment() {
 
-        val apuntesFragment: apuntesFragment = apuntesFragment()
+        val apuntesFragment: ApuntesFragment = ApuntesFragment()
         supportFragmentManager.beginTransaction().add(R.id.root_layout, apuntesFragment)
             .commitAllowingStateLoss()
 
