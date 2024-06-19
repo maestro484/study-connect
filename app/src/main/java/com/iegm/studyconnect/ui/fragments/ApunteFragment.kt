@@ -50,9 +50,9 @@ class ApunteFragment : Fragment() {
         atras = view.findViewById(R.id.Atras)
         fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
 
-         atras.setOnClickListener {
+    /*    atras.setOnClickListener {
             (activity as MainActivity).abrirApuntesFragment()
-        }
+        }*/
 
         val rol : String = "representante"
 

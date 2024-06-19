@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.ScrollView
 import android.widget.SearchView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
@@ -19,6 +20,7 @@ class HomeFragment : Fragment() {
     lateinit var buscador : SearchView
     lateinit var grado : TextView
     lateinit var listaNueva : ScrollView
+    lateinit var materia : RecyclerView
     companion object {
         fun newInstance() = HomeFragment()
     }
@@ -41,10 +43,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        ajuste = view.findViewById(R.id.Ajustes)
+        ajuste = view.findViewById(R.id.ajuste)
         buscador = view.findViewById(R.id.Buscador)
         grado = view.findViewById(R.id.textViewG)
         listaNueva = view.findViewById(R.id.ListaNueva)
+        materia = view.findViewById(R.id.Materia)
 
         ajuste.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()

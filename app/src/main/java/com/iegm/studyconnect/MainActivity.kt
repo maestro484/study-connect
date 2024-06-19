@@ -9,6 +9,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AdmFragment
+import com.iegm.studyconnect.ui.fragments.ApunteFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,11 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().add(R.id.root_layout, admFragment)
             .commitAllowingStateLoss()
     }
-    /*
-    * */
+
+  /*  fun abrirApuntesFragment() {
+        val apunteFragment: ApunteFragment = ApunteFragment()
+        supportFragmentManager.begimTransaction().add(R.id.root_layout, apunteFragment)
+            .commitAllowingStateLoss()
+    }*/
+
 }
