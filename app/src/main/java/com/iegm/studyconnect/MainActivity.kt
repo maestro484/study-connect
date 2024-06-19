@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
+import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 
 class MainActivity : AppCompatActivity() {
@@ -53,18 +54,17 @@ class MainActivity : AppCompatActivity() {
 
 
     /*fun abrirHomeFragment() {
-
    val homeFragment: HomeFragment = HomeFragment()
        supportFragmentManager.beginTransaction().add(R.id.root_layout, homeFragment)
            .commitAllowingStateLoss()
 } */
 
-fun abrirPeriodoFragment() {
-   val periodoFragment: PeriodoFragment = PeriodoFragment()
-   supportFragmentManager.beginTransaction().add(R.id.root_layout, periodoFragment)
-       .commitAllowingStateLoss()
+    fun abrirPeriodoFragment() {
+        val periodoFragment: PeriodoFragment = PeriodoFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, periodoFragment)
+            .commitAllowingStateLoss()
 
-}
+    }
 
     fun abrirAvatarsFragment() {
         val avatarsFragment: AvatarsFragment = AvatarsFragment()
@@ -81,10 +81,19 @@ fun abrirPeriodoFragment() {
 
     }
 
-    /* fun abrirApunteFragment() {
+    /*   fun abrirApunteFragment() {
    val apunteFragment: ApunteFragment = ApunteFragment()
    supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
-       .commitAllowingStateLoss() */
+       .commitAllowingStateLoss() }*/
+
+
+fun abrirConfiguracionFragment() {
+    val configuracionFragment : ConfiguracionFragment = ConfiguracionFragment()
+    supportFragmentManager.beginTransaction().add(R.id.root_layout, configuracionFragment)
+        .commitAllowingStateLoss()
+}
+
+
 
     private fun permisoAlmacenamiento() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -101,9 +110,6 @@ fun abrirPeriodoFragment() {
             )
         }
     }
-
-
-}
 
 
 const val READ_MEDIA_AUDIO_PERMISSION_REQUEST_CODE = 2001

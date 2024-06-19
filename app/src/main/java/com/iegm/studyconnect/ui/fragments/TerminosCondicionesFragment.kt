@@ -22,8 +22,6 @@ class TerminosCondicionesFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
@@ -38,7 +36,7 @@ class TerminosCondicionesFragment : Fragment() {
 
         flecha4 = view.findViewById(R.id.flecha4)
 
-        flecha4.setOnClickListener {
+        //flecha4.setOnClickListener {
             //(activity as MainActivity).abrirConfigurationFragment()
 
         }

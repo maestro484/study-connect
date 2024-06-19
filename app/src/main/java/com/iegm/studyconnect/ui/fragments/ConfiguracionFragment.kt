@@ -62,7 +62,7 @@ class ConfiguracionFragment : Fragment() {
         }
 
         terminos_condiciones.setOnClickListener {
-            //(activity as MainActivity).abrirTerminosCondicionesFragment()
+            (activity as MainActivity).abrirTerminosCondicionesFragment()
 
         }
 
