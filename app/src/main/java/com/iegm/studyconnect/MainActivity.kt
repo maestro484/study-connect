@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
+import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 
 class MainActivity : AppCompatActivity() {
 
