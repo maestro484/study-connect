@@ -86,13 +86,6 @@
             android:layout_height="wrap_content"
             android:text="Menciones" />
 
-        <Button
-            android:id="@+id/tonoDeNoti"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="Tono de Notificación" />
-
     </LinearLayout>
 
 

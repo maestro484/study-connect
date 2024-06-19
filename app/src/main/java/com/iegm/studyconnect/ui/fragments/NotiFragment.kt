@@ -25,10 +25,8 @@ class NotiFragment : Fragment() {
     lateinit var recientes: Switch
     lateinit var comentarios_noti: Switch
     lateinit var flecha3: ImageView
-    lateinit var tonoDeNoti: Button
     lateinit var seguidos: Switch
     lateinit var menciones: Switch
-
 
     companion object {
         fun newInstance() = NotiFragment()
@@ -55,7 +53,6 @@ class NotiFragment : Fragment() {
         recientes = view.findViewById(R.id.recientes)
         comentarios_noti = view.findViewById(R.id.comentarios_noti)
         flecha3 = view.findViewById(R.id.flecha3)
-        tonoDeNoti = view.findViewById(R.id.tonoDeNoti)
         seguidos = view.findViewById(R.id.seguidos)
         menciones = view.findViewById(R.id.menciones)
 
@@ -82,27 +79,6 @@ class NotiFragment : Fragment() {
                 }
             }
         }
-    }
-
-    const val ONESIGNAL_APP_ID = "########-####-####-####-############"
-
-    class StudyConnectApp : Application() {
-        override fun onCreate() {
-            super.onCreate()
-
-            // Verbose Logging set to help debug issues, remove before releasing your app.
-            OneSignal.Debug.logLevel = LogLevel.VERBOSE
-
-            // OneSignal Initialization
-            OneSignal.initWithContext(this, ONESIGNAL_APP_ID)
-
-            // requestPermission will show the native Android notification permission prompt.
-            // NOTE: It's recommended to use a OneSignal In-App Message to prompt instead.
-            CoroutineScope(Dispatchers.IO).launch {
-                OneSignal.Notifications.requestPermission(false)
-            }
-        }
-
     }
 }
 
