@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
+import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -56,14 +57,14 @@ class MainActivity : AppCompatActivity() {
    val homeFragment: HomeFragment = HomeFragment()
        supportFragmentManager.beginTransaction().add(R.id.root_layout, homeFragment)
            .commitAllowingStateLoss()
-}
+} */
 
 fun abrirPeriodoFragment() {
    val periodoFragment: PeriodoFragment = PeriodoFragment()
    supportFragmentManager.beginTransaction().add(R.id.root_layout, periodoFragment)
        .commitAllowingStateLoss()
 
-} */
+}
 
     fun abrirAvatarsFragment() {
         val avatarsFragment: AvatarsFragment = AvatarsFragment()

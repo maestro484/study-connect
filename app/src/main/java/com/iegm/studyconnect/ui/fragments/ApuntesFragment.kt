@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.view.UserAdapter
@@ -22,6 +23,7 @@ class ApuntesFragment : Fragment() {
     private lateinit var recy: RecyclerView
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
+    private lateinit var mMenus : ImageView
 
 
     override fun onCreateView(
@@ -38,7 +40,10 @@ class ApuntesFragment : Fragment() {
         recy = view.findViewById(R.id.mRecycler)
         volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
-        userAdapter = UserAdapter(requireContext(),this, userList) //pasarlo al fragment y no adapter
+        mMenus = view.findViewById(R.id.mMenus)
+
+        userAdapter =
+            UserAdapter(requireContext(), this, userList) //pasarlo al fragment y no adapter
         recy.layoutManager = LinearLayoutManager(requireContext())
         recy.adapter = userAdapter
 
@@ -49,9 +54,12 @@ class ApuntesFragment : Fragment() {
         }
 
 
-        //agregar_apunte.setOnClickListener {
-        //(activity as MainActivity).abrirApunteFragment
+       /* addsBtn.setOnClickListener {
+            (activity as MainActivity).abrirApunteFragment()
+        } */
     }
+
+
 
 
     private fun addInfo() {
@@ -62,6 +70,8 @@ class ApuntesFragment : Fragment() {
         val userNo = v.findViewById<EditText>(R.id.userNo)
 
         val addDialog = AlertDialog.Builder(requireContext())
+
+        val representante : String = ""
 
         addDialog.setView(v)
 
@@ -86,25 +96,28 @@ class ApuntesFragment : Fragment() {
         addDialog.create()
         addDialog.show()
 
+        val rol : String = "representante"
+
+        if(rol == representante){
+            mMenus.isEnabled = true
+             mMenus.visibility = View.VISIBLE
+
+            addsBtn.isEnabled = true
+            addsBtn.visibility = View.VISIBLE
+
+        }else{
+            mMenus.isEnabled = false
+            mMenus.visibility = View.INVISIBLE
+
+            addsBtn.isEnabled = false
+            addsBtn.visibility = View.INVISIBLE
+
+
+
+
+        }
+
     }
 
-   // fun onApunteClicked(recyclerView: RecyclerView, view: View, position: Int) {
-      // val item = recyclerView.adapter?.getItemId(position) as ApunteFragment
-
-        // Crea la vista de apunte
-      //val vistaApunte = ApunteFragment.newInstance(item)
-
-        // Recupera el FragmentManager
-      // val fragmentManager = (view.context as Activity).abrirApunteFragment
-
-        // Reemplaza el fragmento actual por la vista de apunte
-       // transaction.replace(R.id.contenedor_fragmentos, ApunteFragment)
-
-        // Añade la transacción a la pila de retroceso
-    // transaction.addToBackStack("vista_apunte")
-
-        // Ejecuta la transacción
-        //transaction.commit()
-    //}
-
 }
+
