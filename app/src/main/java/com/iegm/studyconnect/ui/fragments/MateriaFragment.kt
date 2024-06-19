@@ -3,7 +3,6 @@ package com.iegm.studyconnect.ui.fragments
 import android.content.Context
 import androidx.fragment.app.viewModels
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,20 +13,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.iegm.studyconnect.R
-import com.iegm.studyconnect.adapter.BusquedaAdapter
+import com.iegm.studyconnect.adapter.MateriasAdapter
 import com.iegm.studyconnect.model.Grado
 import com.iegm.studyconnect.model.SchoolData
 import org.json.JSONObject
 import java.io.InputStream
-import java.text.Normalizer
 
 class MateriaFragment : Fragment() {
-    private lateinit var ListaDeMaterias: RecyclerView
+    private lateinit var materiasAdapter: MateriasAdapter
+    private lateinit var listaDeMaterias: RecyclerView
     private lateinit var atras2: ImageView
 
     var grado: Int = 0
-
-    val objetos: MutableList<String> = mutableListOf()
 
     var busqueda = ""
 
@@ -46,15 +43,17 @@ class MateriaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         atras2 = view.findViewById(R.id.Atras2)
-        ListaDeMaterias = view.findViewById(R.id.listaMaterias)
+        listaDeMaterias = view.findViewById(R.id.listaMaterias)
 
+
+        materiasAdapter = MateriasAdapter()
 
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 
 
-        ListaDeMaterias.apply {
+        listaDeMaterias.apply {
             layoutManager = linearLayoutManager
-
+            adapter = materiasAdapter
         }
 
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
@@ -64,8 +63,18 @@ class MateriaFragment : Fragment() {
 
         val data: SchoolData = gson.fromJson(jsonString, object : TypeToken<SchoolData>() {}.type)
 
+
+        materiasAdapter.materias = filtrarMateria(data.grados[grado])
     }
 
+    fun filtrarMateria(grado: Grado): List<String> {
+        val materias: MutableList<String> = mutableListOf()
+        grado.materias.map {
+            it.nombre
+            materias.add(it.nombre)
+        }
+        return materias
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
