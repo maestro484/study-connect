@@ -10,8 +10,8 @@
 
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.iegm.studyconnect.ui.fragments.BusquedaFragment"
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.iegm.studyconnect.ui.fragments.MateriaFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>
