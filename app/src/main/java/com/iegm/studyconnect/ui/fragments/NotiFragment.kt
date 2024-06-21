@@ -50,6 +50,27 @@ class NotiFragment : Fragment() {
         seguidos = view.findViewById(R.id.seguidos)
         menciones = view.findViewById(R.id.menciones)
 
+        notificaciones_2.setOnCheckedChangeListener { buttonView, isChecked ->
+            controlarSwitchesSecundarios(isChecked)
+
+            controlarSwitchesSecundarios(notificaciones_2.isChecked)
+
+
+            fun controlarSwitchesSecundarios(estadoSwitchGeneral: Boolean) {
+                recientes.isEnabled = estadoSwitchGeneral
+                comentarios_noti.isEnabled = estadoSwitchGeneral
+                seguidos.isEnabled = estadoSwitchGeneral
+                menciones.isEnabled = estadoSwitchGeneral
+
+                if (!estadoSwitchGeneral) {
+                   recientes.isChecked = false
+                    comentarios_noti.isChecked = false
+                    seguidos.isChecked = false
+                    menciones.isChecked = false
+                }
+            }
+        }
+
 
         flecha3.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()
@@ -69,6 +90,7 @@ class NotiFragment : Fragment() {
                 }
                 menciones.setOnClickListener {
                     AdministradorDePreferencias.menciones = menciones.isChecked
+
 
                 }
             }
