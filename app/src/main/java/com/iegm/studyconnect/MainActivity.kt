@@ -14,7 +14,10 @@ import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
+import com.iegm.studyconnect.ui.fragments.NotiFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
+import com.iegm.studyconnect.ui.fragments.TerminosCondicionesFragment
+import com.iegm.studyconnect.ui.fragments.ThemeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,11 +48,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun abrirApuntesFragment() {
-
         val apuntesFragment: ApuntesFragment = ApuntesFragment()
         supportFragmentManager.beginTransaction().add(R.id.root_layout, apuntesFragment)
             .commitAllowingStateLoss()
 
+    }
+
+    fun abrirTerminosCondicionesFragment() {
+        val terminosCondicionesFragment: TerminosCondicionesFragment = TerminosCondicionesFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, terminosCondicionesFragment)
+            .commitAllowingStateLoss()
     }
 
 
@@ -81,19 +89,24 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /*   fun abrirApunteFragment() {
-   val apunteFragment: ApunteFragment = ApunteFragment()
-   supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
-       .commitAllowingStateLoss() }*/
+    fun abrirConfiguracionFragment() {
+        val configuracionFragment: ConfiguracionFragment = ConfiguracionFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, configuracionFragment)
+            .commitAllowingStateLoss()
+    }
+
+    fun abrirThemeFragment() {
+        val themeFragment: ThemeFragment = ThemeFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, themeFragment)
+            .commitAllowingStateLoss()
+    }
 
 
-fun abrirConfiguracionFragment() {
-    val configuracionFragment : ConfiguracionFragment = ConfiguracionFragment()
-    supportFragmentManager.beginTransaction().add(R.id.root_layout, configuracionFragment)
-        .commitAllowingStateLoss()
-}
-
-
+    fun abrirNotiFragment() {
+        val notiFragment: NotiFragment = NotiFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, notiFragment)
+            .commitAllowingStateLoss()
+    }
 
     private fun permisoAlmacenamiento() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -110,6 +123,9 @@ fun abrirConfiguracionFragment() {
             )
         }
     }
+
+}
+
 
 
 const val READ_MEDIA_AUDIO_PERMISSION_REQUEST_CODE = 2001

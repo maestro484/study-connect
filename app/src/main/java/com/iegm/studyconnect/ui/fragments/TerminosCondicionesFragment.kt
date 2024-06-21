@@ -36,8 +36,8 @@ class TerminosCondicionesFragment : Fragment() {
 
         flecha4 = view.findViewById(R.id.flecha4)
 
-        //flecha4.setOnClickListener {
-            //(activity as MainActivity).abrirConfigurationFragment()
+        flecha4.setOnClickListener {
+            (activity as MainActivity).abrirConfiguracionFragment()
 
         }
     }

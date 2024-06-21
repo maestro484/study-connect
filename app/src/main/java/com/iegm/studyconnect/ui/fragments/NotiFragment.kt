@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.utils.AdministradorDePreferencias
 
@@ -51,7 +52,7 @@ class NotiFragment : Fragment() {
 
 
         flecha3.setOnClickListener {
-            //(activity as MainActivity).abrirConfigurationFragment()
+            (activity as MainActivity).abrirConfiguracionFragment()
 
             notificaciones_2.setOnClickListener {
                 AdministradorDePreferencias.notificaciones_2 = notificaciones_2.isChecked

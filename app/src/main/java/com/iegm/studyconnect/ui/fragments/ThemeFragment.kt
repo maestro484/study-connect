@@ -18,7 +18,7 @@ class ThemeFragment : Fragment() {
     lateinit var predeterminado: RadioButton
     lateinit var azul: RadioButton
     lateinit var oscuro: RadioButton
-    lateinit var flecha: ImageView
+    lateinit var flecha1: ImageView
     lateinit var claro: RadioButton
 
     companion object {
@@ -40,10 +40,11 @@ class ThemeFragment : Fragment() {
         predeterminado = view.findViewById(R.id.predeterminado)
         azul = view.findViewById(R.id.azul)
         oscuro = view.findViewById(R.id.oscuro)
-        //flecha = view.findViewById(R.id.flecha)
+        flecha1 = view.findViewById(R.id.flecha1)
         claro = view.findViewById(R.id.claro)
 
         val mainActivity = (requireActivity() as MainActivity)
+
 
         oscuro.setOnClickListener {
             mainActivity.cambiarColor("#550363", "#550363", "#181819")
