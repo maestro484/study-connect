@@ -10,16 +10,19 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaMaterias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingBottom="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/LayoutB2" />
+        app:layout_constraintTop_toBottomOf="@id/LayoutB2"
+
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/LayoutB2"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:background="@android:color/holo_purple"
         app:layout_constraintBottom_toTopOf="@+id/listaMaterias"
         app:layout_constraintStart_toStartOf="parent">
