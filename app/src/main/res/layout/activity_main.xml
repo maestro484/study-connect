@@ -17,9 +17,10 @@
 
     </FrameLayout>
 
+
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView2"
-        android:name="com.iegm.studyconnect.ui.fragments.NotiFragment"
+        android:id="@+id/fragmentContainerView3"
+        android:name="com.iegm.studyconnect.ui.fragments.ThemeFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
