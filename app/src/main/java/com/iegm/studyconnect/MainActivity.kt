@@ -76,8 +76,7 @@ class MainActivity : AppCompatActivity() {
 
     fun abrirAvatarsFragment() {
         val avatarsFragment: AvatarsFragment = AvatarsFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, avatarsFragment)
-            .commitAllowingStateLoss()
+        avatarsFragment.show(supportFragmentManager, "AvatarsFragment")
     }
 
 

@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -51,6 +52,14 @@ class PerfilDeUsuarioFragment : Fragment() {
         editar_numero = view.findViewById(R.id.editar_numero)
         editar_nombre = view.findViewById(R.id.editar_nombre)
         editar_correo = view.findViewById(R.id.editar_correo)
+
+
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, 0)
+
+        if(avatar != 0){
+            abriravt.setImageResource(avatar)
+        }
 
 
         abriravt.setOnClickListener {
