@@ -141,12 +141,14 @@ class BusquedaFragment : Fragment() {
         Log.d("busqueda", "buscar: " + busqueda)
         val grado = data.grados[grado]
 
+    
         objetos.clear()
 
         val resultados = mutableListOf<String>()
 
         grado.materias.map {
             val materia = it.nombre.toLowerCase().replaceAccents()
+            Log.d("OscarNoHaceNada", "materia: " + materia)
             if (materia.contains(busqueda)) run {
                 resultados.add(it.nombre)
             }
