@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -74,17 +75,22 @@ fun LoginScreen(navHostController: NavHostController) {
             Image(
                 painter = painterResource(id = com.firebase.ui.auth.R.drawable.googleg_standard_color_18),
                 contentDescription = "Google Icon"
+
+
             )
-            Text(text = "Continúa con google")
+            Spacer(modifier = Modifier.width(17.dp))
+            Text(text = "Continua con google")
         }
+
         Button(modifier = Modifier.width(250.dp),
             colors = ButtonDefaults.buttonColors(Color.White),
             onClick = { navHostController.navigate(NavigationItem.SignIn.route) }) {
             Image(
-                painter = painterResource(id = com.firebase.ui.auth.R.drawable.googleg_standard_color_18),
-                contentDescription = "Google Icon"
+                painter = painterResource(id = com.firebase.ui.auth.R.drawable.fui_ic_facebook_white_22dp),
+                contentDescription = "Facebook Icon"
             )
-            Text(text = "Continúa con google")
+            Spacer(modifier = Modifier.width(17.dp))
+            Text(text = "Continua con facebook", color = Color.Black)
         }
 
     }
