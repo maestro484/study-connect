@@ -1,20 +1,22 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.graphics.Color
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RadioButton
-import com.google.android.material.internal.ClippableRoundedCornerLayout
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
 class ThemeFragment : Fragment() {
 
+    lateinit var topBar: ConstraintLayout
     lateinit var predeterminado: RadioButton
     lateinit var azul: RadioButton
     lateinit var oscuro: RadioButton
@@ -37,6 +39,7 @@ class ThemeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        topBar = view.findViewById(R.id.constraintLayout)
         predeterminado = view.findViewById(R.id.predeterminado)
         azul = view.findViewById(R.id.azul)
         oscuro = view.findViewById(R.id.oscuro)
@@ -47,22 +50,28 @@ class ThemeFragment : Fragment() {
 
 
         oscuro.setOnClickListener {
-            mainActivity.cambiarColor("#550363", "#550363", "#181819")
+            topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoOscuro))
+            AppTheme.aplicarTema(AppTheme.moradoOscuro)
+            mainActivity.cambiarColor(AppTheme.moradoOscuro, AppTheme.moradoOscuro, AppTheme.gris)
         }
 
         predeterminado.setOnClickListener {
-            mainActivity.cambiarColor("#683781", "#A766C9", "#181819")
+            topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoClaro))
+            AppTheme.aplicarTema(AppTheme.moradoClaro)
+            mainActivity.cambiarColor(AppTheme.moradoClaro, AppTheme.moradoOscuro2, AppTheme.gris)
+        }
 
 
-            azul.setOnClickListener {
-                mainActivity.cambiarColor("#7A8EFA", "#7A8EFA", "#181819")
+        azul.setOnClickListener {
+            topBar.setBackgroundColor(Color.parseColor(AppTheme.azul))
+            AppTheme.aplicarTema(AppTheme.azul)
+            mainActivity.cambiarColor(AppTheme.azul, AppTheme.moradoClaro, AppTheme.gris)
 
-            }
+        }
 
-            claro.setOnClickListener {
-                mainActivity.cambiarColor("#683781", "#A766C9", "#181819")
-
-            }
+        claro.setOnClickListener {
+            topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoClaro))
+            mainActivity.cambiarColor(AppTheme.moradoClaro, AppTheme.moradoOscuro2, AppTheme.gris)
 
         }
     }

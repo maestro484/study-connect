@@ -6,5 +6,10 @@
     <color name="black">#000000</color>
     <color name="red">#FE0000</color>
 
+    <color name="morado_oscuro">#550363</color>
+    <color name="gris">#181819</color>
+    <color name="morado_claro">#683781</color>
+    <color name="azul_claro">#7A8EFA</color>
+    <color name="morado_claro_2">#A766C9</color>
 
 </resources>
