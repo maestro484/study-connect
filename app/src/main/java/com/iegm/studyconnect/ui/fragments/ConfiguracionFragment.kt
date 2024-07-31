@@ -1,4 +1,4 @@
-package com.iegm.studyconnect.ui.fragments
+/*package com.iegm.studyconnect.ui.fragments
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -37,22 +37,22 @@ class ConfiguracionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        flecha = view.findViewById(R.id.flecha)
-        adm_cuenta = view.findViewById(R.id.adm_cuenta)
-        notificaciones = view.findViewById(R.id.notificaciones)
-        tema = view.findViewById(R.id.tema)
+/*  flecha = view.findViewById(R.id.flecha)
+  adm_cuenta = view.findViewById(R.id.adm_cuenta)
+  notificaciones = view.findViewById(R.id.notificaciones)
+  tema = view.findViewById(R.id.tema)
 
-        adm_cuenta.setOnClickListener {
-            (activity as MainActivity).abrirAdmFragment()
-        }
+  adm_cuenta.setOnClickListener {
+      (activity as MainActivity).abrirAdmFragment()
+  }
 
-        notificaciones.setOnClickListener {
+  notificaciones.setOnClickListener {
 
-        }
+  }
 
-        tema.setOnClickListener {
+  tema.setOnClickListener {
 
-        }
-    }
+  }
+}
 
-    }
+}*/

@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
         listaNueva = view.findViewById(R.id.ListaNueva)
         materia = view.findViewById(R.id.Materia)
 
-        ajuste.setOnClickListener {
+      /*  ajuste.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()
         }
 
@@ -58,11 +58,11 @@ class HomeFragment : Fragment() {
         }
 
         listaNueva.setOnClickListener {
-            (activity as MainActivity).abrirApuntesFragment()
+            (activity as MainActivity).abrirMateriasFragment()
         }
 
 
-        val grupo : Grado = Grado()
+        val grupo : Grado = Grado()*/
     }
 
 }

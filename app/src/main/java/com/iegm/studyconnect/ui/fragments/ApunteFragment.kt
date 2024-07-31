@@ -21,7 +21,7 @@ class ApunteFragment : Fragment() {
     lateinit var atras : ImageView
     lateinit var fileTitleTextView : TextView
 
-    val representante : String = ""
+  //  val representante : String = ""
 
     companion object {
         fun newInstance() = ApunteFragment()
@@ -32,7 +32,6 @@ class ApunteFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
@@ -54,7 +53,7 @@ class ApunteFragment : Fragment() {
             (activity as MainActivity).abrirApuntesFragment()
         }*/
 
-        val rol : String = "representante"
+    /*    val rol : String = "representante"
 
 
         if (rol == representante) {
@@ -67,7 +66,7 @@ class ApunteFragment : Fragment() {
             pdfView.isEnabled = false
             fileTitleTextView.isEnabled = false
 
-        }
+        }*/
 
 
 

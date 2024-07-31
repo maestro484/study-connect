@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
-    fun abrirAdmFragment() {
+  /*  fun abrirAdmFragment() {
         val admFragment: AdmFragment = AdmFragment()
         supportFragmentManager.beginTransaction().add(R.id.root_layout, admFragment)
             .commitAllowingStateLoss()
-    }
+    }*/
 
   /*  fun abrirApuntesFragment() {
         val apunteFragment: ApunteFragment = ApunteFragment()
