@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-
+//ddfdfd
         permisoAlmacenamiento()
     }
 
@@ -76,8 +76,7 @@ class MainActivity : AppCompatActivity() {
 
     fun abrirAvatarsFragment() {
         val avatarsFragment: AvatarsFragment = AvatarsFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, avatarsFragment)
-            .commitAllowingStateLoss()
+        avatarsFragment.show(supportFragmentManager, "AvatarsFragment")
     }
 
 

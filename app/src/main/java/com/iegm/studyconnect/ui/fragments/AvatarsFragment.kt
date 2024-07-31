@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.content.Context
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -63,6 +64,13 @@ class AvatarsFragment : BottomSheetDialogFragment(), OnAvatarSelected {
     }
 
     override fun onAvatarClick(avatar: Int) {
-        TODO("Not yet implemented")
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        with (sharedPref.edit()) {
+            putInt(SAVED_AVATAR_PROFILE, avatar)
+            apply()
+        }
+        dismiss()
     }
 }
+
+const val SAVED_AVATAR_PROFILE = "saved_avatar_profile"
