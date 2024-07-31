@@ -50,7 +50,7 @@ class ThemeFragment : Fragment() {
 
 
         oscuro.setOnClickListener {
-            topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoOscuro))
+            topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
             AppTheme.aplicarTema(AppTheme.moradoOscuro)
             mainActivity.cambiarColor(AppTheme.moradoOscuro, AppTheme.moradoOscuro, AppTheme.gris)
         }
