@@ -23,7 +23,7 @@ class ApuntesFragment : Fragment() {
     private lateinit var recy: RecyclerView
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
-    private lateinit var mMenus : ImageView
+    //private lateinit var mMenus : ImageView
 
 
     override fun onCreateView(
@@ -36,11 +36,15 @@ class ApuntesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val representante: String = ""
+        val estudiante: String = ""
+
+
         userList = ArrayList()
         recy = view.findViewById(R.id.mRecycler)
         volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
-        mMenus = view.findViewById(R.id.mMenus)
+        //mMenus = view.findViewById(R.id.mMenus)
 
         userAdapter =
             UserAdapter(requireContext(), this, userList) //pasarlo al fragment y no adapter
@@ -54,12 +58,11 @@ class ApuntesFragment : Fragment() {
         }
 
 
-       /* addsBtn.setOnClickListener {
-            (activity as MainActivity).abrirApunteFragment()
-        } */
+        /* addsBtn.setOnClickListener {
+             (activity as MainActivity).abrirApunteFragment()
+         } */
+
     }
-
-
 
 
     private fun addInfo() {
@@ -71,8 +74,6 @@ class ApuntesFragment : Fragment() {
 
         val addDialog = AlertDialog.Builder(requireContext())
 
-        val representante : String = ""
-
         addDialog.setView(v)
 
         addDialog.setPositiveButton("Ok") {
@@ -80,7 +81,7 @@ class ApuntesFragment : Fragment() {
                 dialog, _ ->
             val names = userName.text.toString()
             val number = userNo.text.toString()
-            userList.add(UserData("Name: $names", " Mobile No. : $number"))
+            userList.add(UserData("Titulo: $names", " Fecha: $number"))
             userAdapter.notifyDataSetChanged()
 
             Toast.makeText(requireContext(), "Adding User Information Succsess", Toast.LENGTH_SHORT)
@@ -96,28 +97,9 @@ class ApuntesFragment : Fragment() {
         addDialog.create()
         addDialog.show()
 
-        val rol : String = "representante"
-
-        if(rol == representante){
-            mMenus.isEnabled = true
-             mMenus.visibility = View.VISIBLE
-
-            addsBtn.isEnabled = true
-            addsBtn.visibility = View.VISIBLE
-
-        }else{
-            mMenus.isEnabled = false
-            mMenus.visibility = View.INVISIBLE
-
-            addsBtn.isEnabled = false
-            addsBtn.visibility = View.INVISIBLE
-
-
-
-
-        }
 
     }
 
 }
+
 
