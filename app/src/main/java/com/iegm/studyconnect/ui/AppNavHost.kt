@@ -36,16 +36,7 @@ fun AppNavHost(
         composable(NavigationItem.SignUp.route) {
             SignUpScreen()
         }
+
+
     }
-}
-fun LoginScreen(navController: NavHostController) {
-    Text(
-        text = "Regístrate",
-        fontSize = 15.sp,
-        color = Color.Blue,
-        fontWeight = FontWeight.Bold,
-        modifier = Modifier
-            .fillMaxSize()
-            .clickable { navController.navigate(NavigationItem.SignUp.route) }
-    )
 }

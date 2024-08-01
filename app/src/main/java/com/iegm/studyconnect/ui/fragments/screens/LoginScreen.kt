@@ -2,6 +2,7 @@ package com.iegm.studyconnect.ui.fragments.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -93,6 +94,34 @@ fun LoginScreen(navHostController: NavHostController) {
             Text(text = "Continua con facebook", color = Color.Black)
         }
 
+    }
+    @Composable
+    fun LoginScreen(navController: NavHostController) {
+        Text(
+            text = "Regístrate",
+            fontSize = 15.sp,
+            color = Color.Blue,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .fillMaxSize()
+                .clickable {
+                    navController.navigate(NavigationItem.SignUp.route)
+                }
+        )
+    }
+    @Composable
+    fun Loginhh(navController: NavHostController) {
+        Text(
+            text = "Inicia sesión",
+            fontSize = 15.sp,
+            color = Color.Blue,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .fillMaxSize()
+                .clickable {
+                    navController.navigate(NavigationItem.SignIn.route)
+                }
+        )
     }
 }
 
