@@ -91,7 +91,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 // Add the dependencies for any other desired Firebase products
 
-
+    implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation ("com.google.code.gson:gson:2.11.0")
 }

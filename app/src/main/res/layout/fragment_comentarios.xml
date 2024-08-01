@@ -9,19 +9,6 @@
     tools:context=".ui.fragments.ComentariosFragment">
 
 
-    <com.rajat.pdfviewer.PdfRendererView
-        android:id="@+id/pdfView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.5"
-        app:pdfView_divider="@drawable/pdf_viewer_divider"
-        app:pdfView_showDivider="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayout3"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
     <!--<ImageView
         android:id="@+id/Descargar"
         android:layout_width="50dp"
@@ -34,6 +21,17 @@
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/PDF" />-->
+
+    <com.rajat.pdfviewer.PdfRendererView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout3"
+        app:pdfView_divider="@drawable/pdf_viewer_divider"
+        app:pdfView_showDivider="false" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaDeComentarios"
@@ -54,6 +52,8 @@
         android:inputType="text"
         android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/listaDeComentarios"
         app:layout_constraintVertical_bias="0.5" />
 
@@ -81,6 +81,7 @@
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
