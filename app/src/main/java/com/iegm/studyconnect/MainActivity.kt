@@ -81,6 +81,7 @@ fun abrirPeriodoFragment() {
 
     }
 
+
     /* fun abrirApunteFragment() {
    val apunteFragment: ApunteFragment = ApunteFragment()
    supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)

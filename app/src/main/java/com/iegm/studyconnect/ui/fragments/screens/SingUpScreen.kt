@@ -46,6 +46,7 @@ fun SignUpScreen() {
     ) {
         Text(text = "Regístrate", fontSize = 35.sp, fontWeight = FontWeight.Bold)
 
+
         var nombre by remember {
             mutableStateOf("")
         }
@@ -128,6 +129,10 @@ fun SignUpScreen() {
                 }
             }
         )
+        Spacer(modifier = Modifier.height(20.dp))
+        Text(text = "¿Ya tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
+        Text(text = "Inicia sesión", fontSize = 15.sp, color = Color.Blue, fontWeight = FontWeight.Bold)
+
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(modifier = Modifier.width(250.dp),

@@ -1,7 +1,13 @@
 package com.iegm.studyconnect.ui
 
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -31,4 +37,15 @@ fun AppNavHost(
             SignUpScreen()
         }
     }
+}
+fun LoginScreen(navController: NavHostController) {
+    Text(
+        text = "Regístrate",
+        fontSize = 15.sp,
+        color = Color.Blue,
+        fontWeight = FontWeight.Bold,
+        modifier = Modifier
+            .fillMaxSize()
+            .clickable { navController.navigate(NavigationItem.SignUp.route) }
+    )
 }
