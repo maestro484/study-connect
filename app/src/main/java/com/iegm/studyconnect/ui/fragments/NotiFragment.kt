@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.utils.AdministradorDePreferencias
@@ -21,6 +24,7 @@ class NotiFragment : Fragment() {
     lateinit var flecha3: ImageView
     lateinit var seguidos: Switch
     lateinit var menciones: Switch
+    lateinit var top_bar4 : ConstraintLayout
 
     companion object {
         fun newInstance() = NotiFragment()
@@ -49,6 +53,10 @@ class NotiFragment : Fragment() {
         flecha3 = view.findViewById(R.id.flecha3)
         seguidos = view.findViewById(R.id.seguidos)
         menciones = view.findViewById(R.id.menciones)
+        top_bar4 = view.findViewById(R.id.top_bar4)
+
+        top_bar4.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
+
 
             fun controlarSwitchesSecundarios(estadoSwitchGeneral: Boolean) {
                 recientes.isEnabled = estadoSwitchGeneral

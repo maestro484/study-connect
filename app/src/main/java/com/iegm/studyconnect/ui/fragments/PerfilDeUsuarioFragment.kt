@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +9,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
@@ -21,6 +24,8 @@ class PerfilDeUsuarioFragment : Fragment() {
     lateinit var editar_correo: EditText
     lateinit var  cerrar_sesion: Button
     lateinit var abriravt: ImageView
+    lateinit var topBar: ConstraintLayout
+
 
     /*private var apuntesMutableList: MutableList<apuntes> =
         PerfilDeUsuarioFragment.apuntes.toMutableList()*/
@@ -52,7 +57,10 @@ class PerfilDeUsuarioFragment : Fragment() {
         editar_numero = view.findViewById(R.id.editar_numero)
         editar_nombre = view.findViewById(R.id.editar_nombre)
         editar_correo = view.findViewById(R.id.editar_correo)
+        topBar = view.findViewById(R.id.constraintLayout)
 
+
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
         val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, 0)

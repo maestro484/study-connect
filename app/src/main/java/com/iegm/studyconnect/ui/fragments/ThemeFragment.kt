@@ -39,20 +39,24 @@ class ThemeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        topBar = view.findViewById(R.id.constraintLayout)
+
+        topBar = view.findViewById(R.id.topBar)
         predeterminado = view.findViewById(R.id.predeterminado)
         azul = view.findViewById(R.id.azul)
         oscuro = view.findViewById(R.id.oscuro)
         flecha1 = view.findViewById(R.id.flecha1)
         claro = view.findViewById(R.id.claro)
 
+
         val mainActivity = (requireActivity() as MainActivity)
 
 
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
+
         oscuro.setOnClickListener {
-            topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
-            AppTheme.aplicarTema(AppTheme.moradoOscuro)
-            mainActivity.cambiarColor(AppTheme.moradoOscuro, AppTheme.moradoOscuro, AppTheme.gris)
+           topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoOscuro))
+                    AppTheme.aplicarTema(AppTheme.moradoOscuro)
+                    mainActivity.cambiarColor(AppTheme.moradoOscuro, AppTheme.moradoOscuro, AppTheme.gris)
         }
 
         predeterminado.setOnClickListener {
@@ -75,5 +79,7 @@ class ThemeFragment : Fragment() {
 
         }
     }
+
 }
+
 

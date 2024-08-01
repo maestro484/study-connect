@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.graphics.Color
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +10,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
@@ -18,6 +21,7 @@ class PeriodoFragment : Fragment() {
     lateinit var periodo2 : Button
     lateinit var periodo3 : Button
     lateinit var volver1 : ImageView
+    lateinit var topBar: ConstraintLayout
 
     companion object {
         fun newInstance() = PeriodoFragment()
@@ -47,6 +51,11 @@ class PeriodoFragment : Fragment() {
         periodo2 = view.findViewById(R.id.periodo2)
         periodo3 = view.findViewById(R.id.periodo3)
         volver1 = view.findViewById(R.id.volver1)
+
+        topBar = view.findViewById(R.id.constraintLayout)
+
+
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
 
 
         periodo1.setOnClickListener {

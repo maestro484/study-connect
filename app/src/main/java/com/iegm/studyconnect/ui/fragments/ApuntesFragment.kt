@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.app.AlertDialog
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,10 +10,11 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.iegm.studyconnect.MainActivity
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.view.UserAdapter
@@ -24,6 +26,7 @@ class ApuntesFragment : Fragment() {
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
     //private lateinit var mMenus : ImageView
+    private lateinit var topBar1: ConstraintLayout
 
 
     override fun onCreateView(
@@ -39,6 +42,9 @@ class ApuntesFragment : Fragment() {
         val representante: String = ""
         val estudiante: String = ""
 
+        topBar1 = view.findViewById(R.id.top_bar1)
+        topBar1.setBackgroundColor(
+            Color.parseColor(AppTheme.temaElegido))
 
         userList = ArrayList()
         recy = view.findViewById(R.id.mRecycler)
