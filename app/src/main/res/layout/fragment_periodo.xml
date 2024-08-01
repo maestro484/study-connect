@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.PeriodoFragment"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+       >
+
+        <ImageView
+            android:id="@+id/volver1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/arrow_back_fill0_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/periodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PERÍODO"
+            android:textColor="@color/purple1"
+            android:textColorHint="@color/purple1"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/periodo1"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text="PERÍODO 1"
+        android:hint="Titulo"
+        android:background="@drawable/shape_background"
+        android:padding="15dp"
+        android:inputType="textPersonName"
+        android:textColor="@color/purple1"
+        android:textColorHint="@color/purple1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColorLink="#7E3655"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/periodo2"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="80dp"
+        android:background="@drawable/shape_background"
+        android:hint="Titulo"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:text="PERÍODO 2"
+        android:textColor="@color/purple1"
+        android:textColorHint="@color/purple1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/periodo1" />
+
+    <Button
+        android:id="@+id/periodo3"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/shape_background"
+        android:hint="Titulo"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:text="PERÍODO 3"
+        android:textColor="@color/purple1"
+        android:textColorHint="@color/purple1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/periodo2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

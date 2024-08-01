@@ -9,6 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_height="50dp"
+        android:layout_width="match_parent"
         android:background="@android:color/holo_purple"
         android:scrollbarSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/flecha"
+            android:id="@+id/flecha3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -37,6 +38,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -52,22 +54,39 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/notificaciones_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notificaciones" />
+            android:checked="false"
+            android:text=" Notificaciones Generales"
+            />
 
         <Switch
-            android:id="@+id/switch2"
+            android:id="@+id/recientes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:text="Recientes" />
 
         <Switch
-            android:id="@+id/switch3"
+            android:id="@+id/comentarios_noti"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:text="Comentarios" />
+
+        <Switch
+            android:id="@+id/seguidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seguidos" />
+
+        <Switch
+            android:id="@+id/menciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menciones" />
+
     </LinearLayout>
 
 

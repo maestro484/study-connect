@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_margin="15dp"
+    >
+
+<LinearLayout
+          android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="15dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:orientation="vertical"
+    android:paddingTop="10dp" >
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:background="@color/purple"
+      android:gravity="center"
+      android:paddingLeft="15dp"
+      android:paddingTop="8dp"
+      android:paddingRight="15dp"
+      android:paddingBottom="8dp"
+      android:text="AGREGA LA INFORMACIÓN"
+      android:textColor="@color/purple1"
+      android:textSize="19sp"
+      android:textStyle="bold"
+
+      />
+
+  <EditText
+      android:id="@+id/userName"
+      android:hint="Titulo"
+      android:background="@drawable/shape_background"
+      android:padding="15dp"
+      android:inputType="textPersonName"
+      android:textColor="@color/purple1"
+      android:textColorHint="@color/purple1"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      android:layout_marginLeft="15dp"
+      android:layout_marginRight="15dp"
+      android:layout_marginBottom="5dp"
+      android:layout_marginTop="15dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+  <EditText
+      android:id="@+id/userNo"
+      android:hint="Fecha"
+      android:inputType="phone"
+      android:textColor="@color/purple1"
+      android:background="@drawable/shape_background"
+      android:padding="15dp"
+      android:textColorHint="@color/purple1"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      android:layout_marginLeft="15dp"
+      android:layout_marginRight="15dp"
+      android:layout_marginBottom="15dp"
+      android:layout_marginTop="5dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+
+</LinearLayout>
+
+
+</LinearLayout>
