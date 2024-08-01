@@ -36,6 +36,10 @@ class ApuntesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val representante: String = ""
+        val estudiante: String = ""
+
+
         userList = ArrayList()
         recy = view.findViewById(R.id.mRecycler)
         volver1 = view.findViewById(R.id.volver1)
@@ -57,6 +61,7 @@ class ApuntesFragment : Fragment() {
         /* addsBtn.setOnClickListener {
              (activity as MainActivity).abrirApunteFragment()
          } */
+
     }
 
 
@@ -68,8 +73,6 @@ class ApuntesFragment : Fragment() {
         val userNo = v.findViewById<EditText>(R.id.userNo)
 
         val addDialog = AlertDialog.Builder(requireContext())
-
-        val representante: String = ""
 
         addDialog.setView(v)
 

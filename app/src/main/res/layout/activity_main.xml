@@ -21,7 +21,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
-        android:name="com.iegm.studyconnect.ui.fragments.ApuntesFragment"
+        android:name="com.iegm.studyconnect.ui.fragments.ThemeFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"

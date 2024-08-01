@@ -11,6 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.iegm.studyconnect.ui.AppNavHost
+import com.iegm.studyconnect.ui.NavigationItem
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 class LoginActivity : ComponentActivity() {
@@ -20,28 +23,13 @@ class LoginActivity : ComponentActivity() {
         setContent {
             StudyConnectTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    AppNavHost(
+                        modifier = Modifier.padding(innerPadding),
+                        navHostController = rememberNavController(),
+                        startDestination = NavigationItem.Login.route
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    StudyConnectTheme {
-        Greeting("Android")
     }
 }

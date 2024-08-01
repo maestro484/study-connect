@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
@@ -16,7 +17,7 @@ class PeriodoFragment : Fragment() {
     lateinit var periodo1 : Button
     lateinit var periodo2 : Button
     lateinit var periodo3 : Button
-    lateinit var volver1 : ImageButton
+    lateinit var volver1 : ImageView
 
     companion object {
         fun newInstance() = PeriodoFragment()
