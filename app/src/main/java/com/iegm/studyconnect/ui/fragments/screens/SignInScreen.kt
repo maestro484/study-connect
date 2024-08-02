@@ -40,11 +40,16 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.iegm.studyconnect.AuthViewModel
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.ui.NavigationItem
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
-fun SignInScreen() {
+fun SignInScreen(navHostController: NavHostController, authViewModel: AuthViewModel) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -137,11 +142,18 @@ fun SignInScreen() {
 
 
         }
-        Spacer(modifier = Modifier.height(20.dp))
         Text(text = "¿No tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
-        Text(text = "Regístrate", fontSize = 15.sp, color = Color.Blue, fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.width(4.dp))
+        Text(
+            text = "Regístrate",
+            fontSize = 15.sp,
+            color = Color.Blue,
+            fontWeight = FontWeight.Bold,
+            onClick = NavHostController.navigate(NavigationItem.SignUp.route)
 
+        )
         Spacer(modifier = Modifier.height(20.dp))
+
         Button(modifier = Modifier.width(250.dp),
             colors = ButtonDefaults.buttonColors(Color.Black),
             onClick = { /*TODO*/ }) {
@@ -154,6 +166,6 @@ fun SignInScreen() {
 @Composable
 fun SigninScreenPreview() {
     StudyConnectTheme {
-        SignInScreen()
+        SignInScreen(rememberNavController(), authViewModel = AuthViewModel())
     }
 }

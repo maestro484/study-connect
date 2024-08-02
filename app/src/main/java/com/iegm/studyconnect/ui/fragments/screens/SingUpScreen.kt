@@ -34,10 +34,13 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.iegm.studyconnect.AuthViewModel
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
-fun SignUpScreen() {
+fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewModel) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -147,6 +150,6 @@ fun SignUpScreen() {
 @Composable
 fun SingUpScreenPreview() {
     StudyConnectTheme {
-        SignUpScreen()
+        SignUpScreen(rememberNavController(), authViewModel = AuthViewModel())
     }
 }
