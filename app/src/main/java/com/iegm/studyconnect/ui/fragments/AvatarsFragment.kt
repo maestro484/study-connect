@@ -55,7 +55,7 @@ class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialo
 
 
         flecha2.setOnClickListener {
-            (activity as MainActivity).abrirPerfilDeUsuarioFragment()
+            dismiss()
         }
     }
 }
