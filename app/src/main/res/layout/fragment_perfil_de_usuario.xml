@@ -22,22 +22,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="PERFIL DE USUARIO"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/black"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/regresar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:src="@drawable/arrow_back_fill0_ic"
             app:layout_constraintBottom_toBottomOf="@id/titulo"
-            app:layout_constraintVertical_bias="0.5"
-            tools:layout_editor_absoluteX="8dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/abrir_avt"
             android:layout_width="200dp"
             android:layout_height="200dp"
