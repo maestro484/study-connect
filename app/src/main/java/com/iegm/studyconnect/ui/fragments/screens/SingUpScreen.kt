@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -37,6 +38,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.iegm.studyconnect.AuthViewModel
+import com.iegm.studyconnect.ui.NavigationItem
+import com.iegm.studyconnect.ui.theme.Purple40
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
@@ -57,13 +60,13 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         OutlinedTextField(value = nombre, onValueChange = {
             nombre = it
         }, label = {
-            Text(text = "person")
+            Text(text = "Person")
         }, placeholder = {
             Text(text = "Nombre")
 
         }, leadingIcon = {
             Icon(imageVector = Icons.Filled.Person, contentDescription = "Icono de la persona")
-        }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text ))
+        }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text))
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -73,7 +76,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         OutlinedTextField(value = email, onValueChange = {
             email = it
         }, label = {
-            Text(text = "email")
+            Text(text = "Email")
         }, placeholder = {
             Text(text = "Ingresa tu email")
 
@@ -134,7 +137,14 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         )
         Spacer(modifier = Modifier.height(20.dp))
         Text(text = "¿Ya tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
-        Text(text = "Inicia sesión", fontSize = 15.sp, color = Color.Blue, fontWeight = FontWeight.Bold)
+        Text(
+            text = "Inicia sesión",
+            fontSize = 15.sp,
+            color = Purple40,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignIn.route)}
+
+        )
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -146,6 +156,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
 //
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun SingUpScreenPreview() {

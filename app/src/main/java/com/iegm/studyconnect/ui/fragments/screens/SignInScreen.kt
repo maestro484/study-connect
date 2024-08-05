@@ -46,6 +46,7 @@ import androidx.navigation.compose.rememberNavController
 import com.iegm.studyconnect.AuthViewModel
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.ui.NavigationItem
+import com.iegm.studyconnect.ui.theme.Purple40
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
@@ -72,7 +73,7 @@ fun SignInScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         OutlinedTextField(value = email, onValueChange = {
             email = it
         }, label = {
-            Text(text = "email")
+            Text(text = "Email")
         }, placeholder = {
             Text(text = "Ingresa tu email.")
 
@@ -147,12 +148,12 @@ fun SignInScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         Text(
             text = "Regístrate",
             fontSize = 15.sp,
-            color = Color.Blue,
+            color = Purple40,
             fontWeight = FontWeight.Bold,
-            onClick = NavHostController.navigate(NavigationItem.SignUp.route)
-
+            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignUp.route) }
         )
         Spacer(modifier = Modifier.height(20.dp))
+
 
         Button(modifier = Modifier.width(250.dp),
             colors = ButtonDefaults.buttonColors(Color.Black),
