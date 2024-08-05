@@ -15,29 +15,19 @@ import androidx.fragment.app.viewModels
 import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
+import de.hdodenhof.circleimageview.CircleImageView
 
-class PerfilDeUsuarioFragment : Fragment() {
+class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
 
     lateinit var regresar: ImageView
     lateinit var editar_numero: EditText
     lateinit var editar_nombre: EditText
     lateinit var editar_correo: EditText
-    lateinit var  cerrar_sesion: Button
-    lateinit var abriravt: ImageView
+    lateinit var cerrar_sesion: Button
+    lateinit var abriravt: CircleImageView
     lateinit var topBar: ConstraintLayout
 
-
-    /*private var apuntesMutableList: MutableList<apuntes> =
-        PerfilDeUsuarioFragment.apuntes.toMutableList()*/
-
-
-    companion object {
-
-        fun newInstance() = ConfiguracionFragment
-
-    }
-
-    private val viewModel: ConfiguracionViewModel by viewModels()
+    private var avatarsFragment: AvatarsFragment? = null
 
 
     override fun onCreateView(
@@ -65,16 +55,27 @@ class PerfilDeUsuarioFragment : Fragment() {
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
         val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, 0)
 
-        if(avatar != 0){
+        if (avatar != 0) {
             abriravt.setImageResource(avatar)
         }
 
 
         abriravt.setOnClickListener {
-        (activity as MainActivity).abrirAvatarsFragment()
-    }
+            avatarsFragment = AvatarsFragment(this)
+            avatarsFragment?.show(requireActivity().supportFragmentManager, "AvatarsFragment")
+        }
 
     }
 
+    override fun onAvatarClick(avatar: Int) {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        with(sharedPref.edit()) {
+            putInt(SAVED_AVATAR_PROFILE, avatar)
+            apply()
+        }
 
+        abriravt.setImageResource(avatar)
+
+        avatarsFragment?.dismiss()
+    }
 }

@@ -55,27 +55,28 @@ class ThemeFragment : Fragment() {
 
         oscuro.setOnClickListener {
            topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoOscuro))
-                    AppTheme.aplicarTema(AppTheme.moradoOscuro)
-                    mainActivity.cambiarColor(AppTheme.moradoOscuro, AppTheme.moradoOscuro, AppTheme.gris)
+                    AppTheme.aplicarTema(AppTheme.moradoOscuro2)
+                    mainActivity.cambiarColor(AppTheme.moradoOscuro2, AppTheme.moradoOscuro2, AppTheme.gris)
         }
 
         predeterminado.setOnClickListener {
             topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoClaro))
-            AppTheme.aplicarTema(AppTheme.moradoClaro)
-            mainActivity.cambiarColor(AppTheme.moradoClaro, AppTheme.moradoOscuro2, AppTheme.gris)
+            AppTheme.aplicarTema(AppTheme.moradoClaro2)
+            mainActivity.cambiarColor(AppTheme.moradoClaro2, AppTheme.moradoClaro2, AppTheme.gris)
         }
 
 
         azul.setOnClickListener {
             topBar.setBackgroundColor(Color.parseColor(AppTheme.azul))
-            AppTheme.aplicarTema(AppTheme.azul)
-            mainActivity.cambiarColor(AppTheme.azul, AppTheme.moradoClaro, AppTheme.gris)
+            AppTheme.aplicarTema(AppTheme.azulClaro)
+            mainActivity.cambiarColor(AppTheme.azulClaro, AppTheme.azulClaro, AppTheme.gris)
 
         }
 
         claro.setOnClickListener {
             topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoClaro))
-            mainActivity.cambiarColor(AppTheme.moradoClaro, AppTheme.moradoOscuro2, AppTheme.gris)
+            AppTheme.aplicarTema(AppTheme.moradoClaro2)
+            mainActivity.cambiarColor(AppTheme.moradoClaro2, AppTheme.moradoClaro2, AppTheme.gris)
 
         }
     }

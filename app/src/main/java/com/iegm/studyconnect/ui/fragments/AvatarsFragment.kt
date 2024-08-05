@@ -19,23 +19,12 @@ import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.AvatarsAdapter
 
-class AvatarsFragment : BottomSheetDialogFragment(), OnAvatarSelected {
+class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialogFragment() {
 
     lateinit var top_bar2: ConstraintLayout
     lateinit var listaAvatars: RecyclerView
     lateinit var flecha2: ImageView
     var avatarsAdapter: AvatarsAdapter? = null
-
-    companion object {
-        fun newInstance() = AvatarsFragment()
-    }
-
-    private val viewModel: AvatarsViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,35 +38,25 @@ class AvatarsFragment : BottomSheetDialogFragment(), OnAvatarSelected {
 
         top_bar2 = view.findViewById(R.id.top_bar2)
         top_bar2.setBackgroundColor(
-            Color.parseColor(AppTheme.temaElegido))
+            Color.parseColor(AppTheme.temaElegido)
+        )
 
-        avatarsAdapter = AvatarsAdapter(this)
+        avatarsAdapter = AvatarsAdapter(onAvatarSelected)
         listaAvatars = view.findViewById(R.id.listaAvatars)
         flecha2 = view.findViewById(R.id.flecha2)
 
+
+        val gridLayoutManager = GridLayoutManager(requireContext(), 3)
+
+        listaAvatars.apply {
+            layoutManager = gridLayoutManager
+            adapter = avatarsAdapter
+        }
+
+
         flecha2.setOnClickListener {
             (activity as MainActivity).abrirPerfilDeUsuarioFragment()
-
-
-            val gridLayoutManager = GridLayoutManager(requireContext(), 3)
-
-            listaAvatars.apply {
-                layoutManager = gridLayoutManager
-                adapter = avatarsAdapter
-            }
-
-
         }
-
-    }
-
-    override fun onAvatarClick(avatar: Int) {
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
-        with (sharedPref.edit()) {
-            putInt(SAVED_AVATAR_PROFILE, avatar)
-            apply()
-        }
-        dismiss()
     }
 }
 

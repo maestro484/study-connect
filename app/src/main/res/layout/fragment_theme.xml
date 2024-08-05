@@ -29,7 +29,7 @@
             android:id="@+id/oscuro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#370640"
+            android:background="#720685"
             android:text="Oscuro"
             android:textColor="#FFFCFC"
             android:textColorLink="#EFE2E2" />
@@ -38,7 +38,7 @@
             android:id="@+id/azul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#A0ACEC"
+            android:background="#8190DE"
             android:text="Azul" />
 
         <RadioButton
