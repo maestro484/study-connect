@@ -1,12 +1,11 @@
 package com.iegm.studyconnect.ui.fragments.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -36,17 +35,15 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.iegm.studyconnect.AuthViewModel
+import com.iegm.studyconnect.ui.NavigationItem
+import com.iegm.studyconnect.ui.theme.Purple40
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
-fun SignUpScreen() {
-    var deployStatus by remember {
-        mutableStateOf(false)
-    }
-    var selectStatus by remember {
-        mutableStateOf("seleccione su Status")
-    }
-    var status = listOf("representante", "estudiante")
+fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewModel) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -55,6 +52,7 @@ fun SignUpScreen() {
     ) {
         Text(text = "Regístrate", fontSize = 35.sp, fontWeight = FontWeight.Bold)
 
+
         var nombre by remember {
             mutableStateOf("")
         }
@@ -62,13 +60,13 @@ fun SignUpScreen() {
         OutlinedTextField(value = nombre, onValueChange = {
             nombre = it
         }, label = {
-            Text(text = "person")
+            Text(text = "Person")
         }, placeholder = {
             Text(text = "Nombre")
 
         }, leadingIcon = {
             Icon(imageVector = Icons.Filled.Person, contentDescription = "Icono de la persona")
-        }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text ))
+        }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text))
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -78,7 +76,7 @@ fun SignUpScreen() {
         OutlinedTextField(value = email, onValueChange = {
             email = it
         }, label = {
-            Text(text = "email")
+            Text(text = "Email")
         }, placeholder = {
             Text(text = "Ingresa tu email")
 
@@ -138,50 +136,31 @@ fun SignUpScreen() {
             }
         )
         Spacer(modifier = Modifier.height(20.dp))
+        Text(text = "¿Ya tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
+        Text(
+            text = "Inicia sesión",
+            fontSize = 15.sp,
+            color = Purple40,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignIn.route)}
 
-        var status1 by remember {
-            mutableStateOf("")
-        }
-
-        OutlinedTextField(value = status1,
-            onValueChange = {
-                status1 = it
-
-            },
-            label = {
-                Text(text = "Status")
-            },
-            placeholder = {
-                Text(text = "Elija su estatus")
-
-                Text(text = selectStatus, modifier = Modifier.fillMaxWidth())
-                Spacer(modifier = Modifier.height(16.dp))
-                Button(onClick = { deployStatus = true }) {
-                    Text(text = "Mostrar opcionesStatus")
-                }
-
-            }, leadingIcon = {
-                Icon(imageVector = Icons.Filled.Person, contentDescription = "Icono de la persona")
-            }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text ))
-
-        }
-
+        )
 
         Spacer(modifier = Modifier.height(20.dp))
-
 
         Button(modifier = Modifier.width(250.dp),
             colors = ButtonDefaults.buttonColors(Color.Black),
             onClick = { /*TODO*/ }) {
             Text(text = "Registrarse")
         }
-
+//
     }
+}
 
 @Preview(showBackground = true)
 @Composable
 fun SingUpScreenPreview() {
     StudyConnectTheme {
-        SignUpScreen()
+        SignUpScreen(rememberNavController(), authViewModel = AuthViewModel())
     }
 }
