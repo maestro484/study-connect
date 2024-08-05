@@ -11,7 +11,7 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/top_bar"
+        android:id="@+id/top_bar1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@android:color/holo_purple"
@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top_bar">
+        app:layout_constraintTop_toBottomOf="@id/top_bar1">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mRecycler"

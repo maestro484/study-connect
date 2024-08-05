@@ -7,7 +7,7 @@
     tools:context=".ui.fragments.ConfiguracionFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/top_bar4"
         android:layout_height="50dp"
         android:layout_width="match_parent"
         android:background="@android:color/holo_purple"
@@ -51,14 +51,15 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/topBar">
 
         <Switch
             android:id="@+id/notificaciones_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text=" Notificaciones Generales" />
+            android:text=" Notificaciones Generales"
+            />
 
         <Switch
             android:id="@+id/recientes"
