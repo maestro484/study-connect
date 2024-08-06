@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
 
@@ -25,9 +26,7 @@ class ComentariosFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    lateinit var devolver_2 : Button
-    lateinit var descargar : Button
-    lateinit var pdf : Button
+  private  lateinit var devolver1: ImageView
     lateinit var teclado : EditText
     lateinit var listadecomentarios : RecyclerView
 
@@ -52,7 +51,13 @@ class ComentariosFragment : Fragment() {
 
    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+
+       devolver1 = view.findViewById(R.id.devolver1)
+
+    }
 
 
 
