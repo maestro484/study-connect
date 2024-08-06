@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -50,37 +51,54 @@ class ThemeFragment : Fragment() {
 
         val mainActivity = (requireActivity() as MainActivity)
 
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
 
-        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
+
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         oscuro.setOnClickListener {
-           topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoOscuro))
-                    AppTheme.aplicarTema(AppTheme.moradoOscuro2)
-                    mainActivity.cambiarColor(AppTheme.moradoOscuro2, AppTheme.moradoOscuro2, AppTheme.gris)
+            topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoOscuro))
+            AppTheme.guardarTema(requireActivity(), AppTheme.moradoOscuro)
+            mainActivity.cambiarColor(
+                AppTheme.moradoOscuro2,
+                AppTheme.moradoOscuro2,
+                AppTheme.gris
+            )
         }
 
         predeterminado.setOnClickListener {
             topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoClaro))
-            AppTheme.aplicarTema(AppTheme.moradoClaro2)
-            mainActivity.cambiarColor(AppTheme.moradoClaro2, AppTheme.moradoClaro2, AppTheme.gris)
+            AppTheme.guardarTema(requireActivity(), AppTheme.moradoClaro)
+            mainActivity.cambiarColor(
+                AppTheme.moradoClaro2,
+                AppTheme.moradoClaro2,
+                AppTheme.gris
+            )
         }
-
 
         azul.setOnClickListener {
             topBar.setBackgroundColor(Color.parseColor(AppTheme.azul))
-            AppTheme.aplicarTema(AppTheme.azulClaro)
+            AppTheme.guardarTema(requireActivity(), AppTheme.azul)
             mainActivity.cambiarColor(AppTheme.azulClaro, AppTheme.azulClaro, AppTheme.gris)
-
         }
 
         claro.setOnClickListener {
             topBar.setBackgroundColor(Color.parseColor(AppTheme.moradoClaro))
-            AppTheme.aplicarTema(AppTheme.moradoClaro2)
-            mainActivity.cambiarColor(AppTheme.moradoClaro2, AppTheme.moradoClaro2, AppTheme.gris)
-
+            AppTheme.guardarTema(requireActivity(), AppTheme.moradoClaro)
+            mainActivity.cambiarColor(
+                AppTheme.moradoClaro2,
+                AppTheme.moradoClaro2,
+                AppTheme.gris
+            )
         }
-    }
 
+        flecha1.setOnClickListener {
+            (activity as MainActivity).abrirConfiguracionFragment()
+        }
+
+    }
 }
+
+const val SAVED_THEME = "saved_theme"
 
 

@@ -44,7 +44,7 @@ class ApuntesFragment : Fragment() {
 
         topBar1 = view.findViewById(R.id.top_bar1)
         topBar1.setBackgroundColor(
-            Color.parseColor(AppTheme.temaElegido))
+            Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         userList = ArrayList()
         recy = view.findViewById(R.id.mRecycler)

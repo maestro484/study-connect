@@ -55,7 +55,7 @@ class PeriodoFragment : Fragment() {
         topBar = view.findViewById(R.id.constraintLayout)
 
 
-        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
 
         periodo1.setOnClickListener {
