@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
+import com.iegm.studyconnect.ui.fragments.ComentariosFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 
 class MainActivity : AppCompatActivity() {
@@ -81,6 +82,12 @@ fun abrirPeriodoFragment() {
 
     }
 
+    fun abriComentariosFragment(){
+        val comentariosFragment: ComentariosFragment = ComentariosFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, comentariosFragment)
+            .commitAllowingStateLoss()
+
+    }
     /* fun abrirApunteFragment() {
    val apunteFragment: ApunteFragment = ApunteFragment()
    supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)

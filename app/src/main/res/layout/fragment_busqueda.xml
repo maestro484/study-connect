@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/topBar" />
 
     <Button
         android:id="@+id/materia"
@@ -29,7 +29,7 @@
         android:layout_marginTop="25dp"
         android:text="materia"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/topBar" />
 
     <Button
         android:id="@+id/fecha"
@@ -39,7 +39,7 @@
         android:layout_marginEnd="20dp"
         android:text="fecha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/topBar" />
 
     <Button
         android:id="@+id/apunte"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@id/profesor" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="@android:color/holo_purple"
@@ -121,6 +121,6 @@
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/topBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

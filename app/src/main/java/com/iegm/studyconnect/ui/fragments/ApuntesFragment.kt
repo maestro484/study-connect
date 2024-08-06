@@ -1,11 +1,13 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
@@ -23,8 +25,8 @@ class ApuntesFragment : Fragment() {
     private lateinit var recy: RecyclerView
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
-    private lateinit var mMenus : ImageView
-
+    private lateinit var mMenus: ImageView
+    private lateinit var button_comentarios: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +43,7 @@ class ApuntesFragment : Fragment() {
         volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
         mMenus = view.findViewById(R.id.mMenus)
+        button_comentarios = view.findViewById(R.id.button_comentarios)
 
         userAdapter =
             UserAdapter(requireContext(), this, userList) //pasarlo al fragment y no adapter
@@ -54,12 +57,14 @@ class ApuntesFragment : Fragment() {
         }
 
 
-       /* addsBtn.setOnClickListener {
-            (activity as MainActivity).abrirApunteFragment()
-        } */
+        /* addsBtn.setOnClickListener {
+             (activity as MainActivity).abrirApunteFragment()
+         } */
+
+        button_comentarios.setOnClickListener {
+            (activity as MainActivity).abriComentariosFragment()
+        }
     }
-
-
 
 
     private fun addInfo() {
@@ -71,7 +76,7 @@ class ApuntesFragment : Fragment() {
 
         val addDialog = AlertDialog.Builder(requireContext())
 
-        val representante : String = ""
+        val representante: String = ""
 
         addDialog.setView(v)
 
@@ -96,23 +101,21 @@ class ApuntesFragment : Fragment() {
         addDialog.create()
         addDialog.show()
 
-        val rol : String = "representante"
+        val rol: String = "representante"
 
-        if(rol == representante){
+        if (rol == representante) {
             mMenus.isEnabled = true
-             mMenus.visibility = View.VISIBLE
+            mMenus.visibility = View.VISIBLE
 
             addsBtn.isEnabled = true
             addsBtn.visibility = View.VISIBLE
 
-        }else{
+        } else {
             mMenus.isEnabled = false
             mMenus.visibility = View.INVISIBLE
 
             addsBtn.isEnabled = false
             addsBtn.visibility = View.INVISIBLE
-
-
 
 
         }

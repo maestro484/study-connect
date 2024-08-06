@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.SearchView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,6 +36,9 @@ class BusquedaFragment : Fragment() {
     lateinit var buscador: SearchView
     lateinit var apunte: Button
     lateinit var listaDeBusqueda: RecyclerView
+
+    lateinit var topBar : ConstraintLayout
+
     var grado: Int = 0
 
 
@@ -71,6 +75,7 @@ class BusquedaFragment : Fragment() {
         buscador = view.findViewById(R.id.buscador)
         apunte = view.findViewById(R.id.apunte)
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
+        topBar = view.findViewById(R.id.topBar)
 
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 

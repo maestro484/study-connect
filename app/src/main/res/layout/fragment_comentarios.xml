@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/text"
+    android:id="@+id/constraintLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#E7D9EA"
+    android:orientation="vertical"
     tools:context=".ui.fragments.ComentariosFragment">
 
 
@@ -22,51 +24,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/PDF" />-->
 
-    <com.rajat.pdfviewer.PdfRendererView
-        android:id="@+id/pdfView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout3"
-        app:pdfView_divider="@drawable/pdf_viewer_divider"
-        app:pdfView_showDivider="false" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listaDeComentarios"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/constraintLayout3"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintBottom_toTopOf="@id/teclado"/>
 
     <EditText
-        android:id="@+id/Teclado"
+        android:id="@+id/teclado"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="200dp"
+        android:layout_height="60dp"
         android:background="@color/material_dynamic_neutral100"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
+        android:textColor="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/listaDeComentarios"
-        app:layout_constraintVertical_bias="0.5" />
+        />
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:background="@android:color/holo_purple"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <ImageView
-        android:id="@+id/Devolver_2"
+        android:id="@+id/devolver1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/arrow_back"
@@ -75,9 +69,9 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:text="apunte"
+        android:text="Comentario"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
