@@ -44,20 +44,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-//ddfdfd
         permisoAlmacenamiento()
     }
 
     fun abrirApuntesFragment() {
         val apuntesFragment: ApuntesFragment = ApuntesFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, apuntesFragment)
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, apuntesFragment)
             .commitAllowingStateLoss()
 
     }
 
     fun abrirTerminosCondicionesFragment() {
         val terminosCondicionesFragment: TerminosCondicionesFragment = TerminosCondicionesFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, terminosCondicionesFragment)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragmentContainerView, terminosCondicionesFragment)
             .commitAllowingStateLoss()
     }
 
@@ -70,41 +70,35 @@ class MainActivity : AppCompatActivity() {
 
     fun abrirPeriodoFragment() {
         val periodoFragment: PeriodoFragment = PeriodoFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, periodoFragment)
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, periodoFragment)
             .commitAllowingStateLoss()
 
     }
-
-    fun abrirAvatarsFragment() {
-        val avatarsFragment: AvatarsFragment = AvatarsFragment()
-        avatarsFragment.show(supportFragmentManager, "AvatarsFragment")
-    }
-
 
     fun abrirPerfilDeUsuarioFragment() {
         val perfilDeUsuarioFragment: PerfilDeUsuarioFragment = PerfilDeUsuarioFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, perfilDeUsuarioFragment)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragmentContainerView, perfilDeUsuarioFragment)
             .commitAllowingStateLoss()
-
-
     }
 
     fun abrirConfiguracionFragment() {
         val configuracionFragment: ConfiguracionFragment = ConfiguracionFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, configuracionFragment)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragmentContainerView, configuracionFragment)
             .commitAllowingStateLoss()
     }
 
     fun abrirThemeFragment() {
         val themeFragment: ThemeFragment = ThemeFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, themeFragment)
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, themeFragment)
             .commitAllowingStateLoss()
     }
 
 
     fun abrirNotiFragment() {
         val notiFragment: NotiFragment = NotiFragment()
-        supportFragmentManager.beginTransaction().add(R.id.root_layout, notiFragment)
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, notiFragment)
             .commitAllowingStateLoss()
     }
 
@@ -125,8 +119,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
-
 
 const val READ_MEDIA_AUDIO_PERMISSION_REQUEST_CODE = 2001
 const val READ_EXTERNAL_STORAGE_IMAGES_PERMISSION_REQUEST_CODE = 207

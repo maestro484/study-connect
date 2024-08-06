@@ -9,7 +9,7 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@android:color/holo_purple"
@@ -32,8 +32,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PERÍODO"
-            android:textColor="@color/purple1"
-            android:textColorHint="@color/purple1"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
