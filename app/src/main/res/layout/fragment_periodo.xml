@@ -15,6 +15,7 @@
         android:background="@android:color/holo_purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
        >
 
         <ImageView
@@ -80,7 +81,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/periodo1" />
+        app:layout_constraintTop_toBottomOf="@id/periodo1"
+
+        />
 
     <Button
         android:id="@+id/periodo3"
