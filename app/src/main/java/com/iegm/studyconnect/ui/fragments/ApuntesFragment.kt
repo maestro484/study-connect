@@ -1,7 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,7 +38,7 @@ class ApuntesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         userList = ArrayList()
-        recy = view.findViewById(R.id.mRecycler)
+        recy = view.findViewById(R.id.listaDeMaterias)
         volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
         mMenus = view.findViewById(R.id.mMenus)

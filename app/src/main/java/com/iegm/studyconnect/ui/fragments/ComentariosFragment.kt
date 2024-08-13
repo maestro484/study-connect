@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.adapter.ComentariosAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,17 +29,18 @@ class ComentariosFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-  private  lateinit var devolver1: ImageView
-    lateinit var teclado : EditText
-    lateinit var listadecomentarios : RecyclerView
-
-
+    private lateinit var devolver1: ImageView
+    private lateinit var teclado: EditText
+    private lateinit var buttonDeEnviar: Button
+    private lateinit var listaDeComentarios: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
+
         }
 
     }
@@ -47,18 +51,26 @@ class ComentariosFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_comentarios, container, false)
-
-
-   }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-       devolver1 = view.findViewById(R.id.devolver1)
+        devolver1 = view.findViewById(R.id.devolver1)
+        buttonDeEnviar = view.findViewById(R.id.buttonDeEnviar)
+        teclado = view.findViewById(R.id.teclado)
+
+
+        val listaDeComentarios = arrayOf("juan", "vero", "felipe", "oscar")
+        val customAdapter = ComentariosAdapter(listaDeComentarios)
+
+        val recyclerView: RecyclerView = view.findViewById(R.id.listaDeMaterias)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = customAdapter
+
 
     }
-
 
 
     companion object {

@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="@id/PDF" />-->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mRecycler"
+        android:id="@+id/listaDeMaterias"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,11 +47,19 @@
         />
 
 
+    <Button
+        android:id="@+id/buttonDeEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="enviar"
+        app:layout_constraintEnd_toEndOf="@id/teclado"
+        app:layout_constraintTop_toBottomOf="@id/listaDeMaterias" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="50dp"
         android:background="@android:color/holo_purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
