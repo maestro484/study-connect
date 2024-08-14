@@ -17,10 +17,15 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.iegm.studyconnect.AuthViewModel
+import com.iegm.studyconnect.ui.NavigationItem
+import com.iegm.studyconnect.ui.theme.Purple40
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
-fun SignUpScreen() {
+fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewModel) {
 
     Column(
         modifier = Modifier
@@ -37,7 +42,12 @@ fun SignUpScreen() {
             onValueChange = { nombre = it },
             label = { Text(text = "Nombre") },
             placeholder = { Text(text = "Nombre") },
-            leadingIcon = { Icon(imageVector = Icons.Filled.Person, contentDescription = "Icono de la persona") },
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Filled.Person,
+                    contentDescription = "Icono de la persona"
+                )
+            },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
 
@@ -49,7 +59,12 @@ fun SignUpScreen() {
             onValueChange = { email = it },
             label = { Text(text = "Email") },
             placeholder = { Text(text = "Ingresa tu email") },
-            leadingIcon = { Icon(imageVector = Icons.Filled.Email, contentDescription = "Icono del correo") },
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Filled.Email,
+                    contentDescription = "Icono del correo"
+                )
+            },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
         )
 
@@ -62,7 +77,12 @@ fun SignUpScreen() {
             onValueChange = { password = it },
             label = { Text(text = "Contraseña") },
             placeholder = { Text(text = "Ingresa tu contraseña") },
-            leadingIcon = { Icon(imageVector = Icons.Filled.Lock, contentDescription = "Icono de candado") },
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Filled.Lock,
+                    contentDescription = "Icono de candado"
+                )
+            },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
             trailingIcon = {
@@ -130,6 +150,18 @@ fun SignUpScreen() {
         ) {
             Text(text = "Registrarse", color = Color.White)
         }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Text(text = "¿No tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.width(4.dp))
+        Text(
+            text = "Inicia sesión",
+            fontSize = 15.sp,
+            color = Purple40,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignUp.route) }
+        )
     }
 }
 
@@ -137,6 +169,6 @@ fun SignUpScreen() {
 @Composable
 fun SignUpScreenPreview() {
     StudyConnectTheme {
-        SignUpScreen()
+        SignUpScreen(rememberNavController(), authViewModel = AuthViewModel())
     }
 }

@@ -16,12 +16,12 @@ import com.rajat.pdfviewer.PdfRendererView
 
 class ApunteFragment : Fragment() {
 
-    lateinit var pdfView : PdfRendererView
-    lateinit var descrepcion : EditText
-    lateinit var atras : ImageView
-    lateinit var fileTitleTextView : TextView
+    lateinit var pdfView: PdfRendererView
+    lateinit var descrepcion: EditText
+    lateinit var atras: ImageView
+    lateinit var fileTitleTextView: TextView
 
-  //  val representante : String = ""
+    val representante: String = ""
 
     companion object {
         fun newInstance() = ApunteFragment()
@@ -49,11 +49,11 @@ class ApunteFragment : Fragment() {
         atras = view.findViewById(R.id.Atras)
         fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
 
-    /*    atras.setOnClickListener {
+        atras.setOnClickListener {
             (activity as MainActivity).abrirApuntesFragment()
-        }*/
+        }
 
-    /*    val rol : String = "representante"
+        val rol: String = "representante"
 
 
         if (rol == representante) {
@@ -66,8 +66,7 @@ class ApunteFragment : Fragment() {
             pdfView.isEnabled = false
             fileTitleTextView.isEnabled = false
 
-        }*/
-
+        }
 
 
     }
