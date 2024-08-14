@@ -74,7 +74,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.firebaseui:firebase-ui-auth:7.2.0")
-    implementation("com.onesignal:OneSignal:[5.0.0, 5.99.99]")
+    implementation( "com.onesignal:OneSignal:[5.0.0, 5.99.99]")
     // Import the BoM for the Firebase platform
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     // Add the dependency for the Realtime Database library
@@ -90,9 +90,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 // Add the dependencies for any other desired Firebase products
+
+    implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.navigation:navigation-compose:2.7.7")
-    // implementation ("com.facebook.android:facebook-android-sdk:8.x")
-//Add the dependecies for the autentication of facebook}
-    implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
+    implementation ("com.google.code.gson:gson:2.11.0")
 }
