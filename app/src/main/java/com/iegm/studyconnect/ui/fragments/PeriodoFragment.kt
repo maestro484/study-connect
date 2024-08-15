@@ -23,6 +23,7 @@ class PeriodoFragment : Fragment() {
     lateinit var periodo3: Button
     lateinit var volver1: ImageView
     lateinit var topBar: ConstraintLayout
+    private lateinit var lottie_Aaimation_view: LottieAnimationView
 
     companion object {
         fun newInstance() = PeriodoFragment()
@@ -75,17 +76,11 @@ class PeriodoFragment : Fragment() {
         volver1.setOnClickListener {
             // (activity as MainActivity).abrirHomeFragment()
         }
-
-    }
-
-    // Obtener referencias a las vistas
-    val lottieAnimationView: LottieAnimationView = view.findViewById(R.id.lottie_animation_view)
-    val periodoButton: View = view.findViewById(R.id.periodo1)
-    private fun setupButton(button: View, animationFileName: String) {
-        button.setOnClickListener {
-            lottieAnimationView.setAnimation(animationFileName)
-            lottieAnimationView.playAnimation()
+        periodo1.setOnClickListener {
+            lottie_Aaimation_view.setAnimation("animation_file_name.json")
+            lottie_Aaimation_view.playAnimation()
         }
+
     }
 
 }
