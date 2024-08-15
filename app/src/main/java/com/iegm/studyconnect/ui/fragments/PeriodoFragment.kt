@@ -60,7 +60,7 @@ class PeriodoFragment : Fragment() {
 
         topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
 
-l
+
         periodo1.setOnClickListener {
             (activity as MainActivity).abrirApuntesFragment()
 
