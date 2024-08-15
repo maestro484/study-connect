@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
@@ -33,7 +34,6 @@ class ComentariosFragment : Fragment() {
     private lateinit var teclado: EditText
     private lateinit var buttonDeEnviar: Button
     private lateinit var listaDeComentarios: RecyclerView
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,16 +64,32 @@ class ComentariosFragment : Fragment() {
         teclado = view.findViewById(R.id.teclado)
 
 
-        val listaDeComentarios = arrayOf("juan", "vero", "felipe", "oscar", "1", "2" , "3", "4", "5")
-        val customAdapter = ComentariosAdapter(listaDeComentarios)
+        val listaDeComentarios =
+            mutableListOf("juan", "vero", "felipe", "oscar", "1", "2", "3", "4", "5")
+        val customAdapter = ComentariosAdapter()
+        customAdapter.dataset = listaDeComentarios
+
 
         val recyclerView: RecyclerView = view.findViewById(R.id.listaDeMaterias)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = customAdapter
 
+        buttonDeEnviar.setOnClickListener {
+            val comentario = teclado.text.toString()
+            if (comentario.isNotEmpty()) {
+                customAdapter.dataset.add(comentario)
+                customAdapter.notifyDataSetChanged()
+
+                recyclerView.smoothScrollToPosition(customAdapter.itemCount - 1)
+            }  else{
+            Toast.makeText(requireContext(), "por favor ingresa  algun texto", Toast.LENGTH_SHORT).show()
+
+        }
+            teclado.text.clear()
 
 
-    }
+        }
+}
 
 
     companion object {
@@ -95,7 +111,6 @@ class ComentariosFragment : Fragment() {
                 }
             }
     }
-
 
 
 }

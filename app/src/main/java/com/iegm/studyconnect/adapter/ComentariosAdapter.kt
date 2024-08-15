@@ -10,8 +10,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
 
-class ComentariosAdapter(private val dataset: Array<String>) :
+class ComentariosAdapter() :
     RecyclerView.Adapter<ComentariosAdapter.ViewHolder>() {
+
+    var dataset: MutableList<String> = mutableListOf()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val TextView: TextView
@@ -38,6 +40,7 @@ class ComentariosAdapter(private val dataset: Array<String>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.TextView.text = dataset[position]
     }
+
 
 }
 
