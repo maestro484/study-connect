@@ -14,13 +14,14 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
+import com.airbnb.lottie.LottieAnimationView
 
 class PeriodoFragment : Fragment() {
 
-    lateinit var periodo1 : Button
-    lateinit var periodo2 : Button
-    lateinit var periodo3 : Button
-    lateinit var volver1 : ImageView
+    lateinit var periodo1: Button
+    lateinit var periodo2: Button
+    lateinit var periodo3: Button
+    lateinit var volver1: ImageView
     lateinit var topBar: ConstraintLayout
 
     companion object {
@@ -33,7 +34,7 @@ class PeriodoFragment : Fragment() {
 
         super.onCreate(savedInstanceState)
 
-     }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +44,7 @@ class PeriodoFragment : Fragment() {
 
 
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -71,9 +73,19 @@ class PeriodoFragment : Fragment() {
 
         }
         volver1.setOnClickListener {
-           // (activity as MainActivity).abrirHomeFragment()
+            // (activity as MainActivity).abrirHomeFragment()
         }
 
+    }
+
+    // Obtener referencias a las vistas
+    val lottieAnimationView: LottieAnimationView = view.findViewById(R.id.lottie_animation_view)
+    val periodoButton: View = view.findViewById(R.id.periodo1)
+    private fun setupButton(button: View, animationFileName: String) {
+        button.setOnClickListener {
+            lottieAnimationView.setAnimation(animationFileName)
+            lottieAnimationView.playAnimation()
+        }
     }
 
 }

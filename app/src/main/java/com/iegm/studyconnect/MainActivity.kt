@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
         permisoAlmacenamiento()
+
     }
 
     fun abrirApuntesFragment() {
@@ -75,6 +76,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     fun abrirPerfilDeUsuarioFragment() {
         val perfilDeUsuarioFragment: PerfilDeUsuarioFragment = PerfilDeUsuarioFragment()
         supportFragmentManager.beginTransaction()
@@ -94,6 +96,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, themeFragment)
             .commitAllowingStateLoss()
     }
+
 
 
     fun abrirNotiFragment() {

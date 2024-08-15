@@ -28,6 +28,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <TextView
             android:id="@+id/periodo"
             android:layout_width="wrap_content"
@@ -84,6 +85,20 @@
         app:layout_constraintTop_toBottomOf="@id/periodo1"
 
         />
+
+<LottieAnimationView
+        android:id="@+id/lottie_animation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:lottie_loop="false"
+        app:lottie_autoPlay="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/periodo1"
+       app:lottie_fileName="animation.json"
+    />
 
     <Button
         android:id="@+id/periodo3"

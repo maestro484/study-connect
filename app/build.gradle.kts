@@ -94,7 +94,9 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
     // implementation ("com.facebook.android:facebook-android-sdk:8.x")
     implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
-    implementation("com.airbnb.android:lottie:6.5.0")
+        implementation ("com.airbnb.android:lottie:5.0.3") // Usa la última versión estable
+
+
     //Implementación de la animación.
 
 
