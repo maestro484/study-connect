@@ -13,7 +13,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
+import com.iegm.studyconnect.ui.fragments.BusquedaFragment
 import com.iegm.studyconnect.ui.fragments.ComentariosFragment
+import com.iegm.studyconnect.ui.fragments.MateriaFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 
 class MainActivity : AppCompatActivity() {
@@ -88,11 +90,23 @@ fun abrirPeriodoFragment() {
             .commitAllowingStateLoss()
 
     }
+
+    fun abrirBusquedaFragment(){
+        val busquedaFragment: BusquedaFragment = BusquedaFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, busquedaFragment)
+            .commitAllowingStateLoss()
+    }
+
     /* fun abrirApunteFragment() {
    val apunteFragment: ApunteFragment = ApunteFragment()
    supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
-       .commitAllowingStateLoss() */
+       .commitAllowingStateLoss() } */
 
+    fun abrirMateriaFragment(){
+        val materiaFragment: MateriaFragment = MateriaFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, materiaFragment)
+            .commitAllowingStateLoss()
+    }
     private fun permisoAlmacenamiento() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             ActivityCompat.requestPermissions(

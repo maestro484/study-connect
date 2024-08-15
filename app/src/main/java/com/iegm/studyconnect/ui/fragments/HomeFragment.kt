@@ -50,17 +50,17 @@ class HomeFragment : Fragment() {
         /*  ajuste.setOnClickListener {
               (activity as MainActivity).abrirConfiguracionFragment()
           }
-
+*/
           buscador.setOnClickListener {
               (activity as MainActivity).abrirBusquedaFragment()
           }
 
           listaNueva.setOnClickListener {
-              (activity as MainActivity).abrirMateriasFragment()
+              (activity as MainActivity).abrirMateriaFragment()
           }
 
 
-          val grupo : Grado = Grado()*/
+       //   val grupo : Grado = Grado()
     }
 
 }
