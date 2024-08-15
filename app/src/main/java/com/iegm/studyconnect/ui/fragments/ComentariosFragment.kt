@@ -34,6 +34,8 @@ class ComentariosFragment : Fragment() {
     private lateinit var buttonDeEnviar: Button
     private lateinit var listaDeComentarios: RecyclerView
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -62,12 +64,13 @@ class ComentariosFragment : Fragment() {
         teclado = view.findViewById(R.id.teclado)
 
 
-        val listaDeComentarios = arrayOf("juan", "vero", "felipe", "oscar")
+        val listaDeComentarios = arrayOf("juan", "vero", "felipe", "oscar", "1", "2" , "3", "4", "5")
         val customAdapter = ComentariosAdapter(listaDeComentarios)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.listaDeMaterias)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = customAdapter
+
 
 
     }
@@ -92,4 +95,7 @@ class ComentariosFragment : Fragment() {
                 }
             }
     }
+
+
+
 }

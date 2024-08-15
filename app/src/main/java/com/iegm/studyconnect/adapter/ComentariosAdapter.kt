@@ -7,9 +7,6 @@ import android.view.ViewGroup
 import android.view.ViewParent
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.compose.foundation.Image
-import androidx.compose.ui.layout.Layout
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
 
