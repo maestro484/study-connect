@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ScrollView
 import android.widget.SearchView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -16,11 +15,11 @@ import com.iegm.studyconnect.R
 
 class HomeFragment : Fragment() {
 
-    lateinit var ajuste : ImageView
-    lateinit var buscador : SearchView
-    lateinit var grado : TextView
-    lateinit var listaNueva : ScrollView
-    lateinit var materia : RecyclerView
+    lateinit var ajuste: ImageView
+    lateinit var buscador: SearchView
+    lateinit var grado: TextView
+    lateinit var listaNueva: RecyclerView
+
     companion object {
         fun newInstance() = HomeFragment()
     }
@@ -47,22 +46,21 @@ class HomeFragment : Fragment() {
         buscador = view.findViewById(R.id.Buscador)
         grado = view.findViewById(R.id.textViewG)
         listaNueva = view.findViewById(R.id.ListaNueva)
-        materia = view.findViewById(R.id.Materia)
 
-      /*  ajuste.setOnClickListener {
-            (activity as MainActivity).abrirConfiguracionFragment()
-        }
+        /*  ajuste.setOnClickListener {
+              (activity as MainActivity).abrirConfiguracionFragment()
+          }
+*/
+          buscador.setOnClickListener {
+              (activity as MainActivity).abrirBusquedaFragment()
+          }
 
-        buscador.setOnClickListener {
-            (activity as MainActivity).abrirBusquedaFragment()
-        }
-
-        listaNueva.setOnClickListener {
-            (activity as MainActivity).abrirMateriasFragment()
-        }
+          listaNueva.setOnClickListener {
+              (activity as MainActivity).abrirMateriaFragment()
+          }
 
 
-        val grupo : Grado = Grado()*/
+       //   val grupo : Grado = Grado()
     }
 
 }
