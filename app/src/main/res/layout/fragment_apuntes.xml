@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@id/top_bar1">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/mRecycler"
+            android:id="@+id/listaDeMaterias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 

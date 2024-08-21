@@ -39,7 +39,7 @@ class ApuntesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         userList = ArrayList()
-        recy = view.findViewById(R.id.mRecycler)
+        recy = view.findViewById(R.id.listaDeMaterias)
         volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
         mMenus = view.findViewById(R.id.mMenus)
