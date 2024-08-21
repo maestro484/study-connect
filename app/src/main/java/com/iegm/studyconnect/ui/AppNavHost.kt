@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.iegm.studyconnect.AuthViewModel
 import com.iegm.studyconnect.ui.fragments.screens.LoginScreen
 import com.iegm.studyconnect.ui.fragments.screens.SignInScreen
 import com.iegm.studyconnect.ui.fragments.screens.SignUpScreen
@@ -13,7 +14,8 @@ import com.iegm.studyconnect.ui.fragments.screens.SignUpScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navHostController: NavHostController,
-    startDestination: String
+    startDestination: String,
+    authViewModel: AuthViewModel
 ) {
     NavHost(
         modifier = modifier,
@@ -22,13 +24,14 @@ fun AppNavHost(
     ) {
 
         composable(NavigationItem.Login.route) {
-            LoginScreen(navHostController)
+            LoginScreen(navHostController, authViewModel)
         }
         composable(NavigationItem.SignIn.route) {
-            SignInScreen()
+            SignInScreen(navHostController, authViewModel)
         }
         composable(NavigationItem.SignUp.route) {
-            SignUpScreen()
+            SignUpScreen(navHostController, authViewModel)
         }
+
     }
 }
