@@ -18,9 +18,11 @@ class ComentariosAdapter() :
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val TextView: TextView
         val ImageView: ImageView
+        val TextView2: TextView
 
         init {
-            TextView = view.findViewById(R.id.textView11)
+            TextView = view.findViewById(R.id.textView12)
+            TextView2 = view.findViewById(R.id.textView11)
             ImageView = view.findViewById(R.id.imageView)
         }
     }
