@@ -14,7 +14,9 @@ import androidx.navigation.compose.rememberNavController
 import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
+import com.iegm.studyconnect.ui.fragments.BusquedaFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
+import com.iegm.studyconnect.ui.fragments.MateriaFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 import com.iegm.studyconnect.ui.fragments.TerminosCondicionesFragment
@@ -119,6 +121,17 @@ class MainActivity : AppCompatActivity() {
                 READ_EXTERNAL_STORAGE_IMAGES_PERMISSION_REQUEST_CODE
             )
         }
+    }
+    fun abrirBusquedaFragment() {
+        val busquedaFragment : BusquedaFragment = BusquedaFragment()
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, busquedaFragment)
+            .commitAllowingStateLoss()
+    }
+
+    fun abrirMateriaFragment() {
+        val abrirMateriaFragment : MateriaFragment = MateriaFragment()
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, abrirMateriaFragment)
+            .commitAllowingStateLoss()
     }
 
 }
