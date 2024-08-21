@@ -1,11 +1,14 @@
 package com.iegm.studyconnect.ui.fragments.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
@@ -28,6 +31,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -36,17 +40,24 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.iegm.studyconnect.AuthViewModel
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.ui.NavigationItem
+import com.iegm.studyconnect.ui.theme.Purple40
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
-fun SignInScreen() {
+fun SignInScreen(navHostController: NavHostController, authViewModel: AuthViewModel) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+
         Image(
             modifier = Modifier.size(250.dp),
             painter = painterResource(id = R.drawable.login_image),
@@ -62,7 +73,7 @@ fun SignInScreen() {
         OutlinedTextField(value = email, onValueChange = {
             email = it
         }, label = {
-            Text(text = "email")
+            Text(text = "Email")
         }, placeholder = {
             Text(text = "Ingresa tu email.")
 
@@ -122,8 +133,26 @@ fun SignInScreen() {
                 }
             }
         )
-        Spacer(modifier = Modifier.height(20.dp))
 
+        Spacer(modifier = Modifier.height(20.dp))
+        Row(
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+
+        ) {
+
+
+        }
+        Text(text = "¿No tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.width(4.dp))
+        Text(
+            text = "Regístrate",
+            fontSize = 15.sp,
+            color = Purple40,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignUp.route) }
+        )
+        Spacer(modifier = Modifier.height(20.dp))
 
 
         Button(modifier = Modifier.width(250.dp),
@@ -138,6 +167,6 @@ fun SignInScreen() {
 @Composable
 fun SigninScreenPreview() {
     StudyConnectTheme {
-        SignInScreen()
+        SignInScreen(rememberNavController(), authViewModel = AuthViewModel())
     }
 }

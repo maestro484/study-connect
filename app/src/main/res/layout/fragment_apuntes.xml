@@ -11,7 +11,7 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/top_bar"
+        android:id="@+id/top_bar1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@android:color/holo_purple"
@@ -32,9 +32,7 @@
             android:id="@+id/titlle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apuntes"
-            android:textColor="@color/black"
-            android:textColorHint="@color/purple1"
+            android:text="APUNTES"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top_bar">
+        app:layout_constraintTop_toBottomOf="@id/top_bar1">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaDeMaterias"

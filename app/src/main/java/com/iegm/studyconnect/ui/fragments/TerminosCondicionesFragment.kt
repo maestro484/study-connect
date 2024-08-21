@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.graphics.Color
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,12 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
 class TerminosCondicionesFragment : Fragment() {
 
     lateinit var flecha4: ImageView
+    lateinit var topBar: ConstraintLayout
 
     companion object {
         fun newInstance() = TerminosCondicionesFragment()
@@ -22,8 +26,6 @@ class TerminosCondicionesFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
@@ -37,9 +39,13 @@ class TerminosCondicionesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         flecha4 = view.findViewById(R.id.flecha4)
+        topBar = view.findViewById(R.id.topBar)
+
+
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
 
         flecha4.setOnClickListener {
-            //(activity as MainActivity).abrirConfigurationFragment()
+            (activity as MainActivity).abrirConfiguracionFragment()
 
         }
     }

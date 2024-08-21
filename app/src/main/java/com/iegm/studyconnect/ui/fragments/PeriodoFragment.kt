@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.graphics.Color
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,15 +9,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
+import com.airbnb.lottie.LottieAnimationView
 
 class PeriodoFragment : Fragment() {
 
-    lateinit var periodo1 : Button
-    lateinit var periodo2 : Button
-    lateinit var periodo3 : Button
-    lateinit var volver1 : ImageButton
+    lateinit var periodo1: Button
+    lateinit var periodo2: Button
+    lateinit var periodo3: Button
+    lateinit var volver1: ImageView
+    lateinit var topBar: ConstraintLayout
+    private lateinit var lottie_Aaimation_view: LottieAnimationView
 
     companion object {
         fun newInstance() = PeriodoFragment()
@@ -28,7 +35,7 @@ class PeriodoFragment : Fragment() {
 
         super.onCreate(savedInstanceState)
 
-     }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +46,7 @@ class PeriodoFragment : Fragment() {
 
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -46,6 +54,11 @@ class PeriodoFragment : Fragment() {
         periodo2 = view.findViewById(R.id.periodo2)
         periodo3 = view.findViewById(R.id.periodo3)
         volver1 = view.findViewById(R.id.volver1)
+
+        topBar = view.findViewById(R.id.constraintLayout)
+
+
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
 
 
         periodo1.setOnClickListener {
@@ -61,7 +74,11 @@ class PeriodoFragment : Fragment() {
 
         }
         volver1.setOnClickListener {
-           // (activity as MainActivity).abrirHomeFragment()
+            // (activity as MainActivity).abrirHomeFragment()
+        }
+        periodo1.setOnClickListener {
+            lottie_Aaimation_view.setAnimation("animation_file_name.json")
+            lottie_Aaimation_view.playAnimation()
         }
 
     }
