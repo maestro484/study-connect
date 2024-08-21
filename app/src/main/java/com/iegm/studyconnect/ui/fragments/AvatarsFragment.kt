@@ -36,9 +36,11 @@ class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialo
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+
         top_bar2 = view.findViewById(R.id.top_bar2)
         top_bar2.setBackgroundColor(
-            Color.parseColor(AppTheme.temaElegido)
+            Color.parseColor(AppTheme.obtenerTema(requireActivity()))
         )
 
         avatarsAdapter = AvatarsAdapter(onAvatarSelected)

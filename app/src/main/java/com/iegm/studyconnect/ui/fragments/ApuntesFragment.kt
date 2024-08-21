@@ -1,20 +1,20 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.app.AlertDialog
-import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.iegm.studyconnect.MainActivity
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.view.UserAdapter
@@ -25,8 +25,9 @@ class ApuntesFragment : Fragment() {
     private lateinit var recy: RecyclerView
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
-    private lateinit var mMenus: ImageView
-    private lateinit var button_comentarios: Button
+    //private lateinit var mMenus : ImageView
+    private lateinit var topBar1: ConstraintLayout
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,12 +39,18 @@ class ApuntesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val representante: String = ""
+        val estudiante: String = ""
+
+        topBar1 = view.findViewById(R.id.top_bar1)
+        topBar1.setBackgroundColor(
+            Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+
         userList = ArrayList()
-        recy = view.findViewById(R.id.listaDeMaterias)
+        recy = view.findViewById(R.id.mRecycler)
         volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
-        mMenus = view.findViewById(R.id.mMenus)
-        button_comentarios = view.findViewById(R.id.button_comentarios)
+        //mMenus = view.findViewById(R.id.mMenus)
 
         userAdapter =
             UserAdapter(requireContext(), this, userList) //pasarlo al fragment y no adapter
@@ -61,9 +68,6 @@ class ApuntesFragment : Fragment() {
              (activity as MainActivity).abrirApunteFragment()
          } */
 
-        button_comentarios.setOnClickListener {
-            (activity as MainActivity).abriComentariosFragment()
-        }
     }
 
 
@@ -76,8 +80,6 @@ class ApuntesFragment : Fragment() {
 
         val addDialog = AlertDialog.Builder(requireContext())
 
-        val representante: String = ""
-
         addDialog.setView(v)
 
         addDialog.setPositiveButton("Ok") {
@@ -85,7 +87,7 @@ class ApuntesFragment : Fragment() {
                 dialog, _ ->
             val names = userName.text.toString()
             val number = userNo.text.toString()
-            userList.add(UserData("Name: $names", " Mobile No. : $number"))
+            userList.add(UserData("Titulo: $names", " Fecha: $number"))
             userAdapter.notifyDataSetChanged()
 
             Toast.makeText(requireContext(), "Adding User Information Succsess", Toast.LENGTH_SHORT)
@@ -101,26 +103,9 @@ class ApuntesFragment : Fragment() {
         addDialog.create()
         addDialog.show()
 
-        val rol: String = "representante"
-
-        if (rol == representante) {
-            mMenus.isEnabled = true
-            mMenus.visibility = View.VISIBLE
-
-            addsBtn.isEnabled = true
-            addsBtn.visibility = View.VISIBLE
-
-        } else {
-            mMenus.isEnabled = false
-            mMenus.visibility = View.INVISIBLE
-
-            addsBtn.isEnabled = false
-            addsBtn.visibility = View.INVISIBLE
-
-
-        }
 
     }
 
 }
+
 
