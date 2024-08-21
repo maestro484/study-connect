@@ -10,15 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.navigation.compose.rememberNavController
 import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
-import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
-import com.iegm.studyconnect.ui.fragments.NotiFragment
+import com.iegm.studyconnect.ui.fragments.ComentariosFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
-import com.iegm.studyconnect.ui.fragments.TerminosCondicionesFragment
-import com.iegm.studyconnect.ui.fragments.ThemeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,66 +40,58 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-        permisoAlmacenamiento()
 
+        permisoAlmacenamiento()
     }
 
     fun abrirApuntesFragment() {
+
         val apuntesFragment: ApuntesFragment = ApuntesFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, apuntesFragment)
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, apuntesFragment)
             .commitAllowingStateLoss()
 
-    }
-
-    fun abrirTerminosCondicionesFragment() {
-        val terminosCondicionesFragment: TerminosCondicionesFragment = TerminosCondicionesFragment()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, terminosCondicionesFragment)
-            .commitAllowingStateLoss()
     }
 
 
     /*fun abrirHomeFragment() {
+
    val homeFragment: HomeFragment = HomeFragment()
        supportFragmentManager.beginTransaction().add(R.id.root_layout, homeFragment)
            .commitAllowingStateLoss()
 } */
 
-    fun abrirPeriodoFragment() {
-        val periodoFragment: PeriodoFragment = PeriodoFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, periodoFragment)
-            .commitAllowingStateLoss()
+fun abrirPeriodoFragment() {
+   val periodoFragment: PeriodoFragment = PeriodoFragment()
+   supportFragmentManager.beginTransaction().add(R.id.root_layout, periodoFragment)
+       .commitAllowingStateLoss()
 
+}
+
+    fun abrirAvatarsFragment() {
+        val avatarsFragment: AvatarsFragment = AvatarsFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, avatarsFragment)
+            .commitAllowingStateLoss()
     }
 
 
     fun abrirPerfilDeUsuarioFragment() {
         val perfilDeUsuarioFragment: PerfilDeUsuarioFragment = PerfilDeUsuarioFragment()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, perfilDeUsuarioFragment)
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, perfilDeUsuarioFragment)
             .commitAllowingStateLoss()
+
+
     }
 
-    fun abrirConfiguracionFragment() {
-        val configuracionFragment: ConfiguracionFragment = ConfiguracionFragment()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, configuracionFragment)
+    fun abriComentariosFragment(){
+        val comentariosFragment: ComentariosFragment = ComentariosFragment()
+        supportFragmentManager.beginTransaction().add(R.id.root_layout, comentariosFragment)
             .commitAllowingStateLoss()
+
     }
-
-    fun abrirThemeFragment() {
-        val themeFragment: ThemeFragment = ThemeFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, themeFragment)
-            .commitAllowingStateLoss()
-    }
-
-
-
-    fun abrirNotiFragment() {
-        val notiFragment: NotiFragment = NotiFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, notiFragment)
-            .commitAllowingStateLoss()
-    }
+    /* fun abrirApunteFragment() {
+   val apunteFragment: ApunteFragment = ApunteFragment()
+   supportFragmentManager.beginTransaction().add(R.id.root_layout, apunteFragment)
+       .commitAllowingStateLoss() */
 
     private fun permisoAlmacenamiento() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -121,7 +109,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
 }
+
 
 const val READ_MEDIA_AUDIO_PERMISSION_REQUEST_CODE = 2001
 const val READ_EXTERNAL_STORAGE_IMAGES_PERMISSION_REQUEST_CODE = 207
