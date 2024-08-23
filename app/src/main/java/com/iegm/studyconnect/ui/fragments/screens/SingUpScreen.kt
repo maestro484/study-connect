@@ -139,6 +139,51 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        var expanded2 by remember { mutableStateOf(false) }
+        var selectGrado by remember { mutableStateOf("Seleccione su grado") }
+        val optionGrado = listOf("8", "9", "10", "11")
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable { expanded2 = true }
+                .padding(16.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = selectGrado,
+                    modifier = Modifier.padding(start = 30.dp)
+
+
+                )
+                Icon(
+                    imageVector = Icons.Filled.ArrowDropDown,
+                    contentDescription = "Ícono de selección",
+                    modifier = Modifier.padding(end = 20.dp)
+                )
+            }
+            DropdownMenu(
+                expanded = expanded2,
+                onDismissRequest = { expanded2 = false }
+            ) {
+                optionGrado.forEach { option ->
+                    DropdownMenuItem(
+                        text = { Text(text = option) },
+                        onClick = {
+                            selectGrado = option
+                            expanded2 = false
+                        }
+                    )
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(20.dp))
+
         Button(
             modifier = Modifier
                 .width(250.dp)

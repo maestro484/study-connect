@@ -19,8 +19,8 @@ data class Periodo(
     val apuntes: ArrayList<Apunte> = ArrayList()
 )
 
-
 data class Apunte(
+
     @SerializedName("apunte_id") val apunteId: Int = 0,
     val nombre: String = "",
     val descripcion: String = "",
