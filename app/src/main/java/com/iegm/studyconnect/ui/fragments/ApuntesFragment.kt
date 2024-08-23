@@ -53,7 +53,7 @@ class ApuntesFragment : Fragment() {
         addsBtn.setOnClickListener { addInfo() }
 
         volver1.setOnClickListener {
-            // (activity as MainActivity).abrirPeriodoFragment()
+            (activity as MainActivity).abrirPeriodoFragment()
         }
 
 
@@ -61,9 +61,9 @@ class ApuntesFragment : Fragment() {
              (activity as MainActivity).abrirApunteFragment()
          } */
 
-        button_comentarios.setOnClickListener {
-            (activity as MainActivity).abriComentariosFragment()
-        }
+      /*  button_comentarios.setOnClickListener {
+            (activity as MainActivity).abrirComentariosFragment()
+        } */
     }
 
 
