@@ -46,7 +46,7 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         editar_numero = view.findViewById(R.id.editar_numero)
         editar_nombre = view.findViewById(R.id.editar_nombre)
         editar_correo = view.findViewById(R.id.editar_correo)
-        topBar = view.findViewById(R.id.constraintLayout)
+        topBar = view.findViewById(R.id.topBar)
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
 
