@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
             android:foregroundTint="@color/black"
-            android:text="APUNTE"
+            android:text="Apunte"
             android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

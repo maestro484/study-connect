@@ -69,6 +69,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.firebase.storage.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -94,7 +95,8 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
     // implementation ("com.facebook.android:facebook-android-sdk:8.x")
     implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
-        implementation ("com.airbnb.android:lottie:5.0.3") // Usa la última versión estable
+    implementation("com.airbnb.android:lottie:5.0.3") // Usa la última versión estable
+    implementation("com.google.firebase: firebase-storage:20.2.1")
 
 
     //Implementación de la animación.
