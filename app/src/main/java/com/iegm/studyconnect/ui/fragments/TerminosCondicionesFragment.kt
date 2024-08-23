@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.content.Context
 import android.graphics.Color
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -42,7 +43,9 @@ class TerminosCondicionesFragment : Fragment() {
         topBar = view.findViewById(R.id.topBar)
 
 
-        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         flecha4.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()
