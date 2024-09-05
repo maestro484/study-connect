@@ -16,6 +16,8 @@ import com.google.firebase.storage.FirebaseStorage
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.rajat.pdfviewer.PdfRendererView
+import com.rajat.pdfviewer.PdfViewerActivity
+import com.rajat.pdfviewer.util.saveTo
 
 class ApunteFragment : Fragment() {
 
@@ -80,6 +82,13 @@ class ApunteFragment : Fragment() {
 
                 uploadTask.addOnSuccessListener {
                     // Manejar éxito
+                    PdfViewerActivity.launchPdfFromPath(
+                        context = requireContext(),
+                        path = "your_file_path_or_uri_here",
+                        pdfTitle = "Title",
+                        saveTo = saveTo.ASK_EVERYTIME,
+                        fromAssets = false
+                    )
                 }.addOnFailureListener {
                     // Manejar error
                 }
