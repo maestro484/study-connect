@@ -57,13 +57,13 @@ class ApuntesFragment : Fragment() {
         }
 
 
-        /* addsBtn.setOnClickListener {
+         addsBtn.setOnClickListener {
              (activity as MainActivity).abrirApunteFragment()
-         } */
+         }
 
-      /*  button_comentarios.setOnClickListener {
+        button_comentarios.setOnClickListener {
             (activity as MainActivity).abrirComentariosFragment()
-        } */
+        }
     }
 
 

@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="PERFIL DE USUARIO"
+            android:text="Perfil de usuario"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -63,13 +63,13 @@
         android:id="@+id/editar_numero"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="1dp"
         android:ems="10"
+        android:inputType="number"
         android:text="Editar número"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editar_nombre"
-        android:inputType="number"/>
+        app:layout_constraintTop_toBottomOf="@id/editar_nombre" />
 
     <EditText
         android:id="@+id/editar_nombre"
@@ -112,16 +112,15 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="153dp"
         android:ems="10"
         android:inputType="textEmailAddress"
+        android:text="Editar correo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editar_numero"
-        android:text="Editar correo"
-        />
+        app:layout_constraintTop_toBottomOf="@id/editar_numero" />
 
     <Button
         android:id="@+id/cerrar_sesion"
@@ -131,8 +130,6 @@
         android:background="@drawable/shape_background"
         android:padding="15dp"
         android:text="CERRAR SESIÓN"
-        android:textColor="@color/purple1"
-        android:textColorHint="@color/purple1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editar_correo" />

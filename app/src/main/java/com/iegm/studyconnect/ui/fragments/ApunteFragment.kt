@@ -41,8 +41,8 @@ class ApunteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        pdfView = view.findViewById(R.id.pdfView)
-        descripcion = view.findViewById(R.id.Descripción)
+        pdfView = view.findViewById(R.id.pdfView1)
+        descripcion = view.findViewById(R.id.Descripcion)
         atras = view.findViewById(R.id.Atras)
         fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
 

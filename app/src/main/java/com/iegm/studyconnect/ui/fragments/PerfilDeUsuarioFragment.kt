@@ -64,6 +64,11 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
             avatarsFragment?.show(requireActivity().supportFragmentManager, "AvatarsFragment")
         }
 
+        regresar.setOnClickListener {
+            (activity as MainActivity).abrirHomeFragment()
+        }
+
+
     }
 
     override fun onAvatarClick(avatar: Int) {
