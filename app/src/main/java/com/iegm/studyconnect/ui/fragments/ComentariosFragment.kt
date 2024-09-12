@@ -50,6 +50,7 @@ class ComentariosFragment : Fragment() {
 
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -66,6 +67,7 @@ class ComentariosFragment : Fragment() {
         buttonDeEnviar = view.findViewById(R.id.buttonDeEnviar)
         teclado = view.findViewById(R.id.teclado)
 
+         avatars
 
         val listaDeComentarios =
             mutableListOf("juan", "vero", "felipe", "oscar", "1", "2", "3", "4", "5")
