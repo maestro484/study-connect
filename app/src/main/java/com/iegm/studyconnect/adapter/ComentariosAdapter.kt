@@ -9,11 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.model.Comentario
 
 class ComentariosAdapter() :
     RecyclerView.Adapter<ComentariosAdapter.ViewHolder>() {
 
-    var dataset: MutableList<String> = mutableListOf()
+    var dataset: MutableList<Comentario> = mutableListOf()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val TextView: TextView
@@ -38,7 +39,8 @@ class ComentariosAdapter() :
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.TextView.text = dataset[position]
+        val comentario = dataset[position]
+        holder.TextView.text = comentario.descripcion
     }
 
 

@@ -1,19 +1,23 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.ComentariosAdapter
+import com.iegm.studyconnect.model.Comentario
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,8 +45,6 @@ class ComentariosFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-
-
         }
 
     }
@@ -67,29 +69,53 @@ class ComentariosFragment : Fragment() {
         val listaDeComentarios =
             mutableListOf("juan", "vero", "felipe", "oscar", "1", "2", "3", "4", "5")
         val customAdapter = ComentariosAdapter()
-        customAdapter.dataset = listaDeComentarios
+       // customAdapter.dataset = listaDeComentarios
 
 
         val recyclerView: RecyclerView = view.findViewById(R.id.listaDeMaterias)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = customAdapter
 
+        val database = FirebaseDatabase.getInstance().reference
+
+
         buttonDeEnviar.setOnClickListener {
             val comentario = teclado.text.toString()
             if (comentario.isNotEmpty()) {
-                customAdapter.dataset.add(comentario)
-                customAdapter.notifyDataSetChanged()
+                /*customAdapter.dataset.add(comentario)
+                customAdapter.notifyDataSetChanged()*/
 
-                recyclerView.smoothScrollToPosition(customAdapter.itemCount - 1)
-            }  else{
-            Toast.makeText(requireContext(), "por favor ingresa  algun texto", Toast.LENGTH_SHORT).show()
+                //recyclerView.smoothScrollToPosition(customAdapter.itemCount - 1)
 
-        }
+                val message = Comentario("Oscar", 8, comentario)
+                database.child("comentarios").push().setValue(message)
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "por favor ingresa  algun texto",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            }
             teclado.text.clear()
-
-
         }
-}
+
+        val messagesReference = database.child("comentarios")
+        messagesReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val messages =
+                    dataSnapshot.children.mapNotNull { it.getValue(Comentario::class.java) }
+                // Update the UI with the new list of messages.
+
+                customAdapter.dataset = messages.toMutableList()
+                customAdapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle errors here.
+            }
+        })
+    }
 
 
     companion object {
