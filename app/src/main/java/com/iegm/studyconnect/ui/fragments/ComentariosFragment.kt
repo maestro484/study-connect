@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -68,6 +69,7 @@ class ComentariosFragment : Fragment() {
 
         val listaDeComentarios =
             mutableListOf("juan", "vero", "felipe", "oscar", "1", "2", "3", "4", "5")
+
         val customAdapter = ComentariosAdapter()
        // customAdapter.dataset = listaDeComentarios
 
@@ -87,8 +89,9 @@ class ComentariosFragment : Fragment() {
 
                 //recyclerView.smoothScrollToPosition(customAdapter.itemCount - 1)
 
-                val message = Comentario("Oscar", 8, comentario)
+                val message = Comentario("Oscar", 6, comentario)
                 database.child("comentarios").push().setValue(message)
+
             } else {
                 Toast.makeText(
                     requireContext(),
