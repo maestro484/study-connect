@@ -52,7 +52,7 @@ class NotiFragment : Fragment() {
         flecha3 = view.findViewById(R.id.flecha3)
         seguidos = view.findViewById(R.id.seguidos)
         menciones = view.findViewById(R.id.menciones)
-        top_bar4 = view.findViewById(R.id.top_bar)
+        top_bar4 = view.findViewById(R.id.topBar3)
 
         top_bar4.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 

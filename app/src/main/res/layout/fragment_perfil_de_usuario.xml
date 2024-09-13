@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topBar"
+        android:id="@+id/topBar3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@android:color/holo_purple"
@@ -50,7 +50,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topBar" />
+        app:layout_constraintTop_toBottomOf="@id/topBar3" />
 
     <EditText
         android:id="@+id/editar_numero"
@@ -99,7 +99,7 @@
         app:layout_constraintEnd_toStartOf="@id/editar_nombre"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBar" />
+        app:layout_constraintTop_toBottomOf="@+id/topBar3" />
 
     <EditText
         android:id="@+id/editar_correo"

@@ -24,25 +24,43 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <SearchView
-            android:id="@+id/Buscador"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="360dp"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="25dp"
+            android:layout_height="wrap_content"
             android:background="@color/cardview_light_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/perfil"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ajuste" />
+            app:layout_constraintTop_toBottomOf="@id/ajuste">
+
+            <SearchView
+                android:id="@+id/Buscador"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_light_background"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/perfil"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/person_24dp_fill0_wght400_grad0_opsz24__1_"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/ajuste" />
 
         <TextView
             android:id="@+id/textViewG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GRADO"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Buscador" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

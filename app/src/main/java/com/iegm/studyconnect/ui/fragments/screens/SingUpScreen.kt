@@ -1,7 +1,10 @@
 package com.iegm.studyconnect.ui.fragments.screens
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.layout.getDefaultLazyLayoutKey
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -20,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.iegm.studyconnect.AuthViewModel
+import com.iegm.studyconnect.R
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
@@ -51,7 +55,11 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        val representantes = listOf("valen.3010066@gmail.com", "perenguesestiven@gmail.com",
+            "juanmg777vg@gmail.com")
+
         var email by remember { mutableStateOf("") }
+        var esRepresentante by remember { mutableStateOf(false) }
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
@@ -65,6 +73,11 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
         )
+
+        esRepresentante = representantes.contains(email)
+
+        val sharedPref = representantes.getSharedPreferences(
+            getString(R.string.preference_file_key), Context.MODE_PRIVATE)
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -93,49 +106,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
             }
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
 
-        var expanded by remember { mutableStateOf(false) }
-        var selectStatus by remember { mutableStateOf("Seleccione su status") }
-        val optionStatus = listOf("Representante", "Estudiante")
-
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { expanded = true }
-                .padding(16.dp)
-        ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween, // Align items with space between
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(
-                    text = selectStatus,
-                    modifier = Modifier.padding(start = 30.dp)
-
-                )
-                Icon(
-                    imageVector = Icons.Filled.ArrowDropDown,
-                    contentDescription = "Ícono de selección",
-                    modifier = Modifier.padding(end = 20.dp)
-                )
-            }
-            DropdownMenu(
-                expanded = expanded,
-                onDismissRequest = { expanded = false }
-            ) {
-                optionStatus.forEach { option ->
-                    DropdownMenuItem(
-                        text = { Text(text = option) },
-                        onClick = {
-                            selectStatus = option
-                            expanded = false
-                        }
-                    )
-                }
-            }
-        }
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -195,6 +166,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         }
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable

@@ -14,7 +14,7 @@
         android:text="Cerrar Sesión"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBar" />
+        app:layout_constraintTop_toBottomOf="@+id/topBar3" />
 
     <Button
         android:id="@+id/theme"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topBar"
+        android:id="@+id/topBar3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="440dp"

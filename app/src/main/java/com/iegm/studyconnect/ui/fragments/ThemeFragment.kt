@@ -41,7 +41,7 @@ class ThemeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        topBar = view.findViewById(R.id.topBar)
+        topBar = view.findViewById(R.id.topBar3)
         predeterminado = view.findViewById(R.id.predeterminado)
         azul = view.findViewById(R.id.azul)
         oscuro = view.findViewById(R.id.oscuro)

@@ -1,7 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.graphics.Color
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,7 +31,7 @@ class ConfiguracionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toBar = view.findViewById(R.id.topBar)
+        toBar = view.findViewById(R.id.topBar3)
 
        toBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 

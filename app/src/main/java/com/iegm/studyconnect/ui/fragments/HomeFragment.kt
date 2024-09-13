@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
@@ -28,8 +29,11 @@ class HomeFragment : Fragment() {
     lateinit var buscador: SearchView
     lateinit var gradoG: TextView
     lateinit var listaDeMaterias: RecyclerView
+    lateinit var perfil: ImageView
     private lateinit var materiasAdapter: MateriasAdapter
     var grado: Int = 0
+
+    var busqueda = ""
 
     companion object {
         fun newInstance() = HomeFragment()
@@ -63,10 +67,13 @@ class HomeFragment : Fragment() {
         buscador = view.findViewById(R.id.Buscador)
         gradoG = view.findViewById(R.id.textViewG)
         listaDeMaterias = view.findViewById(R.id.ListaNueva)
+        perfil = view.findViewById(R.id.perfil)
         materiasAdapter = MateriasAdapter()
 
-
-        val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
+        listaDeMaterias.apply {
+            layoutManager = GridLayoutManager(requireContext(), 3)
+            adapter = materiasAdapter
+        }
 
         ajuste.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()
@@ -74,12 +81,13 @@ class HomeFragment : Fragment() {
 
         buscador.setOnClickListener {
             (activity as MainActivity).abrirBusquedaFragment()
+
         }
 
-        listaDeMaterias.apply {
-            layoutManager = linearLayoutManager
-            adapter = materiasAdapter
+        perfil.setOnClickListener {
+            (activity as MainActivity).abrirPerfilDeUsuarioFragment()
         }
+
 
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
         var jsonObject = JSONObject(jsonString)

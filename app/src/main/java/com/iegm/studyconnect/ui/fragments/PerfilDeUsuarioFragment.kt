@@ -11,9 +11,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.iegm.studyconnect.AppTheme
-import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import de.hdodenhof.circleimageview.CircleImageView
 
@@ -46,7 +44,7 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         editar_numero = view.findViewById(R.id.editar_numero)
         editar_nombre = view.findViewById(R.id.editar_nombre)
         editar_correo = view.findViewById(R.id.editar_correo)
-        topBar = view.findViewById(R.id.topBar)
+        topBar = view.findViewById(R.id.topBar3)
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
 

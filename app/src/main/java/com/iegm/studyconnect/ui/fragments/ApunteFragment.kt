@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
@@ -17,11 +17,14 @@ import com.rajat.pdfviewer.PdfRendererView
 class ApunteFragment : Fragment() {
 
     lateinit var pdfView: PdfRendererView
-    lateinit var descrepcion: EditText
+    lateinit var descripcion: EditText
     lateinit var atras: ImageView
     lateinit var fileTitleTextView: TextView
+    lateinit var imageView: ImageView
+    lateinit var Relative: RelativeLayout
 
     val representante: String = ""
+
 
     companion object {
         fun newInstance() = ApunteFragment()
@@ -45,9 +48,12 @@ class ApunteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         pdfView = view.findViewById(R.id.pdfView)
-        descrepcion = view.findViewById(R.id.Descripción)
+        descripcion = view.findViewById(R.id.descripcion)
         atras = view.findViewById(R.id.Atras)
         fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
+        imageView = view.findViewById(R.id.imageView1)
+        Relative = view.findViewById(R.id.relative)
+
 
         atras.setOnClickListener {
             (activity as MainActivity).abrirApuntesFragment()
@@ -56,17 +62,17 @@ class ApunteFragment : Fragment() {
         val rol: String = "representante"
 
 
-        if (rol == representante) {
-            descrepcion.isEnabled = true
+        /*if (rol == representante) {
+            descripcion.isEnabled = true
             pdfView.isEnabled = true
             fileTitleTextView.isEnabled = true
 
         } else {
-            descrepcion.isEnabled = false
+            descripcion.isEnabled = false
             pdfView.isEnabled = false
             fileTitleTextView.isEnabled = false
 
-        }
+        }*/
 
 
     }

@@ -17,7 +17,6 @@ import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 import com.iegm.studyconnect.ui.fragments.BusquedaFragment
 import com.iegm.studyconnect.ui.fragments.ComentariosFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
-import com.iegm.studyconnect.ui.fragments.MateriaFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 import com.iegm.studyconnect.ui.fragments.TerminosCondicionesFragment
@@ -127,13 +126,10 @@ class MainActivity : AppCompatActivity() {
         val busquedaFragment : BusquedaFragment = BusquedaFragment()
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, busquedaFragment)
             .commitAllowingStateLoss()
+
+
     }
 
-    fun abrirMateriaFragment() {
-        val abrirMateriaFragment : MateriaFragment = MateriaFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, abrirMateriaFragment)
-            .commitAllowingStateLoss()
-    }
 
     fun abrirApunteFragment() {
         val abrirApunteFragment : ApuntesFragment = ApuntesFragment()

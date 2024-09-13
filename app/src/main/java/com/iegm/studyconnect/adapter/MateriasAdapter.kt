@@ -14,7 +14,7 @@ class MateriasAdapter: RecyclerView.Adapter<MateriasAdapter.MateriaViewModel>() 
 
    class MateriaViewModel(itemView: View): RecyclerView.ViewHolder(itemView)
    {                                                       //duda
-       val materiaBtn: Button = itemView.findViewById(R.id.button3)
+       val materiaBtn: Button = itemView.findViewById(R.id.button2)
    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):MateriaViewModel{
