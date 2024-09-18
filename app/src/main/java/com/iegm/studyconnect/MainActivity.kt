@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         val periodoFragment: PeriodoFragment = PeriodoFragment()
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, periodoFragment)
             .commitAllowingStateLoss()
-
+    //
     }
 
 
