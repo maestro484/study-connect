@@ -52,7 +52,10 @@ class ConfiguracionFragment : Fragment() {
 
         }
 
-        /*flecha1.setOnClickListener*/
+        flecha1.setOnClickListener {
+            (activity as MainActivity).abrirHomeFragment()
+
+        }
 
         terminos_condiciones.setOnClickListener {
             (activity as MainActivity).abrirTerminosCondicionesFragment()

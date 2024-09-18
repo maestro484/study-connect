@@ -95,6 +95,7 @@ dependencies {
     // implementation ("com.facebook.android:facebook-android-sdk:8.x")
     implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
         implementation ("com.airbnb.android:lottie:5.0.3") // Usa la última versión estable
+        implementation ("com.google.code.gson:gson:2.11.0")
 
 
     //Implementación de la animación.

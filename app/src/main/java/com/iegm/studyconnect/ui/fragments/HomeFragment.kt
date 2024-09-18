@@ -47,20 +47,20 @@ class HomeFragment : Fragment() {
         grado = view.findViewById(R.id.textViewG)
         listaNueva = view.findViewById(R.id.ListaNueva)
 
-        /*  ajuste.setOnClickListener {
-              (activity as MainActivity).abrirConfiguracionFragment()
-          }
-*/
-          buscador.setOnClickListener {
-              (activity as MainActivity).abrirBusquedaFragment()
-          }
+        ajuste.setOnClickListener {
+            (activity as MainActivity).abrirConfiguracionFragment()
+        }
 
-          listaNueva.setOnClickListener {
-              (activity as MainActivity).abrirMateriaFragment()
-          }
+        buscador.setOnClickListener {
+            (activity as MainActivity).abrirBusquedaFragment()
+        }
+
+        listaNueva.setOnClickListener {
+            (activity as MainActivity).abrirMateriaFragment()
+        }
 
 
-       //   val grupo : Grado = Grado()
+        //   val grupo : Grado = Grado()
     }
 
 }

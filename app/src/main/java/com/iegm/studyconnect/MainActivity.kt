@@ -15,7 +15,9 @@ import com.iegm.studyconnect.ui.fragments.AvatarsFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 import com.iegm.studyconnect.ui.fragments.BusquedaFragment
+import com.iegm.studyconnect.ui.fragments.ComentariosFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
+import com.iegm.studyconnect.ui.fragments.HomeFragment
 import com.iegm.studyconnect.ui.fragments.MateriaFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     fun abrirApuntesFragment() {
         val apuntesFragment: ApuntesFragment = ApuntesFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, apuntesFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, apuntesFragment)
             .commitAllowingStateLoss()
 
     }
@@ -60,50 +62,54 @@ class MainActivity : AppCompatActivity() {
     fun abrirTerminosCondicionesFragment() {
         val terminosCondicionesFragment: TerminosCondicionesFragment = TerminosCondicionesFragment()
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, terminosCondicionesFragment)
+            .replace(R.id.fragmentContainerView, terminosCondicionesFragment)
             .commitAllowingStateLoss()
     }
 
-
-    /*fun abrirHomeFragment() {
-   val homeFragment: HomeFragment = HomeFragment()
-       supportFragmentManager.beginTransaction().add(R.id.root_layout, homeFragment)
-           .commitAllowingStateLoss()
-} */
+    fun abrirHomeFragment() {
+        val homeFragment: HomeFragment = HomeFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainerView, homeFragment)
+            .commitAllowingStateLoss()
+    }
 
     fun abrirPeriodoFragment() {
         val periodoFragment: PeriodoFragment = PeriodoFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, periodoFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, periodoFragment)
             .commitAllowingStateLoss()
 
     }
-
 
     fun abrirPerfilDeUsuarioFragment() {
         val perfilDeUsuarioFragment: PerfilDeUsuarioFragment = PerfilDeUsuarioFragment()
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, perfilDeUsuarioFragment)
+            .replace(R.id.fragmentContainerView, perfilDeUsuarioFragment)
             .commitAllowingStateLoss()
     }
 
     fun abrirConfiguracionFragment() {
         val configuracionFragment: ConfiguracionFragment = ConfiguracionFragment()
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, configuracionFragment)
+            .replace(R.id.fragmentContainerView, configuracionFragment)
             .commitAllowingStateLoss()
     }
 
     fun abrirThemeFragment() {
         val themeFragment: ThemeFragment = ThemeFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, themeFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, themeFragment)
             .commitAllowingStateLoss()
     }
 
 
+    fun abrirComentariosFragment() {
+        val comentariosFragment: ComentariosFragment = ComentariosFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, comentariosFragment)
+            .commitAllowingStateLoss()
+    }
 
     fun abrirNotiFragment() {
         val notiFragment: NotiFragment = NotiFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, notiFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, notiFragment)
             .commitAllowingStateLoss()
     }
 
@@ -124,13 +130,13 @@ class MainActivity : AppCompatActivity() {
     }
     fun abrirBusquedaFragment() {
         val busquedaFragment : BusquedaFragment = BusquedaFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, busquedaFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, busquedaFragment)
             .commitAllowingStateLoss()
     }
 
     fun abrirMateriaFragment() {
         val abrirMateriaFragment : MateriaFragment = MateriaFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, abrirMateriaFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, abrirMateriaFragment)
             .commitAllowingStateLoss()
     }
 
