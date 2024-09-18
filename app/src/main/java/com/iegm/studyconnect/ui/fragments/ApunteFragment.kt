@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.content.Context
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -22,9 +23,6 @@ class ApunteFragment : Fragment() {
     lateinit var fileTitleTextView: TextView
     lateinit var imageView: ImageView
     lateinit var Relative: RelativeLayout
-
-    val representante: String = ""
-
 
     companion object {
         fun newInstance() = ApunteFragment()
@@ -59,10 +57,15 @@ class ApunteFragment : Fragment() {
             (activity as MainActivity).abrirApuntesFragment()
         }
 
-        val rol: String = "representante"
+        val sharedPref = requireActivity().getSharedPreferences(
+            getString(R.string.app_name), Context.MODE_PRIVATE)
 
 
-        /*if (rol == representante) {
+        val representante = sharedPref.getBoolean("REPRESENTANTE", false)
+
+
+
+        if (representante) {
             descripcion.isEnabled = true
             pdfView.isEnabled = true
             fileTitleTextView.isEnabled = true
@@ -72,7 +75,7 @@ class ApunteFragment : Fragment() {
             pdfView.isEnabled = false
             fileTitleTextView.isEnabled = false
 
-        }*/
+        }
 
 
     }

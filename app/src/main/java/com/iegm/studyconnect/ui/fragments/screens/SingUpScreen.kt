@@ -27,7 +27,7 @@ import com.iegm.studyconnect.R
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
-fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewModel) {
+fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewModel, sharedPreferences: SharedPreferences?) {
 
     Column(
         modifier = Modifier
@@ -39,15 +39,13 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         Text(text = "Regístrate", fontSize = 35.sp, fontWeight = FontWeight.Bold)
 
         var nombre by remember { mutableStateOf("") }
-        OutlinedTextField(
-            value = nombre,
+        OutlinedTextField(value = nombre,
             onValueChange = { nombre = it },
             label = { Text(text = "Nombre") },
             placeholder = { Text(text = "Nombre") },
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Filled.Person,
-                    contentDescription = "Icono de la persona"
+                    imageVector = Icons.Filled.Person, contentDescription = "Icono de la persona"
                 )
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
@@ -55,20 +53,20 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        val representantes = listOf("valen.3010066@gmail.com", "perenguesestiven@gmail.com",
-            "juanmg777vg@gmail.com")
+        val representantes = listOf(
+            "valen.3010066@gmail.com", "perenguesestiven@gmail.com", "juanmg777vg@gmail.com"
+        )
+
 
         var email by remember { mutableStateOf("") }
         var esRepresentante by remember { mutableStateOf(false) }
-        OutlinedTextField(
-            value = email,
+        OutlinedTextField(value = email,
             onValueChange = { email = it },
             label = { Text(text = "Email") },
             placeholder = { Text(text = "Ingresa tu email") },
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Filled.Email,
-                    contentDescription = "Icono del correo"
+                    imageVector = Icons.Filled.Email, contentDescription = "Icono del correo"
                 )
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
@@ -76,22 +74,19 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
 
         esRepresentante = representantes.contains(email)
 
-        val sharedPref = representantes.getSharedPreferences(
-            getString(R.string.preference_file_key), Context.MODE_PRIVATE)
+        sharedPreferences?.edit()?.putBoolean("REPRESENTANTE", esRepresentante)?.apply()
 
         Spacer(modifier = Modifier.height(20.dp))
 
         var password by remember { mutableStateOf("") }
         var showPassword by remember { mutableStateOf(false) }
-        OutlinedTextField(
-            value = password,
+        OutlinedTextField(value = password,
             onValueChange = { password = it },
             label = { Text(text = "Contraseña") },
             placeholder = { Text(text = "Ingresa tu contraseña") },
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Filled.Lock,
-                    contentDescription = "Icono de candado"
+                    imageVector = Icons.Filled.Lock, contentDescription = "Icono de candado"
                 )
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
@@ -103,8 +98,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
                         contentDescription = if (showPassword) "Ocultar contraseña" else "Mostrar contraseña"
                     )
                 }
-            }
-        )
+            })
 
 
 
@@ -114,20 +108,17 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         var selectGrado by remember { mutableStateOf("Seleccione su grado") }
         val optionGrado = listOf("8", "9", "10", "11")
 
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { expanded2 = true }
-                .padding(16.dp)
-        ) {
+        Box(modifier = Modifier
+            .fillMaxWidth()
+            .clickable { expanded2 = true }
+            .padding(16.dp)) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = selectGrado,
-                    modifier = Modifier.padding(start = 30.dp)
+                    text = selectGrado, modifier = Modifier.padding(start = 30.dp)
 
 
                 )
@@ -137,31 +128,23 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
                     modifier = Modifier.padding(end = 20.dp)
                 )
             }
-            DropdownMenu(
-                expanded = expanded2,
-                onDismissRequest = { expanded2 = false }
-            ) {
+            DropdownMenu(expanded = expanded2, onDismissRequest = { expanded2 = false }) {
                 optionGrado.forEach { option ->
-                    DropdownMenuItem(
-                        text = { Text(text = option) },
-                        onClick = {
-                            selectGrado = option
-                            expanded2 = false
-                        }
-                    )
+                    DropdownMenuItem(text = { Text(text = option) }, onClick = {
+                        selectGrado = option
+                        expanded2 = false
+                    })
                 }
             }
         }
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(
-            modifier = Modifier
-                .width(250.dp)
-                .padding(top = 16.dp),
+        Button(modifier = Modifier
+            .width(250.dp)
+            .padding(top = 16.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-            onClick = { /*TODO*/ }
-        ) {
+            onClick = { /*TODO*/ }) {
             Text(text = "Registrarse", color = Color.White)
         }
     }
@@ -172,6 +155,6 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
 @Composable
 fun SignUpScreenPreview() {
     StudyConnectTheme {
-        SignUpScreen(rememberNavController(), AuthViewModel())
+        SignUpScreen(rememberNavController(), AuthViewModel(), null)
     }
 }

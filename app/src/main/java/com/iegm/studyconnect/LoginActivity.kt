@@ -1,5 +1,6 @@
 package com.iegm.studyconnect
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -23,6 +24,10 @@ class LoginActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val sharedPref = getSharedPreferences(
+            getString(R.string.app_name), Context.MODE_PRIVATE)
+
         enableEdgeToEdge()
         setContent {
             StudyConnectTheme {
@@ -31,7 +36,8 @@ class LoginActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding),
                         navHostController = rememberNavController(),
                         startDestination = NavigationItem.Login.route,
-                        authViewModel
+                        authViewModel,
+                        sharedPref
                     )
                 }
             }
