@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E7D9EA"
     android:orientation="vertical"
     tools:context=".MainActivity"
 
@@ -24,7 +23,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:src="@drawable/arrow_back_fill0_ic"
+            android:layout_marginEnd="126dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintEnd_toStartOf="@+id/titlle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,14 +40,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/mMenus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/titlle"
-            app:layout_constraintStart_toEndOf="@+id/titlle"
-            app:srcCompat="@drawable/ic_description1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -76,7 +69,7 @@
         android:text="Comentarios"
         app:layout_constraintBottom_toTopOf="@+id/scrollView1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_bar"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar1"
         app:layout_constraintVertical_bias="0.39" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

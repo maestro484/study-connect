@@ -69,6 +69,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.firebase.storage.ktx)
+    implementation(libs.firebase.database.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -76,7 +78,6 @@ dependencies {
     implementation("com.firebaseui:firebase-ui-auth:7.2.0")
     implementation("com.onesignal:OneSignal:[5.0.0, 5.99.99]")
     // Import the BoM for the Firebase platform
-    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     // Add the dependency for the Realtime Database library
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
@@ -94,10 +95,11 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
     // implementation ("com.facebook.android:facebook-android-sdk:8.x")
     implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
-        implementation ("com.airbnb.android:lottie:5.0.3") // Usa la última versión estable
-        implementation ("com.google.code.gson:gson:2.11.0")
+    implementation("com.airbnb.android:lottie:5.0.3") // Usa la última versión estable
+    implementation ("com.google.code.gson:gson:2.11.0")
 
 
+    implementation("com.google.firebase:firebase-database")
     //Implementación de la animación.
 
 
