@@ -4,16 +4,13 @@ package com.iegm.studyconnect.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewParent
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.Comentario
-import com.iegm.studyconnect.ui.fragments.AvatarProvider
 
-class ComentariosAdapter() :
-    RecyclerView.Adapter<ComentariosAdapter.ViewHolder>() {
+class ComentariosAdapter() : RecyclerView.Adapter<ComentariosAdapter.ViewHolder>() {
 
     val avatars = listOf(
         R.drawable.ardilla,
@@ -42,19 +39,20 @@ class ComentariosAdapter() :
     var dataset: MutableList<Comentario> = mutableListOf()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val TextView: TextView
-        val ImageView: ImageView
+        val nombreUsuario: TextView
+        val comentarioUsuario: TextView
+        val avatarUsuario: ImageView
 
         init {
-            TextView = view.findViewById(R.id.textView11)
-            ImageView = view.findViewById(R.id.imageView)
+            comentarioUsuario = view.findViewById(R.id.comentario_usuario)
+            avatarUsuario = view.findViewById(R.id.avatar_image)
+            nombreUsuario = view.findViewById(R.id.nombre_usuario)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
-            R.layout.item_comentarios,
-            parent, false
+            R.layout.item_comentarios, parent, false
         )
 
         return ViewHolder(view)
@@ -65,23 +63,10 @@ class ComentariosAdapter() :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val comentario = dataset[position]
-        holder.TextView.text = comentario.descripcion
-        holder.ImageView.setImageResource(avatars[comentario.avatar])
-
-        // Mostrar el avatar basado en el índice Carltooos. -1 es el valor por defecto
-        val selectedAvatarIndex = arguments?.getInt("selectedAvatarIndex", -1) ?: -1
-        if (selectedAvatarIndex in AvatarProvider.avatars.indices) {
-            val drawableRes = AvatarProvider.avatars[selectedAvatarIndex]
-            val imageView = view.findViewById<ImageView>(R.id.listaAvatars)
-            imageView.setImageResource(drawableRes)
-        } else {
-            println("Índice fuera de rango")
-        }
-
-
+        holder.comentarioUsuario.text = comentario.descripcion
+        holder.avatarUsuario.setImageResource(avatars[comentario.avatar])
+        holder.nombreUsuario.text = comentario.usuario
     }
-
-
 }
 
 
