@@ -22,14 +22,16 @@
             android:id="@+id/predeterminado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#A866CA"
+            android:background="#C0A1DB"
+            android:fontFamily="@font/roboto_mediumitalic"
             android:text="Prededeterminado por el sistema" />
 
         <RadioButton
             android:id="@+id/oscuro"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#720685"
+            android:layout_height="36dp"
+            android:background="#A15EDB"
+            android:fontFamily="@font/roboto_mediumitalic"
             android:text="Oscuro"
             android:textColor="#FFFCFC"
             android:textColorLink="#EFE2E2" />
@@ -38,14 +40,16 @@
             android:id="@+id/azul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#8190DE"
+            android:background="#B6BADB"
+            android:fontFamily="@font/roboto_mediumitalic"
             android:text="Azul" />
 
         <RadioButton
             android:id="@+id/claro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#A766C9"
+            android:background="#C0A1DB"
+            android:fontFamily="@font/roboto_mediumitalic"
             android:text="Púrpura" />
 
     </RadioGroup>
@@ -65,6 +69,7 @@
             android:id="@+id/tema_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_black"
             android:text="TEMA"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -83,7 +88,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

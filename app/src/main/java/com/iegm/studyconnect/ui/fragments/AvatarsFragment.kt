@@ -21,7 +21,7 @@ import com.iegm.studyconnect.adapter.AvatarsAdapter
 
 class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialogFragment() {
 
-    lateinit var top_bar2: ConstraintLayout
+    lateinit var topBar: ConstraintLayout
     lateinit var listaAvatars: RecyclerView
     lateinit var flecha2: ImageView
     var avatarsAdapter: AvatarsAdapter? = null
@@ -38,8 +38,8 @@ class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialo
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
 
-        top_bar2 = view.findViewById(R.id.top_bar2)
-        top_bar2.setBackgroundColor(
+        topBar = view.findViewById(R.id.topBar)
+        topBar.setBackgroundColor(
             Color.parseColor(AppTheme.obtenerTema(requireActivity()))
         )
 
