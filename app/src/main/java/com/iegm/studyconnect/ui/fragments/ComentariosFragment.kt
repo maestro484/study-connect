@@ -101,16 +101,6 @@ class ComentariosFragment : Fragment() {
             teclado.text.clear()
         }
 
-        // Mostrar el avatar basado en el índice Carltooos. -1 es el valor por defecto
-        val selectedAvatarIndex = arguments?.getInt("selectedAvatarIndex", -1) ?: -1
-        if (selectedAvatarIndex in AvatarProvider.avatars.indices) {
-            val drawableRes = AvatarProvider.avatars[selectedAvatarIndex]
-            val imageView = view.findViewById<ImageView>(R.id.listaAvatars)
-            imageView.setImageResource(drawableRes)
-        } else {
-            println("Índice fuera de rango")
-        }
-
         val messagesReference = database.child("comentarios")
         messagesReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

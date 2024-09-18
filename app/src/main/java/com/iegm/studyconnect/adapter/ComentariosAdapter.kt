@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.Comentario
+import com.iegm.studyconnect.ui.fragments.AvatarProvider
 
 class ComentariosAdapter() :
     RecyclerView.Adapter<ComentariosAdapter.ViewHolder>() {
@@ -66,6 +67,18 @@ class ComentariosAdapter() :
         val comentario = dataset[position]
         holder.TextView.text = comentario.descripcion
         holder.ImageView.setImageResource(avatars[comentario.avatar])
+
+        // Mostrar el avatar basado en el índice Carltooos. -1 es el valor por defecto
+        val selectedAvatarIndex = arguments?.getInt("selectedAvatarIndex", -1) ?: -1
+        if (selectedAvatarIndex in AvatarProvider.avatars.indices) {
+            val drawableRes = AvatarProvider.avatars[selectedAvatarIndex]
+            val imageView = view.findViewById<ImageView>(R.id.listaAvatars)
+            imageView.setImageResource(drawableRes)
+        } else {
+            println("Índice fuera de rango")
+        }
+
+
     }
 
 
