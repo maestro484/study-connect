@@ -14,6 +14,30 @@ import com.iegm.studyconnect.model.Comentario
 class ComentariosAdapter() :
     RecyclerView.Adapter<ComentariosAdapter.ViewHolder>() {
 
+    val avatars = listOf(
+        R.drawable.ardilla,
+        R.drawable.ballena,
+        R.drawable.buho,
+        R.drawable.caballo,
+        R.drawable.capibara,
+        R.drawable.chita,
+        R.drawable.cocodrilo,
+        R.drawable.delfin,
+        R.drawable.huron,
+        R.drawable.leon,
+        R.drawable.mapache,
+        R.drawable.oso_pardo,
+        R.drawable.oso_polar,
+        R.drawable.oveja,
+        R.drawable.pajaro,
+        R.drawable.puma,
+        R.drawable.serpiente,
+        R.drawable.tiburon,
+        R.drawable.tortuga,
+        R.drawable.vaca,
+        R.drawable.zorro
+    )
+
     var dataset: MutableList<Comentario> = mutableListOf()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -41,6 +65,7 @@ class ComentariosAdapter() :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val comentario = dataset[position]
         holder.TextView.text = comentario.descripcion
+        holder.ImageView.setImageResource(avatars[comentario.avatar])
     }
 
 
