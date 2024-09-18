@@ -17,10 +17,21 @@ import com.iegm.studyconnect.R
 class ConfiguracionFragment : Fragment() {
 
     lateinit var flecha1: ImageView
+    lateinit var adm_cuenta: Button
     lateinit var notificaciones: Button
     lateinit var theme: Button
     lateinit var terminos_condiciones: Button
-    lateinit var toBar: ConstraintLayout
+    lateinit var top_bar3: ConstraintLayout
+
+    companion object {
+        fun newInstance() = ConfiguracionFragment()
+    }
+
+    private val viewModel: ConfiguracionViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,15 +43,15 @@ class ConfiguracionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toBar = view.findViewById(R.id.topBar)
+        top_bar3 = view.findViewById(R.id.topBar)
 
-       toBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+        top_bar3.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
 
         flecha1 = view.findViewById(R.id.flecha1)
-        notificaciones = view.findViewById(R.id.notificaciones)
+        adm_cuenta = view.findViewById(R.id.cerrar_sesion)
+        notificaciones = view.findViewById(R.id.notificaciones_2)
         theme = view.findViewById(R.id.theme)
-        terminos_condiciones = view.findViewById(R.id.terminos_condiciones)
-
+        terminos_condiciones = view.findViewById(R.id.terminos_y_condiciones)
 
         notificaciones.setOnClickListener {
             (activity as MainActivity).abrirNotiFragment()
@@ -52,13 +63,14 @@ class ConfiguracionFragment : Fragment() {
 
         }
 
-        /*flecha1.setOnClickListener*/
+        flecha1.setOnClickListener {
+
+        }
 
         terminos_condiciones.setOnClickListener {
             (activity as MainActivity).abrirTerminosCondicionesFragment()
 
         }
-
 
     }
 

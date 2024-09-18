@@ -10,18 +10,29 @@
     <!-- TODO: Update blank fragment layout -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topBar"
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@android:color/holo_purple"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/form"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="PERFIL DE USUARIO"
+            android:text="Perfil de usuario"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,36 +41,32 @@
             android:id="@+id/regresar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:src="@drawable/arrow_back_fill0_ic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
-            tools:layout_editor_absoluteX="8dp" />
+            app:layout_constraintBottom_toBottomOf="@id/titulo"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/abrir_avt"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_account_circle"
+            app:layout_constraintEnd_toEndOf="@id/titulo"
+            app:layout_constraintStart_toStartOf="@id/titulo"
+            app:layout_constraintTop_toBottomOf="@id/titulo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/abrir_avt"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="50dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/person_add_fill0_ic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topBar" />
 
     <EditText
         android:id="@+id/editar_numero"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="1dp"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="number"
         android:text="Editar número"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editar_nombre" />
@@ -73,7 +80,7 @@
         android:inputType="text"
         android:text="Editar nombre"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/abrir_avt" />
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
 
     <ImageView
         android:id="@+id/imagen_telefono"
@@ -85,31 +92,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/editar_numero"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <ImageView
         android:id="@+id/imagen_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="312dp"
         android:layout_marginBottom="15dp"
         android:src="@drawable/person_add_fill0_ic"
         app:layout_constraintBottom_toBottomOf="@id/editar_nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/editar_nombre"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBar" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editar_correo"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="153dp"
         android:ems="10"
         android:inputType="textEmailAddress"
+        android:text="Editar correo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,12 +126,10 @@
         android:id="@+id/cerrar_sesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/shape_background"
         android:padding="15dp"
         android:text="CERRAR SESIÓN"
-        android:textColor="@color/purple1"
-        android:textColorHint="@color/purple1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editar_correo" />

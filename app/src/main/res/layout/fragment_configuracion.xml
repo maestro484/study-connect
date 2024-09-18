@@ -10,10 +10,10 @@
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="150dp"
         android:background="@android:color/holo_purple"
         android:scrollbarSize="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/notificaciones"
+        app:layout_constraintBottom_toTopOf="@+id/notificaciones_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
             android:id="@+id/ajustes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AJUSTES"
+            android:text="Ajustes"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,42 +43,55 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/notificaciones"
+        android:id="@+id/notificaciones_2"
         android:layout_width="167dp"
         android:layout_height="68dp"
+        android:layout_marginTop="200dp"
         android:background="@drawable/shape_background"
-        android:text="Notificaciones"
-        app:barrierMargin="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/theme"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:text="NOTIFICACIONES"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBar"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/theme"
-        android:layout_width="164dp"
-        android:layout_height="54dp"
-        android:layout_margin="77dp"
+        android:layout_width="167dp"
+        android:layout_height="68dp"
+        android:layout_margin="80dp"
         android:background="@drawable/shape_background"
-        android:text="Tema"
+        android:hint="Titulo"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:text="TEMA"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/notificaciones" />
+        app:layout_constraintTop_toBottomOf="@id/notificaciones_2"
+
+        />
+
 
     <Button
-        android:id="@+id/terminos_condiciones"
-        android:layout_width="165dp"
-        android:layout_height="64dp"
-        android:layout_margin="7dp"
-        android:layout_marginTop="56dp"
+        android:id="@+id/terminos_y_condiciones"
+        android:layout_width="167dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/shape_background"
-        android:backgroundTint="#494747"
-        android:text="Términos y Condiciones"
+        android:hint="Titulo"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:text="TÉRMINOS Y CONDICIONES"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/notificaciones" />
+        app:layout_constraintTop_toBottomOf="@id/theme" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

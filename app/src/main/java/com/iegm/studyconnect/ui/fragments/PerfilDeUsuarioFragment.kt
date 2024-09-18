@@ -46,22 +46,29 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         editar_numero = view.findViewById(R.id.editar_numero)
         editar_nombre = view.findViewById(R.id.editar_nombre)
         editar_correo = view.findViewById(R.id.editar_correo)
-        topBar = view.findViewById(R.id.topBar)
+        topBar = view.findViewById(R.id.constraintLayout)
 
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
 
-        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
 
-        val avatar = sharedPref?.getInt(SAVED_AVATAR_PROFILE, 0)
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, 0)
 
         if (avatar != 0) {
-            abriravt.setImageResource(avatar!!)
+            abriravt.setImageResource(avatar)
         }
+
 
         abriravt.setOnClickListener {
             avatarsFragment = AvatarsFragment(this)
             avatarsFragment?.show(requireActivity().supportFragmentManager, "AvatarsFragment")
         }
+
+        regresar.setOnClickListener {
+            (activity as MainActivity).abrirHomeFragment()
+        }
+
+
     }
 
     override fun onAvatarClick(avatar: Int) {

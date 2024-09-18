@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +24,7 @@ class NotiFragment : Fragment() {
     lateinit var flecha3: ImageView
     lateinit var seguidos: Switch
     lateinit var menciones: Switch
-    lateinit var top_bar4: ConstraintLayout
+    lateinit var topBar : ConstraintLayout
 
     companion object {
         fun newInstance() = NotiFragment()
@@ -46,15 +47,37 @@ class NotiFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        notificaciones_2 = view.findViewById(R.id.notificaciones)
+        notificaciones_2 = view.findViewById(R.id.notificaciones_2)
         recientes = view.findViewById(R.id.recientes)
         comentarios_noti = view.findViewById(R.id.comentarios_noti)
         flecha3 = view.findViewById(R.id.flecha3)
         seguidos = view.findViewById(R.id.seguidos)
         menciones = view.findViewById(R.id.menciones)
-        top_bar4 = view.findViewById(R.id.top_bar4)
+        topBar = view.findViewById(R.id.topBar)
 
-        top_bar4.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
+
+
+            fun controlarSwitchesSecundarios(estadoSwitchGeneral: Boolean) {
+                recientes.isEnabled = estadoSwitchGeneral
+                comentarios_noti.isEnabled = estadoSwitchGeneral
+                seguidos.isEnabled = estadoSwitchGeneral
+                menciones.isEnabled = estadoSwitchGeneral
+
+                if (!estadoSwitchGeneral) {
+                   recientes.isChecked = false
+                    comentarios_noti.isChecked = false
+                    seguidos.isChecked = false
+                    menciones.isChecked = false
+
+
+                    notificaciones_2.setOnCheckedChangeListener { buttonView, isChecked ->
+                        controlarSwitchesSecundarios(isChecked)
+
+                        controlarSwitchesSecundarios(notificaciones_2.isChecked)
+                }
+            }
+        }
 
 
         flecha3.setOnClickListener {
@@ -82,9 +105,6 @@ class NotiFragment : Fragment() {
         }
     }
 }
-
-
-
 
 
 

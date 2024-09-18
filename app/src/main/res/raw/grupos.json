@@ -1,3031 +1,1798 @@
 {
-    "grados": [
+  "grados": [
+    {
+      "grado": 11,
+      "materias": [
         {
-            "grado": 8,
-            "materias": [
+          "nombre": "Economía",
+          "profesor": "Prof. Juan Pérez",
+          "periodos": [
+            {
+              "period_id": 1,
+              "apuntes": [
                 {
-                    "nombre": "Matematicas",
-                    "profesor": "",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "mes": 0,
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "comentarios": [
-                        {
-                            "avatar" : 0,
-                            "nombre" : "",
-                            "comentario": ""
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Religion",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "E.D fisica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Ciencias naturales",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Artistica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Español",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Comprencion",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Sociales",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Geometía",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Etica y valores",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Ingles",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"Catedra de paz",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"Tecnologia",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                  "apunte_id": 1,
+                  "nombre": "Introducción a la Economía",
+                  "descripcion": "Notas sobre los conceptos básicos de economía.",
+                  "mes": 1,
+                  "archivos": [
+                    {
+                      "archivo_id": 1,
+                      "descripcion": "Diapositiva 1",
+                      "ubicacion": "https://example.com/archivo1.pdf"
+                    },
+                    {
+                      "archivo_id": 2,
+                      "descripcion": "Diapositiva 2",
+                      "ubicacion": "https://example.com/archivo2.pdf"
+                    }
+                  ]
                 }
-
-            ]
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Carlos López",
+              "avatar": 1,
+              "descripcion": "Excelente explicación sobre la oferta y demanda."
+            }
+          ]
         },
         {
-            "grado": 9,
-            "materias": [
+          "nombre": "Religión",
+          "profesor": "Prof. Ana Gómez",
+          "periodos": [
+            {
+              "period_id": 2,
+              "apuntes": [
                 {
-                    "nombre": "Matematicas",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Religion",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "E.D fisica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Ciencias naturales",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Artistica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Español",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Comprencion",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Sociales",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Geometía",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Etica y valores",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Ingles",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"Catedra de paz",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"Tecnologia",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                  "apunte_id": 2,
+                  "nombre": "Historia de las Religiones",
+                  "descripcion": "Resumen de las principales religiones del mundo.",
+                  "mes": 2,
+                  "archivos": [
+                    {
+                      "archivo_id": 3,
+                      "descripcion": "Resumen de Religiones",
+                      "ubicacion": "https://example.com/religion_summary.pdf"
+                    }
+                  ]
                 }
-             
-            ] 
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Lucía Martínez",
+              "avatar": 2,
+              "descripcion": "Me gustaron los ejemplos históricos dados en clase."
+            }
+          ]
         },
         {
-            "grado": 10,
-            "materias": [
+          "nombre": "E.D. Física",
+          "profesor": "Prof. Manuel Ruiz",
+          "periodos": [
+            {
+              "period_id": 3,
+              "apuntes": [
                 {
-                    "nombre": "Religion",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-
-                   
-                },
-                {
-                    "nombre": "E.D fisica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Quimica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Artistica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Español",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Comprencion",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Sociales",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Trigonometria",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Etica y valores",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Ingles",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"Fisica cuantica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"estadistica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                    
-                }, 
-                {
-                    "nombre":"economia",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"filosofia",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"Informatica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                  "apunte_id": 3,
+                  "nombre": "Ejercicios de Calentamiento",
+                  "descripcion": "Rutina de calentamiento para clase de educación física.",
+                  "mes": 3,
+                  "archivos": [
+                    {
+                      "archivo_id": 4,
+                      "descripcion": "Rutina de Calentamiento",
+                      "ubicacion": "https://example.com/calentamiento.pdf"
+                    }
+                  ]
                 }
-             
-            ] 
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Mateo Fernández",
+              "avatar": 3,
+              "descripcion": "Los ejercicios fueron muy útiles y fáciles de seguir."
+            }
+          ]
         },
         {
-            "grado": 11,
-            "materias": [
+          "nombre": "Química",
+          "profesor": "Prof. Laura Sánchez",
+          "periodos": [
+            {
+              "period_id": 4,
+              "apuntes": [
                 {
-                    "nombre": "economia",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-
-                },
-                {
-                    "nombre": "Religion",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "E.D fisica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Quimica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Artistica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Español",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Comprencion",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Sociales",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "estadistica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Etica y valores",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Ingles",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"Calculo",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"Orientacion profesional",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"filosofia",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"Fisica cuantica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "nombre":"informatica",
-                    "periodo": [
-                        {
-                            "periodo_id" : 1,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 2,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "periodo_id" : 3,
-                            "apuntes" : [
-                                {
-                                    "apunte_id" : 1,
-                                    "descripcion": "",
-                                    "archivo": [
-                                        {
-                                            "archivo_id" : 1,
-                                            "descripcion" : "",
-                                            "ubicacion" : ""
-                                        } 
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                  "apunte_id": 4,
+                  "nombre": "Reacciones Químicas",
+                  "descripcion": "Notas sobre tipos de reacciones químicas.",
+                  "mes": 4,
+                  "archivos": [
+                    {
+                      "archivo_id": 5,
+                      "descripcion": "Notas sobre Reacciones",
+                      "ubicacion": "https://example.com/reacciones.pdf"
+                    }
+                  ]
                 }
-             
-            ] 
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Sofía González",
+              "avatar": 4,
+              "descripcion": "Muy buenas explicaciones sobre las reacciones químicas."
+            }
+          ]
+        },
+        {
+          "nombre": "Artística",
+          "profesor": "Prof. Carla Rivas",
+          "periodos": [
+            {
+              "period_id": 5,
+              "apuntes": [
+                {
+                  "apunte_id": 5,
+                  "nombre": "Técnicas de Pintura",
+                  "descripcion": "Guía sobre diferentes técnicas de pintura.",
+                  "mes": 5,
+                  "archivos": [
+                    {
+                      "archivo_id": 6,
+                      "descripcion": "Guía de Pintura",
+                      "ubicacion": "https://example.com/pintura.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Gabriel Ruiz",
+              "avatar": 5,
+              "descripcion": "Las técnicas de pintura están bien explicadas y son útiles."
+            }
+          ]
+        },
+        {
+          "nombre": "Español",
+          "profesor": "Prof. Elena Moreno",
+          "periodos": [
+            {
+              "period_id": 6,
+              "apuntes": [
+                {
+                  "apunte_id": 6,
+                  "nombre": "Literatura Contemporánea",
+                  "descripcion": "Resúmenes de las obras literarias contemporáneas.",
+                  "mes": 6,
+                  "archivos": [
+                    {
+                      "archivo_id": 7,
+                      "descripcion": "Resumen de Literatura",
+                      "ubicacion": "https://example.com/literatura.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "María Pérez",
+              "avatar": 6,
+              "descripcion": "Muy útil para la preparación del examen de literatura."
+            }
+          ]
+        },
+        {
+          "nombre": "Comprensión",
+          "profesor": "Prof. Javier Morales",
+          "periodos": [
+            {
+              "period_id": 7,
+              "apuntes": [
+                {
+                  "apunte_id": 7,
+                  "nombre": "Estrategias de Comprensión Lectora",
+                  "descripcion": "Estrategias para mejorar la comprensión lectora.",
+                  "mes": 7,
+                  "archivos": [
+                    {
+                      "archivo_id": 8,
+                      "descripcion": "Estrategias de Lectura",
+                      "ubicacion": "https://example.com/comprension.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Antonio Fernández",
+              "avatar": 7,
+              "descripcion": "Las estrategias propuestas son muy efectivas."
+            }
+          ]
+        },
+        {
+          "nombre": "Sociales",
+          "profesor": "Prof. Pilar López",
+          "periodos": [
+            {
+              "period_id": 8,
+              "apuntes": [
+                {
+                  "apunte_id": 8,
+                  "nombre": "Historia de las Civilizaciones",
+                  "descripcion": "Apuntes sobre las civilizaciones antiguas.",
+                  "mes": 8,
+                  "archivos": [
+                    {
+                      "archivo_id": 9,
+                      "descripcion": "Civilizaciones Antiguas",
+                      "ubicacion": "https://example.com/civilizaciones.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Paula Jiménez",
+              "avatar": 8,
+              "descripcion": "Muy completos los apuntes sobre historia."
+            }
+          ]
+        },
+        {
+          "nombre": "Estadística",
+          "profesor": "Prof. Mario Castillo",
+          "periodos": [
+            {
+              "period_id": 9,
+              "apuntes": [
+                {
+                  "apunte_id": 9,
+                  "nombre": "Conceptos Básicos de Estadística",
+                  "descripcion": "Notas sobre conceptos básicos y fórmulas estadísticas.",
+                  "mes": 9,
+                  "archivos": [
+                    {
+                      "archivo_id": 10,
+                      "descripcion": "Conceptos Estadísticos",
+                      "ubicacion": "https://example.com/estadistica.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Laura Morales",
+              "avatar": 9,
+              "descripcion": "Los conceptos están bien explicados y son fáciles de entender."
+            }
+          ]
+        },
+        {
+          "nombre": "Ética y Valores",
+          "profesor": "Prof. Andrés Gómez",
+          "periodos": [
+            {
+              "period_id": 10,
+              "apuntes": [
+                {
+                  "apunte_id": 10,
+                  "nombre": "Fundamentos de Ética",
+                  "descripcion": "Notas sobre teorías éticas y valores fundamentales.",
+                  "mes": 10,
+                  "archivos": [
+                    {
+                      "archivo_id": 11,
+                      "descripcion": "Fundamentos de Ética",
+                      "ubicacion": "https://example.com/etica.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Fernanda Díaz",
+              "avatar": 10,
+              "descripcion": "Muy buenas explicaciones sobre ética y valores."
+            }
+          ]
+        },
+        {
+          "nombre": "Inglés",
+          "profesor": "Prof. Marta Rodríguez",
+          "periodos": [
+            {
+              "period_id": 11,
+              "apuntes": [
+                {
+                  "apunte_id": 11,
+                  "nombre": "Gramática Avanzada",
+                  "descripcion": "Notas sobre gramática inglesa avanzada.",
+                  "mes": 11,
+                  "archivos": [
+                    {
+                      "archivo_id": 12,
+                      "descripcion": "Gramática Avanzada",
+                      "ubicacion": "https://example.com/gramatica.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Jorge Martínez",
+              "avatar": 11,
+              "descripcion": "Las explicaciones gramaticales son claras y útiles."
+            }
+          ]
+        },
+        {
+          "nombre": "Cálculo",
+          "profesor": "Prof. Javier Fernández",
+          "periodos": [
+            {
+              "period_id": 12,
+              "apuntes": [
+                {
+                  "apunte_id": 12,
+                  "nombre": "Fundamentos de Cálculo",
+                  "descripcion": "Apuntes sobre derivadas e integrales.",
+                  "mes": 12,
+                  "archivos": [
+                    {
+                      "archivo_id": 13,
+                      "descripcion": "Notas de Cálculo",
+                      "ubicacion": "https://example.com/calculo.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Sandra López",
+              "avatar": 12,
+              "descripcion": "El material es muy útil para entender el cálculo."
+            }
+          ]
+        },
+        {
+          "nombre": "Orientación Profesional",
+          "profesor": "Prof. Roberto Álvarez",
+          "periodos": [
+            {
+              "period_id": 13,
+              "apuntes": [
+                {
+                  "apunte_id": 13,
+                  "nombre": "Exploración de Carreras",
+                  "descripcion": "Guía para la exploración de opciones profesionales.",
+                  "mes": 1,
+                  "archivos": [
+                    {
+                      "archivo_id": 14,
+                      "descripcion": "Guía de Carreras",
+                      "ubicacion": "https://example.com/carreras.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Daniela Rivas",
+              "avatar": 13,
+              "descripcion": "Muy útil para planificar el futuro profesional."
+            }
+          ]
+        },
+        {
+          "nombre": "Filosofía",
+          "profesor": "Prof. Pedro Gómez",
+          "periodos": [
+            {
+              "period_id": 14,
+              "apuntes": [
+                {
+                  "apunte_id": 14,
+                  "nombre": "Principales Corrientes Filosóficas",
+                  "descripcion": "Notas sobre las principales corrientes filosóficas.",
+                  "mes": 2,
+                  "archivos": [
+                    {
+                      "archivo_id": 15,
+                      "descripcion": "Corrientes Filosóficas",
+                      "ubicacion": "https://example.com/filosofia.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Mario López",
+              "avatar": 14,
+              "descripcion": "Excelente contenido sobre filosofía."
+            }
+          ]
+        },
+        {
+          "nombre": "Física Cuántica",
+          "profesor": "Prof. Ana Ruiz",
+          "periodos": [
+            {
+              "period_id": 15,
+              "apuntes": [
+                {
+                  "apunte_id": 15,
+                  "nombre": "Introducción a la Física Cuántica",
+                  "descripcion": "Notas sobre los principios básicos de la física cuántica.",
+                  "mes": 3,
+                  "archivos": [
+                    {
+                      "archivo_id": 16,
+                      "descripcion": "Principios de Física Cuántica",
+                      "ubicacion": "https://example.com/fisica_cuantica.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Elena Fernández",
+              "avatar": 15,
+              "descripcion": "Las notas ayudan mucho a entender los conceptos cuánticos."
+            }
+          ]
+        },
+        {
+          "nombre": "Informática",
+          "profesor": "Prof. Sergio Ortega",
+          "periodos": [
+            {
+              "period_id": 16,
+              "apuntes": [
+                {
+                  "apunte_id": 16,
+                  "nombre": "Programación en Python",
+                  "descripcion": "Apuntes sobre los fundamentos de programación en Python.",
+                  "mes": 4,
+                  "archivos": [
+                    {
+                      "archivo_id": 17,
+                      "descripcion": "Guía de Python",
+                      "ubicacion": "https://example.com/python.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Luis Moreno",
+              "avatar": 16,
+              "descripcion": "Muy útil para aprender programación."
+            }
+          ]
         }
-    ]
-    
+      ]
+    },
+    {
+      "grado": 10,
+      "materias": [
+        {
+          "nombre": "Religión",
+          "profesor": "Prof. Laura Gómez",
+          "periodos": [
+            {
+              "period_id": 1,
+              "apuntes": [
+                {
+                  "apunte_id": 1,
+                  "nombre": "Introducción a la Religión",
+                  "descripcion": "Notas sobre conceptos básicos de religión.",
+                  "mes": 1,
+                  "archivos": [
+                    {
+                      "archivo_id": 1,
+                      "descripcion": "Diapositivas de Introducción",
+                      "ubicacion": "https://example.com/religion_intro.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Ana Ruiz",
+              "avatar": 1,
+              "descripcion": "Muy interesante el enfoque sobre religiones comparadas."
+            }
+          ]
+        },
+        {
+          "nombre": "E.D. Física",
+          "profesor": "Prof. Daniel Martínez",
+          "periodos": [
+            {
+              "period_id": 2,
+              "apuntes": [
+                {
+                  "apunte_id": 2,
+                  "nombre": "Ejercicios de Resistencia",
+                  "descripcion": "Guía de ejercicios para mejorar la resistencia física.",
+                  "mes": 2,
+                  "archivos": [
+                    {
+                      "archivo_id": 2,
+                      "descripcion": "Plan de Ejercicios",
+                      "ubicacion": "https://example.com/ejercicios.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Carlos López",
+              "avatar": 2,
+              "descripcion": "Los ejercicios están bien estructurados y son efectivos."
+            }
+          ]
+        },
+        {
+          "nombre": "Química",
+          "profesor": "Prof. Elena Sánchez",
+          "periodos": [
+            {
+              "period_id": 3,
+              "apuntes": [
+                {
+                  "apunte_id": 3,
+                  "nombre": "Reacciones Químicas Básicas",
+                  "descripcion": "Notas sobre las reacciones químicas fundamentales.",
+                  "mes": 3,
+                  "archivos": [
+                    {
+                      "archivo_id": 3,
+                      "descripcion": "Diapositivas de Reacciones",
+                      "ubicacion": "https://example.com/quimica_reacciones.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "María Pérez",
+              "avatar": 3,
+              "descripcion": "Las diapositivas son claras y detalladas."
+            }
+          ]
+        },
+        {
+          "nombre": "Artística",
+          "profesor": "Prof. Claudia Fernández",
+          "periodos": [
+            {
+              "period_id": 4,
+              "apuntes": [
+                {
+                  "apunte_id": 4,
+                  "nombre": "Técnicas de Dibujo",
+                  "descripcion": "Guía sobre técnicas básicas de dibujo.",
+                  "mes": 4,
+                  "archivos": [
+                    {
+                      "archivo_id": 4,
+                      "descripcion": "Guía de Dibujo",
+                      "ubicacion": "https://example.com/tecnicas_dibujo.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Pedro Martínez",
+              "avatar": 4,
+              "descripcion": "Muy útil para mejorar las habilidades de dibujo."
+            }
+          ]
+        },
+        {
+          "nombre": "Español",
+          "profesor": "Prof. Isabel Gómez",
+          "periodos": [
+            {
+              "period_id": 5,
+              "apuntes": [
+                {
+                  "apunte_id": 5,
+                  "nombre": "Literatura Española",
+                  "descripcion": "Notas sobre la literatura española clásica y contemporánea.",
+                  "mes": 5,
+                  "archivos": [
+                    {
+                      "archivo_id": 5,
+                      "descripcion": "Resumen de Literatura",
+                      "ubicacion": "https://example.com/literatura_espanola.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Laura Gómez",
+              "avatar": 5,
+              "descripcion": "Excelente material para estudiar literatura."
+            }
+          ]
+        },
+        {
+          "nombre": "Comprensión",
+          "profesor": "Prof. Sergio Gómez",
+          "periodos": [
+            {
+              "period_id": 6,
+              "apuntes": [
+                {
+                  "apunte_id": 6,
+                  "nombre": "Técnicas de Comprensión Lectora",
+                  "descripcion": "Estrategias para mejorar la comprensión de textos.",
+                  "mes": 6,
+                  "archivos": [
+                    {
+                      "archivo_id": 6,
+                      "descripcion": "Guía de Comprensión",
+                      "ubicacion": "https://example.com/comprension.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Juan Pérez",
+              "avatar": 6,
+              "descripcion": "Las estrategias son útiles para mejorar la lectura."
+            }
+          ]
+        },
+        {
+          "nombre": "Sociales",
+          "profesor": "Prof. Marta López",
+          "periodos": [
+            {
+              "period_id": 7,
+              "apuntes": [
+                {
+                  "apunte_id": 7,
+                  "nombre": "Historia de América",
+                  "descripcion": "Resumen sobre la historia de América desde la colonización.",
+                  "mes": 7,
+                  "archivos": [
+                    {
+                      "archivo_id": 7,
+                      "descripcion": "Resumen Histórico",
+                      "ubicacion": "https://example.com/historia_america.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Ricardo Ruiz",
+              "avatar": 7,
+              "descripcion": "Los resúmenes son claros y bien organizados."
+            }
+          ]
+        },
+        {
+          "nombre": "Trigonometría",
+          "profesor": "Prof. Elena Morales",
+          "periodos": [
+            {
+              "period_id": 8,
+              "apuntes": [
+                {
+                  "apunte_id": 8,
+                  "nombre": "Conceptos Básicos de Trigonometría",
+                  "descripcion": "Notas sobre ángulos, funciones y aplicaciones trigonométricas.",
+                  "mes": 8,
+                  "archivos": [
+                    {
+                      "archivo_id": 8,
+                      "descripcion": "Notas de Trigonometría",
+                      "ubicacion": "https://example.com/trigonometria.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Valeria Rodríguez",
+              "avatar": 8,
+              "descripcion": "Las notas explican bien los conceptos básicos."
+            }
+          ]
+        },
+        {
+          "nombre": "Ética y Valores",
+          "profesor": "Prof. Andrés López",
+          "periodos": [
+            {
+              "period_id": 9,
+              "apuntes": [
+                {
+                  "apunte_id": 9,
+                  "nombre": "Fundamentos de Ética",
+                  "descripcion": "Notas sobre teorías éticas y su aplicación en la vida cotidiana.",
+                  "mes": 9,
+                  "archivos": [
+                    {
+                      "archivo_id": 9,
+                      "descripcion": "Guía de Ética",
+                      "ubicacion": "https://example.com/etica_valores.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Gabriel Sánchez",
+              "avatar": 9,
+              "descripcion": "Las explicaciones sobre ética son muy completas."
+            }
+          ]
+        },
+        {
+          "nombre": "Inglés",
+          "profesor": "Prof. John Smith",
+          "periodos": [
+            {
+              "period_id": 10,
+              "apuntes": [
+                {
+                  "apunte_id": 10,
+                  "nombre": "Gramática Avanzada",
+                  "descripcion": "Notas sobre temas avanzados de gramática inglesa.",
+                  "mes": 10,
+                  "archivos": [
+                    {
+                      "archivo_id": 10,
+                      "descripcion": "Guía de Gramática",
+                      "ubicacion": "https://example.com/gramatica_avanzada.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Emily Davis",
+              "avatar": 10,
+              "descripcion": "Muy útil para mejorar la gramática en inglés."
+            }
+          ]
+        },
+        {
+          "nombre": "Física Cuántica",
+          "profesor": "Prof. Laura Fernández",
+          "periodos": [
+            {
+              "period_id": 11,
+              "apuntes": [
+                {
+                  "apunte_id": 11,
+                  "nombre": "Fundamentos de Física Cuántica",
+                  "descripcion": "Introducción a los conceptos básicos de física cuántica.",
+                  "mes": 11,
+                  "archivos": [
+                    {
+                      "archivo_id": 11,
+                      "descripcion": "Notas de Física Cuántica",
+                      "ubicacion": "https://example.com/fisica_cuantica.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Samuel Pérez",
+              "avatar": 11,
+              "descripcion": "Las notas son muy completas y explicativas."
+            }
+          ]
+        },
+        {
+          "nombre": "Estadística",
+          "profesor": "Prof. Fernando Morales",
+          "periodos": [
+            {
+              "period_id": 12,
+              "apuntes": [
+                {
+                  "apunte_id": 12,
+                  "nombre": "Introducción a la Estadística",
+                  "descripcion": "Notas sobre conceptos básicos y técnicas de estadística.",
+                  "mes": 12,
+                  "archivos": [
+                    {
+                      "archivo_id": 12,
+                      "descripcion": "Guía de Estadística",
+                      "ubicacion": "https://example.com/estadistica.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Marta Ruiz",
+              "avatar": 12,
+              "descripcion": "El material es claro y bien explicado."
+            }
+          ]
+        },
+        {
+          "nombre": "Economía",
+          "profesor": "Prof. Roberto García",
+          "periodos": [
+            {
+              "period_id": 13,
+              "apuntes": [
+                {
+                  "apunte_id": 13,
+                  "nombre": "Conceptos Básicos de Economía",
+                  "descripcion": "Notas sobre los principios fundamentales de economía.",
+                  "mes": 1,
+                  "archivos": [
+                    {
+                      "archivo_id": 13,
+                      "descripcion": "Resumen de Economía",
+                      "ubicacion": "https://example.com/economia.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "José Martínez",
+              "avatar": 13,
+              "descripcion": "Muy útil para entender los conceptos económicos básicos."
+            }
+          ]
+        },
+        {
+          "nombre": "Filosofía",
+          "profesor": "Prof. Teresa López",
+          "periodos": [
+            {
+              "period_id": 14,
+              "apuntes": [
+                {
+                  "apunte_id": 14,
+                  "nombre": "Introducción a la Filosofía",
+                  "descripcion": "Notas sobre las principales teorías y filósofos.",
+                  "mes": 2,
+                  "archivos": [
+                    {
+                      "archivo_id": 14,
+                      "descripcion": "Guía de Filosofía",
+                      "ubicacion": "https://example.com/filosofia.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Lucía González",
+              "avatar": 14,
+              "descripcion": "El contenido es claro y bien estructurado."
+            }
+          ]
+        },
+        {
+          "nombre": "Informática",
+          "profesor": "Prof. Manuel Rodríguez",
+          "periodos": [
+            {
+              "period_id": 15,
+              "apuntes": [
+                {
+                  "apunte_id": 15,
+                  "nombre": "Programación en Java",
+                  "descripcion": "Apuntes sobre fundamentos de programación en Java.",
+                  "mes": 3,
+                  "archivos": [
+                    {
+                      "archivo_id": 15,
+                      "descripcion": "Guía de Java",
+                      "ubicacion": "https://example.com/java.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Alejandro Jiménez",
+              "avatar": 15,
+              "descripcion": "Muy útil para aprender a programar en Java."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grado": 9,
+      "materias": [
+        {
+          "nombre": "Matemáticas",
+          "profesor": "Prof. Ana Martínez",
+          "periodos": [
+            {
+              "period_id": 1,
+              "apuntes": [
+                {
+                  "apunte_id": 1,
+                  "nombre": "Álgebra Básica",
+                  "descripcion": "Notas sobre operaciones algebraicas básicas.",
+                  "mes": 1,
+                  "archivos": [
+                    {
+                      "archivo_id": 1,
+                      "descripcion": "Diapositivas de Álgebra",
+                      "ubicacion": "https://example.com/algebra_basica.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Luis Fernández",
+              "avatar": 1,
+              "descripcion": "Las diapositivas son muy claras y útiles."
+            }
+          ]
+        },
+        {
+          "nombre": "Religión",
+          "profesor": "Prof. María González",
+          "periodos": [
+            {
+              "period_id": 2,
+              "apuntes": [
+                {
+                  "apunte_id": 2,
+                  "nombre": "Historia de las Religiones",
+                  "descripcion": "Resumen sobre la historia de las principales religiones.",
+                  "mes": 2,
+                  "archivos": [
+                    {
+                      "archivo_id": 2,
+                      "descripcion": "Resumen Religión",
+                      "ubicacion": "https://example.com/historia_religiones.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "José Rodríguez",
+              "avatar": 2,
+              "descripcion": "El material es completo y bien organizado."
+            }
+          ]
+        },
+        {
+          "nombre": "Educación Física",
+          "profesor": "Prof. David Martínez",
+          "periodos": [
+            {
+              "period_id": 3,
+              "apuntes": [
+                {
+                  "apunte_id": 3,
+                  "nombre": "Ejercicios de Flexibilidad",
+                  "descripcion": "Guía de ejercicios para mejorar la flexibilidad.",
+                  "mes": 3,
+                  "archivos": [
+                    {
+                      "archivo_id": 3,
+                      "descripcion": "Guía de Flexibilidad",
+                      "ubicacion": "https://example.com/ejercicios_flexibilidad.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Laura Sánchez",
+              "avatar": 3,
+              "descripcion": "Muy útil para mejorar la flexibilidad."
+            }
+          ]
+        },
+        {
+          "nombre": "Ciencias Naturales",
+          "profesor": "Prof. Paula Herrera",
+          "periodos": [
+            {
+              "period_id": 4,
+              "apuntes": [
+                {
+                  "apunte_id": 4,
+                  "nombre": "Ecosistemas",
+                  "descripcion": "Notas sobre los diferentes tipos de ecosistemas.",
+                  "mes": 4,
+                  "archivos": [
+                    {
+                      "archivo_id": 4,
+                      "descripcion": "Diapositivas de Ecosistemas",
+                      "ubicacion": "https://example.com/ecosistemas.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Ricardo López",
+              "avatar": 4,
+              "descripcion": "Las diapositivas son detalladas y bien explicadas."
+            }
+          ]
+        },
+        {
+          "nombre": "Artística",
+          "profesor": "Prof. Clara González",
+          "periodos": [
+            {
+              "period_id": 5,
+              "apuntes": [
+                {
+                  "apunte_id": 5,
+                  "nombre": "Técnicas de Pintura",
+                  "descripcion": "Guía sobre diferentes técnicas de pintura.",
+                  "mes": 5,
+                  "archivos": [
+                    {
+                      "archivo_id": 5,
+                      "descripcion": "Guía de Pintura",
+                      "ubicacion": "https://example.com/tecnicas_pintura.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "María Álvarez",
+              "avatar": 5,
+              "descripcion": "Excelente guía sobre técnicas de pintura."
+            }
+          ]
+        },
+        {
+          "nombre": "Español",
+          "profesor": "Prof. Jorge Pérez",
+          "periodos": [
+            {
+              "period_id": 6,
+              "apuntes": [
+                {
+                  "apunte_id": 6,
+                  "nombre": "Análisis Literario",
+                  "descripcion": "Notas sobre el análisis de textos literarios.",
+                  "mes": 6,
+                  "archivos": [
+                    {
+                      "archivo_id": 6,
+                      "descripcion": "Guía de Análisis Literario",
+                      "ubicacion": "https://example.com/analisis_literario.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Ana Gómez",
+              "avatar": 6,
+              "descripcion": "Muy útil para el análisis de textos."
+            }
+          ]
+        },
+        {
+          "nombre": "Comprensión",
+          "profesor": "Prof. Manuel Rodríguez",
+          "periodos": [
+            {
+              "period_id": 7,
+              "apuntes": [
+                {
+                  "apunte_id": 7,
+                  "nombre": "Comprensión de Lectura",
+                  "descripcion": "Estrategias para mejorar la comprensión de lectura.",
+                  "mes": 7,
+                  "archivos": [
+                    {
+                      "archivo_id": 7,
+                      "descripcion": "Guía de Comprensión",
+                      "ubicacion": "https://example.com/comprension_lectura.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Luis Castro",
+              "avatar": 7,
+              "descripcion": "Las estrategias son efectivas y fáciles de seguir."
+            }
+          ]
+        },
+        {
+          "nombre": "Sociales",
+          "profesor": "Prof. Patricia Gómez",
+          "periodos": [
+            {
+              "period_id": 8,
+              "apuntes": [
+                {
+                  "apunte_id": 8,
+                  "nombre": "Historia de Europa",
+                  "descripcion": "Notas sobre la historia de Europa desde la Edad Media.",
+                  "mes": 8,
+                  "archivos": [
+                    {
+                      "archivo_id": 8,
+                      "descripcion": "Resumen de Historia Europea",
+                      "ubicacion": "https://example.com/historia_europa.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Fernando Castro",
+              "avatar": 8,
+              "descripcion": "El resumen de historia es muy completo."
+            }
+          ]
+        },
+        {
+          "nombre": "Geometría",
+          "profesor": "Prof. Laura Martínez",
+          "periodos": [
+            {
+              "period_id": 9,
+              "apuntes": [
+                {
+                  "apunte_id": 9,
+                  "nombre": "Teoremas Básicos",
+                  "descripcion": "Notas sobre los teoremas básicos de geometría.",
+                  "mes": 9,
+                  "archivos": [
+                    {
+                      "archivo_id": 9,
+                      "descripcion": "Diapositivas de Geometría",
+                      "ubicacion": "https://example.com/teoremas_geometria.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Ana Belén",
+              "avatar": 9,
+              "descripcion": "Las diapositivas ayudan a entender mejor los teoremas."
+            }
+          ]
+        },
+        {
+          "nombre": "Ética y Valores",
+          "profesor": "Prof. Roberto Díaz",
+          "periodos": [
+            {
+              "period_id": 10,
+              "apuntes": [
+                {
+                  "apunte_id": 10,
+                  "nombre": "Principios Éticos",
+                  "descripcion": "Notas sobre los principios fundamentales de ética.",
+                  "mes": 10,
+                  "archivos": [
+                    {
+                      "archivo_id": 10,
+                      "descripcion": "Guía de Ética",
+                      "ubicacion": "https://example.com/principios_eticos.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Silvia López",
+              "avatar": 10,
+              "descripcion": "La guía es útil para entender principios éticos."
+            }
+          ]
+        },
+        {
+          "nombre": "Inglés",
+          "profesor": "Prof. John Smith",
+          "periodos": [
+            {
+              "period_id": 11,
+              "apuntes": [
+                {
+                  "apunte_id": 11,
+                  "nombre": "Gramática Avanzada",
+                  "descripcion": "Notas sobre temas avanzados de gramática inglesa.",
+                  "mes": 11,
+                  "archivos": [
+                    {
+                      "archivo_id": 11,
+                      "descripcion": "Guía de Gramática",
+                      "ubicacion": "https://example.com/gramatica_avanzada.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Carlos Martínez",
+              "avatar": 11,
+              "descripcion": "Las notas sobre gramática son muy útiles."
+            }
+          ]
+        },
+        {
+          "nombre": "Cátedra de Paz",
+          "profesor": "Prof. Carmen Fernández",
+          "periodos": [
+            {
+              "period_id": 12,
+              "apuntes": [
+                {
+                  "apunte_id": 12,
+                  "nombre": "Principios de la Paz",
+                  "descripcion": "Notas sobre los principios fundamentales de la paz.",
+                  "mes": 12,
+                  "archivos": [
+                    {
+                      "archivo_id": 12,
+                      "descripcion": "Guía de la Cátedra de Paz",
+                      "ubicacion": "https://example.com/principios_paz.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "María Pérez",
+              "avatar": 12,
+              "descripcion": "El contenido es inspirador y educativo."
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnología",
+          "profesor": "Prof. Juan Rodríguez",
+          "periodos": [
+            {
+              "period_id": 13,
+              "apuntes": [
+                {
+                  "apunte_id": 13,
+                  "nombre": "Fundamentos de Tecnología",
+                  "descripcion": "Notas sobre los fundamentos y conceptos básicos de la tecnología.",
+                  "mes": 1,
+                  "archivos": [
+                    {
+                      "archivo_id": 13,
+                      "descripcion": "Guía de Tecnología",
+                      "ubicacion": "https://example.com/fundamentos_tecnologia.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Roberto Gómez",
+              "avatar": 13,
+              "descripcion": "Muy útil para entender los conceptos tecnológicos."
+            }
+          ]
+        }
+      ]
+    }, {
+      "grado": 8,
+      "materias": [
+        {
+          "nombre": "Matemáticas",
+          "profesor": "Prof. Ana Martínez",
+          "periodos": [
+            {
+              "period_id": 1,
+              "apuntes": [
+                {
+                  "apunte_id": 1,
+                  "nombre": "Álgebra Básica",
+                  "descripcion": "Notas sobre operaciones algebraicas básicas.",
+                  "mes": 1,
+                  "archivos": [
+                    {
+                      "archivo_id": 1,
+                      "descripcion": "Diapositivas de Álgebra",
+                      "ubicacion": "https://example.com/algebra_basica.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Luis Fernández",
+              "avatar": 1,
+              "descripcion": "Las diapositivas son muy claras y útiles."
+            }
+          ]
+        },
+        {
+          "nombre": "Religión",
+          "profesor": "Prof. María González",
+          "periodos": [
+            {
+              "period_id": 2,
+              "apuntes": [
+                {
+                  "apunte_id": 2,
+                  "nombre": "Historia de las Religiones",
+                  "descripcion": "Resumen sobre la historia de las principales religiones.",
+                  "mes": 2,
+                  "archivos": [
+                    {
+                      "archivo_id": 2,
+                      "descripcion": "Resumen Religión",
+                      "ubicacion": "https://example.com/historia_religiones.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "José Rodríguez",
+              "avatar": 2,
+              "descripcion": "El material es completo y bien organizado."
+            }
+          ]
+        },
+        {
+          "nombre": "Educación Física",
+          "profesor": "Prof. David Martínez",
+          "periodos": [
+            {
+              "period_id": 3,
+              "apuntes": [
+                {
+                  "apunte_id": 3,
+                  "nombre": "Ejercicios de Flexibilidad",
+                  "descripcion": "Guía de ejercicios para mejorar la flexibilidad.",
+                  "mes": 3,
+                  "archivos": [
+                    {
+                      "archivo_id": 3,
+                      "descripcion": "Guía de Flexibilidad",
+                      "ubicacion": "https://example.com/ejercicios_flexibilidad.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Laura Sánchez",
+              "avatar": 3,
+              "descripcion": "Muy útil para mejorar la flexibilidad."
+            }
+          ]
+        },
+        {
+          "nombre": "Ciencias Naturales",
+          "profesor": "Prof. Paula Herrera",
+          "periodos": [
+            {
+              "period_id": 4,
+              "apuntes": [
+                {
+                  "apunte_id": 4,
+                  "nombre": "Ecosistemas",
+                  "descripcion": "Notas sobre los diferentes tipos de ecosistemas.",
+                  "mes": 4,
+                  "archivos": [
+                    {
+                      "archivo_id": 4,
+                      "descripcion": "Diapositivas de Ecosistemas",
+                      "ubicacion": "https://example.com/ecosistemas.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Ricardo López",
+              "avatar": 4,
+              "descripcion": "Las diapositivas son detalladas y bien explicadas."
+            }
+          ]
+        },
+        {
+          "nombre": "Artística",
+          "profesor": "Prof. Clara González",
+          "periodos": [
+            {
+              "period_id": 5,
+              "apuntes": [
+                {
+                  "apunte_id": 5,
+                  "nombre": "Técnicas de Pintura",
+                  "descripcion": "Guía sobre diferentes técnicas de pintura.",
+                  "mes": 5,
+                  "archivos": [
+                    {
+                      "archivo_id": 5,
+                      "descripcion": "Guía de Pintura",
+                      "ubicacion": "https://example.com/tecnicas_pintura.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "María Álvarez",
+              "avatar": 5,
+              "descripcion": "Excelente guía sobre técnicas de pintura."
+            }
+          ]
+        },
+        {
+          "nombre": "Español",
+          "profesor": "Prof. Jorge Pérez",
+          "periodos": [
+            {
+              "period_id": 6,
+              "apuntes": [
+                {
+                  "apunte_id": 6,
+                  "nombre": "Análisis Literario",
+                  "descripcion": "Notas sobre el análisis de textos literarios.",
+                  "mes": 6,
+                  "archivos": [
+                    {
+                      "archivo_id": 6,
+                      "descripcion": "Guía de Análisis Literario",
+                      "ubicacion": "https://example.com/analisis_literario.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Ana Gómez",
+              "avatar": 6,
+              "descripcion": "Muy útil para el análisis de textos."
+            }
+          ]
+        },
+        {
+          "nombre": "Comprensión",
+          "profesor": "Prof. Manuel Rodríguez",
+          "periodos": [
+            {
+              "period_id": 7,
+              "apuntes": [
+                {
+                  "apunte_id": 7,
+                  "nombre": "Comprensión de Lectura",
+                  "descripcion": "Estrategias para mejorar la comprensión de lectura.",
+                  "mes": 7,
+                  "archivos": [
+                    {
+                      "archivo_id": 7,
+                      "descripcion": "Guía de Comprensión",
+                      "ubicacion": "https://example.com/comprension_lectura.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Luis Castro",
+              "avatar": 7,
+              "descripcion": "Las estrategias son efectivas y fáciles de seguir."
+            }
+          ]
+        },
+        {
+          "nombre": "Sociales",
+          "profesor": "Prof. Patricia Gómez",
+          "periodos": [
+            {
+              "period_id": 8,
+              "apuntes": [
+                {
+                  "apunte_id": 8,
+                  "nombre": "Historia de Europa",
+                  "descripcion": "Notas sobre la historia de Europa desde la Edad Media.",
+                  "mes": 8,
+                  "archivos": [
+                    {
+                      "archivo_id": 8,
+                      "descripcion": "Resumen de Historia Europea",
+                      "ubicacion": "https://example.com/historia_europa.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Fernando Castro",
+              "avatar": 8,
+              "descripcion": "El resumen de historia es muy completo."
+            }
+          ]
+        },
+        {
+          "nombre": "Geometría",
+          "profesor": "Prof. Laura Martínez",
+          "periodos": [
+            {
+              "period_id": 9,
+              "apuntes": [
+                {
+                  "apunte_id": 9,
+                  "nombre": "Teoremas Básicos",
+                  "descripcion": "Notas sobre los teoremas básicos de geometría.",
+                  "mes": 9,
+                  "archivos": [
+                    {
+                      "archivo_id": 9,
+                      "descripcion": "Diapositivas de Geometría",
+                      "ubicacion": "https://example.com/teoremas_geometria.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Ana Belén",
+              "avatar": 9,
+              "descripcion": "Las diapositivas ayudan a entender mejor los teoremas."
+            }
+          ]
+        },
+        {
+          "nombre": "Ética y Valores",
+          "profesor": "Prof. Roberto Díaz",
+          "periodos": [
+            {
+              "period_id": 10,
+              "apuntes": [
+                {
+                  "apunte_id": 10,
+                  "nombre": "Principios Éticos",
+                  "descripcion": "Notas sobre los principios fundamentales de ética.",
+                  "mes": 10,
+                  "archivos": [
+                    {
+                      "archivo_id": 10,
+                      "descripcion": "Guía de Ética",
+                      "ubicacion": "https://example.com/principios_eticos.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Silvia López",
+              "avatar": 10,
+              "descripcion": "La guía es útil para entender principios éticos."
+            }
+          ]
+        },
+        {
+          "nombre": "Inglés",
+          "profesor": "Prof. John Smith",
+          "periodos": [
+            {
+              "period_id": 11,
+              "apuntes": [
+                {
+                  "apunte_id": 11,
+                  "nombre": "Gramática Avanzada",
+                  "descripcion": "Notas sobre temas avanzados de gramática inglesa.",
+                  "mes": 11,
+                  "archivos": [
+                    {
+                      "archivo_id": 11,
+                      "descripcion": "Guía de Gramática",
+                      "ubicacion": "https://example.com/gramatica_avanzada.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Carlos Martínez",
+              "avatar": 11,
+              "descripcion": "Las notas sobre gramática son muy útiles."
+            }
+          ]
+        },
+        {
+          "nombre": "Cátedra de Paz",
+          "profesor": "Prof. Carmen Fernández",
+          "periodos": [
+            {
+              "period_id": 12,
+              "apuntes": [
+                {
+                  "apunte_id": 12,
+                  "nombre": "Principios de la Paz",
+                  "descripcion": "Notas sobre los principios fundamentales de la paz.",
+                  "mes": 12,
+                  "archivos": [
+                    {
+                      "archivo_id": 12,
+                      "descripcion": "Guía de la Cátedra de Paz",
+                      "ubicacion": "https://example.com/principios_paz.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "María Pérez",
+              "avatar": 12,
+              "descripcion": "El contenido es inspirador y educativo."
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnología",
+          "profesor": "Prof. Juan Rodríguez",
+          "periodos": [
+            {
+              "period_id": 13,
+              "apuntes": [
+                {
+                  "apunte_id": 13,
+                  "nombre": "Fundamentos de Tecnología",
+                  "descripcion": "Notas sobre los fundamentos y conceptos básicos de la tecnología.",
+                  "mes": 1,
+                  "archivos": [
+                    {
+                      "archivo_id": 13,
+                      "descripcion": "Guía de Tecnología",
+                      "ubicacion": "https://example.com/fundamentos_tecnologia.pdf"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "comentarios": [
+            {
+              "usuario": "Roberto Gómez",
+              "avatar": 13,
+              "descripcion": "Muy útil para entender los conceptos tecnológicos."
+            }
+          ]
+        }
+      ]
+    }
+
+
+
+  ]
 }
