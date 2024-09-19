@@ -21,13 +21,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyConnect"
         tools:targetApi="31">
+
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.StudyConnect">
-
-        </activity>
+            android:theme="@style/Theme.StudyConnect" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
