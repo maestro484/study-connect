@@ -68,7 +68,7 @@ class ComentariosFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        devolver1 = view.findViewById(R.id.devolver1)
+        devolver1 = view.findViewById(R.id.volver1)
         buttonDeEnviar = view.findViewById(R.id.buttonDeEnviar)
         teclado = view.findViewById(R.id.teclado)
 

@@ -23,15 +23,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#C0A1DB"
-            android:fontFamily="@font/roboto_mediumitalic"
+            android:fontFamily="@font/roboto_medium"
             android:text="Prededeterminado por el sistema" />
+
+        <RadioButton
+            android:id="@+id/claro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#C0A1DB"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Púrpura" />
 
         <RadioButton
             android:id="@+id/oscuro"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="#A15EDB"
-            android:fontFamily="@font/roboto_mediumitalic"
+            android:fontFamily="@font/roboto_medium"
             android:text="Oscuro"
             android:textColor="#FFFCFC"
             android:textColorLink="#EFE2E2" />
@@ -41,16 +49,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#B6BADB"
-            android:fontFamily="@font/roboto_mediumitalic"
+            android:fontFamily="@font/roboto_medium"
             android:text="Azul" />
-
-        <RadioButton
-            android:id="@+id/claro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#C0A1DB"
-            android:fontFamily="@font/roboto_mediumitalic"
-            android:text="Púrpura" />
 
     </RadioGroup>
 

@@ -32,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_black"
             android:text="PERFIL DE USUARIO"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,27 +61,31 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
+        android:id="@+id/editar_nombre"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto_light"
+        android:inputType="text"
+        android:text="Editar nombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
+
+    <EditText
         android:id="@+id/editar_numero"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:layout_marginStart="68dp"
         android:ems="10"
+        android:fontFamily="@font/roboto_light"
+        android:inputType="number"
         android:text="Editar número"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editar_nombre"
-        android:inputType="number"/>
-
-    <EditText
-        android:id="@+id/editar_nombre"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Editar nombre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@id/editar_nombre" />
 
     <ImageView
         android:id="@+id/imagen_telefono"
@@ -115,13 +120,13 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="153dp"
         android:ems="10"
+        android:fontFamily="@font/roboto_light"
         android:inputType="textEmailAddress"
+        android:text="Editar correo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editar_numero"
-        android:text="Editar correo"
-        />
+        app:layout_constraintTop_toBottomOf="@id/editar_numero" />
 
     <Button
         android:id="@+id/cerrar_sesion"
@@ -129,6 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/shape_background"
+        android:fontFamily="@font/roboto_bold"
         android:padding="15dp"
         android:text="CERRAR SESIÓN"
         android:textColor="@color/purple1"

@@ -23,7 +23,7 @@ class NotiFragment : Fragment() {
     lateinit var flecha3: ImageView
     lateinit var seguidos: Switch
     lateinit var menciones: Switch
-    lateinit var top_bar: ConstraintLayout
+    lateinit var topBar: ConstraintLayout
 
     companion object {
         fun newInstance() = NotiFragment()
@@ -52,9 +52,9 @@ class NotiFragment : Fragment() {
         flecha3 = view.findViewById(R.id.flecha3)
         seguidos = view.findViewById(R.id.seguidos)
         menciones = view.findViewById(R.id.menciones)
-        top_bar = view.findViewById(R.id.top_bar)
+        topBar = view.findViewById(R.id.topBar)
 
-        top_bar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
 
         flecha3.setOnClickListener {
