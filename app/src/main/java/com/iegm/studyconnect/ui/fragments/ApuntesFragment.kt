@@ -56,7 +56,6 @@ class ApuntesFragment : Fragment() {
             (activity as MainActivity).abrirPeriodoFragment()
         }
 
-
          addsBtn.setOnClickListener {
              (activity as MainActivity).abrirApunteFragment()
          }
