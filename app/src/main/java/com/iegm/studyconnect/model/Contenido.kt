@@ -41,3 +41,4 @@ data class Archivo(
     val descripcion: String = "",
     val ubicacion: String = ""
 )
+

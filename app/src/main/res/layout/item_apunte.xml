@@ -22,24 +22,28 @@
             android:padding="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/mTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:fontFamily="@font/roboto_mediumitalic"
                 android:text="Titulo"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="19sp"
-                android:textStyle="bold"
-                android:layout_margin="6dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/mSubTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:fontFamily="@font/roboto_black_italic"
                 android:text="Fecha"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                android:layout_margin="6dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
         <ImageView

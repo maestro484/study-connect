@@ -42,7 +42,6 @@ class ApuntesFragment : Fragment() {
         recy = view.findViewById(R.id.listaDeMaterias)
         volver1 = view.findViewById(R.id.volver1)
         addsBtn = view.findViewById(R.id.addingBtn)
-        mMenus = view.findViewById(R.id.mMenus)
         button_comentarios = view.findViewById(R.id.button_comentarios)
 
         userAdapter =
@@ -56,10 +55,9 @@ class ApuntesFragment : Fragment() {
             (activity as MainActivity).abrirPeriodoFragment()
         }
 
-
-         addsBtn.setOnClickListener {
-             (activity as MainActivity).abrirApunteFragment()
-         }
+        addsBtn.setOnClickListener {
+            (activity as MainActivity).abrirApunteFragment()
+        }
 
         button_comentarios.setOnClickListener {
             (activity as MainActivity).abrirComentariosFragment()

@@ -27,6 +27,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:autoText="false"
+                android:fontFamily="@font/roboto_regular"
                 android:text="Bienvenido a Study Connect, una plataforma diseñada para facilitar la gestión académica, promover el intercambio de conocimientos y mejorar la experiencia educativa de los estudiantes de octavo en adelante. Antes de utilizar nuestra aplicación, te pedimos que leas detenidamente estos términos y condiciones. Al acceder y utilizar Study Connect, aceptas regirte por estos términos y condiciones, así como por nuestras políticas de privacidad."
                 android:textSize="14sp" />
 
@@ -36,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_regular"
                 android:text="1. Uso de la Aplicación: - Study Connect es una aplicación destinada exclusivamente para el uso académico de estudiantes de octavo en adelante. - Al utilizar la aplicación, aceptas cumplir con todas las leyes y regulaciones locales, estatales, nacionales e internacionales aplicables. " />
 
             <TextView
@@ -44,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_regular"
                 android:text="2. Registro de Usuarios: - Para acceder a los servicios ofrecidos por Study Connect, debes registrarte como usuario. - Al registrarte, debes proporcionar información precisa, actualizada y completa sobre ti mismo según lo solicitado en el formulario de registro.  " />
 
             <TextView
@@ -52,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_regular"
                 android:text="3. Responsabilidades del Usuario: - Eres responsable de mantener la confidencialidad de tu cuenta y contraseña, así como de todas las actividades que ocurran bajo tu cuenta. - Te comprometes a no compartir tu cuenta con terceros ni a permitir que otros accedan a la aplicación utilizando tu información de inicio de sesión." />
 
             <TextView
@@ -60,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_regular"
                 android:text="4. Contenido de la Aplicación: - Study Connect proporciona un repositorio digital de apuntes y un foro de ayuda para facilitar el intercambio de conocimientos entre estudiantes. - El contenido compartido en la aplicación es responsabilidad de los usuarios que lo publican. Study Connect no asume ninguna responsabilidad por la exactitud, integridad o legalidad del contenido compartido por los usuarios." />
 
             <TextView
@@ -68,6 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_regular"
                 android:text=" 5. Uso Aceptable: - Al utilizar Study Connect, te comprometes a no participar en ninguna actividad que sea ilegal, fraudulenta, difamatoria, abusiva, obscena, amenazante o que viole los derechos de propiedad intelectual de terceros. - Está prohibido el uso de la aplicación para promover o facilitar actividades ilegales o fraudulentas." />
 
             <TextView
@@ -76,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_regular"
                 android:text="6. Limitación de Responsabilidad: - En ningún caso, Study Connect será responsable por daños directos, indirectos, incidentales, especiales, consecuentes o punitivos que surjan del uso o la imposibilidad de usar la aplicación." />
 
             <TextView
@@ -84,6 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_regular"
                 android:text="7. Modificaciones de los Términos y Condiciones: - Study Connect se reserva el derecho de modificar o actualizar estos términos y condiciones en cualquier momento sin previo aviso. - Se te notificará sobre cualquier cambio en los términos y condiciones mediante una notificación en la aplicación. El uso continuado de la aplicación después de dichos cambios constituirá tu aceptación de los mismos. " />
 
             <TextView
@@ -92,6 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="80dp"
+                android:fontFamily="@font/roboto_regular"
                 android:text="8. Terminación del Acceso: - Study Connect se reserva el derecho de suspender o cancelar tu acceso a la aplicación en cualquier momento y por cualquier motivo, sin previo aviso.  Al utilizar Study Connect, aceptas regirte por estos términos y condiciones." />
         </LinearLayout>
     </ScrollView>
@@ -113,6 +122,7 @@
             android:id="@+id/terminos_y_condiciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_black"
             android:text="Términos y Condiciones"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -127,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:scrollbarSize="40dp"
-            android:src="@drawable/arrow_back_fill0_ic"
+            android:src="@drawable/ic_arrow_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

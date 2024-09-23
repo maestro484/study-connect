@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
 
+        android:fontFamily="@font/roboto_medium"
         android:text="profesor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -21,11 +22,22 @@
         app:layout_constraintTop_toBottomOf="@+id/topBar" />
 
     <Button
+        android:id="@+id/apunte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="apunte"
+        app:layout_constraintStart_toStartOf="@id/profesor"
+        app:layout_constraintTop_toBottomOf="@id/profesor" />
+
+    <Button
         android:id="@+id/materia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
+        android:fontFamily="@font/roboto_medium"
         android:text="materia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBar" />
@@ -36,18 +48,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="@font/roboto_medium"
         android:text="fecha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBar" />
-
-    <Button
-        android:id="@+id/apunte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="apunte"
-        app:layout_constraintStart_toStartOf="@id/profesor"
-        app:layout_constraintTop_toBottomOf="@id/profesor" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"
@@ -61,15 +65,17 @@
             android:id="@+id/devolver"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_marginStart="7dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/arrow_back" />
+            app:srcCompat="@drawable/ic_arrow_back" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto_black"
             android:src="@drawable/search_fill0_wght400_grad0_opsz24"
             android:text="Buscar"
             android:textSize="30dp"
@@ -94,7 +100,8 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:fontFamily="@font/roboto_light"
+            android:text="Filtros"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"

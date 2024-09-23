@@ -62,7 +62,7 @@ class ThemeFragment : Fragment() {
             mainActivity.cambiarColor(
                 AppTheme.moradoOscuro2,
                 AppTheme.moradoOscuro2,
-                AppTheme.gris
+                AppTheme.negro
             )
         }
 
@@ -72,14 +72,14 @@ class ThemeFragment : Fragment() {
             mainActivity.cambiarColor(
                 AppTheme.moradoClaro2,
                 AppTheme.moradoClaro2,
-                AppTheme.gris
+                AppTheme.negro
             )
         }
 
         azul.setOnClickListener {
             topBar.setBackgroundColor(Color.parseColor(AppTheme.azul))
             AppTheme.guardarTema(requireActivity(), AppTheme.azul)
-            mainActivity.cambiarColor(AppTheme.azulClaro, AppTheme.azulClaro, AppTheme.gris)
+            mainActivity.cambiarColor(AppTheme.azulClaro, AppTheme.azulClaro, AppTheme.negro )
         }
 
         claro.setOnClickListener {
@@ -88,7 +88,7 @@ class ThemeFragment : Fragment() {
             mainActivity.cambiarColor(
                 AppTheme.moradoClaro2,
                 AppTheme.moradoClaro2,
-                AppTheme.gris
+                AppTheme.negro
             )
         }
 

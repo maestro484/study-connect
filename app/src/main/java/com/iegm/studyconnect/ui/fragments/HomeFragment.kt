@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
           buscador.setOnClickListener {
               (activity as MainActivity).abrirBusquedaFragment()
           }
-
+*/
           listaNueva.setOnClickListener {
               (activity as MainActivity).abrirMateriaFragment()
           }

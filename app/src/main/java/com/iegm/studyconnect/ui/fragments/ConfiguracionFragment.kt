@@ -51,7 +51,8 @@ class ConfiguracionFragment : Fragment() {
         adm_cuenta = view.findViewById(R.id.cerrar_sesion)
         notificaciones = view.findViewById(R.id.notificaciones_2)
         theme = view.findViewById(R.id.theme)
-        terminos_condiciones = view.findViewById(R.id.terminos_y_condiciones)
+        terminos_condiciones = view.findViewById(R.id.terminos_condiciones)
+
 
         notificaciones.setOnClickListener {
             (activity as MainActivity).abrirNotiFragment()
@@ -64,6 +65,7 @@ class ConfiguracionFragment : Fragment() {
         }
 
         flecha1.setOnClickListener {
+            (activity as MainActivity).abrirHomeFragment()
 
         }
 
@@ -71,6 +73,7 @@ class ConfiguracionFragment : Fragment() {
             (activity as MainActivity).abrirTerminosCondicionesFragment()
 
         }
+
 
     }
 
