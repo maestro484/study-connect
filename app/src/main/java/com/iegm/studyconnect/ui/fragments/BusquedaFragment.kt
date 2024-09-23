@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.BusquedaAdapter
 import com.iegm.studyconnect.model.Grado
@@ -31,7 +32,6 @@ class BusquedaFragment : Fragment() {
 //aqui declaramos las variables de la vista busqueda
     lateinit var devolver: ImageView
     lateinit var materia: Button
-    lateinit var profesor: Button
     lateinit var fecha: Button
     lateinit var buscador: SearchView
     lateinit var apunte: Button
@@ -70,7 +70,6 @@ class BusquedaFragment : Fragment() {
 //aqui llamamos las variables de la lista de busqueda
         devolver = view.findViewById(R.id.devolver)
         materia = view.findViewById(R.id.materia)
-        profesor = view.findViewById(R.id.profesor)
         fecha = view.findViewById(R.id.fecha)
         buscador = view.findViewById(R.id.buscador)
         apunte = view.findViewById(R.id.apunte)
@@ -87,13 +86,7 @@ class BusquedaFragment : Fragment() {
             adapter = busquedaAdapter
         }
 
-        buscador.setOnClickListener {
-            profesor.visibility = View.INVISIBLE
-            fecha.visibility = View.INVISIBLE
-            materia.visibility = View.INVISIBLE
-            apunte.visibility = View.INVISIBLE
-            listaDeBusqueda.visibility = View.VISIBLE
-        }
+
 
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
         var jsonObject = JSONObject(jsonString)
@@ -108,11 +101,7 @@ class BusquedaFragment : Fragment() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 busqueda = query.toString()
                 buscar(busqueda.toLowerCase().replaceAccents(), data)
-                profesor.visibility = View.INVISIBLE
-                fecha.visibility = View.INVISIBLE
-                materia.visibility = View.INVISIBLE
-                apunte.visibility = View.INVISIBLE
-                listaDeBusqueda.visibility = View.VISIBLE
+
                 return true
             }
 
@@ -123,15 +112,13 @@ class BusquedaFragment : Fragment() {
         })
 
         devolver.setOnClickListener {
-            //aqui necesito que cuando se le unda al boton se debuelva a la anterior pagina
+            (activity as MainActivity).abrirHomeFragment()
+
         }
 //aqui se hace el codigo para poder filtar las materias
         materia.setOnClickListener {
             filtrarMateria(data.grados[grado])
-        }
-
-        profesor.setOnClickListener {
-            filtrarProfesor(data.grados[grado])
+            (activity as MainActivity).abrirHomeFragment()
         }
 
         fecha.setOnClickListener {
@@ -139,6 +126,7 @@ class BusquedaFragment : Fragment() {
         }
         apunte.setOnClickListener {
             filtrarApunte(data.grados[grado])
+            (activity as MainActivity).abrirApunteFragment()
         }
     }
 //aqui es para que el buscador busque los elementos
