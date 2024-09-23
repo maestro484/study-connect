@@ -21,7 +21,7 @@ class ConfiguracionFragment : Fragment() {
     lateinit var notificaciones: Button
     lateinit var theme: Button
     lateinit var terminos_condiciones: Button
-    lateinit var top_bar3: ConstraintLayout
+    lateinit var topBar: ConstraintLayout
 
     companion object {
         fun newInstance() = ConfiguracionFragment()
@@ -43,15 +43,16 @@ class ConfiguracionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        top_bar3 = view.findViewById(R.id.topBar)
+        topBar = view.findViewById(R.id.topBar)
 
-        top_bar3.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
+       topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         flecha1 = view.findViewById(R.id.flecha1)
         adm_cuenta = view.findViewById(R.id.cerrar_sesion)
-        notificaciones = view.findViewById(R.id.notificaciones_2)
+        notificaciones = view.findViewById(R.id.notificaciones)
         theme = view.findViewById(R.id.theme)
         terminos_condiciones = view.findViewById(R.id.terminos_condiciones)
+
 
 
         notificaciones.setOnClickListener {
