@@ -8,21 +8,23 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="32dp"
+        android:elevation="1dp"
         android:background="@color/cardview_light_background"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="25dp"
+        app:cardCornerRadius="70dp"
+        app:cardElevation="35dp"
         app:layout_constraintEnd_toStartOf="@+id/perfil"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <SearchView
             android:id="@+id/Buscador"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/cardview_light_background"
+            android:backgroundTint="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.cardview.widget.CardView>
 
@@ -30,10 +32,11 @@
         android:id="@+id/perfil"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_weight="1"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="5dp"
+        android:elevation="100dp"
         android:src="@drawable/person_24dp_fill0_wght400_grad0_opsz24__1_"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -57,14 +60,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView" />
 
-    <ImageView
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ajuste"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="50dp"
-        android:elevation="5dp"
-        android:src="@drawable/settings_fill0_ic"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="44dp"
+        android:src="@drawable/settings_24dp_000000_fill0_wght400_grad0_opsz24"
+        app:backgroundTint="#F4F4F4"
+        app:fabCustomSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
