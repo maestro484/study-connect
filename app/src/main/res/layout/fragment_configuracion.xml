@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
-        android:background="@android:color/holo_purple"
+        android:background="?attr/colorPrimary"
         android:scrollbarSize="50dp"
         app:layout_constraintBottom_toTopOf="@+id/notificaciones"
         app:layout_constraintEnd_toEndOf="parent"
