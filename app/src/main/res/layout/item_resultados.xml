@@ -6,6 +6,7 @@
     android:layout_marginBottom="20dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/resultadoView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:cardCornerRadius="6dp"

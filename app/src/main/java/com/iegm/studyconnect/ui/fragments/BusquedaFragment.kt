@@ -20,7 +20,9 @@ import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.BusquedaAdapter
 import com.iegm.studyconnect.model.Grado
+import com.iegm.studyconnect.model.Resultados
 import com.iegm.studyconnect.model.SchoolData
+import com.iegm.studyconnect.model.Tipo
 import org.json.JSONObject
 import java.io.InputStream
 import java.text.Normalizer
@@ -78,7 +80,7 @@ class BusquedaFragment : Fragment() {
 
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 
-        busquedaAdapter = BusquedaAdapter()
+        busquedaAdapter = BusquedaAdapter(requireContext())
 
 
         listaDeBusqueda.apply {
@@ -137,18 +139,20 @@ class BusquedaFragment : Fragment() {
     
         objetos.clear()
 
-        val resultados = mutableListOf<String>()
+        val resultados = mutableListOf<Resultados>()
 
         grado.materias.map {
             val materia = it.nombre.toLowerCase().replaceAccents()
             Log.d("OscarNoHaceNada", "materia: " + materia)
             if (materia.contains(busqueda)) run {
-                resultados.add(it.nombre)
+                val resultado = Resultados(it.nombre, Tipo.MATERIA)
+                resultados.add(resultado)
             }
 
             val profesor = it.profesor.toLowerCase().replaceAccents()
             if (profesor.contains(busqueda)) run {
-                resultados.add(it.profesor)
+               val resultado = Resultados(it.profesor, Tipo.PROFESOR)
+                resultados.add(resultado)
             }
 
             if (it.periodos.isNotEmpty()) {
@@ -156,12 +160,14 @@ class BusquedaFragment : Fragment() {
                     it.apuntes.map {
                         val apunte = it.nombre.toLowerCase().replaceAccents()
                         if (apunte.contains(busqueda)) run {
-                            resultados.add(it.nombre)
+                            val resultado = Resultados(it.nombre, Tipo.APUNTE)
+                            resultados.add(resultado)
                         }
 
                         val mes = it.mes.toString().toLowerCase().replaceAccents()
                         if (mes.contains(busqueda)) run {
-                            resultados.add(it.mes.toString())
+                            val resultado = Resultados(it.mes.toString(), Tipo.FECHA)
+                            resultados.add(resultado)
                         }
                     }
                 }
