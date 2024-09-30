@@ -20,6 +20,11 @@ import com.iegm.studyconnect.R
 import com.rajat.pdfviewer.PdfRendererView
 import com.rajat.pdfviewer.PdfViewerActivity
 import com.rajat.pdfviewer.util.saveTo
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
 class ApunteFragment : Fragment() {
 
@@ -27,6 +32,7 @@ class ApunteFragment : Fragment() {
         ASK_EVERYTIME,
         // Otras opciones si las necesitas
     }
+
 
     private lateinit var pdfView: PdfRendererView
     private lateinit var descripcion: EditText
@@ -59,34 +65,27 @@ class ApunteFragment : Fragment() {
             (activity as MainActivity).abrirApuntesFragment()
         }
 
-        val rol: String = "representante"
-
-        if (rol == "representante") {
-            descripcion.isEnabled = true
-            pdfView.isEnabled = true
-            fileTitleTextView.isEnabled = true
-        } else {
-            descripcion.isEnabled = false
-            pdfView.isEnabled = false
-            fileTitleTextView.isEnabled = false
-        }
 
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
             type = "*/*"
         }
         pdfView.initWithUrl(
-                url = "http://www.scielo.org.pe/pdf/hm/v18n2/a05v18n2.pdf",
-        lifecycleCoroutineScope = lifecycleScope,
-        lifecycle = lifecycle
+            url = "http://www.scielo.org.pe/pdf/hm/v18n2/a05v18n2.pdf",
+            lifecycleCoroutineScope = lifecycleScope,
+            lifecycle = lifecycle
         )
 
-        PdfViewerActivity.launchPdfFromUrl(
-            context = requireContext(),
-            pdfUrl = "http://www.scielo.org.pe/pdf/hm/v18n2/a05v18n2.pdf",
-            pdfTitle = "PDF Title",
-            saveTo = saveTo.ASK_EVERYTIME,
-            enableDownload = true
+        requireActivity().startActivity(
+            PdfViewerActivity.launchPdfFromUrl(
+                context = requireContext(),
+                pdfUrl = "http://www.scielo.org.pe/pdf/hm/v18n2/a05v18n2.pdf",
+                pdfTitle = "PDF Title",
+                saveTo = saveTo.ASK_EVERYTIME,
+                enableDownload = true
+            )
         )
+
+
 
 
 
@@ -102,21 +101,28 @@ class ApunteFragment : Fragment() {
                 val fileRef = storageRef.child("uploads/${it.lastPathSegment}")
                 val uploadTask = fileRef.putFile(it)
 
-                uploadTask.addOnSuccessListener {
-                    // Obtén la URL de descarga para abrir el PDF
-                    fileRef.downloadUrl.addOnSuccessListener { downloadUri ->
-                        PdfViewerActivity.launchPdfFromUrl(
-                            context = requireContext(),
-                            pdfUrl = "https://www.hq.nasa.gov/alsj/a17/A17_FlightPlan.pdf",
-                            pdfTitle = "PDF Title",
-                            saveTo = saveTo.ASK_EVERYTIME,
-                            enableDownload = true
-                        )
+                CoroutineScope(Dispatchers.Main).launch {
+                    try {
+                        uploadTask.await() // Espera a que se complete la carga
+                        val downloadUri = fileRef.downloadUrl.await() // Espera la URL
+                        withContext(Dispatchers.Main) {
+                            requireActivity().startActivity(
+                                PdfViewerActivity.launchPdfFromUrl(
+                                    context = requireContext(),
+                                    pdfUrl = "https://www.hq.nasa.gov/alsj/a17/A17_FlightPlan.pdf",
+                                    pdfTitle = "PDF Title",
+                                    saveTo = saveTo.ASK_EVERYTIME,
+                                    enableDownload = true
+                                )
+                            )
+                        }
+                    } catch (e: Exception) {
+                        Log.d("", "error: ${e.message}")
                     }
-                }.addOnFailureListener {
-                    Log.d("", "error${it.cause}  ")
                 }
             }
         }
     }
+
+
 }
