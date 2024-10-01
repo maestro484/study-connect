@@ -61,9 +61,9 @@ class ApuntesFragment : Fragment() {
              (activity as MainActivity).abrirApunteFragment()
          }
 
-        button_comentarios.setOnClickListener {
-            (activity as MainActivity).abriComentariosFragment()
-        }
+      /*  button_comentarios.setOnClickListener {
+            (activity as MainActivity).abrirComentariosFragment()
+        } */
     }
 
 
