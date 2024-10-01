@@ -17,6 +17,7 @@ import com.iegm.studyconnect.model.Tipo
 
 class BusquedaAdapter(val context: Context) : RecyclerView.Adapter<BusquedaAdapter.BusquedaViewHolder>() {
 
+
     val resultados: MutableList<Resultados> = mutableListOf()
 
     class BusquedaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,6 +39,7 @@ class BusquedaAdapter(val context: Context) : RecyclerView.Adapter<BusquedaAdapt
     override fun getItemCount(): Int {
         return resultados.size
 
+
     }
 
     override fun onBindViewHolder(holder: BusquedaViewHolder, position: Int) {
@@ -51,15 +53,16 @@ class BusquedaAdapter(val context: Context) : RecyclerView.Adapter<BusquedaAdapt
                 }
 
                 Tipo.APUNTE -> {
-
+                    (context as MainActivity).abrirApuntesFragment()
                 }
 
                 Tipo.FECHA -> {
+                    (context as MainActivity).abrirApuntesFragment()
 
                 }
 
                 Tipo.PROFESOR -> {
-
+                    (context as MainActivity).abrirApuntesFragment()
                 }
 
             }
@@ -69,3 +72,4 @@ class BusquedaAdapter(val context: Context) : RecyclerView.Adapter<BusquedaAdapt
 
 
 }
+

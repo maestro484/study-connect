@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.apphosting.datastore.testing.DatastoreTestTrace.FirestoreV1Action.RemoveListen
+import com.google.firebase.firestore.model.mutation.ArrayTransformOperation.Remove
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.iegm.studyconnect.MainActivity
@@ -31,7 +33,8 @@ class BusquedaFragment : Fragment() {
     //
 
     lateinit var busquedaAdapter: BusquedaAdapter
-//aqui declaramos las variables de la vista busqueda
+
+    //aqui declaramos las variables de la vista busqueda
     lateinit var devolver: ImageView
     lateinit var materia: Button
     lateinit var fecha: Button
@@ -39,11 +42,9 @@ class BusquedaFragment : Fragment() {
     lateinit var apunte: Button
     lateinit var listaDeBusqueda: RecyclerView
 
-    lateinit var topBar : ConstraintLayout
+    lateinit var topBar: ConstraintLayout
 
     var grado: Int = 0
-
-
 
 
     val objetos: MutableList<String> = mutableListOf()
@@ -89,7 +90,6 @@ class BusquedaFragment : Fragment() {
         }
 
 
-
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
         var jsonObject = JSONObject(jsonString)
 
@@ -125,19 +125,27 @@ class BusquedaFragment : Fragment() {
 
         fecha.setOnClickListener {
             filtrarFecha(data.grados[grado])
+            (activity as MainActivity).abrirApuntesFragment()
         }
         apunte.setOnClickListener {
             filtrarApunte(data.grados[grado])
-            (activity as MainActivity).abrirApunteFragment()
+            (activity as MainActivity).abrirApuntesFragment()
+
         }
     }
-//aqui es para que el buscador busque los elementos
+
+    //aqui es para que el buscador busque los elementos
     private fun buscar(busqueda: String, data: SchoolData) {
         Log.d("busqueda", "buscar: " + busqueda)
         val grado = data.grados[grado]
 
-    
+
         objetos.clear()
+
+        busquedaAdapter.apply {
+            this.resultados.clear()
+            notifyDataSetChanged()
+        }
 
         val resultados = mutableListOf<Resultados>()
 
@@ -151,7 +159,7 @@ class BusquedaFragment : Fragment() {
 
             val profesor = it.profesor.toLowerCase().replaceAccents()
             if (profesor.contains(busqueda)) run {
-               val resultado = Resultados(it.profesor, Tipo.PROFESOR)
+                val resultado = Resultados(it.profesor, Tipo.PROFESOR)
                 resultados.add(resultado)
             }
 
@@ -159,14 +167,33 @@ class BusquedaFragment : Fragment() {
                 it.periodos.map {
                     it.apuntes.map {
                         val apunte = it.nombre.toLowerCase().replaceAccents()
+
                         if (apunte.contains(busqueda)) run {
                             val resultado = Resultados(it.nombre, Tipo.APUNTE)
                             resultados.add(resultado)
                         }
 
+
+                        var meses = "1"
+                        when (busqueda) {
+                            "enero" -> meses = 1.toString()
+                            "febrero" -> meses = 2.toString()
+                            "marzo" -> meses = 3.toString()
+                            "abril" -> meses = 4.toString()
+                            "mayo" -> meses = 5.toString()
+                            "junio" -> meses = 6.toString()
+                            "julio" -> meses = 7.toString()
+                            "agosto" -> meses = 8.toString()
+                            "septiembre" -> meses = 9.toString()
+                            "octubre" -> meses = 10.toString()
+                            "noviembre" -> meses = 11.toString()
+                            "diciembre" -> meses = 12.toString()
+                        }
+
+
                         val mes = it.mes.toString().toLowerCase().replaceAccents()
-                        if (mes.contains(busqueda)) run {
-                            val resultado = Resultados(it.mes.toString(), Tipo.FECHA)
+                        if (mes == meses) run {
+                            val resultado = Resultados(it.nombre.toString(), Tipo.FECHA)
                             resultados.add(resultado)
                         }
                     }
@@ -181,7 +208,8 @@ class BusquedaFragment : Fragment() {
 
         Log.d("busqueda", "buscar: " + resultados)
     }
-//aqui es para que cuando busque el ususario aparesca enseguida su resultado
+
+    //aqui es para que cuando busque el ususario aparesca enseguida su resultado
     fun String.replaceAccents(): String {
         val chars = Normalizer.normalize(this, Normalizer.Form.NFD)
         return chars.replace("[\\p{InCombiningDiacriticalMarks}]".toRegex(), "")
@@ -191,7 +219,8 @@ class BusquedaFragment : Fragment() {
         val inputStream: InputStream = context.resources.openRawResource(resourceId)
         return inputStream.bufferedReader().use { it.readText() }
     }
-//esto es para que los filtros busquen exactamente el lugar y lo que les corresponde
+
+    //esto es para que los filtros busquen exactamente el lugar y lo que les corresponde
     fun filtrarMateria(grado: Grado) {
         grado.materias.map {
             it.nombre
@@ -231,9 +260,5 @@ class BusquedaFragment : Fragment() {
 
 
 }
-
-
-
-
 
 
