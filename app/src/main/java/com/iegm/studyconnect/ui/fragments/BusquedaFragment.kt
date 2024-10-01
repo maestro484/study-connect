@@ -174,7 +174,7 @@ class BusquedaFragment : Fragment() {
                         }
 
 
-                        var meses = "1"
+                        var meses = "0"
                         when (busqueda) {
                             "enero" -> meses = 1.toString()
                             "febrero" -> meses = 2.toString()
