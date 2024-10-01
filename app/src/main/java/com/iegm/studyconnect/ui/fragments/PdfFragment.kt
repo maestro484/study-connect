@@ -43,10 +43,10 @@ class PdfFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val pdfView: PdfRendererView = view.findViewById(R.id.pdfView)
         //Creo que eso no va porque yo no tengo un   Button
-        val showInView: Button = view.findViewById(R.id.showInView)
+     //   val showInView: Button = view.findViewById(R.id.showInView)
 
         //igual
-        val pickPdfButton: Button = view.findViewById(R.id.pickPdfButton)
+     //   val pickPdfButton: Button = view.findViewById(R.id.pickPdfButton)
 
         pickPdfButton.setOnClickListener {
             launchFilePicker()
