@@ -73,7 +73,7 @@ class PeriodoFragment : Fragment() {
 
         }
         volver1.setOnClickListener {
-            // (activity as MainActivity).abrirHomeFragment()
+             (activity as MainActivity).abrirHomeFragment()
         }
         periodo1.setOnClickListener {
             lottie_Aaimation_view.setAnimation("animation_file_name.json")

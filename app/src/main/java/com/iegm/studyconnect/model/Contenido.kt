@@ -11,8 +11,16 @@ data class Grado(val grado: Int = 0, val materias: ArrayList<Materia> = ArrayLis
 data class Materia(
     val nombre: String = "",
     val profesor: String = "",
-    val periodos: ArrayList<Periodo> = ArrayList()
+    val periodos: ArrayList<Periodo> = ArrayList(),
+    val comentarios: ArrayList<Comentario> = ArrayList()
 )
+
+data class Comentario(
+    val usuario: String = "",
+    val avatar: Int = 0,
+    val descripcion: String = ""
+)
+
 
 data class Periodo(
     @SerializedName("period_id") val periodId: Int = 0,

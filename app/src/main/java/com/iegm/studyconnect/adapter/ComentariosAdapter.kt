@@ -4,33 +4,55 @@ package com.iegm.studyconnect.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewParent
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.model.Comentario
 
-class ComentariosAdapter() :
-    RecyclerView.Adapter<ComentariosAdapter.ViewHolder>() {
+class ComentariosAdapter() : RecyclerView.Adapter<ComentariosAdapter.ViewHolder>() {
 
-    var dataset: MutableList<String> = mutableListOf()
+    val avatars = listOf(
+        R.drawable.ardilla,
+        R.drawable.ballena,
+        R.drawable.buho,
+        R.drawable.caballo,
+        R.drawable.capibara,
+        R.drawable.chita,
+        R.drawable.cocodrilo,
+        R.drawable.delfin,
+        R.drawable.huron,
+        R.drawable.leon,
+        R.drawable.mapache,
+        R.drawable.oso_pardo,
+        R.drawable.oso_polar,
+        R.drawable.oveja,
+        R.drawable.pajaro,
+        R.drawable.puma,
+        R.drawable.serpiente,
+        R.drawable.tiburon,
+        R.drawable.tortuga,
+        R.drawable.vaca,
+        R.drawable.zorro
+    )
+
+    var dataset: MutableList<Comentario> = mutableListOf()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val TextView: TextView
-        val ImageView: ImageView
-        val TextView2: TextView
+        val nombreUsuario: TextView
+        val comentarioUsuario: TextView
+        val avatarUsuario: ImageView
 
         init {
-            TextView = view.findViewById(R.id.textView12)
-            TextView2 = view.findViewById(R.id.textView11)
-            ImageView = view.findViewById(R.id.imageView)
+            comentarioUsuario = view.findViewById(R.id.comentario_usuario)
+            avatarUsuario = view.findViewById(R.id.avatar_image)
+            nombreUsuario = view.findViewById(R.id.nombre_usuario)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
-            R.layout.item_comentarios,
-            parent, false
+            R.layout.item_comentarios, parent, false
         )
 
         return ViewHolder(view)
@@ -40,10 +62,11 @@ class ComentariosAdapter() :
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.TextView.text = dataset[position]
+        val comentario = dataset[position]
+        holder.comentarioUsuario.text = comentario.descripcion
+        holder.avatarUsuario.setImageResource(avatars[comentario.avatar])
+        holder.nombreUsuario.text = comentario.usuario
     }
-
-
 }
 
 
