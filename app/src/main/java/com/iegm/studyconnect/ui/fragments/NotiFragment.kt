@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +23,7 @@ class NotiFragment : Fragment() {
     lateinit var flecha3: ImageView
     lateinit var seguidos: Switch
     lateinit var menciones: Switch
-    lateinit var topBar : ConstraintLayout
+    lateinit var topBar: ConstraintLayout
 
     companion object {
         fun newInstance() = NotiFragment()
@@ -47,7 +46,7 @@ class NotiFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        notificaciones_2 = view.findViewById(R.id.notificaciones_2)
+        notificaciones_2 = view.findViewById(R.id.notificaciones)
         recientes = view.findViewById(R.id.recientes)
         comentarios_noti = view.findViewById(R.id.comentarios_noti)
         flecha3 = view.findViewById(R.id.flecha3)
@@ -55,29 +54,7 @@ class NotiFragment : Fragment() {
         menciones = view.findViewById(R.id.menciones)
         topBar = view.findViewById(R.id.topBar)
 
-        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
-
-
-            fun controlarSwitchesSecundarios(estadoSwitchGeneral: Boolean) {
-                recientes.isEnabled = estadoSwitchGeneral
-                comentarios_noti.isEnabled = estadoSwitchGeneral
-                seguidos.isEnabled = estadoSwitchGeneral
-                menciones.isEnabled = estadoSwitchGeneral
-
-                if (!estadoSwitchGeneral) {
-                   recientes.isChecked = false
-                    comentarios_noti.isChecked = false
-                    seguidos.isChecked = false
-                    menciones.isChecked = false
-
-
-                    notificaciones_2.setOnCheckedChangeListener { buttonView, isChecked ->
-                        controlarSwitchesSecundarios(isChecked)
-
-                        controlarSwitchesSecundarios(notificaciones_2.isChecked)
-                }
-            }
-        }
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
 
         flecha3.setOnClickListener {
@@ -105,6 +82,9 @@ class NotiFragment : Fragment() {
         }
     }
 }
+
+
+
 
 
 

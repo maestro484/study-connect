@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.BusquedaAdapter
 import com.iegm.studyconnect.model.Grado
@@ -36,13 +38,9 @@ class BusquedaFragment : Fragment() {
     lateinit var buscador: SearchView
     lateinit var apunte: Button
     lateinit var listaDeBusqueda: RecyclerView
-
     lateinit var topBar : ConstraintLayout
 
     var grado: Int = 0
-
-
-
 
     val objetos: MutableList<String> = mutableListOf()
 
@@ -77,9 +75,16 @@ class BusquedaFragment : Fragment() {
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
         topBar = view.findViewById(R.id.topBar)
 
+        topBar.setBackgroundColor(
+            Color.parseColor(AppTheme.obtenerTema(requireActivity()))
+        )
+
+
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 
         busquedaAdapter = BusquedaAdapter()
+
+
 
 
         listaDeBusqueda.apply {
