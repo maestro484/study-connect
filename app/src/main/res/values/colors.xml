@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple1">#550363</color>
-    <color name="purple">#A766C9</color>
-    <color name="white">#A084A5</color>
-    <color name="black">#000000</color>
-    <color name="red">#FE0000</color>
+    <color name="moraOscuro">#7D30BF</color>
+    <color name="moradoOsc2">#A799E0</color>
+    <color name="purpuraCl2">#C0A1DB</color>
+    <color name="purpuraCl">#CB69DB</color>
     <color name="gris">#494745</color>
+    <color name="azul">#4B65F2</color>
+    <color name="azulCl">#22ABAFD0</color>
+
 
 </resources>

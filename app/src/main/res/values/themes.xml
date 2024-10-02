@@ -5,19 +5,16 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.StudyConnect" parent="Base.Theme.StudyConnect" />
-
+    <style name="Theme.StudyConnect" parent="Base.Theme.StudyConnect">
+        <item name="colorPrimary">@color/purpuraCl2</item>
+    </style>
 
     <style name="Theme.StudyConnect.Theme1" parent="Base.Theme.StudyConnect">
-        <item name="colorPrimary">@color/purple1</item>
+        <item name="colorPrimary">@color/purpuraCl2</item>
     </style>
 
     <style name="Theme.StudyConnect.Theme2" parent="Base.Theme.StudyConnect">
-        <item name="colorPrimary">@color/purple</item>
-    </style>
-
-    <style name="Theme.StudyConnect.Theme3" parent="Base.Theme.StudyConnect">
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">@color/azulCl</item>
     </style>
 
 

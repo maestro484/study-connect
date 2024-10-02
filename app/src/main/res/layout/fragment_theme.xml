@@ -27,22 +27,22 @@
             android:text="Prededeterminado por el sistema" />
 
         <RadioButton
+            android:id="@+id/morado"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#A15EDB"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Morado"
+            android:textColor="#FFFCFC"
+            android:textColorLink="#EFE2E2" />
+
+        <RadioButton
             android:id="@+id/claro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#C0A1DB"
             android:fontFamily="@font/roboto_medium"
             android:text="Púrpura" />
-
-        <RadioButton
-            android:id="@+id/oscuro"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:background="#A15EDB"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Oscuro"
-            android:textColor="#FFFCFC"
-            android:textColorLink="#EFE2E2" />
 
         <RadioButton
             android:id="@+id/azul"
@@ -58,7 +58,7 @@
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/system_primary_dark"
+        android:background="?attr/colorPrimary"
         android:scrollbarSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
