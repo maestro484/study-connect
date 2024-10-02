@@ -42,8 +42,8 @@ class PdfFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val pdfView: PdfRendererView = view.findViewById(R.id.pdfView)
-        val showInView: Button = view.findViewById(R.id.showInView)
-        val pickPdfButton: Button = view.findViewById(R.id.pickPdfButton)
+       // val showInView: Button = view.findViewById(R.id.showInView)
+       // val pickPdfButton: Button = view.findViewById(R.id.pickPdfButton)
         pickPdfButton.setOnClickListener {
             launchFilePicker()
         }
