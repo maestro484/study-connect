@@ -85,13 +85,6 @@
             android:fontFamily="@font/roboto_black_italic"
             android:text="Seguidos" />
 
-        <Switch
-            android:id="@+id/menciones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_black_italic"
-            android:text="Menciones" />
-
     </LinearLayout>
 
 

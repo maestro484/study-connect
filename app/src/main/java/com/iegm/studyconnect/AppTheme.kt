@@ -8,7 +8,7 @@ import com.iegm.studyconnect.ui.fragments.SAVED_THEME
 import android.widget.Button
 
 object AppTheme {
-    val moradoOscuro = "#A15EDB" /*Barra*/
+    val moradoOscuro = "#7D30BF" /*Barra*/
     val moradoOscuro2 = "#A799E0"
     val moradoClaro2 = "#C0A1DB"
     val moradoClaro = "#CB69DB" /*Barra*/

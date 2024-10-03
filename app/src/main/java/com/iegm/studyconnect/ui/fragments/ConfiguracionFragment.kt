@@ -49,15 +49,29 @@ class ConfiguracionFragment : Fragment() {
         drawable?.mutate()?.colorFilter = PorterDuffColorFilter(Color.parseColor("#A15EDB"), PorterDuff.Mode.SRC_IN)
         notificaciones.background = drawable
 
-        // Obtener el tema guardado y aplicar el color a los botones
+        // Obtener el tema guardado
         val temaActual = AppTheme.obtenerTema(requireActivity())
 
-        when(temaActual) {
-            AppTheme.moradoOscuro -> "#A15EDB" // Color para morado oscuro
-            AppTheme.moradoClaro -> "#CB69DB"  // Color para morado claro
-            AppTheme.azul -> "#B6BADB"          // Color para azul
-            else -> "#CB69DB"                   // Color predeterminado
+        // Función para aplicar color al botón manteniendo el shape_background
+        fun setButtonColor(button: Button) {
+            val color = when (temaActual) {
+                AppTheme.moradoClaro -> "#C0A1DB"
+                AppTheme.moradoOscuro -> "#A799E0"  // Color para morado claro
+                AppTheme.azul -> "#B6BADB"          // Color para azul
+                else -> "#CB69DB"                   // Color predeterminado
+            }
+
+            // Obtener el drawable existente
+            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
+            drawable?.mutate()?.colorFilter = PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
+
+            button.background = drawable // Aplicar el drawable modificado al botón
         }
+
+        // Aplicar el color a todos los botones
+        setButtonColor(notificaciones)
+        setButtonColor(theme)
+        setButtonColor(terminos_condiciones)
 
         notificaciones.setOnClickListener {
             (activity as MainActivity).abrirNotiFragment()
