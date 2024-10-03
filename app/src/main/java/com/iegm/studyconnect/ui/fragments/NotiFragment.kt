@@ -51,7 +51,6 @@ class NotiFragment : Fragment() {
         comentarios_noti = view.findViewById(R.id.comentarios_noti)
         flecha3 = view.findViewById(R.id.flecha3)
         seguidos = view.findViewById(R.id.seguidos)
-        menciones = view.findViewById(R.id.menciones)
         topBar = view.findViewById(R.id.topBar)
 
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
