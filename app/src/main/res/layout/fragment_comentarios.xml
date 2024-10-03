@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="enviar"
+        android:text="ENVIAR"
 
         app:layout_constraintStart_toEndOf="@+id/field_teclado"
         app:layout_constraintTop_toBottomOf="@id/listaDeMaterias" />

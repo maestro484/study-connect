@@ -42,25 +42,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button_comentarios"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:shadowColor="#9D9595"
-            android:text="Comentarios"
-            tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="6dp" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top_bar1">
+        app:layout_constraintTop_toBottomOf="@+id/button_comentarios">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaDeMaterias"
@@ -71,6 +60,16 @@
 
         </androidx.recyclerview.widget.RecyclerView>
     </ScrollView>
+
+    <Button
+        android:id="@+id/button_comentarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:shadowColor="#9D9595"
+        android:text="Comentarios"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView1"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar1" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addingBtn"
