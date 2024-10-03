@@ -4,6 +4,7 @@ import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,14 +13,26 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.google.firebase.storage.FirebaseStorage
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.rajat.pdfviewer.PdfRendererView
 import com.rajat.pdfviewer.PdfViewerActivity
 import com.rajat.pdfviewer.util.saveTo
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
 class ApunteFragment : Fragment() {
+
+    enum class SaveTo {
+        ASK_EVERYTIME,
+        // Otras opciones si las necesitas
+    }
+
 
     private lateinit var pdfView: PdfRendererView
     private lateinit var descripcion: EditText
@@ -52,21 +65,29 @@ class ApunteFragment : Fragment() {
             (activity as MainActivity).abrirApuntesFragment()
         }
 
-        val rol: String = "representante"
-
-        if (rol == "representante") {
-            descripcion.isEnabled = true
-            pdfView.isEnabled = true
-            fileTitleTextView.isEnabled = true
-        } else {
-            descripcion.isEnabled = false
-            pdfView.isEnabled = false
-            fileTitleTextView.isEnabled = false
-        }
 
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
             type = "*/*"
         }
+        pdfView.initWithUrl(
+            url = "http://www.scielo.org.pe/pdf/hm/v18n2/a05v18n2.pdf",
+            lifecycleCoroutineScope = lifecycleScope,
+            lifecycle = lifecycle
+        )
+
+        requireActivity().startActivity(
+            PdfViewerActivity.launchPdfFromUrl(
+                context = requireContext(),
+                pdfUrl = "http://www.scielo.org.pe/pdf/hm/v18n2/a05v18n2.pdf",
+                pdfTitle = "PDF Title",
+                saveTo = saveTo.ASK_EVERYTIME,
+                enableDownload = true
+            )
+        )
+
+
+
+
 
         startActivityForResult(intent, 1)
     }
@@ -80,19 +101,28 @@ class ApunteFragment : Fragment() {
                 val fileRef = storageRef.child("uploads/${it.lastPathSegment}")
                 val uploadTask = fileRef.putFile(it)
 
-                uploadTask.addOnSuccessListener {
-                    // Manejar éxito
-                    PdfViewerActivity.launchPdfFromPath(
-                        context = requireContext(),
-                        path = "your_file_path_or_uri_here",
-                        pdfTitle = "Title",
-                        saveTo = saveTo.ASK_EVERYTIME,
-                        fromAssets = false
-                    )
-                }.addOnFailureListener {
-                    // Manejar error
+                CoroutineScope(Dispatchers.Main).launch {
+                    try {
+                        uploadTask.await() // Espera a que se complete la carga
+                        val downloadUri = fileRef.downloadUrl.await() // Espera la URL
+                        withContext(Dispatchers.Main) {
+                            requireActivity().startActivity(
+                                PdfViewerActivity.launchPdfFromUrl(
+                                    context = requireContext(),
+                                    pdfUrl = "https://www.hq.nasa.gov/alsj/a17/A17_FlightPlan.pdf",
+                                    pdfTitle = "PDF Title",
+                                    saveTo = saveTo.ASK_EVERYTIME,
+                                    enableDownload = true
+                                )
+                            )
+                        }
+                    } catch (e: Exception) {
+                        Log.d("", "error: ${e.message}")
+                    }
                 }
             }
         }
     }
+
+
 }
