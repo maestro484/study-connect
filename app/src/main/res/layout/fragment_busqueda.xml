@@ -9,27 +9,17 @@
 
 
     <Button
-        android:id="@+id/profesor"
+        android:id="@+id/apunte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
 
         android:fontFamily="@font/roboto_medium"
-        android:text="profesor"
+        android:text="Apunte"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBar" />
-
-    <Button
-        android:id="@+id/apunte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="apunte"
-        app:layout_constraintStart_toStartOf="@id/profesor"
-        app:layout_constraintTop_toBottomOf="@id/profesor" />
 
     <Button
         android:id="@+id/materia"
@@ -38,7 +28,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="materia"
+        android:text="Materia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBar" />
 
@@ -49,7 +39,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="fecha"
+        android:text="Fecha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBar" />
 
@@ -78,6 +68,7 @@
             android:fontFamily="@font/roboto_black"
             android:src="@drawable/search_fill0_wght400_grad0_opsz24"
             android:text="Buscar"
+            android:textColor="#FFFFFF"
             android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@+id/buscador"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,8 +84,9 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/devolver"
+            android:editTextColor = "@color/black" />
 
-            />
+
 
         <TextView
             android:id="@+id/textView"
@@ -102,6 +94,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
             android:text="Filtros"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -122,10 +115,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ListaDeBusqueda"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="wrap_content"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBar" />
+        app:layout_constraintTop_toBottomOf="@+id/materia" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
