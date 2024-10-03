@@ -31,7 +31,7 @@ class QrcodeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         back = view.findViewById(R.id.back)
-
+        topBar = view.findViewById(R.id.topBar)
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         back.setOnClickListener {
