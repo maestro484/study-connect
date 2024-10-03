@@ -144,21 +144,21 @@ class MainActivity : AppCompatActivity() {
 
     fun abrirBusquedaFragment() {
         val busquedaFragment: BusquedaFragment = BusquedaFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, busquedaFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, busquedaFragment)
             .commitAllowingStateLoss()
     }
 
     fun abrirMateriaFragment() {
         val abrirMateriaFragment: MateriaFragment = MateriaFragment()
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, abrirMateriaFragment)
+            .replace(R.id.fragmentContainerView, abrirMateriaFragment)
             .commitAllowingStateLoss()
     }
 
     fun abrirQrcodeFragment() {
         val abrirQrcodeFragment : QrcodeFragment = QrcodeFragment()
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, abrirQrcodeFragment)
+            .replace(R.id.fragmentContainerView, abrirQrcodeFragment)
             .commitAllowingStateLoss()
     }
 
