@@ -79,4 +79,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/terminos_condiciones" />
 
+    <Button
+        android:id="@+id/qrButton"
+        android:layout_width="164dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_background"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Soporte técnico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/theme" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

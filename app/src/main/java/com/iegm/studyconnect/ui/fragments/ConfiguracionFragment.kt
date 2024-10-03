@@ -23,6 +23,7 @@ class ConfiguracionFragment : Fragment() {
     lateinit var theme: Button
     lateinit var terminos_condiciones: Button
     lateinit var toBar: ConstraintLayout
+    lateinit var qrButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +44,7 @@ class ConfiguracionFragment : Fragment() {
         notificaciones = view.findViewById(R.id.notificaciones)
         theme = view.findViewById(R.id.theme)
         terminos_condiciones = view.findViewById(R.id.terminos_condiciones)
+        qrButton = view.findViewById(R.id.qrButton)
 
 
         val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
@@ -61,6 +63,11 @@ class ConfiguracionFragment : Fragment() {
 
         notificaciones.setOnClickListener {
             (activity as MainActivity).abrirNotiFragment()
+
+        }
+
+        qrButton.setOnClickListener {
+            (activity as MainActivity).abrirQrcodeFragment()
 
         }
 
