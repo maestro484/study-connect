@@ -34,8 +34,6 @@ class QrcodeFragment : Fragment() {
 
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
-
-
         back.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()
 
@@ -45,3 +43,5 @@ class QrcodeFragment : Fragment() {
 
 
 }
+
+

@@ -25,6 +25,7 @@ class ConfiguracionFragment : Fragment() {
     lateinit var toBar: ConstraintLayout
     lateinit var qrButton: Button
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -74,6 +75,7 @@ class ConfiguracionFragment : Fragment() {
         setButtonColor(notificaciones)
         setButtonColor(theme)
         setButtonColor(terminos_condiciones)
+        setButtonColor(qrButton)
 
         notificaciones.setOnClickListener {
             (activity as MainActivity).abrirNotiFragment()
