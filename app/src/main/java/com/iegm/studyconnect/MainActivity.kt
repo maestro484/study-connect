@@ -50,6 +50,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState, persistentState)
         permisoAlmacenamiento()
 
+        val tema = AppTheme.obtenerTema(this)
+        AppTheme.aplicarTema(tema, this)
     }
 
     fun abrirApunteFragment() {
