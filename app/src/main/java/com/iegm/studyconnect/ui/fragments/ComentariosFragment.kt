@@ -18,6 +18,12 @@ import com.google.firebase.database.ValueEventListener
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.ComentariosAdapter
 import com.iegm.studyconnect.model.Comentario
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import okhttp3.Response
+import java.io.IOException
 
 // Singleton para la lista de avatares
 object AvatarProvider {
@@ -52,6 +58,7 @@ class ComentariosFragment : Fragment() {
     private lateinit var teclado: EditText
     private lateinit var buttonDeEnviar: Button
     private lateinit var listaDeComentarios: RecyclerView
+    private val client = OkHttpClient() // Instancia de OkHttpClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,11 +87,13 @@ class ComentariosFragment : Fragment() {
 
         // Configuración de Firebase
         val database = FirebaseDatabase.getInstance().reference
+
         buttonDeEnviar.setOnClickListener {
             val comentario = teclado.text.toString()
             if (comentario.isNotEmpty()) {
                 val message = Comentario("Oscar", 6, comentario)
                 database.child("comentarios").push().setValue(message)
+                sendNotification(comentario) // Llama a la función para enviar la notificación
             } else {
                 Toast.makeText(
                     requireContext(),
@@ -95,18 +104,60 @@ class ComentariosFragment : Fragment() {
             teclado.text.clear()
         }
 
+        // Listener para los comentarios
         val messagesReference = database.child("comentarios")
         messagesReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val messages = dataSnapshot.children.mapNotNull { it.getValue(Comentario::class.java) }
+                val messages =
+                    dataSnapshot.children.mapNotNull { it.getValue(Comentario::class.java) }
                 customAdapter.dataset = messages.toMutableList()
                 customAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                // Handle errors here.
+                // Manejo de errores aquí.
             }
         })
     }
+
+    private fun sendNotification(comentario: String) {
+        val mediaType = "application/json".toMediaType()
+
+        val jsonBody = """
+    {
+        "included_segments": ["Grado 11"], // Tu segmento
+        "contents": {
+            "en": "$comentario",
+            "es": "$comentario"
+        },
+        "name": "Comentario de Usuario"
+    }
+    """.trimIndent()
+
+        val body: RequestBody = RequestBody.create(mediaType, jsonBody)
+
+        val request = Request.Builder()
+            .url("https://onesignal.com/api/v1/notifications")
+            .post(body)
+            .addHeader("Authorization", "Basic OGUwMDk1YjYtZThjNS00MjI0LTgxNmEtOGMwMjAxZDNkODI4") // Tu REST API Key
+            .addHeader("accept", "application/json")
+            .addHeader("content-type", "application/json")
+            .build()
+
+        Thread {
+            try {
+                val response = client.newCall(request).execute()
+                val responseBody = response.body?.string() ?: "No response body"
+                println("Response: $responseBody")
+
+                if (!response.isSuccessful) {
+                    throw IOException("Unexpected code $response: $responseBody")
+                }
+            } catch (e: IOException) {
+                e.printStackTrace() // Manejo de errores
+            }
+        }.start() // Inicia un nuevo hilo para ejecutar la solicitud de red
+    }
+
 
 }
