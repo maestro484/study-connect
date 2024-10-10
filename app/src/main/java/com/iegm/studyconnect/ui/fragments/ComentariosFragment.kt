@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,11 +19,17 @@ import com.google.firebase.database.ValueEventListener
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.ComentariosAdapter
 import com.iegm.studyconnect.model.Comentario
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
 import okhttp3.Response
+import org.json.JSONObject
 import java.io.IOException
 
 // Singleton para la lista de avatares
@@ -93,7 +100,7 @@ class ComentariosFragment : Fragment() {
             if (comentario.isNotEmpty()) {
                 val message = Comentario("Oscar", 6, comentario)
                 database.child("comentarios").push().setValue(message)
-                sendNotification(comentario) // Llama a la función para enviar la notificación
+                sendPushNotification(comentario)// Llama a la función para enviar la notificación
             } else {
                 Toast.makeText(
                     requireContext(),
@@ -120,44 +127,50 @@ class ComentariosFragment : Fragment() {
         })
     }
 
-    private fun sendNotification(comentario: String) {
-        val mediaType = "application/json".toMediaType()
+    fun sendPushNotification(comentario: Comentario) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val client = OkHttpClient()
 
-        val jsonBody = """
-    {
-        "included_segments": ["Grado 11"], // Tu segmento
-        "contents": {
-            "en": "$comentario",
-            "es": "$comentario"
-        },
-        "name": "Comentario de Usuario"
-    }
-    """.trimIndent()
-
-        val body: RequestBody = RequestBody.create(mediaType, jsonBody)
-
-        val request = Request.Builder()
-            .url("https://onesignal.com/api/v1/notifications")
-            .post(body)
-            .addHeader("Authorization", "Basic OGUwMDk1YjYtZThjNS00MjI0LTgxNmEtOGMwMjAxZDNkODI4") // Tu REST API Key
-            .addHeader("accept", "application/json")
-            .addHeader("content-type", "application/json")
-            .build()
-
-        Thread {
-            try {
-                val response = client.newCall(request).execute()
-                val responseBody = response.body?.string() ?: "No response body"
-                println("Response: $responseBody")
-
-                if (!response.isSuccessful) {
-                    throw IOException("Unexpected code $response: $responseBody")
-                }
-            } catch (e: IOException) {
-                e.printStackTrace() // Manejo de errores
+            val json = """
+            {
+            "app_id": "335e2f0f-5f50-4378-896f-3eeda23a1c41",
+                "filters": [
+                    {
+                        "field": "tag",
+                        "key": "Grade",
+                        "relation": "=",
+                        "value": "11"
+                    }
+                ],
+                "contents": {
+                    "en": "comentario",
+                    "es": "comentario"
+                },
+                "name": "INTERNAL_CAMPAIGN_NAME"
             }
-        }.start() // Inicia un nuevo hilo para ejecutar la solicitud de red
+        """.trimIndent()
+
+            val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), json)
+
+            val request = Request.Builder()
+                .url("https://onesignal.com/api/v1/notifications")
+                .post(requestBody)
+                .addHeader("Authorization", "Basic OGUwMDk1YjYtZThjNS00MjI0LTgxNmEtOGMwMjAxZDNkODI4")
+                .addHeader("accept", "application/json")
+                .build()
+
+            try {
+                val response: Response = client.newCall(request).execute()
+                val responseBody = response.body?.string()
+
+                // Regresar al hilo principal para manejar la respuesta
+                withContext(Dispatchers.Main) {
+                    // Manejar la respuesta aquí
+                    println(responseBody)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
-
-
 }

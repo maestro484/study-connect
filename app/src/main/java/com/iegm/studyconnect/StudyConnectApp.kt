@@ -26,6 +26,8 @@ class StudyConnectApp : Application() {
             OneSignal.Notifications.requestPermission(false)
         }
 
+        OneSignal.User.addTag("Grade", "11")
+
     }
 
 
