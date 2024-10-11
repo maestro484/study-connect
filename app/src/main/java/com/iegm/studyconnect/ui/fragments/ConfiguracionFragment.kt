@@ -74,6 +74,7 @@ class ConfiguracionFragment : Fragment() {
         setButtonColor(notificaciones)
         setButtonColor(theme)
         setButtonColor(terminos_condiciones)
+        setButtonColor(qrButton)
 
         notificaciones.setOnClickListener {
             (activity as MainActivity).abrirNotiFragment()

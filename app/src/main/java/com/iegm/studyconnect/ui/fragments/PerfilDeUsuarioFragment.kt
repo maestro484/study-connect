@@ -70,7 +70,7 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         }
 
         regresar.setOnClickListener {
-            (activity as MainActivity).abrirHomeFragment()
+            (activity as MainActivity).abrirPeriodoFragment()
         }
 
         cerrar_sesion.setOnClickListener {
