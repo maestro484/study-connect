@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.app.AlertDialog
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,9 +12,11 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
@@ -26,6 +29,8 @@ class ApuntesFragment : Fragment() {
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
     private lateinit var button_comentarios: Button
+    lateinit var top_bar: ConstraintLayout
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +47,12 @@ class ApuntesFragment : Fragment() {
         volver1 = view.findViewById(R.id.devolver1)
         addsBtn = view.findViewById(R.id.addingBtn)
         button_comentarios = view.findViewById(R.id.button_comentarios)
+
+        top_bar = view.findViewById(R.id.top_bar1)
+
+
+        top_bar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+
 
         userAdapter =
             UserAdapter(requireContext(), this, userList) //pasarlo al fragment y no adapter
