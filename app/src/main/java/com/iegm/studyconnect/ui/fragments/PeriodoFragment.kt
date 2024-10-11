@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.iegm.studyconnect.AppTheme
@@ -53,7 +52,7 @@ class PeriodoFragment : Fragment() {
         periodo1 = view.findViewById(R.id.periodo1)
         periodo2 = view.findViewById(R.id.periodo2)
         periodo3 = view.findViewById(R.id.periodo3)
-        volver1 = view.findViewById(R.id.volver1)
+        volver1 = view.findViewById(R.id.devolver1)
 
         topBar = view.findViewById(R.id.topBar)
 

@@ -1,7 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +15,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.ComentariosAdapter
 import com.iegm.studyconnect.model.Comentario
@@ -23,14 +23,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
 import okhttp3.Response
-import org.json.JSONObject
-import java.io.IOException
 
 // Singleton para la lista de avatares
 object AvatarProvider {
@@ -82,7 +79,7 @@ class ComentariosFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        devolver1 = view.findViewById(R.id.volver1)
+        devolver1 = view.findViewById(R.id.devolver1)
         buttonDeEnviar = view.findViewById(R.id.buttonDeEnviar)
         teclado = view.findViewById(R.id.teclado)
 
@@ -94,6 +91,11 @@ class ComentariosFragment : Fragment() {
 
         // Configuración de Firebase
         val database = FirebaseDatabase.getInstance().reference
+
+        devolver1.setOnClickListener {
+            (activity as MainActivity).abrirApuntesFragment()
+        }
+
 
         buttonDeEnviar.setOnClickListener {
             val comentario = teclado.text.toString()
@@ -127,7 +129,7 @@ class ComentariosFragment : Fragment() {
         })
     }
 
-    fun sendPushNotification(comentario: Comentario) {
+    fun sendPushNotification(comentario: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val client = OkHttpClient()
 
@@ -143,8 +145,8 @@ class ComentariosFragment : Fragment() {
                     }
                 ],
                 "contents": {
-                    "en": "comentario",
-                    "es": "comentario"
+                    "en": "$comentario",
+                    "es": "$comentario"
                 },
                 "name": "INTERNAL_CAMPAIGN_NAME"
             }
@@ -155,7 +157,10 @@ class ComentariosFragment : Fragment() {
             val request = Request.Builder()
                 .url("https://onesignal.com/api/v1/notifications")
                 .post(requestBody)
-                .addHeader("Authorization", "Basic OGUwMDk1YjYtZThjNS00MjI0LTgxNmEtOGMwMjAxZDNkODI4")
+                .addHeader(
+                    "Authorization",
+                    "Basic OGUwMDk1YjYtZThjNS00MjI0LTgxNmEtOGMwMjAxZDNkODI4"
+                )
                 .addHeader("accept", "application/json")
                 .build()
 
