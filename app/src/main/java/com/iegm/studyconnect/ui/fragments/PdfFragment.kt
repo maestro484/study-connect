@@ -52,7 +52,7 @@ class PdfFragment : Fragment() {
         atras = view.findViewById(R.id.Atras)
         fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
         Relative = view.findViewById(R.id.relative)
-
+//
         // Recuperar valores guardados
         selectedUri = getSavedPdfUri()
         val savedDescription = getSavedDescription() ?: ""
