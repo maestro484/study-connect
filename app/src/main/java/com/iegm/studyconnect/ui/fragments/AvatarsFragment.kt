@@ -18,7 +18,6 @@ import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.AvatarsAdapter
-
 // Fragmento que muestra una lista de avatares para seleccionar
 class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialogFragment() {
 
@@ -32,36 +31,41 @@ class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialo
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // Infla el diseño del fragmento de avatares
         return inflater.inflate(R.layout.fragment_avatars, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Obtiene las preferencias compartidas de la actividad
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
 
+        // Inicializa la barra superior y aplica el color del tema actual
         topBar = view.findViewById(R.id.topBar)
         topBar.setBackgroundColor(
             Color.parseColor(AppTheme.obtenerTema(requireActivity()))
         )
 
+        // Inicializa el adaptador de avatares con el callback de selección
         avatarsAdapter = AvatarsAdapter(onAvatarSelected)
-        listaAvatars = view.findViewById(R.id.listaAvatars)
-        flecha2 = view.findViewById(R.id.flecha2)
+        listaAvatars = view.findViewById(R.id.listaAvatars) // Inicializa el RecyclerView
+        flecha2 = view.findViewById(R.id.flecha2) // Inicializa la flecha de cierre
 
-
-        val gridLayoutManager = GridLayoutManager(requireContext(), 3)
+        // Configura el layout manager para el RecyclerView en formato de grilla
+        val gridLayoutManager = GridLayoutManager(requireContext(), 3) // 3 columnas
 
         listaAvatars.apply {
-            layoutManager = gridLayoutManager
-            adapter = avatarsAdapter
+            layoutManager = gridLayoutManager // Asigna el layout manager al RecyclerView
+            adapter = avatarsAdapter // Asigna el adaptador al RecyclerView
         }
 
-
+        // Configura el listener para cerrar el fragmento al hacer clic en la flecha
         flecha2.setOnClickListener {
-            dismiss()
+            dismiss() // Cierra el BottomSheetDialogFragment
         }
     }
 }
 
+// Constante para la clave de las preferencias del avatar guardado
 const val SAVED_AVATAR_PROFILE = "saved_avatar_profile"
