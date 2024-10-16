@@ -92,7 +92,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     fun abrirPerfilDeUsuarioFragment() {
         val perfilDeUsuarioFragment: PerfilDeUsuarioFragment = PerfilDeUsuarioFragment()
         supportFragmentManager.beginTransaction()
@@ -158,7 +157,7 @@ class MainActivity : AppCompatActivity() {
     fun abrirQrcodeFragment() {
         val abrirQrcodeFragment : QrcodeFragment = QrcodeFragment()
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, abrirQrcodeFragment)
+            .replace(R.id.fragmentContainerView, abrirQrcodeFragment)
             .commitAllowingStateLoss()
     }
 
