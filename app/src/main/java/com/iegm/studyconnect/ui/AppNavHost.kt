@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui
 
+import android.content.SharedPreferences
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -15,7 +16,8 @@ fun AppNavHost(
     modifier: Modifier = Modifier,
     navHostController: NavHostController,
     startDestination: String,
-    authViewModel: AuthViewModel
+    authViewModel: AuthViewModel,
+    sharedPreferences: SharedPreferences
 ) {
     NavHost(
         modifier = modifier,
@@ -30,7 +32,7 @@ fun AppNavHost(
             SignInScreen(navHostController, authViewModel)
         }
         composable(NavigationItem.SignUp.route) {
-            SignUpScreen(navHostController, authViewModel)
+            SignUpScreen(navHostController, authViewModel, sharedPreferences)
 
         }
 
