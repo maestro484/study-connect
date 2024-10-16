@@ -77,7 +77,7 @@ class BusquedaFragment : Fragment() {
         buscador = view.findViewById(R.id.buscador)
         apunte = view.findViewById(R.id.apunte)
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
-        topBar = view.findViewById(R.id.topBar)
+        topBar = view.findViewById(R.id.topBar3)
 
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 

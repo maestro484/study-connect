@@ -53,7 +53,7 @@ class PeriodoFragment : Fragment() {
         periodo3 = view.findViewById(R.id.periodo3)
         volver1 = view.findViewById(R.id.devolver1)
 
-        topBar = view.findViewById(R.id.topBar)
+        topBar = view.findViewById(R.id.topBar3)
 
 
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))

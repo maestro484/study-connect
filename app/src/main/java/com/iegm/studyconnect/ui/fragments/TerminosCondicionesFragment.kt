@@ -40,7 +40,7 @@ class TerminosCondicionesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         flecha4 = view.findViewById(R.id.flecha4)
-        topBar = view.findViewById(R.id.topBar)
+        topBar = view.findViewById(R.id.topBar3)
 
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
