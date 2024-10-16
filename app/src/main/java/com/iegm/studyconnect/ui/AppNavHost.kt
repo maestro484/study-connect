@@ -31,6 +31,7 @@ fun AppNavHost(
         }
         composable(NavigationItem.SignUp.route) {
             SignUpScreen(navHostController, authViewModel)
+
         }
 
     }

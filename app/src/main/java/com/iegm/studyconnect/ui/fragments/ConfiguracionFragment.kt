@@ -25,14 +25,12 @@ class ConfiguracionFragment : Fragment() {
     lateinit var toBar: ConstraintLayout // Contenedor de la barra superior
     lateinit var qrButton: Button // Botón para abrir el escáner QR
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Infla el layout del fragmento de configuración
         return inflater.inflate(R.layout.fragment_configuracion, container, false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,17 +40,12 @@ class ConfiguracionFragment : Fragment() {
         toBar = view.findViewById(R.id.topBar)
         toBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
-        // Inicializa los botones y la imagen desde el layout
+        // Inicializa los botones y la imagen desde el layout (BUSCA EL id y le asigna la variable)
         flecha1 = view.findViewById(R.id.flecha1)
         notificaciones = view.findViewById(R.id.notificaciones)
         theme = view.findViewById(R.id.theme)
         terminos_condiciones = view.findViewById(R.id.terminos_condiciones)
         qrButton = view.findViewById(R.id.qrButton)
-
-       // Modifica el fondo del botón de notificaciones
-        val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
-        drawable?.mutate()?.colorFilter = PorterDuffColorFilter(Color.parseColor("#A15EDB"), PorterDuff.Mode.SRC_IN)
-        notificaciones.background = drawable
 
         // Obtener el tema guardado
         val temaActual = AppTheme.obtenerTema(requireActivity())
