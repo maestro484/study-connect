@@ -1,15 +1,14 @@
 package com.iegm.studyconnect
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.ApunteFragment
@@ -18,9 +17,11 @@ import com.iegm.studyconnect.ui.fragments.BusquedaFragment
 import com.iegm.studyconnect.ui.fragments.ComentariosFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
 import com.iegm.studyconnect.ui.fragments.HomeFragment
+import com.iegm.studyconnect.ui.fragments.MateriaFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
+import com.iegm.studyconnect.ui.fragments.QrcodeFragment
 import com.iegm.studyconnect.ui.fragments.TerminosCondicionesFragment
 import com.iegm.studyconnect.ui.fragments.ThemeFragment
 
@@ -50,6 +51,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState, persistentState)
         permisoAlmacenamiento()
 
+        val tema = AppTheme.obtenerTema(this)
+        AppTheme.aplicarTema(tema, this)
     }
 
     fun abrirApunteFragment() {
@@ -58,8 +61,7 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainerView, apunteFragment)
             .commitAllowingStateLoss()
 
-    } // Muestra el periodo correspondiente a la materia
-
+    }
 
     fun abrirApuntesFragment() {
         val apuntesFragment: ApuntesFragment = ApuntesFragment()
@@ -90,6 +92,10 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
 
     }
+    fun abrirLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
 
 
     fun abrirPerfilDeUsuarioFragment() {
@@ -98,6 +104,8 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainerView, perfilDeUsuarioFragment)
             .commitAllowingStateLoss()
     }
+
+
 
     fun abrirConfiguracionFragment() {
         val configuracionFragment: ConfiguracionFragment = ConfiguracionFragment()
@@ -143,16 +151,23 @@ class MainActivity : AppCompatActivity() {
 
     fun abrirBusquedaFragment() {
         val busquedaFragment: BusquedaFragment = BusquedaFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, busquedaFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, busquedaFragment)
             .commitAllowingStateLoss()
     }
 
-   /* fun abrirMateriaFragment() {
+    fun abrirMateriaFragment() {
         val abrirMateriaFragment: MateriaFragment = MateriaFragment()
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, abrirMateriaFragment)
+            .replace(R.id.fragmentContainerView, abrirMateriaFragment)
             .commitAllowingStateLoss()
-    }*/
+    }
+
+    fun abrirQrcodeFragment() {
+        val abrirQrcodeFragment: QrcodeFragment = QrcodeFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainerView, abrirQrcodeFragment)
+            .commitAllowingStateLoss()
+    }
 
 }
 

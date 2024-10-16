@@ -2,22 +2,26 @@ package com.iegm.studyconnect.ui.fragments
 
 import android.content.Context
 import android.graphics.Color
+import androidx.fragment.app.viewModels
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.iegm.studyconnect.AppTheme
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.AvatarsAdapter
 
 class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialogFragment() {
 
-    lateinit var top_bar2: ConstraintLayout
+    lateinit var topBar: ConstraintLayout
     lateinit var listaAvatars: RecyclerView
     lateinit var flecha2: ImageView
     var avatarsAdapter: AvatarsAdapter? = null
@@ -34,8 +38,8 @@ class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialo
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
 
-        top_bar2 = view.findViewById(R.id.topBar3)
-        top_bar2.setBackgroundColor(
+        topBar = view.findViewById(R.id.topBar)
+        topBar.setBackgroundColor(
             Color.parseColor(AppTheme.obtenerTema(requireActivity()))
         )
 

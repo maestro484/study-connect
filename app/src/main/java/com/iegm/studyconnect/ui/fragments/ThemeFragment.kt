@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RadioButton
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.iegm.studyconnect.AppTheme
@@ -40,19 +41,14 @@ class ThemeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        topBar = view.findViewById(R.id.topBar3)
+        topBar = view.findViewById(R.id.topBar)
         predeterminado = view.findViewById(R.id.predeterminado)
         azul = view.findViewById(R.id.azul)
-        oscuro = view.findViewById(R.id.oscuro)
+        oscuro = view.findViewById(R.id.morado)
         flecha1 = view.findViewById(R.id.flecha1)
         claro = view.findViewById(R.id.claro)
 
-
         val mainActivity = (requireActivity() as MainActivity)
-
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
-
 
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
@@ -90,7 +86,15 @@ class ThemeFragment : Fragment() {
                 AppTheme.moradoClaro2,
                 AppTheme.gris
             )
+
+            mainActivity.cambiarColor(
+                AppTheme.moradoClaro2,
+                AppTheme.moradoClaro2,
+                AppTheme.gris
+            )
         }
+
+
 
         flecha1.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()
