@@ -33,7 +33,6 @@ class NotiFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -54,7 +53,6 @@ class NotiFragment : Fragment() {
         topBar = view.findViewById(R.id.topBar)
 
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
-
 
         flecha3.setOnClickListener {
             (activity as MainActivity).abrirConfiguracionFragment()
