@@ -16,6 +16,7 @@ import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
+
 class ConfiguracionFragment : Fragment() {
 
     lateinit var flecha1: ImageView
@@ -102,7 +103,11 @@ class ConfiguracionFragment : Fragment() {
         }
 
 
+
+
     }
 
+
 }
+
 

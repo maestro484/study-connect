@@ -12,8 +12,6 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import com.google.android.gms.auth.api.Auth
 import com.google.firebase.auth.FirebaseAuth
 import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.LoginActivity
@@ -98,4 +96,5 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
 
         avatarsFragment?.dismiss()
     }
+
 }

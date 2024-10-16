@@ -1,5 +1,6 @@
 package com.iegm.studyconnect
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
@@ -91,6 +92,10 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
 
     }
+    fun abrirLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
 
 
     fun abrirPerfilDeUsuarioFragment() {
@@ -99,6 +104,8 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainerView, perfilDeUsuarioFragment)
             .commitAllowingStateLoss()
     }
+
+
 
     fun abrirConfiguracionFragment() {
         val configuracionFragment: ConfiguracionFragment = ConfiguracionFragment()

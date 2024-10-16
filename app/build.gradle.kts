@@ -98,7 +98,6 @@ dependencies {
     implementation("com.airbnb.android:lottie:5.0.3") // Usa la última versión estable
     implementation("com.google.code.gson:gson:2.11.0")
 
-
     implementation("com.google.firebase:firebase-database")
     //Implementación de la animación.
     implementation("com.onesignal:OneSignal:[4.0.0, 5.0.0)")
