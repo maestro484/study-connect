@@ -11,7 +11,7 @@ import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.Comentario
 
 class ComentariosAdapter() : RecyclerView.Adapter<ComentariosAdapter.ViewHolder>() {
-
+//esto es para que los usuarios cuando escriban el comentario aparesca con la imagen
     val avatars = listOf(
         R.drawable.ardilla,
         R.drawable.ballena,
@@ -35,9 +35,9 @@ class ComentariosAdapter() : RecyclerView.Adapter<ComentariosAdapter.ViewHolder>
         R.drawable.vaca,
         R.drawable.zorro
     )
-
+//esta es la lista que contiene los elementos de los comentarios
     var dataset: MutableList<Comentario> = mutableListOf()
-
+//aqui llamamos los elementos de item_comentarios
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nombreUsuario: TextView
         val comentarioUsuario: TextView

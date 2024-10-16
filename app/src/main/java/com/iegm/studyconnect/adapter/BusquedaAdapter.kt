@@ -17,9 +17,9 @@ import com.iegm.studyconnect.model.Tipo
 
 class BusquedaAdapter(val context: Context) : RecyclerView.Adapter<BusquedaAdapter.BusquedaViewHolder>() {
 
-
+//esta es la lista que contiene los resultados de busqueda
     val resultados: MutableList<Resultados> = mutableListOf()
-
+//esta clase continen los resultados de busqueda y actualiza los resultados atiempo real
     class BusquedaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val resultadoTV: TextView = itemView.findViewById(R.id.textView4)
         val resultadoView: CardView = itemView.findViewById(R.id.resultadoView)
