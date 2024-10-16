@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +13,10 @@ import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.google.android.gms.auth.api.Auth
+import com.google.firebase.auth.FirebaseAuth
 import com.iegm.studyconnect.AppTheme
+import com.iegm.studyconnect.LoginActivity
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import de.hdodenhof.circleimageview.CircleImageView
@@ -49,6 +53,7 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         topBar = view.findViewById(R.id.constraintLayout)
 
 
+
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
@@ -65,7 +70,18 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         }
 
         regresar.setOnClickListener {
-            (activity as MainActivity).abrirHomeFragment()
+            (activity as MainActivity).abrirPeriodoFragment()
+        }
+
+        cerrar_sesion.setOnClickListener {
+
+            FirebaseAuth.getInstance().signOut()  // Cerrar sesión en Firebase
+
+            val intent = Intent(requireContext(), LoginActivity::class.java)
+            startActivity(intent)  // lo manda pal  LoginActivity
+
+            requireActivity().finish()
+            // Finalizar la actividad actual para evitar que el usuario vuelva a ella
         }
 
 

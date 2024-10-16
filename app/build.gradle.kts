@@ -96,11 +96,14 @@ dependencies {
     // implementation ("com.facebook.android:facebook-android-sdk:8.x")
     implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
     implementation("com.airbnb.android:lottie:5.0.3") // Usa la última versión estable
-    implementation ("com.google.code.gson:gson:2.11.0")
+    implementation("com.google.code.gson:gson:2.11.0")
 
 
     implementation("com.google.firebase:firebase-database")
     //Implementación de la animación.
+    implementation("com.onesignal:OneSignal:[4.0.0, 5.0.0)")
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    // Libreria del okhttp
 
 
 }

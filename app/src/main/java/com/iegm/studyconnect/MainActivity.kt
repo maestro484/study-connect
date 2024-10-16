@@ -156,7 +156,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun abrirQrcodeFragment() {
-        val abrirQrcodeFragment : QrcodeFragment = QrcodeFragment()
+        val abrirQrcodeFragment: QrcodeFragment = QrcodeFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, abrirQrcodeFragment)
             .commitAllowingStateLoss()

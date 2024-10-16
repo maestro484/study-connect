@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.iegm.studyconnect.AppTheme
@@ -23,7 +22,6 @@ class PeriodoFragment : Fragment() {
     lateinit var periodo3: Button
     lateinit var volver1: ImageView
     lateinit var topBar: ConstraintLayout
-    private lateinit var lottie_Aaimation_view: LottieAnimationView
 
     companion object {
         fun newInstance() = PeriodoFragment()
@@ -53,7 +51,7 @@ class PeriodoFragment : Fragment() {
         periodo1 = view.findViewById(R.id.periodo1)
         periodo2 = view.findViewById(R.id.periodo2)
         periodo3 = view.findViewById(R.id.periodo3)
-        volver1 = view.findViewById(R.id.volver1)
+        volver1 = view.findViewById(R.id.devolver1)
 
         topBar = view.findViewById(R.id.topBar)
 
@@ -76,10 +74,7 @@ class PeriodoFragment : Fragment() {
         volver1.setOnClickListener {
              (activity as MainActivity).abrirHomeFragment()
         }
-        periodo1.setOnClickListener {
-            lottie_Aaimation_view.setAnimation("animation_file_name.json")
-            lottie_Aaimation_view.playAnimation()
-        }
+
 
     }
 

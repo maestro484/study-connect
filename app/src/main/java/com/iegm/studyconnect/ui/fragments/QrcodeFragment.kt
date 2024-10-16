@@ -14,41 +14,42 @@ import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
+
 class QrcodeFragment : Fragment() {
 
     lateinit var back: ImageView
     lateinit var topBar: ConstraintLayout
-    lateinit var imageQr: ImageView
+    lateinit var qr_image: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_qrcode, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Inicializar las vistas
         back = view.findViewById(R.id.back)
+        qr_image = view.findViewById(R.id.qr_image)
         topBar = view.findViewById(R.id.topBar)
-        imageQr = view.findViewById(R.id.ImageQr)
 
-        // Cambiar el color del topBar según el tema
-        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+        qr_image.setOnClickListener {
 
-        // Listener para el botón "back"
-        back.setOnClickListener {
-            (activity as MainActivity).abrirConfiguracionFragment()
+            // Crear el intent para abrir el navegador con la URL
+
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://juanmg777vg.wixsite.com/study-connect"))
+            startActivity(intent)
         }
 
-        // Listener para el ImageView que abre la página web
-        imageQr.setOnClickListener {
-            val uri = Uri.parse("https://juanmg777vg.wixsite.com/study-connect")
-            val intent = Intent(Intent.ACTION_VIEW, uri)
-            startActivity(intent)
+        // Cambiar el color de la barra superior usando el tema actual
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+
+        // Configurar el botón de retroceso
+        back.setOnClickListener {
+            (activity as MainActivity).abrirConfiguracionFragment()
         }
     }
 }

@@ -10,7 +10,9 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
@@ -23,12 +25,15 @@ class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: Ar
         var name: TextView
         var mbNum: TextView
         var mMenus: ImageView
+        val itemCard : CardView
 
         init {
             name = v.findViewById<TextView>(R.id.mTitle)
             mbNum = v.findViewById<TextView>(R.id.mSubTitle)
             mMenus = v.findViewById(R.id.mMenus)
             mMenus.setOnClickListener { popupMenus(it) }
+
+            itemCard = v.findViewById(R.id.item_card)
 
         }
 
@@ -100,24 +105,37 @@ class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: Ar
 
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val inflater = LayoutInflater.from(parent.context)
 
-        val v = inflater.inflate(R.layout.item_apunte, parent, false)
+        val v = inflater.inflate(R.layout.item_apunte, parent, false,  )
 
         return UserViewHolder(v)
+
+
+
     }
 
     override fun getItemCount(): Int {
         return userList.size
     }
 
+
+
+
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val newList = userList[position]
         holder.name.text = newList.userName
         holder.mbNum.text = newList.userMb
-
+        holder.itemCard.setOnClickListener {
+            (context as  MainActivity).apply {
+                abrirApunteFragment()
+            }
+        }
     }
+
+
 
 
 }
