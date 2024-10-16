@@ -1,36 +1,46 @@
 package com.iegm.studyconnect.adapter
 
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.ui.fragments.HomeFragment
 
-class MateriasAdapter: RecyclerView.Adapter<MateriasAdapter.MateriaViewModel>() {
+class MateriasAdapter(val context: Context): RecyclerView.Adapter<MateriasAdapter.MateriaViewModel>() {
 
     var materias: List<String> = listOf()
 
-   class MateriaViewModel(itemView: View): RecyclerView.ViewHolder(itemView)
-   {                                                       //duda
-       val materiaBtn: Button = itemView.findViewById(R.id.button2)
-   }
+    class MateriaViewModel(itemView: View) :
+        RecyclerView.ViewHolder(itemView) {                                                       //duda
+        val materiaBtn: Button = itemView.findViewById(R.id.button2)
+    }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):MateriaViewModel{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MateriaViewModel {
         val viewLayout = LayoutInflater.from(parent.context).inflate(
             //duda
-             R.layout.item_materias,
-            parent,false)
+            R.layout.item_materias,
+            parent, false
+        )
         return MateriaViewModel(viewLayout)
     }
 
     override fun onBindViewHolder(holder: MateriasAdapter.MateriaViewModel, position: Int) {
         Log.d("busqueda", "resultados: " + materias[position])
         holder.materiaBtn.text = materias[position]
+        holder.materiaBtn.setOnClickListener {
+            (context as MainActivity).apply {
+                abrirPeriodoFragment()
+            }
+        }
     }
 
     override fun getItemCount(): Int {
         return materias.size
+
     }
 }

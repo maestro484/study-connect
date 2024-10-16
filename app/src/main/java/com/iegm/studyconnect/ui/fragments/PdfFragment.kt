@@ -79,6 +79,10 @@ class PdfFragment : Fragment() {
             launchFilePicker() // Abre el selector de archivos cuando el usuario toca el PDF view
         }
 
+        atras.setOnClickListener {
+            (activity as MainActivity).abrirApunteFragment()
+        }
+
         pdfView.initWithUrl(
             url = pdfView.toString(),
             lifecycleCoroutineScope = lifecycleScope,

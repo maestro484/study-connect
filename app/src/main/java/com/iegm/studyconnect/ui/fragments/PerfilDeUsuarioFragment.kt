@@ -49,7 +49,7 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         topBar = view.findViewById(R.id.constraintLayout)
 
 
-        topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
+      //  topBar.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
         val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, 0)

@@ -45,10 +45,10 @@ class ConfiguracionFragment : Fragment() {
 
         top_bar3 = view.findViewById(R.id.topBar)
 
-        top_bar3.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
+       // top_bar3.setBackgroundColor(Color.parseColor(AppTheme.temaElegido))
 
         flecha1 = view.findViewById(R.id.flecha1)
-        adm_cuenta = view.findViewById(R.id.cerrar_sesion)
+       // adm_cuenta = view.findViewById(R.id.cerrar_sesion)
         notificaciones = view.findViewById(R.id.notificaciones_2)
         theme = view.findViewById(R.id.theme)
         terminos_condiciones = view.findViewById(R.id.terminos_y_condiciones)

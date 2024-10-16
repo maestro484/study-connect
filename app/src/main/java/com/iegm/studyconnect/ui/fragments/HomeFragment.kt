@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
         gradoG = view.findViewById(R.id.textViewG)
         listaDeMaterias = view.findViewById(R.id.ListaNueva)
         perfil = view.findViewById(R.id.perfil)
-        materiasAdapter = MateriasAdapter()
+        materiasAdapter = MateriasAdapter(context = requireContext())
 
         listaDeMaterias.apply {
             layoutManager = GridLayoutManager(requireContext(), 3)
@@ -87,6 +87,12 @@ class HomeFragment : Fragment() {
         perfil.setOnClickListener {
             (activity as MainActivity).abrirPerfilDeUsuarioFragment()
         }
+
+        listaDeMaterias.setOnClickListener {
+            (activity as MainActivity).abrirPeriodoFragment()
+
+        }
+
 
 
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)

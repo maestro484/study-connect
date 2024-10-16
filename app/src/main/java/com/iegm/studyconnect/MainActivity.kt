@@ -5,9 +5,11 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.ui.fragments.ApunteFragment
@@ -56,7 +58,8 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainerView, apunteFragment)
             .commitAllowingStateLoss()
 
-    }
+    } // Muestra el periodo correspondiente a la materia
+
 
     fun abrirApuntesFragment() {
         val apuntesFragment: ApuntesFragment = ApuntesFragment()

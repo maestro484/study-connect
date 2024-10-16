@@ -57,7 +57,7 @@ class ApunteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         pdfView = view.findViewById(R.id.pdfView1)
-        descripcion = view.findViewById(R.id.Descripcion)
+        descripcion = view.findViewById(R.id.descripcion)
         atras = view.findViewById(R.id.Atras)
         fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
 
