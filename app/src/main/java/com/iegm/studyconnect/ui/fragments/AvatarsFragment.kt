@@ -19,12 +19,14 @@ import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.AvatarsAdapter
 
+// Fragmento que muestra una lista de avatares para seleccionar
 class AvatarsFragment(val onAvatarSelected: OnAvatarSelected) : BottomSheetDialogFragment() {
 
-    lateinit var topBar: ConstraintLayout
-    lateinit var listaAvatars: RecyclerView
-    lateinit var flecha2: ImageView
-    var avatarsAdapter: AvatarsAdapter? = null
+    // Declaración de variables para la interfaz de usuario
+    lateinit var topBar: ConstraintLayout // Barra superior del fragmento
+    lateinit var listaAvatars: RecyclerView // RecyclerView que muestra la lista de avatares
+    lateinit var flecha2: ImageView // Imagen que permite cerrar el fragmento
+    var avatarsAdapter: AvatarsAdapter? = null // Adaptador para manejar la lista de avatares
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

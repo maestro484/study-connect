@@ -96,7 +96,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
     fun abrirPerfilDeUsuarioFragment() {
         val perfilDeUsuarioFragment: PerfilDeUsuarioFragment = PerfilDeUsuarioFragment()
         supportFragmentManager.beginTransaction()
