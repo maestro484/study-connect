@@ -11,7 +11,6 @@ import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -25,98 +24,97 @@ import java.io.InputStream
 
 class HomeFragment : Fragment() {
 
-    lateinit var ajuste: ImageView
-    lateinit var buscador: SearchView
-    lateinit var gradoG: TextView
-    lateinit var listaDeMaterias: RecyclerView
-    lateinit var perfil: ImageView
-    private lateinit var materiasAdapter: MateriasAdapter
-    var grado: Int = 0
-
-    var busqueda = ""
+    // Variables para los elementos de la interfaz
+    lateinit var ajuste: ImageView // Icono para ajustes
+    lateinit var buscador: SearchView // Barra de búsqueda
+    lateinit var gradoG: TextView // Texto que muestra el grado actual
+    lateinit var listaDeMaterias: RecyclerView // Lista para mostrar las materias
+    lateinit var perfil: ImageView // Icono para perfil de usuario
+    private lateinit var materiasAdapter: MateriasAdapter // Adaptador para la lista de materias
+    var grado: Int = 0 // Índice del grado actual
+    var busqueda = "" // Variable para almacenar la búsqueda
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() = HomeFragment() // Método para crear una nueva instancia del fragmento
     }
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels() // Inicializa el ViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
+        // Aquí se puede usar el ViewModel si es necesario
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // Infla la vista del fragmento
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    // Método para leer el archivo JSON desde la carpeta raw
     private fun readJsonFromRaw(context: Context, resourceId: Int): String {
         val inputStream: InputStream = context.resources.openRawResource(resourceId)
-        return inputStream.bufferedReader().use { it.readText() }
+        return inputStream.bufferedReader().use { it.readText() } // Lee el contenido del archivo
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Inicializa los elementos de la interfaz
         ajuste = view.findViewById(R.id.ajuste)
         buscador = view.findViewById(R.id.Buscador)
         gradoG = view.findViewById(R.id.textViewG)
         listaDeMaterias = view.findViewById(R.id.ListaNueva)
         perfil = view.findViewById(R.id.perfil)
+
+        // Inicializa el adaptador de materias
         materiasAdapter = MateriasAdapter(context = requireContext())
 
+        // Configura el RecyclerView
         listaDeMaterias.apply {
-            layoutManager = GridLayoutManager(requireContext(), 3)
-            adapter = materiasAdapter
+            layoutManager = GridLayoutManager(requireContext(), 3) // Configura un GridLayout con 3 columnas
+            adapter = materiasAdapter // Asigna el adaptador al RecyclerView
         }
 
+        // Configura los listeners para los botones
         ajuste.setOnClickListener {
-            (activity as MainActivity).abrirConfiguracionFragment()
+            (activity as MainActivity).abrirConfiguracionFragment() // Navega a la configuración
         }
 
         buscador.setOnClickListener {
-            (activity as MainActivity).abrirBusquedaFragment()
-
+            (activity as MainActivity).abrirBusquedaFragment() // Navega al fragmento de búsqueda
         }
 
         perfil.setOnClickListener {
-            (activity as MainActivity).abrirPerfilDeUsuarioFragment()
+            (activity as MainActivity).abrirPerfilDeUsuarioFragment() // Navega al perfil del usuario
         }
 
         listaDeMaterias.setOnClickListener {
-            (activity as MainActivity).abrirPeriodoFragment()
-
+            (activity as MainActivity).abrirPeriodoFragment() // Navega al fragmento de período
         }
 
-
-
+        // Lee el archivo JSON con los datos de grupos
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
-        var jsonObject = JSONObject(jsonString)
+        val jsonObject = JSONObject(jsonString) // Crea un objeto JSON a partir de la cadena leída
 
-        val gson = Gson()
+        val gson = Gson() // Inicializa Gson para convertir JSON a objetos
+        val data: SchoolData = gson.fromJson(jsonString, object : TypeToken<SchoolData>() {}.type) // Convierte el JSON a SchoolData
 
-        val data: SchoolData = gson.fromJson(jsonString, object : TypeToken<SchoolData>() {}.type)
-
-
-
+        // Actualiza el texto con el grado actual
         gradoG.text = "Grado ${data.grados[grado].grado}"
 
+        // Filtra las materias y las asigna al adaptador
         materiasAdapter.materias = filtrarMateria(data.grados[grado])
-
-
     }
 
+    // Función para filtrar las materias según el grado
     fun filtrarMateria(grado: Grado): List<String> {
-        val materias: MutableList<String> = mutableListOf()
+        val materias: MutableList<String> = mutableListOf() // Lista mutable para almacenar los nombres de las materias
         grado.materias.map {
-            it.nombre
-            materias.add(it.nombre)
+            materias.add(it.nombre) // Agrega el nombre de cada materia a la lista
         }
-        return materias
+        return materias // Devuelve la lista de nombres de materias
     }
 }
