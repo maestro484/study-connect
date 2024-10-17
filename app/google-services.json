@@ -13,7 +13,20 @@
           "package_name": "com.iegm.studyconnect"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "445197493672-538io520vkdpsj0b6jd41ot1kdorbek4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iegm.studyconnect",
+            "certificate_hash": "e3599c0afa500c3feddf79ee3391007a5695e1d5"
+          }
+        },
+        {
+          "client_id": "445197493672-rfhgv8cga8eb03ikkn9b5coffs5t6tmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCXaxwWi0eIk5cdtr53PfVxCZE_y1hMuCI"
@@ -21,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445197493672-rfhgv8cga8eb03ikkn9b5coffs5t6tmu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
