@@ -30,7 +30,6 @@ import java.io.InputStream
 import java.text.Normalizer
 
 class BusquedaFragment : Fragment() {
-    //
 
     lateinit var busquedaAdapter: BusquedaAdapter
 
