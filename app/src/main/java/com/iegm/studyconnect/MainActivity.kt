@@ -1,5 +1,6 @@
 package com.iegm.studyconnect
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
@@ -91,6 +92,10 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
 
     }
+    fun abrirLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
 
     fun abrirPerfilDeUsuarioFragment() {
         val perfilDeUsuarioFragment: PerfilDeUsuarioFragment = PerfilDeUsuarioFragment()
@@ -98,6 +103,8 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainerView, perfilDeUsuarioFragment)
             .commitAllowingStateLoss()
     }
+
+
 
     fun abrirConfiguracionFragment() {
         val configuracionFragment: ConfiguracionFragment = ConfiguracionFragment()
@@ -143,19 +150,19 @@ class MainActivity : AppCompatActivity() {
 
     fun abrirBusquedaFragment() {
         val busquedaFragment: BusquedaFragment = BusquedaFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, busquedaFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, busquedaFragment)
             .commitAllowingStateLoss()
     }
 
     fun abrirMateriaFragment() {
         val abrirMateriaFragment: MateriaFragment = MateriaFragment()
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerView, abrirMateriaFragment)
+            .replace(R.id.fragmentContainerView, abrirMateriaFragment)
             .commitAllowingStateLoss()
     }
 
     fun abrirQrcodeFragment() {
-        val abrirQrcodeFragment : QrcodeFragment = QrcodeFragment()
+        val abrirQrcodeFragment: QrcodeFragment = QrcodeFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, abrirQrcodeFragment)
             .commitAllowingStateLoss()

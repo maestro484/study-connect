@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@id/pdfView">
 
         <EditText
-            android:id="@+id/Descripcion"
+            android:id="@+id/descripcion"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="top|start"

@@ -39,7 +39,7 @@ class TerminosCondicionesFragment : Fragment() {
 
         // Inicializa la flecha de regreso y la barra superior desde el layout
         flecha4 = view.findViewById(R.id.flecha4)
-        topBar = view.findViewById(R.id.topBar)
+        topBar = view.findViewById(R.id.topBar3)
 
         // Obtiene las preferencias compartidas de la actividad
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
