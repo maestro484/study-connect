@@ -1,6 +1,9 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +13,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.SearchView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +22,7 @@ import com.google.apphosting.datastore.testing.DatastoreTestTrace.FirestoreV1Act
 import com.google.firebase.firestore.model.mutation.ArrayTransformOperation.Remove
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.BusquedaAdapter
@@ -41,11 +46,9 @@ class BusquedaFragment : Fragment() {
     lateinit var buscador: SearchView
     lateinit var apunte: Button
     lateinit var listaDeBusqueda: RecyclerView
-
     lateinit var topBar: ConstraintLayout
 
     var grado: Int = 0
-
 
     val objetos: MutableList<String> = mutableListOf()
 
@@ -65,7 +68,6 @@ class BusquedaFragment : Fragment() {
     ): View {
         return inflater.inflate(R.layout.fragment_busqueda, container, false)
 
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,6 +80,38 @@ class BusquedaFragment : Fragment() {
         apunte = view.findViewById(R.id.apunte)
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
         topBar = view.findViewById(R.id.topBar)
+
+
+        topBar = view.findViewById(R.id.topBar)
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+
+
+        // Obtener el tema guardado
+        val temaActual = AppTheme.obtenerTema(requireActivity())
+
+
+        fun setButtonColor(button: Button) {
+            val color = when (temaActual) {
+                AppTheme.moradoClaro -> "#C0A1DB" // Color para el tema morado claro
+                AppTheme.moradoOscuro -> "#A799E0" // Color para el tema morado oscuro
+                AppTheme.azul -> "#B6BADB"         // Color para el tema azul
+                else -> "#CB69DB"                  // Color predeterminado
+            }
+
+            // Obtener el drawable existente y aplicar el nuevo color
+            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
+            drawable?.mutate()?.colorFilter =
+                PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
+
+            button.background = drawable  // Aplicar el drawable modificado al botón
+
+        }
+        // Aplicar el color a todos los botones
+        setButtonColor(materia)
+        setButtonColor(fecha)
+        setButtonColor(apunte)
+
+
 
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 

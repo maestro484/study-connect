@@ -3,6 +3,8 @@ package com.iegm.studyconnect.ui.fragments
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.iegm.studyconnect.AppTheme
@@ -28,7 +31,7 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
     lateinit var cerrar_sesion: Button
     lateinit var abriravt: CircleImageView
     lateinit var topBar: ConstraintLayout
-
+    lateinit var franja: ImageView
     private var avatarsFragment: AvatarsFragment? = null
 
     override fun onCreateView(
@@ -48,11 +51,36 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         editar_numero = view.findViewById(R.id.editar_numero)
         editar_nombre = view.findViewById(R.id.editar_nombre)
         editar_correo = view.findViewById(R.id.editar_correo)
-        topBar = view.findViewById(R.id.constraintLayout)
+        franja = view.findViewById(R.id.franja)
 
 
 
-        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+        franja.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+
+
+        // Obtener el tema guardado
+        val temaActual = AppTheme.obtenerTema(requireActivity())
+
+
+        fun setButtonColor(button: Button) {
+            val color = when (temaActual) {
+                AppTheme.moradoClaro -> "#C0A1DB" // Color para el tema morado claro
+                AppTheme.moradoOscuro -> "#A799E0" // Color para el tema morado oscuro
+                AppTheme.azul -> "#B6BADB"         // Color para el tema azul
+                else -> "#CB69DB"                  // Color predeterminado
+            }
+
+            // Obtener el drawable existente y aplicar el nuevo color
+            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
+            drawable?.mutate()?.colorFilter =
+                PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
+
+            button.background = drawable  // Aplicar el drawable modificado al botón
+
+        }
+        // Aplicar el color a todos los botones
+        setButtonColor(cerrar_sesion)
+
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
         val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, 0)

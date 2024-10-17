@@ -17,8 +17,8 @@ import com.iegm.studyconnect.ui.fragments.BusquedaFragment
 import com.iegm.studyconnect.ui.fragments.ComentariosFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
 import com.iegm.studyconnect.ui.fragments.HomeFragment
-import com.iegm.studyconnect.ui.fragments.MateriaFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
+import com.iegm.studyconnect.ui.fragments.PdfFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 import com.iegm.studyconnect.ui.fragments.QrcodeFragment
@@ -55,10 +55,10 @@ class MainActivity : AppCompatActivity() {
         AppTheme.aplicarTema(tema, this)
     }
 
-    fun abrirApunteFragment() {
-        val apunteFragment: ApunteFragment = ApunteFragment()
+    fun abrirPdfFragment() {
+        val pdfFragment: PdfFragment = PdfFragment()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView, apunteFragment)
+            .replace(R.id.fragmentContainerView, pdfFragment)
             .commitAllowingStateLoss()
 
     }
@@ -154,12 +154,7 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
     }
 
-    fun abrirMateriaFragment() {
-        val abrirMateriaFragment: MateriaFragment = MateriaFragment()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView, abrirMateriaFragment)
-            .commitAllowingStateLoss()
-    }
+
 
     fun abrirQrcodeFragment() {
         val abrirQrcodeFragment: QrcodeFragment = QrcodeFragment()

@@ -1,5 +1,8 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +11,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +20,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.ComentariosAdapter
@@ -63,6 +69,7 @@ class ComentariosFragment : Fragment() {
     private lateinit var buttonDeEnviar: Button
     private lateinit var listaDeComentarios: RecyclerView
     private val client = OkHttpClient() // Instancia de OkHttpClient
+    private lateinit var topBar : ConstraintLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,6 +89,33 @@ class ComentariosFragment : Fragment() {
         devolver1 = view.findViewById(R.id.devolver1)
         buttonDeEnviar = view.findViewById(R.id.buttonDeEnviar)
         teclado = view.findViewById(R.id.teclado)
+        topBar = view.findViewById(R.id.topBar)
+
+
+        topBar = view.findViewById(R.id.topBar)
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+
+        // Obtener el tema guardado
+        val temaActual = AppTheme.obtenerTema(requireActivity())
+
+        // Función para aplicar color a los botones manteniendo el shape_background
+        fun setButtonColor(button: Button) {
+            val color = when (temaActual) {
+                AppTheme.moradoClaro -> "#C0A1DB" // Color para el tema morado claro
+                AppTheme.moradoOscuro -> "#A799E0" // Color para el tema morado oscuro
+                AppTheme.azul -> "#B6BADB"         // Color para el tema azul
+                else -> "#CB69DB"                  // Color predeterminado
+            }
+
+            // Obtener el drawable existente y aplicar el nuevo color
+            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
+            drawable?.mutate()?.colorFilter = PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
+
+            button.background = drawable  // Aplicar el drawable modificado al botón
+        }
+
+        // Aplicar el color a todos los botones
+        setButtonColor(buttonDeEnviar)
 
         // Configuración del RecyclerView
         val customAdapter = ComentariosAdapter()

@@ -80,7 +80,7 @@ class PdfFragment : Fragment() {
 
         // Navegar al fragmento anterior al presionar "Atrás"
         atras.setOnClickListener {
-            (activity as MainActivity).abrirApunteFragment()
+            (activity as MainActivity).abrirPdfFragment()
         }
 
         // Inicializar el PDF view (aunque este método parece estar incorrecto)
