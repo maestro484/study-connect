@@ -75,7 +75,7 @@ class ApuntesFragment : Fragment() {
 
 
     private fun addInfo() {
-
+//
         val inflter = LayoutInflater.from(requireContext())
         val v = inflter.inflate(R.layout.add_item, null)
         val userName = v.findViewById<EditText>(R.id.userName)

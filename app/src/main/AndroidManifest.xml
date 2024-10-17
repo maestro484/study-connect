@@ -9,8 +9,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACTION_OPEN_DOCUMENT" />
 
     <application
         android:name=".StudyConnectApp"
@@ -28,8 +27,7 @@
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.StudyConnect"/>
-
+            android:theme="@style/Theme.StudyConnect" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
