@@ -7,7 +7,7 @@
     tools:context=".ui.fragments.ConfiguracionFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topBar"
+        android:id="@+id/topBar3"
         android:layout_height="50dp"
         android:layout_width="match_parent"
         android:background="@android:color/holo_purple"
@@ -84,13 +84,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_black_italic"
             android:text="Seguidos" />
-
-        <Switch
-            android:id="@+id/menciones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_black_italic"
-            android:text="Menciones" />
 
     </LinearLayout>
 

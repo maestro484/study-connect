@@ -5,16 +5,14 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import com.iegm.studyconnect.ui.fragments.SAVED_THEME
+import android.widget.Button
 
-/**
- * Created by Carlos Jiménez on 31-Jul-24.
- */
 object AppTheme {
-    val moradoOscuro = "#A15EDB" /*Barra*/
+    val moradoOscuro = "#7D30BF" /*Barra*/
     val moradoOscuro2 = "#A799E0"
     val moradoClaro2 = "#C0A1DB"
     val moradoClaro = "#CB69DB" /*Barra*/
-    val negro = "#000000" /*Fondo*/
+    val gris = "#494745" /*Fondo*/
     val azulClaro = "#B6BADB"
     val azul = "#4B65F2" /*Barra*/
 
@@ -27,35 +25,53 @@ object AppTheme {
         aplicarTema(color, (activity as MainActivity))
     }
 
-    fun aplicarTema(tema: String, activity: MainActivity){
+
+    fun aplicarTema(tema: String, activity: MainActivity) {
         activity.apply {
-            when(tema){
-                azul ->{
+            when (tema) {
+                azul -> {
                     window.statusBarColor = Color.parseColor(azul)
                     supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor(azulClaro)))
-                    window.setBackgroundDrawable(ColorDrawable(Color.parseColor(negro )))
+                    window.setBackgroundDrawable(ColorDrawable(Color.parseColor(gris)))
                     window.navigationBarColor = Color.parseColor(azulClaro)
                 }
-                moradoOscuro ->{
+
+                moradoOscuro -> {
                     window.statusBarColor = Color.parseColor(moradoOscuro)
-                    supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor(
-                        moradoOscuro2)))
-                    window.setBackgroundDrawable(ColorDrawable(Color.parseColor(negro )))
+                    supportActionBar?.setBackgroundDrawable(
+                        ColorDrawable(
+                            Color.parseColor(
+                                moradoOscuro2
+                            )
+                        )
+                    )
+                    window.setBackgroundDrawable(ColorDrawable(Color.parseColor(gris)))
                     window.navigationBarColor = Color.parseColor(moradoOscuro2)
                 }
-                moradoClaro ->{
+
+                moradoClaro -> {
                     window.statusBarColor = Color.parseColor(moradoClaro)
-                    supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor(
-                        moradoClaro2)))
-                    window.setBackgroundDrawable(ColorDrawable(Color.parseColor(negro )))
+                    supportActionBar?.setBackgroundDrawable(
+                        ColorDrawable(
+                            Color.parseColor(
+                                moradoClaro2
+                            )
+                        )
+                    )
+                    window.setBackgroundDrawable(ColorDrawable(Color.parseColor(gris)))
                     window.navigationBarColor = Color.parseColor(moradoClaro)
                 }
             }
         }
     }
 
+
     fun obtenerTema(activity: Activity): String {
         val sharedPref = activity.getPreferences(Context.MODE_PRIVATE)
         return sharedPref.getString(SAVED_THEME, moradoClaro)!!
+    }
+
+    fun aplicarTemaAElementos(temaActual: String, listOf: List<Button>) {
+
     }
 }

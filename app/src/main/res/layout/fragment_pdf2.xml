@@ -21,7 +21,9 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apunte"
+            android:backgroundTint="@color/black"
+            android:foregroundTint="@color/black"
+            android:text="APUNTE"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,13 +34,10 @@
 
         <ImageView
             android:id="@+id/Atras"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="116dp"
-            android:src="@drawable/ic_arrow_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/arrow_back_fill0_ic"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
@@ -54,44 +53,65 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout2" />
+        app:layout_constraintTop_toBottomOf="@id/layout2"/>
 
-    <FrameLayout
-        android:id="@+id/pdfView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fileTitleTextView">
+        app:layout_constraintTop_toBottomOf="@id/fileTitleTextView"
+        >
 
 
         <com.rajat.pdfviewer.PdfRendererView
-            android:id="@+id/pdfView1"
+            android:id="@+id/pdfView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
             app:pdfView_divider="@drawable/pdf_viewer_divider"
-            app:pdfView_showDivider="false" />
-    </FrameLayout>
+            app:pdfView_showDivider="false">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/note_add_24dp_5f6368_fill0_" />
+        </com.rajat.pdfviewer.PdfRendererView>
+
+    </RelativeLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/pdfView">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative">
 
-        <EditText
-            android:id="@+id/descripcion"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="top|start"
-            android:hint="Escribe aquí"
-            android:textStyle="bold"
-            android:inputType="textMultiLine"
-            android:minLines="3"
-            android:padding="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:hint="Escribe aquí"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:padding="16dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

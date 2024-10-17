@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
-        android:background="@android:color/holo_purple"
+        android:background="?attr/colorPrimary"
         android:scrollbarSize="50dp"
         app:layout_constraintBottom_toTopOf="@+id/notificaciones"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,6 @@
         android:layout_height="64dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/shape_background"
-        android:backgroundTint="#494747"
         android:fontFamily="@font/roboto_medium"
         android:text="Términos y Condiciones"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,5 +78,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/terminos_condiciones" />
+
+    <Button
+        android:id="@+id/qrButton"
+        android:layout_width="164dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_background"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Soporte técnico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/theme" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
