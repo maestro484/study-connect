@@ -1,19 +1,26 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.MateriasAdapter
@@ -30,9 +37,15 @@ class HomeFragment : Fragment() {
     lateinit var gradoG: TextView // Texto que muestra el grado actual
     lateinit var listaDeMaterias: RecyclerView // Lista para mostrar las materias
     lateinit var perfil: ImageView // Icono para perfil de usuario
+    lateinit var topBar: ConstraintLayout
+
+
     private lateinit var materiasAdapter: MateriasAdapter // Adaptador para la lista de materias
+
+
     var grado: Int = 0 // Índice del grado actual
     var busqueda = "" // Variable para almacenar la búsqueda
+
 
     companion object {
         fun newInstance() = HomeFragment() // Método para crear una nueva instancia del fragmento
@@ -68,6 +81,10 @@ class HomeFragment : Fragment() {
         gradoG = view.findViewById(R.id.textViewG)
         listaDeMaterias = view.findViewById(R.id.ListaNueva)
         perfil = view.findViewById(R.id.perfil)
+
+
+        topBar = view.findViewById(R.id.topBar)
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         // Inicializa el adaptador de materias
         materiasAdapter = MateriasAdapter(context = requireContext())
