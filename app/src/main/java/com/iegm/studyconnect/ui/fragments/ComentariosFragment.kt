@@ -132,7 +132,7 @@ class ComentariosFragment : Fragment() {
     fun sendPushNotification(comentario: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val client = OkHttpClient()
-
+//
             val json = """
             {
             "app_id": "335e2f0f-5f50-4378-896f-3eeda23a1c41",
