@@ -13,7 +13,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
-import com.airbnb.lottie.LottieAnimationView
 
 class PeriodoFragment : Fragment() {
 
@@ -53,7 +52,7 @@ class PeriodoFragment : Fragment() {
         periodo3 = view.findViewById(R.id.periodo3)
         volver1 = view.findViewById(R.id.devolver1)
 
-        topBar = view.findViewById(R.id.topBar3)
+        topBar = view.findViewById(R.id.topBar)
 
 
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))

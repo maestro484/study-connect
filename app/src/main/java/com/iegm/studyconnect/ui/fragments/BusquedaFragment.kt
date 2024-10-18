@@ -14,8 +14,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.apphosting.datastore.testing.DatastoreTestTrace.FirestoreV1Action.RemoveListen
-import com.google.firebase.firestore.model.mutation.ArrayTransformOperation.Remove
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.iegm.studyconnect.MainActivity
@@ -77,7 +75,7 @@ class BusquedaFragment : Fragment() {
         buscador = view.findViewById(R.id.buscador)
         apunte = view.findViewById(R.id.apunte)
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
-        topBar = view.findViewById(R.id.topBar3)
+        topBar = view.findViewById(R.id.topBar)
 
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 
