@@ -17,7 +17,6 @@ import com.iegm.studyconnect.ui.fragments.BusquedaFragment
 import com.iegm.studyconnect.ui.fragments.ComentariosFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
 import com.iegm.studyconnect.ui.fragments.HomeFragment
-import com.iegm.studyconnect.ui.fragments.MateriaFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
@@ -154,12 +153,7 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
     }
 
-    fun abrirMateriaFragment() {
-        val abrirMateriaFragment: MateriaFragment = MateriaFragment()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView, abrirMateriaFragment)
-            .commitAllowingStateLoss()
-    }
+
 
     fun abrirQrcodeFragment() {
         val abrirQrcodeFragment: QrcodeFragment = QrcodeFragment()
