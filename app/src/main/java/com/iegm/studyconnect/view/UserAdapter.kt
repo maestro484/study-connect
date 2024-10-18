@@ -131,7 +131,7 @@ class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: Ar
         holder.mbNum.text = newList.userMb
         holder.itemCard.setOnClickListener {
             (context as  MainActivity).apply {
-                abrirPdfFragment()
+                abrirPdfFragment(holder.name.text.toString())
             }
         }
     }

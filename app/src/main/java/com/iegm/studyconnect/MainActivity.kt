@@ -55,8 +55,8 @@ class MainActivity : AppCompatActivity() {
         AppTheme.aplicarTema(tema, this)
     }
 
-    fun abrirPdfFragment() {
-        val pdfFragment: PdfFragment = PdfFragment()
+    fun abrirPdfFragment(nombre : String) {
+        val pdfFragment: PdfFragment = PdfFragment(nombre)
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, pdfFragment)
             .commitAllowingStateLoss()

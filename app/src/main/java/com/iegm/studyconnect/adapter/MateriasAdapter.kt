@@ -9,10 +9,15 @@ import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
+import de.hdodenhof.circleimageview.CircleImageView
 
 // Clase adaptadora para el RecyclerView que muestra las materias
 class MateriasAdapter(val context: Context) : RecyclerView.Adapter<MateriasAdapter.MateriaViewModel>() {
 
+    val Materia = listOf(
+
+        R.drawable.zorro
+    )
     // Lista que contiene los nombres de las materias
     var materias: List<String> = listOf()
 
@@ -20,6 +25,8 @@ class MateriasAdapter(val context: Context) : RecyclerView.Adapter<MateriasAdapt
     class MateriaViewModel(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Referencia al botón que representa la materia
         val materiaBtn: Button = itemView.findViewById(R.id.button2)
+        val profileMateria: CircleImageView = itemView.findViewById(R.id.profile_image)
+
     }
 
     // Método para crear nuevas vistas (invocado por el layout manager)
@@ -31,6 +38,7 @@ class MateriasAdapter(val context: Context) : RecyclerView.Adapter<MateriasAdapt
         )
         return MateriaViewModel(viewLayout) // Devuelve el ViewHolder con la vista inflada
     }
+
 
     // Método para reemplazar el contenido de una vista (invocado por el layout manager)
     override fun onBindViewHolder(holder: MateriasAdapter.MateriaViewModel, position: Int) {
@@ -45,6 +53,8 @@ class MateriasAdapter(val context: Context) : RecyclerView.Adapter<MateriasAdapt
                 abrirPeriodoFragment()
             }
         }
+        holder.profileMateria.setImageResource(Materia[position])
+
     }
 
     // Método que devuelve el número de elementos en la lista
