@@ -74,7 +74,7 @@ class ComentariosFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Referencia a los elementos de la vista.
-        devolver1 = view.findViewById(R.id.volver1)
+        devolver1 = view.findViewById(R.id.devolver1)
         buttonDeEnviar = view.findViewById(R.id.buttonDeEnviar)
         teclado = view.findViewById(R.id.teclado)
         listaDeComentarios = view.findViewById(R.id.listaDeMaterias)

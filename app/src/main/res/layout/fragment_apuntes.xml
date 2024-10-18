@@ -59,16 +59,6 @@
         </androidx.recyclerview.widget.RecyclerView>
     </ScrollView>
 
-    <Button
-        android:id="@+id/button_comentarios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_medium"
-        android:shadowColor="#9D9595"
-        android:text="Comentarios"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_bar1" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addingBtn"
@@ -83,5 +73,17 @@
         app:tint="@color/gris"
         tools:ignore="SpeakableTextPresentCheck" />
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_comentarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_comment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addingBtn"
+        app:tint="@color/gris"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,12 +41,16 @@ class BusquedaFragment : Fragment() {
     lateinit var apunte: Button
     lateinit var listaDeBusqueda: RecyclerView
 
+
+
+
     lateinit var topBar: ConstraintLayout
 
     var grado: Int = 0
 
 
     val objetos: MutableList<String> = mutableListOf()
+
 
     companion object {
         fun newInstance() = BusquedaFragment()
@@ -124,7 +128,7 @@ class BusquedaFragment : Fragment() {
 
         fecha.setOnClickListener {
             filtrarFecha(data.grados[grado])
-            (activity as MainActivity).abrirApuntesFragment()
+
         }
         apunte.setOnClickListener {
             filtrarApunte(data.grados[grado])
