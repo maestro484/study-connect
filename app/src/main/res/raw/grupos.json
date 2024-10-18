@@ -954,7 +954,7 @@
                   "apunte_id": 15,
                   "nombre": "Programación en Java",
                   "descripcion": "Apuntes sobre fundamentos de programación en Java.",
-                  "mes": 3,
+                  "mes": "3",
                   "archivos": [
                     {
                       "archivo_id": 15,
@@ -990,7 +990,7 @@
                   "apunte_id": 1,
                   "nombre": "Álgebra Básica",
                   "descripcion": "Notas sobre operaciones algebraicas básicas.",
-                  "mes": 1,
+                  "mes": "1",
                   "archivos": [
                     {
                       "archivo_id": 1,
@@ -1021,7 +1021,7 @@
                   "apunte_id": 2,
                   "nombre": "Historia de las Religiones",
                   "descripcion": "Resumen sobre la historia de las principales religiones.",
-                  "mes": 2,
+                  "mes": "2",
                   "archivos": [
                     {
                       "archivo_id": 2,
@@ -1052,7 +1052,7 @@
                   "apunte_id": 3,
                   "nombre": "Ejercicios de Flexibilidad",
                   "descripcion": "Guía de ejercicios para mejorar la flexibilidad.",
-                  "mes": 3,
+                  "mes": "3",
                   "archivos": [
                     {
                       "archivo_id": 3,
@@ -1083,7 +1083,7 @@
                   "apunte_id": 4,
                   "nombre": "Ecosistemas",
                   "descripcion": "Notas sobre los diferentes tipos de ecosistemas.",
-                  "mes": 4,
+                  "mes": "4",
                   "archivos": [
                     {
                       "archivo_id": 4,
@@ -1114,7 +1114,7 @@
                   "apunte_id": 5,
                   "nombre": "Técnicas de Pintura",
                   "descripcion": "Guía sobre diferentes técnicas de pintura.",
-                  "mes": 5,
+                  "mes": "5",
                   "archivos": [
                     {
                       "archivo_id": 5,
@@ -1145,7 +1145,7 @@
                   "apunte_id": 6,
                   "nombre": "Análisis Literario",
                   "descripcion": "Notas sobre el análisis de textos literarios.",
-                  "mes": 6,
+                  "mes": "6",
                   "archivos": [
                     {
                       "archivo_id": 6,
@@ -1176,7 +1176,7 @@
                   "apunte_id": 7,
                   "nombre": "Comprensión de Lectura",
                   "descripcion": "Estrategias para mejorar la comprensión de lectura.",
-                  "mes": 7,
+                  "mes": "7",
                   "archivos": [
                     {
                       "archivo_id": 7,
@@ -1207,7 +1207,7 @@
                   "apunte_id": 8,
                   "nombre": "Historia de Europa",
                   "descripcion": "Notas sobre la historia de Europa desde la Edad Media.",
-                  "mes": 8,
+                  "mes": "8",
                   "archivos": [
                     {
                       "archivo_id": 8,
@@ -1238,7 +1238,7 @@
                   "apunte_id": 9,
                   "nombre": "Teoremas Básicos",
                   "descripcion": "Notas sobre los teoremas básicos de geometría.",
-                  "mes": 9,
+                  "mes": "9",
                   "archivos": [
                     {
                       "archivo_id": 9,
@@ -1269,7 +1269,7 @@
                   "apunte_id": 10,
                   "nombre": "Principios Éticos",
                   "descripcion": "Notas sobre los principios fundamentales de ética.",
-                  "mes": 10,
+                  "mes": "10",
                   "archivos": [
                     {
                       "archivo_id": 10,
@@ -1300,7 +1300,7 @@
                   "apunte_id": 11,
                   "nombre": "Gramática Avanzada",
                   "descripcion": "Notas sobre temas avanzados de gramática inglesa.",
-                  "mes": 11,
+                  "mes": "11",
                   "archivos": [
                     {
                       "archivo_id": 11,
@@ -1331,7 +1331,7 @@
                   "apunte_id": 12,
                   "nombre": "Principios de la Paz",
                   "descripcion": "Notas sobre los principios fundamentales de la paz.",
-                  "mes": 12,
+                  "mes": "12",
                   "archivos": [
                     {
                       "archivo_id": 12,
@@ -1362,7 +1362,7 @@
                   "apunte_id": 13,
                   "nombre": "Fundamentos de Tecnología",
                   "descripcion": "Notas sobre los fundamentos y conceptos básicos de la tecnología.",
-                  "mes": 1,
+                  "mes": "1",
                   "archivos": [
                     {
                       "archivo_id": 13,
@@ -1398,7 +1398,7 @@
                   "apunte_id": 1,
                   "nombre": "Álgebra Básica",
                   "descripcion": "Notas sobre operaciones algebraicas básicas.",
-                  "mes": 1,
+                  "mes": "1",
                   "archivos": [
                     {
                       "archivo_id": 1,
@@ -1429,7 +1429,7 @@
                   "apunte_id": 2,
                   "nombre": "Historia de las Religiones",
                   "descripcion": "Resumen sobre la historia de las principales religiones.",
-                  "mes": 2,
+                  "mes": "2",
                   "archivos": [
                     {
                       "archivo_id": 2,
@@ -1460,7 +1460,7 @@
                   "apunte_id": 3,
                   "nombre": "Ejercicios de Flexibilidad",
                   "descripcion": "Guía de ejercicios para mejorar la flexibilidad.",
-                  "mes": 3,
+                  "mes": "3",
                   "archivos": [
                     {
                       "archivo_id": 3,
@@ -1491,7 +1491,7 @@
                   "apunte_id": 4,
                   "nombre": "Ecosistemas",
                   "descripcion": "Notas sobre los diferentes tipos de ecosistemas.",
-                  "mes": 4,
+                  "mes": "4",
                   "archivos": [
                     {
                       "archivo_id": 4,
@@ -1522,7 +1522,7 @@
                   "apunte_id": 5,
                   "nombre": "Técnicas de Pintura",
                   "descripcion": "Guía sobre diferentes técnicas de pintura.",
-                  "mes": 5,
+                  "mes": "5",
                   "archivos": [
                     {
                       "archivo_id": 5,
@@ -1553,7 +1553,7 @@
                   "apunte_id": 6,
                   "nombre": "Análisis Literario",
                   "descripcion": "Notas sobre el análisis de textos literarios.",
-                  "mes": 6,
+                  "mes": "6",
                   "archivos": [
                     {
                       "archivo_id": 6,
@@ -1584,7 +1584,7 @@
                   "apunte_id": 7,
                   "nombre": "Comprensión de Lectura",
                   "descripcion": "Estrategias para mejorar la comprensión de lectura.",
-                  "mes": 7,
+                  "mes": "7",
                   "archivos": [
                     {
                       "archivo_id": 7,
@@ -1615,7 +1615,7 @@
                   "apunte_id": 8,
                   "nombre": "Historia de Europa",
                   "descripcion": "Notas sobre la historia de Europa desde la Edad Media.",
-                  "mes": 8,
+                  "mes": "8",
                   "archivos": [
                     {
                       "archivo_id": 8,
@@ -1646,7 +1646,7 @@
                   "apunte_id": 9,
                   "nombre": "Teoremas Básicos",
                   "descripcion": "Notas sobre los teoremas básicos de geometría.",
-                  "mes": 9,
+                  "mes": "9",
                   "archivos": [
                     {
                       "archivo_id": 9,
@@ -1677,7 +1677,7 @@
                   "apunte_id": 10,
                   "nombre": "Principios Éticos",
                   "descripcion": "Notas sobre los principios fundamentales de ética.",
-                  "mes": 10,
+                  "mes": "10",
                   "archivos": [
                     {
                       "archivo_id": 10,
@@ -1708,7 +1708,7 @@
                   "apunte_id": 11,
                   "nombre": "Gramática Avanzada",
                   "descripcion": "Notas sobre temas avanzados de gramática inglesa.",
-                  "mes": 11,
+                  "mes": "11",
                   "archivos": [
                     {
                       "archivo_id": 11,
@@ -1739,7 +1739,7 @@
                   "apunte_id": 12,
                   "nombre": "Principios de la Paz",
                   "descripcion": "Notas sobre los principios fundamentales de la paz.",
-                  "mes": 12,
+                  "mes": "12",
                   "archivos": [
                     {
                       "archivo_id": 12,
@@ -1770,7 +1770,7 @@
                   "apunte_id": 13,
                   "nombre": "Fundamentos de Tecnología",
                   "descripcion": "Notas sobre los fundamentos y conceptos básicos de la tecnología.",
-                  "mes": 1,
+                  "mes": "1",
                   "archivos": [
                     {
                       "archivo_id": 13,
