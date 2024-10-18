@@ -14,8 +14,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.apphosting.datastore.testing.DatastoreTestTrace.FirestoreV1Action.RemoveListen
-import com.google.firebase.firestore.model.mutation.ArrayTransformOperation.Remove
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.iegm.studyconnect.MainActivity
@@ -40,8 +38,6 @@ class BusquedaFragment : Fragment() {
     lateinit var buscador: SearchView
     lateinit var apunte: Button
     lateinit var listaDeBusqueda: RecyclerView
-
-
 
 
     lateinit var topBar: ConstraintLayout
@@ -176,27 +172,8 @@ class BusquedaFragment : Fragment() {
                             resultados.add(resultado)
                         }
 
-
-                        var meses = "0"
-                        when (busqueda) {
-                            "enero" -> meses = 1.toString()
-                            "febrero" -> meses = 2.toString()
-                            "marzo" -> meses = 3.toString()
-                            "abril" -> meses = 4.toString()
-                            "mayo" -> meses = 5.toString()
-                            "junio" -> meses = 6.toString()
-                            "julio" -> meses = 7.toString()
-                            "agosto" -> meses = 8.toString()
-                            "septiembre" -> meses = 9.toString()
-                            "octubre" -> meses = 10.toString()
-                            "noviembre" -> meses = 11.toString()
-                            "diciembre" -> meses = 12.toString()
-                        }
-
-
-                        val mes = it.mes.toString().toLowerCase().replaceAccents()
-                        if (mes == meses) run {
-                            val resultado = Resultados(it.nombre.toString(), Tipo.FECHA)
+                        if (apunte.contains(busqueda)) run {
+                            val resultado = Resultados(it.nombre, Tipo.FECHA)
                             resultados.add(resultado)
                         }
                     }
