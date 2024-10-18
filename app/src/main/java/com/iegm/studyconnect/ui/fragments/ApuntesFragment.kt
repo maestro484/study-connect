@@ -59,8 +59,6 @@ class ApuntesFragment : Fragment() {
         recy.layoutManager = LinearLayoutManager(requireContext())
         recy.adapter = userAdapter
 
-
-
         addsBtn.setOnClickListener { addInfo() }
 
         volver1.setOnClickListener {
