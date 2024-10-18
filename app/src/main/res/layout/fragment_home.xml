@@ -43,6 +43,7 @@
         android:id="@+id/textViewG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mediumitalic"
         android:text="GRADO"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,22 +63,21 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ajuste"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="end|bottom"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="44dp"
         android:src="@drawable/settings_24dp_000000_fill0_wght400_grad0_opsz24"
         app:backgroundTint="#F4F4F4"
-        app:fabCustomSize="50dp"
+        app:fabCustomSize="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout3"
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@drawable/board5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 

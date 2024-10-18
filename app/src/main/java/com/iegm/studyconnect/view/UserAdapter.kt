@@ -120,6 +120,7 @@ class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: Ar
     override fun getItemCount(): Int {
         return userList.size
     }
+    //
 
 
 
@@ -130,7 +131,7 @@ class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: Ar
         holder.mbNum.text = newList.userMb
         holder.itemCard.setOnClickListener {
             (context as  MainActivity).apply {
-                abrirApunteFragment()
+                abrirPdfFragment()
             }
         }
     }

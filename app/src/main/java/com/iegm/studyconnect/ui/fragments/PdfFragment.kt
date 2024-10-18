@@ -53,7 +53,7 @@ class PdfFragment : Fragment() {
         fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
         Relative = view.findViewById(R.id.relative)
 
-//
+
         // Recuperar valores guardados
         selectedUri = getSavedPdfUri()
         val savedDescription = getSavedDescription() ?: ""
@@ -81,7 +81,7 @@ class PdfFragment : Fragment() {
 
         // Navegar al fragmento anterior al presionar "Atrás"
         atras.setOnClickListener {
-            (activity as MainActivity).abrirApunteFragment()
+            (activity as MainActivity).abrirApuntesFragment()
         }
 
         // Inicializar el PDF view (aunque este método parece estar incorrecto)
