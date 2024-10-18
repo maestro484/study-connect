@@ -167,12 +167,14 @@ class BusquedaFragment : Fragment() {
                     it.apuntes.map {
                         val apunte = it.nombre.toLowerCase().replaceAccents()
 
+                        val fecha  = it.mes
+
                         if (apunte.contains(busqueda)) run {
                             val resultado = Resultados(it.nombre, Tipo.APUNTE)
                             resultados.add(resultado)
                         }
 
-                        if (apunte.contains(busqueda)) run {
+                        if (fecha.contains(busqueda)) run {
                             val resultado = Resultados(it.nombre, Tipo.FECHA)
                             resultados.add(resultado)
                         }
