@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBar" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <Button
         android:id="@+id/materia"
@@ -30,7 +30,7 @@
         android:fontFamily="@font/roboto_medium"
         android:text="Materia"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBar" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <Button
         android:id="@+id/fecha"
@@ -41,13 +41,73 @@
         android:fontFamily="@font/roboto_medium"
         android:text="Fecha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBar" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="59dp"
+        android:background="@color/cardview_light_background"
+        android:elevation="1dp"
+        app:cardCornerRadius="70dp"
+        app:cardElevation="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/devolver"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <SearchView
+            android:id="@+id/buscador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_light_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Filtros"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apunte">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ListaDeBusqueda"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@android:color/holo_purple"
+        android:layout_height="50dp"
+        android:background="?attr/colorPrimary"
+        android:scrollbarSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -55,70 +115,25 @@
             android:id="@+id/devolver"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginStart="7dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_arrow_back" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="100dp"
+            android:layout_width="130dp"
             android:layout_height="45dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/roboto_black"
             android:src="@drawable/search_fill0_wght400_grad0_opsz24"
-            android:text="Buscar"
+            android:text="Buscador"
             android:textColor="#FFFFFF"
             android:textSize="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/buscador"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <SearchView
-            android:id="@+id/buscador"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/cardview_light_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/devolver"
-            />
-
-
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
-            android:text="Filtros"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buscador" />
-
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="700dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ListaDeBusqueda">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ListaDeBusqueda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materia" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

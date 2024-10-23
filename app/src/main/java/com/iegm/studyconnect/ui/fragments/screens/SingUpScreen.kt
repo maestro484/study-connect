@@ -37,7 +37,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         verticalArrangement = Arrangement.Center
     ) {
         Text(text = "Regístrate", fontSize = 35.sp, fontWeight = FontWeight.Bold)
-
+//
         var nombre by remember { mutableStateOf("") }
         OutlinedTextField(value = nombre,
             onValueChange = { nombre = it },

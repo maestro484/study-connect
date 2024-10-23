@@ -28,7 +28,7 @@ class ApuntesFragment : Fragment() {
     private lateinit var recy: RecyclerView
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
-    private lateinit var button_comentarios: Button
+    private lateinit var button_comentarios: FloatingActionButton
     lateinit var top_bar: ConstraintLayout
 
 
@@ -58,8 +58,6 @@ class ApuntesFragment : Fragment() {
             UserAdapter(requireContext(), this, userList) //pasarlo al fragment y no adapter
         recy.layoutManager = LinearLayoutManager(requireContext())
         recy.adapter = userAdapter
-
-
 
         addsBtn.setOnClickListener { addInfo() }
 
