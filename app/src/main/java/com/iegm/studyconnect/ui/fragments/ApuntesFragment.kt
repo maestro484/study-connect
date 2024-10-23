@@ -47,12 +47,9 @@ class ApuntesFragment : Fragment() {
         volver1 = view.findViewById(R.id.devolver1)
         addsBtn = view.findViewById(R.id.addingBtn)
         button_comentarios = view.findViewById(R.id.button_comentarios)
-
         top_bar = view.findViewById(R.id.top_bar1)
 
-
         top_bar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
-
 
         userAdapter =
             UserAdapter(requireContext(), this, userList) //pasarlo al fragment y no adapter

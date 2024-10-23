@@ -41,7 +41,6 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_perfil_de_usuario, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -53,10 +52,7 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         editar_correo = view.findViewById(R.id.editar_correo)
         franja = view.findViewById(R.id.franja)
 
-
-
         franja.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
-
 
         // Obtener el tema guardado
         val temaActual = AppTheme.obtenerTema(requireActivity())
@@ -78,9 +74,9 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
             button.background = drawable  // Aplicar el drawable modificado al botón
 
         }
+
         // Aplicar el color a todos los botones
         setButtonColor(cerrar_sesion)
-
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
         val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, 0)
@@ -109,7 +105,6 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
             requireActivity().finish()
             // Finalizar la actividad actual para evitar que el usuario vuelva a ella
         }
-
 
     }
 

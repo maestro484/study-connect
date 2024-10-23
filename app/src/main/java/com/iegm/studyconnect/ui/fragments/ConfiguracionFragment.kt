@@ -99,7 +99,6 @@ class ConfiguracionFragment : Fragment() {
 
         }
 
-
     }
 
 }
