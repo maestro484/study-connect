@@ -27,6 +27,24 @@
                       "ubicacion": "https://example.com/archivo2.pdf"
                     }
                   ]
+                },
+                {
+                  "apunte_id": 2,
+                  "nombre": "Introducción a la Economía",
+                  "descripcion": "Notas sobre los conceptos básicos de economía.",
+                  "mes": "2-02-2024",
+                  "archivos": [
+                    {
+                      "archivo_id": 1,
+                      "descripcion": "Diapositiva 1",
+                      "ubicacion": "https://example.com/archivo1.pdf"
+                    },
+                    {
+                      "archivo_id": 2,
+                      "descripcion": "Diapositiva 2",
+                      "ubicacion": "https://example.com/archivo2.pdf"
+                    }
+                  ]
                 }
               ]
             }

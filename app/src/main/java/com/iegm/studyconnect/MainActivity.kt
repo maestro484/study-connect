@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.iegm.studyconnect.model.Resultados
 import com.iegm.studyconnect.ui.fragments.ApunteFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 import com.iegm.studyconnect.ui.fragments.BusquedaFragment
@@ -62,8 +63,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun abrirApuntesFragment() {
-        val apuntesFragment: ApuntesFragment = ApuntesFragment()
+    fun abrirApuntesFragment(periodo: Int, materia: String) {
+        val apuntesFragment: ApuntesFragment = ApuntesFragment() // QUIZAS
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, apuntesFragment)
             .commitAllowingStateLoss()
@@ -84,8 +85,8 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
     }
 
-    fun abrirPeriodoFragment() {
-        val periodoFragment: PeriodoFragment = PeriodoFragment()
+    fun abrirPeriodoFragment(materia :String) {
+        val periodoFragment: PeriodoFragment = PeriodoFragment(materia)
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, periodoFragment)
             .commitAllowingStateLoss()

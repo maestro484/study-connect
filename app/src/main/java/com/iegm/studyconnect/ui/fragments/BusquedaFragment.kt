@@ -170,7 +170,7 @@ class BusquedaFragment : Fragment() {
                         val fecha  = it.mes
 
                         if (apunte.contains(busqueda)) run {
-                            val resultado = Resultados(it.nombre, Tipo.APUNTE)
+                            val resultado = Resultados(it.nombre, Tipo.APUNTE, )
                             resultados.add(resultado)
                         }
 
