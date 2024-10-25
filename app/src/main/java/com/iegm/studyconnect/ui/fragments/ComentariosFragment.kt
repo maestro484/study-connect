@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -91,17 +92,35 @@ class ComentariosFragment : Fragment() {
 
         // Configuración de Firebase
         val database = FirebaseDatabase.getInstance().reference
+        val comentariosRef = database.child("grados/0/materias/0/comentarios")
+        Log.d("ComentariosFragment", comentariosRef.toString())
 
         devolver1.setOnClickListener {
             (activity as MainActivity).abrirApuntesFragment()
         }
 
+        comentariosRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val comentariosList = mutableListOf<Comentario>()
+                for (comentarioSnapshot in snapshot.children) {
+                    val comentario = comentarioSnapshot.getValue(Comentario::class.java)
+                    comentario?.let { comentariosList.add(it) }
+                }
+                // Use comentariosList as needed (e.g., update UI)
+                customAdapter.dataset = comentariosList
+                customAdapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Handle possible errors.
+            }
+        })
 
         buttonDeEnviar.setOnClickListener {
             val comentario = teclado.text.toString()
             if (comentario.isNotEmpty()) {
                 val message = Comentario("Oscar", 6, comentario)
-                database.child("comentarios").push().setValue(message)
+                comentariosRef.push().setValue(message)
                 sendPushNotification(comentario)// Llama a la función para enviar la notificación
             } else {
                 Toast.makeText(
@@ -112,21 +131,6 @@ class ComentariosFragment : Fragment() {
             }
             teclado.text.clear()
         }
-
-        // Listener para los comentarios
-        val messagesReference = database.child("comentarios")
-        messagesReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val messages =
-                    dataSnapshot.children.mapNotNull { it.getValue(Comentario::class.java) }
-                customAdapter.dataset = messages.toMutableList()
-                customAdapter.notifyDataSetChanged()
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Manejo de errores aquí.
-            }
-        })
     }
 
     fun sendPushNotification(comentario: String) {

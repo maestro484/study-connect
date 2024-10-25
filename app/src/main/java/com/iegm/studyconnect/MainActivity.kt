@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun abrirApuntesFragment(periodo: Int, materia: String) {
+    fun abrirApuntesFragment() {
         val apuntesFragment: ApuntesFragment = ApuntesFragment() // QUIZAS
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, apuntesFragment)
@@ -85,8 +85,8 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
     }
 
-    fun abrirPeriodoFragment(materia :String) {
-        val periodoFragment: PeriodoFragment = PeriodoFragment(materia)
+    fun abrirPeriodoFragment() {
+        val periodoFragment: PeriodoFragment = PeriodoFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, periodoFragment)
             .commitAllowingStateLoss()

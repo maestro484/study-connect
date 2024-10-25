@@ -42,7 +42,7 @@ class MateriasAdapter(val context: Context) : RecyclerView.Adapter<MateriasAdapt
         holder.materiaBtn.setOnClickListener {
             // Llama al método abrirPeriodoFragment en la actividad actual
             (context as MainActivity).apply {
-                abrirPeriodoFragment(materias[position])
+                abrirPeriodoFragment()
             }
         }
     }

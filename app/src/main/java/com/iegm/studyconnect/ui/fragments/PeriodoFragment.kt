@@ -14,7 +14,7 @@ import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
-class PeriodoFragment (val materia: String): Fragment() {
+class PeriodoFragment: Fragment() {
 
     lateinit var periodo1: Button
     lateinit var periodo2: Button
@@ -58,13 +58,13 @@ class PeriodoFragment (val materia: String): Fragment() {
 
 
         periodo1.setOnClickListener {
-            (activity as MainActivity).abrirApuntesFragment(0 , materia )
+            (activity as MainActivity).abrirApuntesFragment()
         }
         periodo2.setOnClickListener {
-            (activity as MainActivity).abrirApuntesFragment(1, materia)
+            (activity as MainActivity).abrirApuntesFragment()
         }
         periodo3.setOnClickListener {
-            (activity as MainActivity).abrirApuntesFragment(2, materia)
+            (activity as MainActivity).abrirApuntesFragment()
 
         }
         volver1.setOnClickListener {
