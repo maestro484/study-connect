@@ -1,3 +1,4 @@
+
 package com.iegm.studyconnect.adapter
 
 import android.content.Context
@@ -6,27 +7,48 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import de.hdodenhof.circleimageview.CircleImageView
 
 // Clase adaptadora para el RecyclerView que muestra las materias
-class MateriasAdapter(val context: Context) : RecyclerView.Adapter<MateriasAdapter.MateriaViewModel>() {
+class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdapter.MateriaViewModel>() {
 
-    val Materia = listOf(
+    val imagenes = listOf(
 
-        R.drawable.zorro
+        R.drawable.lengua,
+        R.drawable.matematicas,
+        R.drawable.economia,
+        R.drawable.comprension_lectora,
+        R.drawable.tecnologia,
+        R.drawable.etica,
+        R.drawable.etnoeducacion,
+        R.drawable.geometria,
+        R.drawable.estadistica,
+        R.drawable.ingles,
+        R.drawable.ciencias_sociales,
+        R.drawable.ciencias_naturales,
+        R.drawable.educacion_fisica,
+        R.drawable.artistica,
+        R.drawable.quimica,
+        R.drawable.calculo,
+        R.drawable.fisica_cuantica,
+        R.drawable.orientacion_profesional,
+        R.drawable.religion
     )
+
     // Lista que contiene los nombres de las materias
     var materias: List<String> = listOf()
 
     // Clase interna ViewHolder que almacena las referencias a las vistas de cada ítem
     class MateriaViewModel(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Referencia al botón que representa la materia
-        val materiaBtn: Button = itemView.findViewById(R.id.button2)
-        val profileMateria: CircleImageView = itemView.findViewById(R.id.profile_image)
-
+        val materiaBtn: ConstraintLayout = itemView.findViewById(R.id.layout1708)
+        val materiaTv: TextView = itemView.findViewById(R.id.textView13)
+        val materiaImg: CircleImageView = itemView.findViewById(R.id.button2)
     }
 
     // Método para crear nuevas vistas (invocado por el layout manager)
@@ -39,22 +61,20 @@ class MateriasAdapter(val context: Context) : RecyclerView.Adapter<MateriasAdapt
         return MateriaViewModel(viewLayout) // Devuelve el ViewHolder con la vista inflada
     }
 
-
-    // Método para reemplazar el contenido de una vista (invocado por el layout manager)
     override fun onBindViewHolder(holder: MateriasAdapter.MateriaViewModel, position: Int) {
-        // Imprime el nombre de la materia en logcat para depuración
         Log.d("busqueda", "resultados: " + materias[position])
-        holder.materiaBtn.text = materias[position] // Asigna el nombre de la materia al botón
 
-        // Configura el listener para el botón
+        // Asigna el nombre de la materia al TextView
+        holder.materiaTv.text = materias[position]
+
+        // Configura el listener para el botón (manteniendo el código original)
         holder.materiaBtn.setOnClickListener {
-            // Llama al método abrirPeriodoFragment en la actividad actual
             (context as MainActivity).apply {
                 abrirPeriodoFragment()
             }
         }
-        holder.profileMateria.setImageResource(Materia[position])
 
+        holder.materiaImg.setImageResource(imagenes[position])
     }
 
     // Método que devuelve el número de elementos en la lista

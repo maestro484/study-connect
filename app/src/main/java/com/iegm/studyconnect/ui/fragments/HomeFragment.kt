@@ -25,7 +25,7 @@ import com.iegm.studyconnect.model.SchoolData
 import org.json.JSONObject
 import java.io.InputStream
 
-class HomeFragment() : Fragment() {
+class HomeFragment : Fragment() {
 
     // Variables para los elementos de la interfaz
     lateinit var ajuste: ImageView // Icono para ajustes
@@ -36,16 +36,12 @@ class HomeFragment() : Fragment() {
     lateinit var topBar: ConstraintLayout
 
 
-    private lateinit var materiasAdapter: MateriasAdapter // Adaptador para la lista de materias
+    private var materiasAdapter: MateriasAdapter? = null // Adaptador para la lista de materias
 
 
     var grado: Int = 0 // Índice del grado actual
     var busqueda = "" // Variable para almacenar la búsqueda
 
-
-    companion object {
-        fun newInstance() = HomeFragment() // Método para crear una nueva instancia del fragmento
-    }
 
     private val viewModel: HomeViewModel by viewModels() // Inicializa el ViewModel
 
@@ -82,7 +78,7 @@ class HomeFragment() : Fragment() {
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         // Inicializa el adaptador de materias
-        materiasAdapter = MateriasAdapter(context = requireContext())
+        materiasAdapter = MateriasAdapter(context)
 
         // Configura el RecyclerView
         listaDeMaterias.apply {
@@ -118,7 +114,7 @@ class HomeFragment() : Fragment() {
         gradoG.text = "Grado ${data.grados[grado].grado}"
 
         // Filtra las materias y las asigna al adaptador
-        materiasAdapter.materias = filtrarMateria(data.grados[grado])
+        materiasAdapter!!.materias = filtrarMateria(data.grados[grado])
     }
 
     // Función para filtrar las materias según el grado

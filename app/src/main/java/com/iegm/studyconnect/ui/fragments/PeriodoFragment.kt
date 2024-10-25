@@ -13,9 +13,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
-import com.airbnb.lottie.LottieAnimationView
 
-class PeriodoFragment : Fragment() {
+class PeriodoFragment() : Fragment() {
 
     lateinit var periodo1: Button
     lateinit var periodo2: Button
@@ -23,9 +22,9 @@ class PeriodoFragment : Fragment() {
     lateinit var volver1: ImageView
     lateinit var topBar: ConstraintLayout
 
-    companion object {
-        fun newInstance() = PeriodoFragment()
-    }
+//    companion object {
+//        fun newInstance() = PeriodoFragment()
+//    }
 
     private val viewModel: PeriodoViewModel by viewModels()
 
@@ -55,7 +54,7 @@ class PeriodoFragment : Fragment() {
         topBar = view.findViewById(R.id.topBar)
 
 
-        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+       // topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
 
         periodo1.setOnClickListener {

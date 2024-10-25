@@ -97,4 +97,6 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         avatarsFragment?.dismiss()
     }
 
+
+
 }

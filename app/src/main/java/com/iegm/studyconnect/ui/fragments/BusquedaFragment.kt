@@ -14,8 +14,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.apphosting.datastore.testing.DatastoreTestTrace.FirestoreV1Action.RemoveListen
-import com.google.firebase.firestore.model.mutation.ArrayTransformOperation.Remove
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.iegm.studyconnect.MainActivity
@@ -30,7 +28,6 @@ import java.io.InputStream
 import java.text.Normalizer
 
 class BusquedaFragment : Fragment() {
-    //
 
     lateinit var busquedaAdapter: BusquedaAdapter
 
@@ -59,6 +56,7 @@ class BusquedaFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -81,7 +79,7 @@ class BusquedaFragment : Fragment() {
 
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 
-        busquedaAdapter = BusquedaAdapter(requireContext())
+        busquedaAdapter = BusquedaAdapter(context)
 
 
         listaDeBusqueda.apply {

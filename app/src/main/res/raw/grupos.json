@@ -4,7 +4,7 @@
       "grado": 11,
       "materias": [
         {
-          "nombre": "Economía",
+          "nombre": "economia",
           "profesor": "Prof. Juan Pérez",
           "periodos": [
             {

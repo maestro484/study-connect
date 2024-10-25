@@ -16,6 +16,7 @@ import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
+import com.iegm.studyconnect.ui.fragments.OnAvatarSelected
 
 class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: ArrayList<UserData>) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {

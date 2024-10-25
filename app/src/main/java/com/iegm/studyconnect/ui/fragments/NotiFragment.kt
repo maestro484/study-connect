@@ -25,9 +25,9 @@ class NotiFragment : Fragment() {
     lateinit var menciones: Switch
     lateinit var topBar: ConstraintLayout
 
-    companion object {
-        fun newInstance() = NotiFragment()
-    }
+//    companion object {
+//        fun newInstance() = NotiFragment(on)
+//    }
 
     private val viewModel: NotiViewModel by viewModels()
 

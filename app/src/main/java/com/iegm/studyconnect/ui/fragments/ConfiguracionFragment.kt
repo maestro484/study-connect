@@ -16,7 +16,7 @@ import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
-class ConfiguracionFragment : Fragment() {
+class ConfiguracionFragment: Fragment() {
     // Declaración de variables que representan elementos de la interfaz de usuario
     lateinit var flecha1: ImageView // Imagen que probablemente navega hacia atrás
     lateinit var notificaciones: Button // Botón para abrir la sección de notificaciones
