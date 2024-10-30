@@ -19,25 +19,24 @@ class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdap
 
     val imagenes = listOf(
 
-        R.drawable.lengua,
-        R.drawable.matematicas,
         R.drawable.economia,
-        R.drawable.comprension_lectora,
-        R.drawable.tecnologia,
-        R.drawable.etica,
-        R.drawable.etnoeducacion,
-        R.drawable.geometria,
-        R.drawable.estadistica,
-        R.drawable.ingles,
-        R.drawable.ciencias_sociales,
-        R.drawable.ciencias_naturales,
+        R.drawable.religion,
         R.drawable.educacion_fisica,
-        R.drawable.artistica,
         R.drawable.quimica,
+        R.drawable.artistica,
+        R.drawable.lengua,
+        R.drawable.comprension_lectora,
+        R.drawable.ciencias_sociales,
+        R.drawable.estadistica,
+        R.drawable.etica,
+        R.drawable.ingles,
         R.drawable.calculo,
-        R.drawable.fisica_cuantica,
         R.drawable.orientacion_profesional,
-        R.drawable.religion
+        R.drawable.filosofia,
+        R.drawable.fisica_cuantica,
+        R.drawable.ciencias_naturales,
+        R.drawable.geometria,
+        R.drawable.etnoeducacion
     )
 
     // Lista que contiene los nombres de las materias
