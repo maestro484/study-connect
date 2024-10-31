@@ -14,7 +14,7 @@ import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
-class PeriodoFragment() : Fragment() {
+class PeriodoFragment: Fragment() {
 
     lateinit var periodo1: Button
     lateinit var periodo2: Button
@@ -22,9 +22,8 @@ class PeriodoFragment() : Fragment() {
     lateinit var volver1: ImageView
     lateinit var topBar: ConstraintLayout
 
-//    companion object {
-//        fun newInstance() = PeriodoFragment()
-//    }
+
+
 
     private val viewModel: PeriodoViewModel by viewModels()
 
@@ -51,19 +50,18 @@ class PeriodoFragment() : Fragment() {
         periodo2 = view.findViewById(R.id.periodo2)
         periodo3 = view.findViewById(R.id.periodo3)
         volver1 = view.findViewById(R.id.devolver1)
+
         topBar = view.findViewById(R.id.topBar)
 
 
-       // topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
 
         periodo1.setOnClickListener {
             (activity as MainActivity).abrirApuntesFragment()
-
         }
         periodo2.setOnClickListener {
             (activity as MainActivity).abrirApuntesFragment()
-
         }
         periodo3.setOnClickListener {
             (activity as MainActivity).abrirApuntesFragment()

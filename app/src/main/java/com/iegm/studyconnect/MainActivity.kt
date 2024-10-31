@@ -11,13 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.iegm.studyconnect.model.Resultados
+import com.iegm.studyconnect.ui.fragments.ApunteFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 import com.iegm.studyconnect.ui.fragments.BusquedaFragment
 import com.iegm.studyconnect.ui.fragments.ComentariosFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
 import com.iegm.studyconnect.ui.fragments.HomeFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
-import com.iegm.studyconnect.ui.fragments.PdfFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 import com.iegm.studyconnect.ui.fragments.QrcodeFragment
@@ -54,16 +55,16 @@ class MainActivity : AppCompatActivity() {
         AppTheme.aplicarTema(tema, this)
     }
 
-    fun abrirPdfFragment(nombre : String) {
-        val pdfFragment: PdfFragment = PdfFragment(nombre)
+    fun abrirApunteFragment() {
+        val apunteFragment: ApunteFragment = ApunteFragment()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView, pdfFragment)
+            .replace(R.id.fragmentContainerView, apunteFragment)
             .commitAllowingStateLoss()
 
     }
 
     fun abrirApuntesFragment() {
-        val apuntesFragment: ApuntesFragment = ApuntesFragment()
+        val apuntesFragment: ApuntesFragment = ApuntesFragment() // QUIZAS
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, apuntesFragment)
             .commitAllowingStateLoss()
@@ -152,7 +153,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, busquedaFragment)
             .commitAllowingStateLoss()
     }
-
 
 
     fun abrirQrcodeFragment() {

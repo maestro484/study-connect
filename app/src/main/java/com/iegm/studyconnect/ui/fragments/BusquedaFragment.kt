@@ -39,12 +39,14 @@ class BusquedaFragment : Fragment() {
     lateinit var apunte: Button
     lateinit var listaDeBusqueda: RecyclerView
 
+
     lateinit var topBar: ConstraintLayout
 
     var grado: Int = 0
 
 
     val objetos: MutableList<String> = mutableListOf()
+
 
     companion object {
         fun newInstance() = BusquedaFragment()
@@ -123,7 +125,7 @@ class BusquedaFragment : Fragment() {
 
         fecha.setOnClickListener {
             filtrarFecha(data.grados[grado])
-            (activity as MainActivity).abrirApuntesFragment()
+
         }
         apunte.setOnClickListener {
             filtrarApunte(data.grados[grado])
@@ -166,32 +168,15 @@ class BusquedaFragment : Fragment() {
                     it.apuntes.map {
                         val apunte = it.nombre.toLowerCase().replaceAccents()
 
+                        val fecha  = it.mes
+
                         if (apunte.contains(busqueda)) run {
-                            val resultado = Resultados(it.nombre, Tipo.APUNTE)
+                            val resultado = Resultados(it.nombre, Tipo.APUNTE, )
                             resultados.add(resultado)
                         }
 
-
-                        var meses = "0"
-                        when (busqueda) {
-                            "enero" -> meses = 1.toString()
-                            "febrero" -> meses = 2.toString()
-                            "marzo" -> meses = 3.toString()
-                            "abril" -> meses = 4.toString()
-                            "mayo" -> meses = 5.toString()
-                            "junio" -> meses = 6.toString()
-                            "julio" -> meses = 7.toString()
-                            "agosto" -> meses = 8.toString()
-                            "septiembre" -> meses = 9.toString()
-                            "octubre" -> meses = 10.toString()
-                            "noviembre" -> meses = 11.toString()
-                            "diciembre" -> meses = 12.toString()
-                        }
-
-
-                        val mes = it.mes.toString().toLowerCase().replaceAccents()
-                        if (mes == meses) run {
-                            val resultado = Resultados(it.nombre.toString(), Tipo.FECHA)
+                        if (fecha.contains(busqueda)) run {
+                            val resultado = Resultados(it.nombre, Tipo.FECHA)
                             resultados.add(resultado)
                         }
                     }
