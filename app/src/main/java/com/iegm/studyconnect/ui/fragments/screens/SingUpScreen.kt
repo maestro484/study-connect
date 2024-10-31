@@ -144,7 +144,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
             .width(250.dp)
             .padding(top = 16.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-            onClick = { /*TODO*/ }) {
+            onClick = { authViewModel.createUser(email, password)}) {
             Text(text = "Registrarse", color = Color.White)
         }
     }
