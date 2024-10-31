@@ -28,6 +28,7 @@ class LoginActivity : ComponentActivity() {
     lateinit var googleSignInClient: GoogleSignInClient
 
     private val RC_SIGN_IN = 9001
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
