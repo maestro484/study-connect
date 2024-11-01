@@ -49,7 +49,7 @@ fun LoginScreen(navHostController: NavHostController, authViewModel: AuthViewMod
     ) {
         Image(
             modifier = Modifier.size(250.dp),
-            painter = painterResource(id = R.drawable.login_image),
+            painter = painterResource(id = R.drawable.logou_foreground),
             contentDescription = "Imagen del login"
         )
         Spacer(modifier = Modifier.height(20.dp))
@@ -61,7 +61,7 @@ fun LoginScreen(navHostController: NavHostController, authViewModel: AuthViewMod
         Text(
             modifier = Modifier.padding(horizontal = 50.dp),
             textAlign = TextAlign.Center,
-            text = "¡HOLA! Descubre un mundo de posibilidades en Playground.Explora, conecta y disfruta. ¡Registrate ya!"
+            text = "¡BIENVENIDO A STUDY CONNECT, DISFRUTA Y ORGANIZA TUS APUNTES!"
         )
         Spacer(modifier = Modifier.height(20.dp))
 
