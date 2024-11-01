@@ -18,6 +18,8 @@ import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlin.math.log
+
 
 class AuthViewModel : ViewModel() {
 
@@ -26,6 +28,9 @@ class AuthViewModel : ViewModel() {
     //Para informarnos si el inicio fue exitoso o no, registra el estado de autenticacion
 
     val authState: StateFlow<FirebaseUser?> = _authState
+
+    private val _errorMessage = MutableLiveData<String>()
+    val errorMessage: LiveData<String> get() = _errorMessage
 
 
     fun createUser(email: String, password: String){
@@ -55,11 +60,7 @@ class AuthViewModel : ViewModel() {
                 }
         }
     }
-    fun signOut(){
-        firebaseAuth.signOut()
-        _authState.value = null
-    }
-    //Cerrar sesión y volver un usuario nulo.
+
 
     private val _googleSignInResult = MutableLiveData<Result<GoogleSignInAccount>>()
     val googleSignInResult: LiveData<Result<GoogleSignInAccount>> = _googleSignInResult
@@ -87,13 +88,18 @@ class AuthViewModel : ViewModel() {
             _googleSignInResult.value = Result.success(account)
         } catch (e: ApiException) {
             val errorMessage = when (e.statusCode) {
+
                 CommonStatusCodes.CANCELED -> "Sign-in was canceled. Please try again."
                 CommonStatusCodes.ERROR -> "Sign-in failed. Please check your connection and try again."
                 CommonStatusCodes.NETWORK_ERROR -> "Network error occurred. Please check your internet connection."
                 CommonStatusCodes.DEVELOPER_ERROR -> "Developer error. Please check your app's configuration."
                 else -> "An unknown error occurred. Please try again."
             }
+            // Mostrar el mensaje al usuario
+            _errorMessage.value = errorMessage
             _googleSignInResult.value = Result.failure(Exception(errorMessage))
+
+
         }
     }
 
@@ -108,6 +114,11 @@ class AuthViewModel : ViewModel() {
                 }
             }
     }
+    fun signOut(){
+        firebaseAuth.signOut()
+        _authState.value = null
+    }
+    //Cerrar sesión y volver un usuario nulo.
 
 
 }

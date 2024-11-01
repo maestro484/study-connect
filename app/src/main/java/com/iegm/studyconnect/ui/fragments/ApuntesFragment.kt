@@ -20,9 +20,12 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.iegm.studyconnect.AppTheme
+import com.iegm.studyconnect.DataManager
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.Apunte
+import com.iegm.studyconnect.utils.DataManager.grado
+import com.iegm.studyconnect.utils.DataManager.materia
 import com.iegm.studyconnect.view.UserAdapter
 
 class ApuntesFragment : Fragment() {
@@ -72,8 +75,8 @@ class ApuntesFragment : Fragment() {
         // Configuración de Firebase
         val database = FirebaseDatabase.getInstance().reference
         val apuntesRef = database.child("grados/0/materias/0/periodos/0/apuntes")
-        Log.d("ApuntesFragment", apuntesRef.toString())
 
+        Log.d("ApuntesFragment", apuntesRef.toString())
         apuntesRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val apuntesList = mutableListOf<Apunte>()
@@ -100,9 +103,13 @@ class ApuntesFragment : Fragment() {
 
         val addDialog = AlertDialog.Builder(requireContext())
         addDialog.setView(v)
-
         val database = FirebaseDatabase.getInstance().reference
-        val apuntesRef = database.child("grados/0/materias/0/periodos/0/apuntes")
+        val apuntesRef = database.child("grados/${DataManager.grado}/materias/${DataManager.materia}/periodos/${DataManager.periodo}/apuntes")
+
+
+        Log.d("ApuntesFragment", apuntesRef.toString())
+
+
 
         addDialog.setPositiveButton("Ok") { dialog, _ ->
             val names = userName.text.toString()
