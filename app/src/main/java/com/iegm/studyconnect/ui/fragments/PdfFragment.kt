@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -63,6 +64,24 @@ class PdfFragment(private val nombre: String) : Fragment() {
 
         // Inicializar el PDF view
         pdfView?.initWithUrl(url = pdfView.toString(), lifecycleCoroutineScope = lifecycleScope, lifecycle = lifecycle)
+
+        requireActivity().apply {
+
+            val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
+
+            val representantes = sharedPreferences.getBoolean("REPRESENTANTE", false)
+
+            if (representantes) {
+                descripcion?.isEnabled = true
+                pdfView?.isEnabled = true
+            } else {
+                descripcion?.isEnabled = false
+                pdfView?.isEnabled = false
+            }
+
+        }
+
+
     }
 
     override fun onPause() {

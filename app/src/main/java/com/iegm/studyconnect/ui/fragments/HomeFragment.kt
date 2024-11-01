@@ -35,6 +35,9 @@ class HomeFragment : Fragment() {
     lateinit var perfil: ImageView // Icono para perfil de usuario
     lateinit var topBar: ConstraintLayout
 
+    private val SAVED_AVATAR_PROFILE = "saved_avatar_profile"
+
+
 
     private var materiasAdapter: MateriasAdapter? = null // Adaptador para la lista de materias
 
@@ -102,6 +105,12 @@ class HomeFragment : Fragment() {
         listaDeMaterias.setOnClickListener {
             (activity as MainActivity).abrirPeriodoFragment() // Navega al fragmento de período
         }
+
+        // Cargar el avatar guardado de SharedPreferences
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, R.drawable.person_24dp_fill0_wght400_grad0_opsz24__1_) // Usa un avatar por defecto si no está configurado
+
+        perfil.setImageResource(avatar) // Establece la imagen del avatar en el ImageView de perfil
 
         // Lee el archivo JSON con los datos de grupos
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)

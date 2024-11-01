@@ -34,6 +34,7 @@ class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdap
         R.drawable.orientacion_profesional,
         R.drawable.filosofia,
         R.drawable.fisica_cuantica,
+        R.drawable.tecnologia,
         R.drawable.ciencias_naturales,
         R.drawable.geometria,
         R.drawable.etnoeducacion

@@ -9,11 +9,10 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
-import com.iegm.studyconnect.model.Apunte
 import com.iegm.studyconnect.model.Resultados
 import com.iegm.studyconnect.model.Tipo
 
-class BusquedaAdapter(val context: Context) : RecyclerView.Adapter<BusquedaAdapter.BusquedaViewHolder>() {
+class BusquedaAdapter(val context: Context?) : RecyclerView.Adapter<BusquedaAdapter.BusquedaViewHolder>() {
 
     // Esta es la lista que contiene los resultados de búsqueda.
     val resultados: MutableList<Resultados> = mutableListOf()
