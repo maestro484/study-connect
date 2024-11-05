@@ -66,22 +66,22 @@ class PdfFragment(private val nombre: String) : Fragment() {
         pdfView?.initWithUrl(url = pdfView.toString(), lifecycleCoroutineScope = lifecycleScope, lifecycle = lifecycle)
 
         requireActivity().apply {
-
             val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
-
             val representantes = sharedPreferences.getBoolean("REPRESENTANTE", false)
 
             if (representantes) {
+                // Si es representante, habilitar la edición de descripción y PDF view
                 descripcion?.isEnabled = true
                 pdfView?.isEnabled = true
             } else {
-                descripcion?.isEnabled = false
+                // Si NO es representante, deshabilitar la edición de descripción y ocultar PDF view
+                descripcion?.apply {
+                    isEnabled = false
+                    visibility = View.INVISIBLE
+                }
                 pdfView?.isEnabled = false
             }
-
         }
-
-
     }
 
     override fun onPause() {

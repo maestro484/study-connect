@@ -12,7 +12,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.model.Resultados
-import com.iegm.studyconnect.ui.fragments.ApunteFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 import com.iegm.studyconnect.ui.fragments.BusquedaFragment
 import com.iegm.studyconnect.ui.fragments.ComentariosFragment

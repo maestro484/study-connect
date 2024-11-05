@@ -42,8 +42,7 @@ class HomeFragment : Fragment() {
     private var materiasAdapter: MateriasAdapter? = null // Adaptador para la lista de materias
 
 
-    var grado: Int = 0 // Índice del grado actual
-    var busqueda = "" // Variable para almacenar la búsqueda
+    var grado: Int = 2 // Índice del grado actual
 
 
     private val viewModel: HomeViewModel by viewModels() // Inicializa el ViewModel
