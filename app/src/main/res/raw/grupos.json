@@ -4,7 +4,7 @@
       "grado": 11,
       "materias": [
         {
-          "nombre": "Economía",
+          "nombre": "economia",
           "profesor": "Prof. Juan Pérez",
           "periodos": [
             {
@@ -1339,7 +1339,7 @@
           ]
         },
         {
-          "nombre": "Cátedra de Paz",
+          "nombre": "Etnoeducación",
           "profesor": "Prof. Carmen Fernández",
           "periodos": [
             {
@@ -1747,7 +1747,7 @@
           ]
         },
         {
-          "nombre": "Cátedra de Paz",
+          "nombre": "Etnoeducación",
           "profesor": "Prof. Carmen Fernández",
           "periodos": [
             {

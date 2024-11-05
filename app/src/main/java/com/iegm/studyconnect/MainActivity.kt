@@ -12,13 +12,13 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iegm.studyconnect.model.Resultados
-import com.iegm.studyconnect.ui.fragments.ApunteFragment
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 import com.iegm.studyconnect.ui.fragments.BusquedaFragment
 import com.iegm.studyconnect.ui.fragments.ComentariosFragment
 import com.iegm.studyconnect.ui.fragments.ConfiguracionFragment
 import com.iegm.studyconnect.ui.fragments.HomeFragment
 import com.iegm.studyconnect.ui.fragments.NotiFragment
+import com.iegm.studyconnect.ui.fragments.PdfFragment
 import com.iegm.studyconnect.ui.fragments.PerfilDeUsuarioFragment
 import com.iegm.studyconnect.ui.fragments.PeriodoFragment
 import com.iegm.studyconnect.ui.fragments.QrcodeFragment
@@ -55,10 +55,10 @@ class MainActivity : AppCompatActivity() {
         AppTheme.aplicarTema(tema, this)
     }
 
-    fun abrirApunteFragment() {
-        val apunteFragment: ApunteFragment = ApunteFragment()
+    fun abrirPdfFragment(nombre: String) {
+        val pdfFragment: PdfFragment = PdfFragment(nombre)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView, apunteFragment)
+            .replace(R.id.fragmentContainerView, PdfFragment(nombre))
             .commitAllowingStateLoss()
 
     }

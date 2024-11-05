@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.app.AlertDialog
+import android.content.Context.MODE_PRIVATE
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -70,6 +71,17 @@ class ApuntesFragment : Fragment() {
 
         button_comentarios.setOnClickListener {
             (activity as MainActivity).abrirComentariosFragment()
+        }
+
+        requireActivity().apply {
+            val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
+            val representantes = sharedPreferences.getBoolean("REPRESENTANTE", false)
+
+            if (representantes) {
+                addsBtn.isEnabled = true
+            } else {
+                addsBtn.isEnabled = false
+            }
         }
 
         // Configuración de Firebase
