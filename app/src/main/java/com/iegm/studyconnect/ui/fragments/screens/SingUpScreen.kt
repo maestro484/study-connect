@@ -45,6 +45,8 @@ fun SignUpScreen(
             nombre.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && selectGrado != "Seleccione su grado"
     }
 
+    sharedPreferences!!.edit().putInt("GRADO_USUARIO", 1).apply()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
