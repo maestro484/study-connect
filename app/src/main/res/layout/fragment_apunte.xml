@@ -8,7 +8,7 @@
     tools:context=".ui.fragments.ApunteFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout2"
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@android:color/holo_purple"
@@ -21,8 +21,9 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_black"
             android:text="Apunte"
-            android:textSize="30sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -54,7 +55,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout2" />
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
 
     <FrameLayout
         android:id="@+id/pdfView"

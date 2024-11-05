@@ -2,6 +2,7 @@ package com.iegm.studyconnect.ui.fragments
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -11,10 +12,12 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.storage.FirebaseStorage
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.rajat.pdfviewer.PdfRendererView
@@ -33,7 +36,7 @@ class ApunteFragment : Fragment() {
         // Otras opciones si las necesitas
     }
 
-
+    private lateinit var topBar: ConstraintLayout
     private lateinit var pdfView: PdfRendererView
     private lateinit var descripcion: EditText
     private lateinit var atras: ImageView
@@ -62,6 +65,11 @@ class ApunteFragment : Fragment() {
         descripcion = view.findViewById(R.id.descripcion)
         atras = view.findViewById(R.id.Atras)
         fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
+
+        topBar = view.findViewById(R.id.topBar)
+        topBar.setBackgroundColor(
+            Color.parseColor(AppTheme.obtenerTema(requireActivity()))
+        )
 
         atras.setOnClickListener {
             (activity as MainActivity).abrirApuntesFragment()

@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
+import android.util.Log // AÑADIR IMPORT PARA DEBUG
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,31 +53,12 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         editar_correo = view.findViewById(R.id.editar_correo)
         franja = view.findViewById(R.id.franja)
 
-        franja.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
-
         // Obtener el tema guardado
         val temaActual = AppTheme.obtenerTema(requireActivity())
 
-
-        fun setButtonColor(button: Button) {
-            val color = when (temaActual) {
-                AppTheme.moradoClaro -> "#C0A1DB" // Color para el tema morado claro
-                AppTheme.moradoOscuro -> "#A799E0" // Color para el tema morado oscuro
-                AppTheme.azul -> "#B6BADB"         // Color para el tema azul
-                else -> "#CB69DB"                  // Color predeterminado
-            }
-
-            // Obtener el drawable existente y aplicar el nuevo color
-            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
-            drawable?.mutate()?.colorFilter =
-                PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
-
-            button.background = drawable  // Aplicar el drawable modificado al botón
-
-        }
-
-        // Aplicar el color a todos los botones
-        setButtonColor(cerrar_sesion)
+        // Cambia el color de la franja y configura el botón de cierre de sesión
+        setFranjaColor(franja, temaActual)
+        setButtonColor(cerrar_sesion, temaActual)
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
         val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, 0)
@@ -84,7 +66,6 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         if (avatar != 0) {
             abriravt.setImageResource(avatar)
         }
-
 
         abriravt.setOnClickListener {
             avatarsFragment = AvatarsFragment(this)
@@ -96,16 +77,38 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         }
 
         cerrar_sesion.setOnClickListener {
-
             FirebaseAuth.getInstance().signOut()  // Cerrar sesión en Firebase
-
             val intent = Intent(requireContext(), LoginActivity::class.java)
-            startActivity(intent)  // lo manda pal  LoginActivity
+            startActivity(intent)  // Lo manda al LoginActivity
+            requireActivity().finish()  // Finalizar la actividad actual
+        }
+    }
 
-            requireActivity().finish()
-            // Finalizar la actividad actual para evitar que el usuario vuelva a ella
+    private fun setButtonColor(button: Button, temaActual: String) {
+        val color = when (temaActual) {
+            AppTheme.moradoClaro -> "#C0A1DB" // Color para el tema morado claro
+            AppTheme.moradoOscuro -> "#A799E0" // Color para el tema morado oscuro
+            AppTheme.azul -> "#B6BADB"         // Color para el tema azul
+            else -> "#CB69DB"                  // Color predeterminado
         }
 
+        val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
+        drawable?.mutate()?.colorFilter =
+            PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
+
+        button.background = drawable  // Aplicar el drawable modificado al botón
+    }
+
+    private fun setFranjaColor(imageView: ImageView, temaActual: String) {
+        val color = when (temaActual) {
+            AppTheme.moradoClaro -> "#C0A1DB"
+            AppTheme.moradoOscuro -> "#A799E0"
+            AppTheme.azul -> "#B6BADB"
+            else -> "#CB69DB"
+        }
+
+        Log.d("DEBUG", "Color aplicado en franja: $color") // LOG PARA VERIFICACIÓN
+        imageView.setBackgroundColor(Color.parseColor(color))
     }
 
     override fun onAvatarClick(avatar: Int) {
@@ -114,10 +117,7 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
             putInt(SAVED_AVATAR_PROFILE, avatar)
             apply()
         }
-
         abriravt.setImageResource(avatar)
-
         avatarsFragment?.dismiss()
     }
-
 }
