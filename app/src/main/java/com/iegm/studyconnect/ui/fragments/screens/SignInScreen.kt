@@ -24,6 +24,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -51,7 +52,14 @@ import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
 fun SignInScreen(navHostController: NavHostController, authViewModel: AuthViewModel) {
-
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+    var isButtonEnabled by remember { mutableStateOf(false) }
+    // Listener para habilitar el botón
+    LaunchedEffect( email, password) {
+        isButtonEnabled =
+            email.isNotEmpty() && password.isNotEmpty()
+    }
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -155,10 +163,14 @@ fun SignInScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         Spacer(modifier = Modifier.height(20.dp))
 
 
-        Button(modifier = Modifier.width(250.dp),
+        Button(
+            modifier = Modifier.width(250.dp),
             colors = ButtonDefaults.buttonColors(Color.Black),
-            onClick = { authViewModel.SignIn(email, password) }) {
-            Text(text = "Iniciar sesión")
+            onClick = {if (isButtonEnabled) authViewModel.SignIn(email, password)},
+            enabled = isButtonEnabled  // habilitar o deshabilitar el botón
+                ){
+
+            Text(text = "Iniciar sesión",color = Color.White)
         }
     }
 }
