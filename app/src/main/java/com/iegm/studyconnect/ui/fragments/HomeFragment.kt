@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.graphics.Color
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -42,7 +43,7 @@ class HomeFragment : Fragment() {
     private var materiasAdapter: MateriasAdapter? = null // Adaptador para la lista de materias
 
 
-    var grado: Int = 2 // Índice del grado actual
+    var grado: Int = 0 // Índice del grado actual
 
 
     private val viewModel: HomeViewModel by viewModels() // Inicializa el ViewModel
@@ -119,7 +120,12 @@ class HomeFragment : Fragment() {
         val data: SchoolData = gson.fromJson(jsonString, object : TypeToken<SchoolData>() {}.type) // Convierte el JSON a SchoolData
 
         // Actualiza el texto con el grado actual
-        gradoG.text = "Grado ${data.grados[grado].grado}"
+
+        requireActivity().apply {
+            val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
+            grado = sharedPreferences.getInt("GRADO_USUARIO", 1)
+            gradoG.text = grado.toString()
+        }
 
         // Filtra las materias y las asigna al adaptador
         materiasAdapter!!.materias = filtrarMateria(data.grados[grado])

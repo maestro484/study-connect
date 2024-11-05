@@ -29,6 +29,8 @@ import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 @Composable
 fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewModel, sharedPreferences: SharedPreferences?) {
 
+    sharedPreferences!!.edit().putInt("GRADO_USUARIO", 1).apply()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
