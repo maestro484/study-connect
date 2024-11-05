@@ -1,5 +1,4 @@
 package com.iegm.studyconnect.ui.fragments
-
 import android.app.AlertDialog
 import android.content.Context.MODE_PRIVATE
 import android.graphics.Color
@@ -25,8 +24,6 @@ import com.iegm.studyconnect.DataManager
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.Apunte
-import com.iegm.studyconnect.utils.DataManager.grado
-import com.iegm.studyconnect.utils.DataManager.materia
 import com.iegm.studyconnect.view.UserAdapter
 
 class ApuntesFragment : Fragment() {

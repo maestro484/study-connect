@@ -1,4 +1,4 @@
-package com.iegm.studyconnect
+ package com.iegm.studyconnect
 
 import android.app.Activity
 import android.content.Intent
@@ -89,17 +89,15 @@ class AuthViewModel : ViewModel() {
         } catch (e: ApiException) {
             val errorMessage = when (e.statusCode) {
 
-                CommonStatusCodes.CANCELED -> "Sign-in was canceled. Please try again."
-                CommonStatusCodes.ERROR -> "Sign-in failed. Please check your connection and try again."
-                CommonStatusCodes.NETWORK_ERROR -> "Network error occurred. Please check your internet connection."
-                CommonStatusCodes.DEVELOPER_ERROR -> "Developer error. Please check your app's configuration."
-                else -> "An unknown error occurred. Please try again."
+                CommonStatusCodes.CANCELED -> "El inicio de sesión fue cancelado. Inténtelo de nuevo."
+                CommonStatusCodes.ERROR -> "Error al iniciar sesión. Verifique su conexión e inténtelo nuevamente."
+                CommonStatusCodes.NETWORK_ERROR -> "Se produjo un error de red. Verifique su conexión a Internet."
+                CommonStatusCodes.DEVELOPER_ERROR -> "Error del desarrollador. Verifique la configuración de su aplicación."
+                else -> "Se produjo un error desconocido. Por favor inténtalo de nuevo."
             }
             // Mostrar el mensaje al usuario
             _errorMessage.value = errorMessage
             _googleSignInResult.value = Result.failure(Exception(errorMessage))
-
-
         }
     }
 
