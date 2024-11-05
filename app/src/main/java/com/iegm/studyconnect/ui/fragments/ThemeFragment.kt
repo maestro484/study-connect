@@ -16,7 +16,7 @@ import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
-class ThemeFragment : Fragment() {
+class ThemeFragment() : Fragment() {
 
     lateinit var topBar: ConstraintLayout
     lateinit var predeterminado: RadioButton
@@ -25,9 +25,9 @@ class ThemeFragment : Fragment() {
     lateinit var flecha1: ImageView
     lateinit var claro: RadioButton
 
-    companion object {
-        fun newInstance() = ThemeFragment()
-    }
+//    companion object {
+//        fun newInstance() = ThemeFragment()
+//    }
 
     private val viewModel: ThemeViewModel by viewModels()
 

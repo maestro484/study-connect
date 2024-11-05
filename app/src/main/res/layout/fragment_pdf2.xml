@@ -41,12 +41,11 @@
             app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <EditText
+    <TextView
         android:id="@+id/fileTitleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:hint="Titulo"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,6 +97,7 @@
                 android:id="@+id/descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/fui_transparent"
                 android:gravity="top|start"
                 android:hint="Escribe aquí"
                 android:inputType="textMultiLine"

@@ -17,6 +17,7 @@ import com.iegm.studyconnect.R
 import com.iegm.studyconnect.model.Apunte
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
+import com.iegm.studyconnect.ui.fragments.OnAvatarSelected
 
 class UserAdapter(val context: Context) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
@@ -123,6 +124,7 @@ class UserAdapter(val context: Context) :
     override fun getItemCount(): Int {
         return userList.size
     }
+    //
 
 
 
@@ -133,7 +135,7 @@ class UserAdapter(val context: Context) :
         holder.mbNum.text = newList.mes
         holder.itemCard.setOnClickListener {
             (context as  MainActivity).apply {
-                abrirApunteFragment()
+                abrirPdfFragment(holder.name.text.toString())
             }
         }
     }

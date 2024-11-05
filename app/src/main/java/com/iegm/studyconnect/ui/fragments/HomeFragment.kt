@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments
 
 import android.content.Context
+import android.graphics.Color
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,10 +11,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.MateriasAdapter
@@ -30,13 +33,17 @@ class HomeFragment : Fragment() {
     lateinit var gradoG: TextView // Texto que muestra el grado actual
     lateinit var listaDeMaterias: RecyclerView // Lista para mostrar las materias
     lateinit var perfil: ImageView // Icono para perfil de usuario
-    private lateinit var materiasAdapter: MateriasAdapter // Adaptador para la lista de materias
-    var grado: Int = 0 // Índice del grado actual
-    var busqueda = "" // Variable para almacenar la búsqueda
+    lateinit var topBar: ConstraintLayout
 
-    companion object {
-        fun newInstance() = HomeFragment() // Método para crear una nueva instancia del fragmento
-    }
+    private val SAVED_AVATAR_PROFILE = "saved_avatar_profile"
+
+
+
+    private var materiasAdapter: MateriasAdapter? = null // Adaptador para la lista de materias
+
+
+    var grado: Int = 2 // Índice del grado actual
+
 
     private val viewModel: HomeViewModel by viewModels() // Inicializa el ViewModel
 
@@ -68,9 +75,12 @@ class HomeFragment : Fragment() {
         gradoG = view.findViewById(R.id.textViewG)
         listaDeMaterias = view.findViewById(R.id.ListaNueva)
         perfil = view.findViewById(R.id.perfil)
+        topBar = view.findViewById(R.id.topBar)
+
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         // Inicializa el adaptador de materias
-        materiasAdapter = MateriasAdapter(context = requireContext())
+        materiasAdapter = MateriasAdapter(context)
 
         // Configura el RecyclerView
         listaDeMaterias.apply {
@@ -95,6 +105,12 @@ class HomeFragment : Fragment() {
             (activity as MainActivity).abrirPeriodoFragment() // Navega al fragmento de período
         }
 
+        // Cargar el avatar guardado de SharedPreferences
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        val avatar = sharedPref.getInt(SAVED_AVATAR_PROFILE, R.drawable.person_24dp_fill0_wght400_grad0_opsz24__1_) // Usa un avatar por defecto si no está configurado
+
+        perfil.setImageResource(avatar) // Establece la imagen del avatar en el ImageView de perfil
+
         // Lee el archivo JSON con los datos de grupos
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
         val jsonObject = JSONObject(jsonString) // Crea un objeto JSON a partir de la cadena leída
@@ -106,7 +122,7 @@ class HomeFragment : Fragment() {
         gradoG.text = "Grado ${data.grados[grado].grado}"
 
         // Filtra las materias y las asigna al adaptador
-        materiasAdapter.materias = filtrarMateria(data.grados[grado])
+        materiasAdapter!!.materias = filtrarMateria(data.grados[grado])
     }
 
     // Función para filtrar las materias según el grado

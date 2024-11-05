@@ -58,6 +58,7 @@ class BusquedaFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -80,7 +81,7 @@ class BusquedaFragment : Fragment() {
 
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 
-        busquedaAdapter = BusquedaAdapter(requireContext())
+        busquedaAdapter = BusquedaAdapter(context)
 
 
         listaDeBusqueda.apply {
