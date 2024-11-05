@@ -98,8 +98,6 @@ class AuthViewModel : ViewModel() {
             // Mostrar el mensaje al usuario
             _errorMessage.value = errorMessage
             _googleSignInResult.value = Result.failure(Exception(errorMessage))
-
-
         }
     }
 

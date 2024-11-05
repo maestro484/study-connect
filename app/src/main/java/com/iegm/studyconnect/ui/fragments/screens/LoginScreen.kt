@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.ui.fragments.screens
 
 import android.app.Activity
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -18,6 +19,8 @@ import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -41,6 +44,19 @@ import androidx.compose.ui.platform.LocalContext
 fun LoginScreen(navHostController: NavHostController, authViewModel: AuthViewModel) {
 
     val context = LocalContext.current as Activity  // Obtener el contexto de la actividad
+
+    val googleSignInResult by authViewModel.googleSignInResult.observeAsState()
+
+    googleSignInResult?.let { result ->
+        result.fold(
+            onSuccess = { account ->
+                authViewModel.authWithGoogle(account)
+            },
+            onFailure = { e ->
+                Toast.makeText(context, "Google sign in failed: $e", Toast.LENGTH_SHORT).show()
+            }
+        )
+    }
 
     Column(
         modifier = Modifier.fillMaxSize(),
