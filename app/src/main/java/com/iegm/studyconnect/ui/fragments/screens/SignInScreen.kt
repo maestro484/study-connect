@@ -157,7 +157,7 @@ fun SignInScreen(navHostController: NavHostController, authViewModel: AuthViewMo
 
         Button(modifier = Modifier.width(250.dp),
             colors = ButtonDefaults.buttonColors(Color.Black),
-            onClick = { /*TODO*/ }) {
+            onClick = { authViewModel.SignIn(email, password) }) {
             Text(text = "Iniciar sesión")
         }
     }

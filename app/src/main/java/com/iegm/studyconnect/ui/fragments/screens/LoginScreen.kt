@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments.screens
 
+import android.app.Activity
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -28,14 +29,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.firebase.ui.auth.viewmodel.AuthViewModelBase
 import com.iegm.studyconnect.AuthViewModel
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.ui.NavigationItem
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
+import androidx.compose.ui.platform.LocalContext
 
+ // Asegúrate de que esta constante esté declarada aquí.
+ const val RC_SIGN_IN = 9001
 @Composable
-fun LoginScreen(navHostController:NavHostController,authViewModel: AuthViewModel) {
+fun LoginScreen(navHostController: NavHostController, authViewModel: AuthViewModel) {
+
+    val context = LocalContext.current as Activity  // Obtener el contexto de la actividad
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -43,7 +49,7 @@ fun LoginScreen(navHostController:NavHostController,authViewModel: AuthViewModel
     ) {
         Image(
             modifier = Modifier.size(250.dp),
-            painter = painterResource(id = R.drawable.login_image),
+            painter = painterResource(id = R.drawable.logou_foreground),
             contentDescription = "Imagen del login"
         )
         Spacer(modifier = Modifier.height(20.dp))
@@ -55,7 +61,7 @@ fun LoginScreen(navHostController:NavHostController,authViewModel: AuthViewModel
         Text(
             modifier = Modifier.padding(horizontal = 50.dp),
             textAlign = TextAlign.Center,
-            text = "¡HOLA! Descubre un mundo de posibilidades en Playground.Explora, conecta y disfruta. ¡Registrate ya!"
+            text = "¡BIENVENIDO A STUDY CONNECT, DISFRUTA Y ORGANIZA TUS APUNTES!"
         )
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -72,62 +78,16 @@ fun LoginScreen(navHostController:NavHostController,authViewModel: AuthViewModel
             onClick = { navHostController.navigate(NavigationItem.SignUp.route) }) {
             Text(text = "Registrarse", color = Color.Black)
         }
-        ElevatedButton(onClick = { /*TODO*/ }) {
-            Button(modifier = Modifier.width(250.dp),
-                colors = ButtonDefaults.buttonColors(Color.Black),
-                onClick = { navHostController.navigate(NavigationItem.SignIn.route) }) {
-                Image(
-                    painter = painterResource(id = com.firebase.ui.auth.R.drawable.googleg_standard_color_18),
-                    contentDescription = "Google Icon"
-
-
-                )
-                Spacer(modifier = Modifier.width(17.dp))
-                Text(text = "Continua con google")
-            }
-        }
-
-
-
-        Button(modifier = Modifier.width(250.dp),
-            colors = ButtonDefaults.buttonColors(Color.White),
-            onClick = { navHostController.navigate(NavigationItem.SignIn.route) }) {
+        ElevatedButton(onClick = {
+            authViewModel.signInWithGoogle(context, RC_SIGN_IN)
+        }, modifier = Modifier.width(250.dp)) {
             Image(
-                painter = painterResource(id = com.firebase.ui.auth.R.drawable.fui_ic_facebook_white_22dp),
-                contentDescription = "Facebook Icon"
+                painter = painterResource(id = com.google.android.gms.base.R.drawable.googleg_standard_color_18),
+                contentDescription = "Google Icon"
             )
-            Spacer(modifier = Modifier.width(17.dp))
-            Text(text = "Continua con facebook", color = Color.Black)
+            Spacer(modifier = Modifier.width(10.dp))
+            Text(text = "Continua con Google", color = Color.Black)
         }
-
-    }
-    @Composable
-    fun LoginScreen(navController: NavHostController) {
-        Text(
-            text = "Regístrate",
-            fontSize = 15.sp,
-            color = Color.Blue,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier
-                .fillMaxSize()
-                .clickable {
-                    navController.navigate(NavigationItem.SignUp.route)
-                }
-        )
-    }
-    @Composable
-    fun Loginhh(navController: NavHostController) {
-        Text(
-            text = "Inicia sesión",
-            fontSize = 15.sp,
-            color = Color.Blue,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier
-                .fillMaxSize()
-                .clickable {
-                    navController.navigate(NavigationItem.SignIn.route)
-                }
-        )
     }
 }
 

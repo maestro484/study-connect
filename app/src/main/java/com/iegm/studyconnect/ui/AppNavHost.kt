@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.iegm.studyconnect.AuthViewModel
+import com.iegm.studyconnect.ui.fragments.screens.HomeScreen
 import com.iegm.studyconnect.ui.fragments.screens.LoginScreen
 import com.iegm.studyconnect.ui.fragments.screens.SignInScreen
 import com.iegm.studyconnect.ui.fragments.screens.SignUpScreen
@@ -33,6 +34,10 @@ fun AppNavHost(
         }
         composable(NavigationItem.SignUp.route) {
             SignUpScreen(navHostController, authViewModel, sharedPreferences)
+        }
+
+        composable(NavigationItem.Home.route) {
+            HomeScreen()
         }
 
     }

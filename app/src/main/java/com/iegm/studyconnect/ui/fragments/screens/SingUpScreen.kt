@@ -24,6 +24,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.iegm.studyconnect.AuthViewModel
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.ui.NavigationItem
+import com.iegm.studyconnect.ui.theme.Purple40
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
@@ -137,6 +139,15 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
                 }
             }
         }
+        Text(text = "¿No tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.width(4.dp))
+        Text(
+            text = "Regístrate",
+            fontSize = 15.sp,
+            color = Purple40,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignIn.route) }
+        )
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -144,7 +155,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
             .width(250.dp)
             .padding(top = 16.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-            onClick = { /*TODO*/ }) {
+            onClick = { authViewModel.createUser(email, password)}) {
             Text(text = "Registrarse", color = Color.White)
         }
     }

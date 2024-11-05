@@ -14,11 +14,14 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.model.Apunte
 import com.iegm.studyconnect.model.UserData
 import com.iegm.studyconnect.ui.fragments.ApuntesFragment
 
-class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: ArrayList<UserData>) :
+class UserAdapter(val context: Context) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+
+    var userList: MutableList<Apunte> = mutableListOf()
 
 
     inner class UserViewHolder(val v: View) : RecyclerView.ViewHolder(v) {
@@ -52,8 +55,8 @@ class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: Ar
                             .setView(v)
                             .setPositiveButton("Ok"){
                                 dialog,_ ->
-                                position.userName = name.text.toString()
-                                position.userMb = number.text.toString()
+                                position.nombre = name.text.toString()
+                                position.mes = number.text.toString()
                                 notifyDataSetChanged()
                                 Toast.makeText(context, "Estas editando", Toast.LENGTH_SHORT)
                                 dialog.dismiss()
@@ -126,8 +129,8 @@ class UserAdapter(val context: Context, val c: ApuntesFragment, val userList: Ar
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val newList = userList[position]
-        holder.name.text = newList.userName
-        holder.mbNum.text = newList.userMb
+        holder.name.text = newList.nombre
+        holder.mbNum.text = newList.mes
         holder.itemCard.setOnClickListener {
             (context as  MainActivity).apply {
                 abrirPdfFragment()
