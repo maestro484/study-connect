@@ -142,7 +142,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         Text(text = "¿No tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.width(4.dp))
         Text(
-            text = "Regístrate",
+            text = "Inicia sesión",
             fontSize = 15.sp,
             color = Purple40,
             fontWeight = FontWeight.Bold,
