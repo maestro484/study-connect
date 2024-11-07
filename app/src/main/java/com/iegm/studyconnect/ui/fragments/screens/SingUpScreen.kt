@@ -31,7 +31,6 @@ fun SignUpScreen(
     authViewModel: AuthViewModel,
     sharedPreferences: SharedPreferences?
 ) {
-    sharedPreferences!!.edit().putInt("GRADO_USUARIO", 1).apply()
 
     var nombre by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -148,7 +147,10 @@ fun SignUpScreen(
                     })
                 }
             }
+            sharedPreferences!!.edit().putInt("GRADO_USUARIO", 0).apply()
+
         }
+
 
         Text(text = "¿No tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.width(4.dp))
