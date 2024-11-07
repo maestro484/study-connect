@@ -74,10 +74,9 @@ class PdfFragment(private val nombre: String) : Fragment() {
                 descripcion?.isEnabled = true
                 pdfView?.isEnabled = true
             } else {
-                // Si NO es representante, deshabilitar la edición de descripción y ocultar PDF view
+                // Si NO es representante, deshabilitar la edición de descripción y deshabilitar PDF view
                 descripcion?.apply {
                     isEnabled = false
-                    visibility = View.INVISIBLE
                 }
                 pdfView?.isEnabled = false
             }
