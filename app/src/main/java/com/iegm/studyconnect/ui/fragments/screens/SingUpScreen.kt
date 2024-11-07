@@ -44,7 +44,8 @@ fun SignUpScreen(
             nombre.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && selectGrado != "Seleccione su grado"
     }
 
-    sharedPreferences!!.edit().putInt("GRADO_USUARIO", 0).apply()
+/*    sharedPreferences!!.edit().putInt("GRADO_USUARIO", 0).apply()*/
+
 
     Column(
         modifier = Modifier
@@ -147,8 +148,8 @@ fun SignUpScreen(
                     })
                 }
             }
-            sharedPreferences!!.edit().putInt("GRADO_USUARIO", 0).apply()
-
+            expanded2 = optionGrado.contains(selectGrado)
+            sharedPreferences!!.edit().putString("GRADO_USUARIO", selectGrado).apply()
         }
 
 
