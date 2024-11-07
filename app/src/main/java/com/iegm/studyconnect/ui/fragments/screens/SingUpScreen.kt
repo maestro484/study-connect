@@ -39,7 +39,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         verticalArrangement = Arrangement.Center
     ) {
         Text(text = "Regístrate", fontSize = 35.sp, fontWeight = FontWeight.Bold)
-//
+
         var nombre by remember { mutableStateOf("") }
         OutlinedTextField(value = nombre,
             onValueChange = { nombre = it },
@@ -56,7 +56,7 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         Spacer(modifier = Modifier.height(20.dp))
 
         val representantes = listOf(
-            "valen.3010066@gmail.com", "perenguesestiven@gmail.com", "juanmg777vg@gmail.com"
+            "valen.301006@gmail.com", "perenguesestiven@gmail.com", "juanmg777vg@gmail.com"
         )
 
 

@@ -60,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, PdfFragment(nombre))
             .commitAllowingStateLoss()
-
     }
 
     fun abrirApuntesFragment() {
@@ -68,7 +67,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView, apuntesFragment)
             .commitAllowingStateLoss()
-
     }
 
     fun abrirTerminosCondicionesFragment() {

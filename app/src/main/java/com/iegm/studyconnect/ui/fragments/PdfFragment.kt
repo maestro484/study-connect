@@ -21,7 +21,7 @@ import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.rajat.pdfviewer.PdfRendererView
 
-class PdfFragment : Fragment() {
+class PdfFragment(val nombre : String) : Fragment() {
 
     // Inicialización de variables para las vistas
     lateinit var pdfView: PdfRendererView
@@ -80,7 +80,7 @@ class PdfFragment : Fragment() {
 
         // Navegar al fragmento anterior al presionar "Atrás"
         atras.setOnClickListener {
-            (activity as MainActivity).abrirPdfFragment()
+            (activity as MainActivity).abrirPdfFragment(nombre)
         }
 
         // Inicializar el PDF view (aunque este método parece estar incorrecto)
