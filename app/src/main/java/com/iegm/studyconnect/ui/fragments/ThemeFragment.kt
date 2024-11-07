@@ -45,7 +45,7 @@ class ThemeFragment() : Fragment() {
         predeterminado = view.findViewById(R.id.predeterminado)
         azul = view.findViewById(R.id.azul)
         oscuro = view.findViewById(R.id.morado)
-        flecha1 = view.findViewById(R.id.flecha1)
+        flecha1 = view.findViewById(R.id.arrow)
         claro = view.findViewById(R.id.claro)
 
         val mainActivity = (requireActivity() as MainActivity)

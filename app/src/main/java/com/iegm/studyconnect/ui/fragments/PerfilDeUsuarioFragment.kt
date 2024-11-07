@@ -22,7 +22,6 @@ import de.hdodenhof.circleimageview.CircleImageView
 class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
 
     lateinit var regresar: ImageView
-    lateinit var editar_numero: EditText
     lateinit var editar_nombre: EditText
     lateinit var editar_correo: EditText
     lateinit var cerrar_sesion: Button
@@ -44,8 +43,7 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
 
         abriravt = view.findViewById(R.id.abrir_avt)
         cerrar_sesion = view.findViewById(R.id.cerrar_sesion)
-        regresar = view.findViewById(R.id.regresar)
-        editar_numero = view.findViewById(R.id.editar_numero)
+        regresar = view.findViewById(R.id.devolver1)
         editar_nombre = view.findViewById(R.id.editar_nombre)
         editar_correo = view.findViewById(R.id.editar_correo)
         topBar = view.findViewById(R.id.constraintLayout)

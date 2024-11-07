@@ -38,13 +38,13 @@ fun SignUpScreen(
     var selectGrado by remember { mutableStateOf("Seleccione su grado") }
     var isButtonEnabled by remember { mutableStateOf(false) }
 
+    var gradoSeleccionado by remember { mutableStateOf(0) }
+
     // Listener para habilitar el botón
     LaunchedEffect(nombre, email, password, selectGrado) {
         isButtonEnabled =
             nombre.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && selectGrado != "Seleccione su grado"
     }
-
-/*    sharedPreferences!!.edit().putInt("GRADO_USUARIO", 0).apply()*/
 
 
     Column(
@@ -56,8 +56,7 @@ fun SignUpScreen(
     ) {
         Text(text = "Regístrate", fontSize = 35.sp, fontWeight = FontWeight.Bold)
 
-        OutlinedTextField(
-            value = nombre,
+        OutlinedTextField(value = nombre,
             onValueChange = { nombre = it },
             label = { Text(text = "Nombre") },
             placeholder = { Text(text = "Nombre") },
@@ -76,8 +75,7 @@ fun SignUpScreen(
         )
 
         var esRepresentante by remember { mutableStateOf(false) }
-        OutlinedTextField(
-            value = email,
+        OutlinedTextField(value = email,
             onValueChange = { email = it },
             label = { Text(text = "Email") },
             placeholder = { Text(text = "Ingresa tu email") },
@@ -95,8 +93,7 @@ fun SignUpScreen(
         Spacer(modifier = Modifier.height(20.dp))
 
         var showPassword by remember { mutableStateOf(false) }
-        OutlinedTextField(
-            value = password,
+        OutlinedTextField(value = password,
             onValueChange = { password = it },
             label = { Text(text = "Contraseña") },
             placeholder = { Text(text = "Ingresa tu contraseña") },
@@ -114,13 +111,12 @@ fun SignUpScreen(
                         contentDescription = if (showPassword) "Ocultar contraseña" else "Mostrar contraseña"
                     )
                 }
-            }
-        )
+            })
 
         Spacer(modifier = Modifier.height(20.dp))
 
         var expanded2 by remember { mutableStateOf(false) }
-        val optionGrado = listOf("8", "9", "10", "11")
+        val optionGrado = listOf("Grado 11", "Grado 10", "Grado 9", "Grado 8")
 
         Box(modifier = Modifier
             .fillMaxWidth()
@@ -141,27 +137,23 @@ fun SignUpScreen(
                 )
             }
             DropdownMenu(expanded = expanded2, onDismissRequest = { expanded2 = false }) {
-                optionGrado.forEach { option ->
+                optionGrado.forEachIndexed { index, option ->
                     DropdownMenuItem(text = { Text(text = option) }, onClick = {
+                        gradoSeleccionado = index
                         selectGrado = option
                         expanded2 = false
                     })
                 }
             }
-            expanded2 = optionGrado.contains(selectGrado)
-            sharedPreferences!!.edit().putString("GRADO_USUARIO", selectGrado).apply()
         }
-
 
         Text(text = "¿No tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.width(4.dp))
-        Text(
-            text = "Inicia sesión",
+        Text(text = "Inicia sesión",
             fontSize = 15.sp,
             color = Purple40,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignIn.route) }
-        )
+            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignIn.route) })
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -170,7 +162,10 @@ fun SignUpScreen(
                 .width(250.dp)
                 .padding(top = 16.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-            onClick = { if (isButtonEnabled) authViewModel.createUser(email, password) },
+            onClick = {
+                sharedPreferences!!.edit().putInt("GRADO_USUARIO", gradoSeleccionado).apply()
+                if (isButtonEnabled) authViewModel.createUser(email, password)
+            },
             enabled = isButtonEnabled // habilitar o deshabilitar el botón
         ) {
             Text(text = "Registrarse", color = Color.White)

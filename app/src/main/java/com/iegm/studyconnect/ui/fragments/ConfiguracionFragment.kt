@@ -49,7 +49,8 @@ class ConfiguracionFragment : Fragment() {
 
 
         val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
-        drawable?.mutate()?.colorFilter = PorterDuffColorFilter(Color.parseColor("#A15EDB"), PorterDuff.Mode.SRC_IN)
+        drawable?.mutate()?.colorFilter =
+            PorterDuffColorFilter(Color.parseColor("#A15EDB"), PorterDuff.Mode.SRC_IN)
         notificaciones.background = drawable
 
         // Obtener el tema guardado
@@ -66,7 +67,8 @@ class ConfiguracionFragment : Fragment() {
 
             // Obtener el drawable existente
             val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
-            drawable?.mutate()?.colorFilter = PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
+            drawable?.mutate()?.colorFilter =
+                PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
 
             button.background = drawable // Aplicar el drawable modificado al botón
         }
@@ -101,8 +103,6 @@ class ConfiguracionFragment : Fragment() {
             (activity as MainActivity).abrirTerminosCondicionesFragment()
 
         }
-
-
 
 
     }

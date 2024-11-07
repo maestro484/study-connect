@@ -98,6 +98,8 @@ class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdap
     // Lista que contiene los nombres de las materias
     var materias: List<String> = listOf()
 
+
+
     // Clase interna ViewHolder que almacena las referencias a las vistas de cada ítem
     class MateriaViewModel(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Referencia al botón que representa la materia
@@ -117,7 +119,6 @@ class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdap
     }
 
     override fun onBindViewHolder(holder: MateriasAdapter.MateriaViewModel, position: Int) {
-
         // Asigna el nombre de la materia al TextView
         holder.materiaTv.text = materias[position]
 

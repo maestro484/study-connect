@@ -44,7 +44,7 @@ class LoginActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         val sharedPref = getSharedPreferences(
-            "Study Connect", Context.MODE_PRIVATE
+            packageName, Context.MODE_PRIVATE
         )
         setContent {
             StudyConnectTheme {
