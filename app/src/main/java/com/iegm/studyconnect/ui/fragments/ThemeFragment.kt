@@ -97,6 +97,7 @@ class ThemeFragment : Fragment() {
                 AppTheme.moradoClaro2,
                 AppTheme.gris
             )
+            //
         }
 
         // Configura el listener para regresar a la pantalla de configuración
