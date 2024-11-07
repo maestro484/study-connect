@@ -123,8 +123,13 @@ class HomeFragment : Fragment() {
 
         requireActivity().apply {
             val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
-            grado = sharedPreferences.getInt("GRADO_USUARIO", 1)
-            gradoG.text = grado.toString()
+            grado = sharedPreferences.getInt("GRADO_USUARIO", 0)
+            when(grado){
+                0 -> gradoG.text = "Grado 11"
+                1 -> gradoG.text = "Grado 10"
+                2 -> gradoG.text = "Grado 9"
+                3 -> gradoG.text = "Grado 8"
+            }
         }
 
         // Filtra las materias y las asigna al adaptador
