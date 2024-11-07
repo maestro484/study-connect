@@ -80,7 +80,7 @@ class ThemeFragment : Fragment() {
                 AppTheme.gris
             )
         }
-
+///dhfhsdhsfjsjhfs
         // Configura el listener para el tema azul
         azul.setOnClickListener {
             topBar.setBackgroundColor(Color.parseColor(AppTheme.azul))
