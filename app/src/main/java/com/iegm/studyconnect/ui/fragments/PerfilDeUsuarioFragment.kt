@@ -3,6 +3,8 @@ package com.iegm.studyconnect.ui.fragments
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.iegm.studyconnect.AppTheme
@@ -48,7 +51,33 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         editar_correo = view.findViewById(R.id.editar_correo)
         topBar = view.findViewById(R.id.constraintLayout)
 
+        val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
+        drawable?.mutate()?.colorFilter =
+            PorterDuffColorFilter(Color.parseColor("#A15EDB"), PorterDuff.Mode.SRC_IN)
+        cerrar_sesion.background = drawable
 
+        // Obtener el tema guardado
+        val temaActual = AppTheme.obtenerTema(requireActivity())
+
+        // Función para aplicar color al botón manteniendo el shape_background
+        fun setButtonColor(button: Button) {
+            val color = when (temaActual) {
+                AppTheme.moradoClaro -> "#C0A1DB"
+                AppTheme.moradoOscuro -> "#A799E0"  // Color para morado claro
+                AppTheme.azul -> "#B6BADB"          // Color para azul
+                else -> "#CB69DB"                   // Color predeterminado
+            }
+
+            // Obtener el drawable existente
+            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
+            drawable?.mutate()?.colorFilter =
+                PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
+
+            button.background = drawable // Aplicar el drawable modificado al botón
+        }
+
+        // Aplicar el color a todos los botones
+        setButtonColor(cerrar_sesion)
 
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 

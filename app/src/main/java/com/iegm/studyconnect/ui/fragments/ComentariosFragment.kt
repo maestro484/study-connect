@@ -1,5 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +18,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.ComentariosAdapter
@@ -63,6 +66,7 @@ class ComentariosFragment : Fragment() {
     private lateinit var teclado: EditText
     private lateinit var buttonDeEnviar: Button
     private lateinit var listaDeComentarios: RecyclerView
+    private lateinit var topBar : ConstraintLayout
     private val client = OkHttpClient() // Instancia de OkHttpClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,6 +87,12 @@ class ComentariosFragment : Fragment() {
         devolver1 = view.findViewById(R.id.devolver1)
         buttonDeEnviar = view.findViewById(R.id.buttonDeEnviar)
         teclado = view.findViewById(R.id.teclado)
+
+        topBar = view.findViewById(R.id.topBar)
+
+
+        topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+
 
         // Configuración del RecyclerView
         val customAdapter = ComentariosAdapter()

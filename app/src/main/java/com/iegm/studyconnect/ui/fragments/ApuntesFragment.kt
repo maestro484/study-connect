@@ -33,7 +33,7 @@ class ApuntesFragment : Fragment() {
     private lateinit var userList: ArrayList<Apunte>
     private lateinit var userAdapter: UserAdapter
     private lateinit var button_comentarios: FloatingActionButton
-    lateinit var top_bar: ConstraintLayout
+    private lateinit var top_bar: ConstraintLayout
 
 
     override fun onCreateView(

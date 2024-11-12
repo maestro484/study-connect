@@ -3,6 +3,7 @@ package com.iegm.studyconnect.ui.fragments
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -17,7 +18,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.lifecycleScope
+import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.rajat.pdfviewer.PdfRendererView
@@ -29,7 +32,12 @@ class PdfFragment(private val nombre: String) : Fragment() {
     private val descripcion by lazy { view?.findViewById<EditText>(R.id.descripcion) }
     private val atras by lazy { view?.findViewById<ImageView>(R.id.Atras) }
     private val fileTitleTextView by lazy { view?.findViewById<TextView>(R.id.fileTitleTextView) }
-    private val relativeLayout by lazy { view?.findViewById<RelativeLayout>(R.id.relative) }
+    private val relativeLayout by lazy { view?.findViewById<RelativeLayout>(R.id.relative)
+         val topBar by lazy { view?.findViewById<ConstraintLayout>(R.id.topBar) }
+
+        topBar?.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
+
+    }
 
     private var selectedUri: String? = null // URI del PDF seleccionado
 
@@ -40,13 +48,17 @@ class PdfFragment(private val nombre: String) : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflar el layout del fragmento
         return inflater.inflate(R.layout.fragment_pdf2, container, false)
+
+
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // Establecer el título del archivo en el TextView
         fileTitleTextView?.text = nombre
+
 
         // Recuperar la URI guardada del PDF
         selectedUri = getSavedPdfUri()

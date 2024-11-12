@@ -70,14 +70,16 @@ fun LoginScreen(navHostController: NavHostController, authViewModel: AuthViewMod
         )
         Spacer(modifier = Modifier.height(20.dp))
 
-        Text(text = "¡HOLA!", fontSize = 35.sp, fontWeight = FontWeight.Bold)
+        Text(text = "¡HOLA!", fontSize = 35.sp, fontWeight = FontWeight.Bold, color = Color.White)
+
 
         Spacer(modifier = Modifier.height(20.dp))
 
         Text(
             modifier = Modifier.padding(horizontal = 50.dp),
             textAlign = TextAlign.Center,
-            text = "¡BIENVENIDO A STUDY CONNECT, DISFRUTA Y ORGANIZA TUS APUNTES!"
+            text = "¡BIENVENIDO A STUDY CONNECT, DISFRUTA Y ORGANIZA TUS APUNTES!",
+            color = Color.White
         )
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -92,7 +94,7 @@ fun LoginScreen(navHostController: NavHostController, authViewModel: AuthViewMod
             border = BorderStroke(1.dp, Color.Black),
             colors = ButtonDefaults.outlinedButtonColors(),
             onClick = { navHostController.navigate(NavigationItem.SignUp.route) }) {
-            Text(text = "Registrarse", color = Color.Black)
+            Text(text = "Registrarse", color = Color.White)
         }
         ElevatedButton(onClick = {
             authViewModel.signInWithGoogle(context, RC_SIGN_IN)
