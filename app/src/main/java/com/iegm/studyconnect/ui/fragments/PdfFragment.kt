@@ -109,7 +109,8 @@ class PdfFragment(private val nombre: String) : Fragment() {
             // Si se seleccionó un archivo, guardar la URI y cargar el PDF
             result.data?.data?.let { selectedFileUri ->
                 savePdfUri(selectedFileUri)
-                requireContext().contentResolver.takePersistableUriPermission(selectedFileUri, Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                requireContext().contentResolver.takePersistableUriPermission(selectedFileUri,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
                 loadPdfInView(selectedFileUri)
             } ?: Toast.makeText(context, "Error al seleccionar el archivo", Toast.LENGTH_SHORT).show()
         }
