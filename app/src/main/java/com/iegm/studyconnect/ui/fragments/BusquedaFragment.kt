@@ -31,12 +31,11 @@ import com.iegm.studyconnect.model.Tipo
 import org.json.JSONObject
 import java.io.InputStream
 import java.text.Normalizer
-
 class BusquedaFragment : Fragment() {
 
     lateinit var busquedaAdapter: BusquedaAdapter
 
-    //aqui declaramos las variables de la vista busqueda
+    // Declaración de las variables para los elementos de la vista de búsqueda
     lateinit var devolver: ImageView
     lateinit var materia: Button
     lateinit var fecha: Button
@@ -44,38 +43,34 @@ class BusquedaFragment : Fragment() {
     lateinit var apunte: Button
     lateinit var listaDeBusqueda: RecyclerView
 
-
     lateinit var topBar: ConstraintLayout
 
-    var grado: Int = 0
+    var grado: Int = 0  // Variable para almacenar el grado seleccionado
 
-
-    val objetos: MutableList<String> = mutableListOf()
-
+    val objetos: MutableList<String> = mutableListOf()  // Lista de objetos que se utilizarán en la búsqueda
 
     companion object {
-        fun newInstance() = BusquedaFragment()
+        fun newInstance() = BusquedaFragment()  // Función para crear una nueva instancia del fragmento
     }
 
-    private val viewModel: BusquedaViewModel by viewModels()
+    private val viewModel: BusquedaViewModel by viewModels()  // ViewModel para manejar datos de la búsqueda
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // Inflar el layout para este fragmento
         return inflater.inflate(R.layout.fragment_busqueda, container, false)
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//aqui llamamos las variables de la lista de busqueda
+
+        // Inicialización de las variables de la vista
         devolver = view.findViewById(R.id.devolver)
         materia = view.findViewById(R.id.materia)
         fecha = view.findViewById(R.id.fecha)
@@ -84,16 +79,16 @@ class BusquedaFragment : Fragment() {
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
         topBar = view.findViewById(R.id.topBar)
 
-
+        // Configuración de color de fondo para el botón 'materia'
         val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
         drawable?.mutate()?.colorFilter =
             PorterDuffColorFilter(Color.parseColor("#A15EDB"), PorterDuff.Mode.SRC_IN)
-        materia.background= drawable
+        materia.background = drawable
 
-        // Obtener el tema guardado
+        // Obtener el tema guardado y aplicar colores
         val temaActual = AppTheme.obtenerTema(requireActivity())
 
-        // Función para aplicar color al botón manteniendo el shape_background
+        // Función para aplicar color a los botones manteniendo el fondo
         fun setButtonColor(button: Button) {
             val color = when (temaActual) {
                 AppTheme.moradoClaro -> "#C0A1DB"
@@ -102,50 +97,43 @@ class BusquedaFragment : Fragment() {
                 else -> "#CB69DB"                   // Color predeterminado
             }
 
-            // Obtener el drawable existente
+            // Modificar el color del fondo del botón
             val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
             drawable?.mutate()?.colorFilter =
                 PorterDuffColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN)
-
-            button.background = drawable // Aplicar el drawable modificado al botón
+            button.background = drawable
         }
 
-        // Aplicar el color a todos los botones
+        // Aplicar color a todos los botones
         setButtonColor(materia)
         setButtonColor(apunte)
         setButtonColor(fecha)
 
-        topBar = view.findViewById(R.id.topBar)
-
-
+        // Aplicar el color de fondo del top bar según el tema
         topBar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
-
+        // Configuración del RecyclerView
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
-
         busquedaAdapter = BusquedaAdapter(context)
-
-
         listaDeBusqueda.apply {
             layoutManager = linearLayoutManager
             adapter = busquedaAdapter
         }
 
-
+        // Cargar datos de 'grupos' desde un archivo JSON
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
         var jsonObject = JSONObject(jsonString)
 
         val gson = Gson()
-
         val data: SchoolData = gson.fromJson(jsonString, object : TypeToken<SchoolData>() {}.type)
 
         var busqueda = ""
 
+        // Configurar el SearchView para realizar la búsqueda
         buscador.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 busqueda = query.toString()
                 buscar(busqueda.toLowerCase().replaceAccents(), data)
-
                 return true
             }
 
@@ -155,32 +143,33 @@ class BusquedaFragment : Fragment() {
             }
         })
 
+        // Configurar el botón 'devolver' para navegar al fragmento Home
         devolver.setOnClickListener {
             (activity as MainActivity).abrirHomeFragment()
-
         }
-//aqui se hace el codigo para poder filtar las materias
+
+        // Configurar el botón 'materia' para filtrar por materia
         materia.setOnClickListener {
             filtrarMateria(data.grados[grado])
             (activity as MainActivity).abrirHomeFragment()
         }
 
+        // Configurar el botón 'fecha' para filtrar por fecha
         fecha.setOnClickListener {
             filtrarFecha(data.grados[grado])
-
         }
+
+        // Configurar el botón 'apunte' para filtrar por apuntes
         apunte.setOnClickListener {
             filtrarApunte(data.grados[grado])
             (activity as MainActivity).abrirApuntesFragment()
-
         }
     }
 
-    //aqui es para que el buscador busque los elementos
+    // Función para realizar la búsqueda de resultados
     private fun buscar(busqueda: String, data: SchoolData) {
         Log.d("busqueda", "buscar: " + busqueda)
         val grado = data.grados[grado]
-
 
         objetos.clear()
 
@@ -191,9 +180,9 @@ class BusquedaFragment : Fragment() {
 
         val resultados = mutableListOf<Resultados>()
 
+        // Buscar en materias y profesores
         grado.materias.map {
             val materia = it.nombre.toLowerCase().replaceAccents()
-            Log.d("OscarNoHaceNada", "materia: " + materia)
             if (materia.contains(busqueda)) run {
                 val resultado = Resultados(it.nombre, Tipo.MATERIA)
                 resultados.add(resultado)
@@ -205,15 +194,14 @@ class BusquedaFragment : Fragment() {
                 resultados.add(resultado)
             }
 
+            // Buscar en apuntes y fechas
             if (it.periodos.isNotEmpty()) {
                 it.periodos.map {
                     it.apuntes.map {
                         val apunte = it.nombre.toLowerCase().replaceAccents()
-
-                        val fecha  = it.mes
-
+                        val fecha = it.mes
                         if (apunte.contains(busqueda)) run {
-                            val resultado = Resultados(it.nombre, Tipo.APUNTE, )
+                            val resultado = Resultados(it.nombre, Tipo.APUNTE)
                             resultados.add(resultado)
                         }
 
@@ -226,6 +214,7 @@ class BusquedaFragment : Fragment() {
             }
         }
 
+        // Actualizar los resultados en el adaptador
         busquedaAdapter.apply {
             this.resultados.addAll(resultados)
             notifyDataSetChanged()
@@ -234,18 +223,19 @@ class BusquedaFragment : Fragment() {
         Log.d("busqueda", "buscar: " + resultados)
     }
 
-    //aqui es para que cuando busque el ususario aparesca enseguida su resultado
+    // Función para eliminar los acentos de una cadena de texto
     fun String.replaceAccents(): String {
         val chars = Normalizer.normalize(this, Normalizer.Form.NFD)
         return chars.replace("[\\p{InCombiningDiacriticalMarks}]".toRegex(), "")
     }
 
+    // Función para leer un archivo JSON desde 'raw'
     private fun readJsonFromRaw(context: Context, resourceId: Int): String {
         val inputStream: InputStream = context.resources.openRawResource(resourceId)
         return inputStream.bufferedReader().use { it.readText() }
     }
 
-    //esto es para que los filtros busquen exactamente el lugar y lo que les corresponde
+    // Funciones para filtrar los elementos de acuerdo con el grado y mostrar resultados
     fun filtrarMateria(grado: Grado) {
         grado.materias.map {
             it.nombre
@@ -264,7 +254,6 @@ class BusquedaFragment : Fragment() {
         }
     }
 
-
     fun filtrarProfesor(grado: Grado) {
         grado.materias.map {
             it.profesor
@@ -282,8 +271,4 @@ class BusquedaFragment : Fragment() {
             }
         }
     }
-
-
 }
-
-

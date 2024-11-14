@@ -24,7 +24,6 @@ import com.iegm.studyconnect.AppTheme
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.rajat.pdfviewer.PdfRendererView
-
 class PdfFragment(private val nombre: String) : Fragment() {
 
     // Inicialización perezosa de vistas para mejorar el rendimiento
@@ -33,10 +32,9 @@ class PdfFragment(private val nombre: String) : Fragment() {
     private val atras by lazy { view?.findViewById<ImageView>(R.id.Atras) }
     private val fileTitleTextView by lazy { view?.findViewById<TextView>(R.id.fileTitleTextView) }
     private val relativeLayout by lazy { view?.findViewById<RelativeLayout>(R.id.relative)
-         val topBar by lazy { view?.findViewById<ConstraintLayout>(R.id.topBar) }
+        val topBar by lazy { view?.findViewById<ConstraintLayout>(R.id.topBar) }
 
-        topBar?.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
-
+        topBar?.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity()))) // Establecer el color de fondo del topBar según el tema
     }
 
     private var selectedUri: String? = null // URI del PDF seleccionado
@@ -48,10 +46,7 @@ class PdfFragment(private val nombre: String) : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflar el layout del fragmento
         return inflater.inflate(R.layout.fragment_pdf2, container, false)
-
-
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -59,13 +54,12 @@ class PdfFragment(private val nombre: String) : Fragment() {
         // Establecer el título del archivo en el TextView
         fileTitleTextView?.text = nombre
 
-
         // Recuperar la URI guardada del PDF
         selectedUri = getSavedPdfUri()
 
         // Cargar el PDF si existe una URI guardada
         if (!selectedUri.isNullOrEmpty()) {
-            loadPdfIfPermitted(Uri.parse(selectedUri))
+            loadPdfIfPermitted(Uri.parse(selectedUri)) // Cargar PDF si se tiene permiso
         }
 
         // Abrir el selector de archivos al tocar el PDF view
@@ -77,6 +71,7 @@ class PdfFragment(private val nombre: String) : Fragment() {
         // Inicializar el PDF view
         pdfView?.initWithUrl(url = pdfView.toString(), lifecycleCoroutineScope = lifecycleScope, lifecycle = lifecycle)
 
+        // Comprobar si el usuario es representante y habilitar o deshabilitar la edición
         requireActivity().apply {
             val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
             val representantes = sharedPreferences.getBoolean("REPRESENTANTE", false)
@@ -108,11 +103,11 @@ class PdfFragment(private val nombre: String) : Fragment() {
         if (result.resultCode == AppCompatActivity.RESULT_OK) {
             // Si se seleccionó un archivo, guardar la URI y cargar el PDF
             result.data?.data?.let { selectedFileUri ->
-                savePdfUri(selectedFileUri)
+                savePdfUri(selectedFileUri) // Guardar la URI del archivo seleccionado
                 requireContext().contentResolver.takePersistableUriPermission(selectedFileUri,
-                    Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
-                loadPdfInView(selectedFileUri)
-            } ?: Toast.makeText(context, "Error al seleccionar el archivo", Toast.LENGTH_SHORT).show()
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION) // Solicitar permisos para la URI
+                loadPdfInView(selectedFileUri) // Cargar el PDF en la vista
+            } ?: Toast.makeText(context, "Error al seleccionar el archivo", Toast.LENGTH_SHORT).show() // Mensaje de error si no se selecciona ningún archivo
         }
     }
 
@@ -127,10 +122,10 @@ class PdfFragment(private val nombre: String) : Fragment() {
 
     // Cargar el PDF si se tiene permiso
     private fun loadPdfIfPermitted(uri: Uri) {
-        if (hasUriPermission(uri)) {
-            loadPdfInView(uri)
+        if (hasUriPermission(uri)) { // Verificar si se tiene permiso para acceder al archivo
+            loadPdfInView(uri) // Cargar el PDF si se tiene permiso
         } else {
-            Toast.makeText(context, "No se tiene acceso al PDF, selecciona de nuevo.", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "No se tiene acceso al PDF, selecciona de nuevo.", Toast.LENGTH_LONG).show() // Mensaje de error si no se tiene permiso
         }
     }
 
@@ -147,7 +142,7 @@ class PdfFragment(private val nombre: String) : Fragment() {
 
             override fun onError(error: Throwable) {
                 Log.e("statusCallBack", "onError: ${error.message}") // Log de error
-                Toast.makeText(context, "Error al cargar el PDF", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Error al cargar el PDF", Toast.LENGTH_SHORT).show() // Mensaje de error si ocurre un fallo
             }
 
             override fun onPageChanged(currentPage: Int, totalPage: Int) {}
@@ -160,18 +155,18 @@ class PdfFragment(private val nombre: String) : Fragment() {
     // Guardar la URI del PDF en SharedPreferences
     private fun savePdfUri(uri: Uri) {
         requireContext().getSharedPreferences("PdfPrefs", Context.MODE_PRIVATE).edit().apply {
-            putString("saved_pdf_uri", uri.toString())
+            putString("saved_pdf_uri", uri.toString()) // Guardar la URI como string
             apply() // Aplicar cambios
         }
         selectedUri = uri.toString() // Actualizar la URI seleccionada
-        Toast.makeText(context, "PDF guardado correctamente", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "PDF guardado correctamente", Toast.LENGTH_SHORT).show() // Mensaje de confirmación
     }
 
     // Verificar si aún tenemos permisos sobre la URI guardada
     private fun hasUriPermission(uri: Uri): Boolean {
         val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
         return try {
-            requireContext().contentResolver.takePersistableUriPermission(uri, takeFlags)
+            requireContext().contentResolver.takePersistableUriPermission(uri, takeFlags) // Solicitar permisos persistentes
             true // Si se puede tomar el permiso
         } catch (e: SecurityException) {
             false // Si se lanza una excepción, no se tienen permisos
@@ -181,7 +176,7 @@ class PdfFragment(private val nombre: String) : Fragment() {
     // Guardar el título en SharedPreferences
     private fun saveTitle(title: String) {
         requireContext().getSharedPreferences("PdfPrefs", Context.MODE_PRIVATE).edit().apply {
-            putString("file_title", title)
+            putString("file_title", title) // Guardar el título
             apply() // Aplicar cambios
         }
     }
@@ -189,13 +184,13 @@ class PdfFragment(private val nombre: String) : Fragment() {
     // Guardar la descripción en SharedPreferences
     private fun saveDescription(description: String) {
         requireContext().getSharedPreferences("PdfPrefs", Context.MODE_PRIVATE).edit().apply {
-            putString("description", description)
+            putString("description", description) // Guardar la descripción
             apply() // Aplicar cambios
         }
     }
 
     // Obtener la URI guardada de SharedPreferences
     private fun getSavedPdfUri(): String? {
-        return requireContext().getSharedPreferences("PdfPrefs", Context.MODE_PRIVATE).getString("saved_pdf_uri", null)
+        return requireContext().getSharedPreferences("PdfPrefs", Context.MODE_PRIVATE).getString("saved_pdf_uri", null) // Recuperar la URI guardada
     }
 }
