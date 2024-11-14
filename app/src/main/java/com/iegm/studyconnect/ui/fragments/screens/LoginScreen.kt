@@ -70,14 +70,16 @@ fun LoginScreen(navHostController: NavHostController, authViewModel: AuthViewMod
         )
         Spacer(modifier = Modifier.height(20.dp))
 
-        Text(text = "¡HOLA!", fontSize = 35.sp, fontWeight = FontWeight.Bold)
+        Text(text = "¡HOLA!", fontSize = 35.sp, fontWeight = FontWeight.Bold, color = Color.Black)
+
 
         Spacer(modifier = Modifier.height(20.dp))
 
         Text(
             modifier = Modifier.padding(horizontal = 50.dp),
             textAlign = TextAlign.Center,
-            text = "¡BIENVENIDO A STUDY CONNECT, DISFRUTA Y ORGANIZA TUS APUNTES!"
+            text = "¡BIENVENIDO A STUDY CONNECT, DISFRUTA Y ORGANIZA TUS APUNTES!",
+            color = Color.Black
         )
         Spacer(modifier = Modifier.height(20.dp))
 

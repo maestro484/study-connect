@@ -1,6 +1,7 @@
 package com.iegm.studyconnect.adapter
 
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,11 +15,6 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 // Clase adaptadora para el RecyclerView que muestra las materias
 class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdapter.MateriaViewModel>() {
-
-    val grado0 : Int = 0
-    val grado1 : Int = 1
-    val grado2 : Int = 2
-    val grado3 : Int = 3
 
     val imagenes8 = listOf(
 
@@ -102,16 +98,7 @@ class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdap
     // Lista que contiene los nombres de las materias
     var materias: List<String> = listOf()
 
-    // Método para determinar a qué grado corresponde la imagen
-    fun getGrado(imagen: Int): Int {
-        when (imagen) {
-            in imagenes8.indices -> return grado3
-            in imagenes9.indices -> return grado2
-            in imagenes10.indices -> return grado1
-            in imagenes11.indices -> return grado0
-            else -> return -1 // Devuelve -1 si la imagen no corresponde a ningún grado
-        }
-    }
+
 
     // Clase interna ViewHolder que almacena las referencias a las vistas de cada ítem
     class MateriaViewModel(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -132,10 +119,6 @@ class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdap
     }
 
     override fun onBindViewHolder(holder: MateriasAdapter.MateriaViewModel, position: Int) {
-        Log.d("busqueda", "resultados: " + materias[position])
-        Log.d("grado", "Imágenes de grado: ${getGrado(imagenes11[position])}")
-
-
         // Asigna el nombre de la materia al TextView
         holder.materiaTv.text = materias[position]
 
@@ -146,11 +129,15 @@ class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdap
             }
         }
 
-        holder.materiaImg.setImageResource(imagenes11[position])
-        holder.materiaImg.setImageResource(imagenes10[position])
-        holder.materiaImg.setImageResource(imagenes9[position])
-        holder.materiaImg.setImageResource(imagenes8[position])
+        val sharePref = context?.getSharedPreferences(context?.packageName, MODE_PRIVATE)
+        val grado = sharePref?.getInt("GRADO_USUARIO", 0)
 
+        when(grado){
+            0 -> holder.materiaImg.setImageResource(imagenes11[position])
+            1 -> holder.materiaImg.setImageResource(imagenes10[position])
+            2 -> holder.materiaImg.setImageResource(imagenes9[position])
+            3 -> holder.materiaImg.setImageResource(imagenes8[position])
+        }
 
     }
 

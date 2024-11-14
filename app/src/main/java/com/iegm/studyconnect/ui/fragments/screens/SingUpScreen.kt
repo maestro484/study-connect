@@ -1,10 +1,8 @@
 package com.iegm.studyconnect.ui.fragments.screens
 
-import android.content.Context
 import android.content.SharedPreferences
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.layout.getDefaultLazyLayoutKey
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -23,13 +21,31 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.iegm.studyconnect.AuthViewModel
-import com.iegm.studyconnect.R
 import com.iegm.studyconnect.ui.NavigationItem
 import com.iegm.studyconnect.ui.theme.Purple40
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
 @Composable
-fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewModel, sharedPreferences: SharedPreferences?) {
+fun SignUpScreen(
+    navHostController: NavHostController,
+    authViewModel: AuthViewModel,
+    sharedPreferences: SharedPreferences?
+) {
+
+    var nombre by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+    var selectGrado by remember { mutableStateOf("Seleccione su grado") }
+    var isButtonEnabled by remember { mutableStateOf(false) }
+
+    var gradoSeleccionado by remember { mutableStateOf(0) }
+
+    // Listener para habilitar el botón
+    LaunchedEffect(nombre, email, password, selectGrado) {
+        isButtonEnabled =
+            nombre.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && selectGrado != "Seleccione su grado"
+    }
+
 
     Column(
         modifier = Modifier
@@ -40,7 +56,6 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
     ) {
         Text(text = "Regístrate", fontSize = 35.sp, fontWeight = FontWeight.Bold)
 
-        var nombre by remember { mutableStateOf("") }
         OutlinedTextField(value = nombre,
             onValueChange = { nombre = it },
             label = { Text(text = "Nombre") },
@@ -56,11 +71,9 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         Spacer(modifier = Modifier.height(20.dp))
 
         val representantes = listOf(
-            "valen.301006@gmail.com", "perenguesestiven@gmail.com", "juanmg777vg@gmail.com"
+            "valen.3010066@gmail.com", "perenguesestiven@gmail.com", "juanmg777vg@gmail.com"
         )
 
-
-        var email by remember { mutableStateOf("") }
         var esRepresentante by remember { mutableStateOf(false) }
         OutlinedTextField(value = email,
             onValueChange = { email = it },
@@ -75,12 +88,10 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
         )
 
         esRepresentante = representantes.contains(email)
-
         sharedPreferences?.edit()?.putBoolean("REPRESENTANTE", esRepresentante)?.apply()
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        var password by remember { mutableStateOf("") }
         var showPassword by remember { mutableStateOf(false) }
         OutlinedTextField(value = password,
             onValueChange = { password = it },
@@ -102,13 +113,10 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
                 }
             })
 
-
-
         Spacer(modifier = Modifier.height(20.dp))
 
         var expanded2 by remember { mutableStateOf(false) }
-        var selectGrado by remember { mutableStateOf("Seleccione su grado") }
-        val optionGrado = listOf("8", "9", "10", "11")
+        val optionGrado = listOf("Grado 11", "Grado 10", "Grado 9", "Grado 8")
 
         Box(modifier = Modifier
             .fillMaxWidth()
@@ -121,8 +129,6 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
             ) {
                 Text(
                     text = selectGrado, modifier = Modifier.padding(start = 30.dp)
-
-
                 )
                 Icon(
                     imageVector = Icons.Filled.ArrowDropDown,
@@ -131,31 +137,37 @@ fun SignUpScreen(navHostController: NavHostController, authViewModel: AuthViewMo
                 )
             }
             DropdownMenu(expanded = expanded2, onDismissRequest = { expanded2 = false }) {
-                optionGrado.forEach { option ->
+                optionGrado.forEachIndexed { index, option ->
                     DropdownMenuItem(text = { Text(text = option) }, onClick = {
+                        gradoSeleccionado = index
                         selectGrado = option
                         expanded2 = false
                     })
                 }
             }
         }
+
         Text(text = "¿No tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.width(4.dp))
-        Text(
-            text = "Inicia sesión",
+        Text(text = "Inicia sesión",
             fontSize = 15.sp,
             color = Purple40,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignIn.route) }
-        )
+            modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignIn.route) })
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(modifier = Modifier
-            .width(250.dp)
-            .padding(top = 16.dp),
+        Button(
+            modifier = Modifier
+                .width(250.dp)
+                .padding(top = 16.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-            onClick = { authViewModel.createUser(email, password)}) {
+            onClick = {
+                sharedPreferences!!.edit().putInt("GRADO_USUARIO", gradoSeleccionado).apply()
+                if (isButtonEnabled) authViewModel.createUser(email, password)
+            },
+            enabled = isButtonEnabled // habilitar o deshabilitar el botón
+        ) {
             Text(text = "Registrarse", color = Color.White)
         }
     }
