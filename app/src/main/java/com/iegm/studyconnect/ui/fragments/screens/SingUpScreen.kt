@@ -1,5 +1,4 @@
-package com.iegm.studyconnect.ui.fragments.screens
-
+// Importaciones necesarias para el uso de Jetpack Compose y otras funciones
 import android.content.SharedPreferences
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -25,28 +24,30 @@ import com.iegm.studyconnect.ui.NavigationItem
 import com.iegm.studyconnect.ui.theme.Purple40
 import com.iegm.studyconnect.ui.theme.StudyConnectTheme
 
+// Composable principal para la pantalla de registro
 @Composable
 fun SignUpScreen(
-    navHostController: NavHostController,
-    authViewModel: AuthViewModel,
-    sharedPreferences: SharedPreferences?
+    navHostController: NavHostController, // Controlador de navegación
+    authViewModel: AuthViewModel, // ViewModel de autenticación
+    sharedPreferences: SharedPreferences? // Preferencias compartidas para almacenar datos
 ) {
 
-    var nombre by remember { mutableStateOf("") }
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
-    var selectGrado by remember { mutableStateOf("Seleccione su grado") }
-    var isButtonEnabled by remember { mutableStateOf(false) }
+    // Definición de los estados locales para cada campo de entrada
+    var nombre by remember { mutableStateOf("") } // Estado para el nombre del usuario
+    var email by remember { mutableStateOf("") } // Estado para el email del usuario
+    var password by remember { mutableStateOf("") } // Estado para la contraseña del usuario
+    var selectGrado by remember { mutableStateOf("Seleccione su grado") } // Estado para el grado seleccionado
+    var isButtonEnabled by remember { mutableStateOf(false) } // Estado para habilitar o deshabilitar el botón de registro
 
-    var gradoSeleccionado by remember { mutableStateOf(0) }
+    var gradoSeleccionado by remember { mutableStateOf(0) } // Estado para almacenar el índice del grado seleccionado
 
-    // Listener para habilitar el botón
+    // Lógica para habilitar el botón de registro solo cuando todos los campos estén completos
     LaunchedEffect(nombre, email, password, selectGrado) {
         isButtonEnabled =
             nombre.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && selectGrado != "Seleccione su grado"
     }
 
-
+    // Contenedor principal de la pantalla de registro
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -54,8 +55,10 @@ fun SignUpScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        // Título principal de la pantalla
         Text(text = "Regístrate", fontSize = 35.sp, fontWeight = FontWeight.Bold)
 
+        // Campo de texto para el nombre del usuario
         OutlinedTextField(value = nombre,
             onValueChange = { nombre = it },
             label = { Text(text = "Nombre") },
@@ -68,13 +71,17 @@ fun SignUpScreen(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
 
+        // Espaciador para separar los elementos
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Lista de correos electrónicos de representantes para validación
         val representantes = listOf(
             "valen.3010066@gmail.com", "perenguesestiven@gmail.com", "juanmg777vg@gmail.com"
         )
 
+        // Estado para verificar si el correo pertenece a un representante
         var esRepresentante by remember { mutableStateOf(false) }
+        // Campo de texto para el correo electrónico del usuario
         OutlinedTextField(value = email,
             onValueChange = { email = it },
             label = { Text(text = "Email") },
@@ -87,12 +94,16 @@ fun SignUpScreen(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
         )
 
+        // Verificar si el correo ingresado está en la lista de representantes
         esRepresentante = representantes.contains(email)
-        sharedPreferences?.edit()?.putBoolean("REPRESENTANTE", esRepresentante)?.apply()
+        sharedPreferences?.edit()?.putBoolean("REPRESENTANTE", esRepresentante)?.apply() // Guardar el estado de representante en SharedPreferences
 
+        // Espaciador
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Estado para mostrar u ocultar la contraseña
         var showPassword by remember { mutableStateOf(false) }
+        // Campo de texto para la contraseña
         OutlinedTextField(value = password,
             onValueChange = { password = it },
             label = { Text(text = "Contraseña") },
@@ -103,7 +114,7 @@ fun SignUpScreen(
                 )
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
+            visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(), // Lógica para mostrar/ocultar la contraseña
             trailingIcon = {
                 IconButton(onClick = { showPassword = !showPassword }) {
                     Icon(
@@ -113,11 +124,15 @@ fun SignUpScreen(
                 }
             })
 
+        // Espaciador
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Estado para controlar la expansión del menú desplegable de grados
         var expanded2 by remember { mutableStateOf(false) }
+        // Lista de grados disponibles para seleccionar
         val optionGrado = listOf("Grado 11", "Grado 10", "Grado 9", "Grado 8")
 
+        // Menú desplegable para seleccionar el grado
         Box(modifier = Modifier
             .fillMaxWidth()
             .clickable { expanded2 = true }
@@ -136,17 +151,19 @@ fun SignUpScreen(
                     modifier = Modifier.padding(end = 20.dp)
                 )
             }
+            // Acción cuando se selecciona un grado
             DropdownMenu(expanded = expanded2, onDismissRequest = { expanded2 = false }) {
-                optionGrado.forEachIndexed { index, option ->
+                optionGrado.forEachIndexed { index, option -> // Iterar sobre las opciones de grado
                     DropdownMenuItem(text = { Text(text = option) }, onClick = {
-                        gradoSeleccionado = index
-                        selectGrado = option
+                        gradoSeleccionado = index // Guardar el índice del grado seleccionado
+                        selectGrado = option // Actualizar el grado seleccionado
                         expanded2 = false
                     })
                 }
             }
         }
 
+        // Texto para navegar a la pantalla de inicio de sesión
         Text(text = "¿No tienes cuenta?", fontSize = 15.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.width(4.dp))
         Text(text = "Inicia sesión",
@@ -155,29 +172,31 @@ fun SignUpScreen(
             fontWeight = FontWeight.Bold,
             modifier = Modifier.clickable { navHostController.navigate(NavigationItem.SignIn.route) })
 
+        // Espaciador
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Botón de registro
         Button(
             modifier = Modifier
                 .width(250.dp)
                 .padding(top = 16.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
             onClick = {
-                sharedPreferences!!.edit().putInt("GRADO_USUARIO", gradoSeleccionado).apply()
-                if (isButtonEnabled) authViewModel.createUser(email, password)
+                sharedPreferences!!.edit().putInt("GRADO_USUARIO", gradoSeleccionado).apply() // Guardar el grado seleccionado en SharedPreferences
+                if (isButtonEnabled) authViewModel.createUser(email, password) // Crear el usuario si el botón está habilitado
             },
-            enabled = isButtonEnabled // habilitar o deshabilitar el botón
+            enabled = isButtonEnabled // Habilitar o deshabilitar el botón según la validación de los campos
         ) {
             Text(text = "Registrarse", color = Color.White)
         }
     }
 }
 
-
+// Función de previsualización para la pantalla de registro
 @Preview(showBackground = true)
 @Composable
 fun SignUpScreenPreview() {
     StudyConnectTheme {
-        SignUpScreen(rememberNavController(), AuthViewModel(), null)
+        SignUpScreen(rememberNavController(), AuthViewModel(), sharedPreferences = null)
     }
 }

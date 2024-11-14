@@ -1,4 +1,6 @@
 package com.iegm.studyconnect.ui.fragments
+
+// Importaciones necesarias
 import android.app.AlertDialog
 import android.content.Context.MODE_PRIVATE
 import android.graphics.Color
@@ -27,6 +29,7 @@ import com.iegm.studyconnect.model.Apunte
 import com.iegm.studyconnect.view.UserAdapter
 
 class ApuntesFragment : Fragment() {
+    // Declaración de variables
     private lateinit var addsBtn: FloatingActionButton
     private lateinit var volver1: ImageView
     private lateinit var recy: RecyclerView
@@ -35,17 +38,18 @@ class ApuntesFragment : Fragment() {
     private lateinit var button_comentarios: FloatingActionButton
     private lateinit var top_bar: ConstraintLayout
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // Inflar el layout del fragmento
         return inflater.inflate(R.layout.fragment_apuntes, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Inicialización de vistas y variables
         userList = ArrayList()
         recy = view.findViewById(R.id.listaDeApuntes)
         volver1 = view.findViewById(R.id.devolver1)
@@ -53,38 +57,46 @@ class ApuntesFragment : Fragment() {
         button_comentarios = view.findViewById(R.id.button_comentarios)
         top_bar = view.findViewById(R.id.top_bar1)
 
+        // Configuración del tema de la barra superior
         top_bar.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
+        // Configuración del adaptador y layout del RecyclerView
         userAdapter = UserAdapter(requireContext())
         recy.layoutManager = LinearLayoutManager(requireContext())
         recy.adapter = userAdapter
 
-
+        // Configuración del botón "addsBtn" para agregar información
         addsBtn.setOnClickListener { addInfo() }
 
+        // Configuración del botón "volver1" para volver al fragmento de período
         volver1.setOnClickListener {
-            (activity as MainActivity).abrirPeriodoFragment() ///quizas
+            (activity as MainActivity).abrirPeriodoFragment()
         }
 
+        // Configuración del botón "button_comentarios" para abrir el fragmento de comentarios
         button_comentarios.setOnClickListener {
             (activity as MainActivity).abrirComentariosFragment()
         }
 
+        // Configuración de permisos para el botón "addsBtn" según las preferencias guardadas
         requireActivity().apply {
             val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
             val representantes = sharedPreferences.getBoolean("REPRESENTANTE", false)
 
             if (representantes) {
                 addsBtn.isEnabled = true
+                addsBtn.visibility = View.VISIBLE
             } else {
                 addsBtn.isEnabled = false
+                addsBtn.visibility = View.GONE
             }
         }
 
-        // Configuración de Firebase
+        // Configuración de la referencia a Firebase para obtener los apuntes
         val database = FirebaseDatabase.getInstance().reference
-        val apuntesRef = database.child("grados/0/materias/0/periodos/0/apuntes")
+        val apuntesRef = database.child("grados/${DataManager.grado}/materias/${DataManager.materia}/periodos/${DataManager.periodo}/apuntes")
 
+        // Registro del evento para escuchar cambios en los datos de Firebase
         Log.d("ApuntesFragment", apuntesRef.toString())
         apuntesRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -93,45 +105,41 @@ class ApuntesFragment : Fragment() {
                     val apunte = comentarioSnapshot.getValue(Apunte::class.java)
                     apunte?.let { apuntesList.add(it) }
                 }
-                // Use comentariosList as needed (e.g., update UI)
+                // Actualización del adaptador del RecyclerView
                 userAdapter.userList = apuntesList
                 userAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle possible errors.
+                // Manejo de errores
             }
         })
     }
 
     private fun addInfo() {
+        // Inflado de vista personalizada para el diálogo de agregar información
         val inflter = LayoutInflater.from(requireContext())
         val v = inflter.inflate(R.layout.add_item, null)
         val userName = v.findViewById<EditText>(R.id.userName)
         val userNo = v.findViewById<EditText>(R.id.userNo)
 
+        // Configuración del diálogo de alerta para agregar apuntes
         val addDialog = AlertDialog.Builder(requireContext())
         addDialog.setView(v)
         val database = FirebaseDatabase.getInstance().reference
         val apuntesRef = database.child("grados/${DataManager.grado}/materias/${DataManager.materia}/periodos/${DataManager.periodo}/apuntes")
 
-
-        Log.d("ApuntesFragment", apuntesRef.toString())
-
-
-
+        // Acción al confirmar el diálogo de agregar información
         addDialog.setPositiveButton("Ok") { dialog, _ ->
             val names = userName.text.toString()
             val number = userNo.text.toString()
             val apunte = Apunte(nombre = names, mes = number)
             apuntesRef.push().setValue(apunte)
-//            userAdapter.notifyDataSetChanged()
-            Toast.makeText(requireContext(), "Adding User Information Success", Toast.LENGTH_SHORT)
-                .show()
-
+            Toast.makeText(requireContext(), "Adding User Information Success", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
 
+        // Acción al cancelar el diálogo
         addDialog.setNegativeButton("cancel") { dialog, _ ->
             dialog.dismiss()
             Toast.makeText(requireContext(), "cancel", Toast.LENGTH_SHORT).show()
@@ -139,8 +147,4 @@ class ApuntesFragment : Fragment() {
         addDialog.create()
         addDialog.show()
     }
-
-
 }
-
-
