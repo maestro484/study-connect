@@ -43,7 +43,9 @@ fun SignUpScreen(
     // Listener para habilitar el botón
     LaunchedEffect(nombre, email, password, selectGrado) {
         isButtonEnabled =
-            nombre.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && selectGrado != "Seleccione su grado"
+            nombre.isNotEmpty() && email.isNotEmpty() &&
+                    password.isNotEmpty() &&
+                    selectGrado != "Seleccione su grado"
     }
 
 

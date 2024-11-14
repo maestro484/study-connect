@@ -29,9 +29,7 @@ class PdfFragment(private val nombre: String) : Fragment() {
     private val descripcion by lazy { view?.findViewById<EditText>(R.id.descripcion) }
     private val atras by lazy { view?.findViewById<ImageView>(R.id.Atras) }
     private val fileTitleTextView by lazy { view?.findViewById<TextView>(R.id.fileTitleTextView) }
-    private val relativeLayout by lazy { view?.findViewById<RelativeLayout>(R.id.relative) }
 
-    private var selectedUri: String? = null // URI del PDF seleccionado
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,13 +46,7 @@ class PdfFragment(private val nombre: String) : Fragment() {
         // Establecer el título del archivo en el TextView
         fileTitleTextView?.text = nombre
 
-        // Recuperar la URI guardada del PDF
-        selectedUri = getSavedPdfUri()
 
-        // Cargar el PDF si existe una URI guardada
-        if (!selectedUri.isNullOrEmpty()) {
-            loadPdfIfPermitted(Uri.parse(selectedUri))
-        }
 
         // Abrir el selector de archivos al tocar el PDF view
         pdfView?.setOnClickListener { launchFilePicker() }
@@ -62,8 +54,6 @@ class PdfFragment(private val nombre: String) : Fragment() {
         // Navegar al fragmento anterior al presionar "Atrás"
         atras?.setOnClickListener { (activity as MainActivity).abrirApuntesFragment() }
 
-        // Inicializar el PDF view
-        pdfView?.initWithUrl(url = pdfView.toString(), lifecycleCoroutineScope = lifecycleScope, lifecycle = lifecycle)
 
         requireActivity().apply {
             val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
@@ -85,8 +75,7 @@ class PdfFragment(private val nombre: String) : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        // Guardar la URI, descripción y título al pausar el fragmento
-        selectedUri?.let { savePdfUri(Uri.parse(it)) }
+        // Guardar la descripción y título al pausar el fragmento
         saveDescription(descripcion?.text.toString())
         saveTitle(fileTitleTextView?.text.toString())
     }
@@ -150,7 +139,6 @@ class PdfFragment(private val nombre: String) : Fragment() {
             putString("saved_pdf_uri", uri.toString())
             apply() // Aplicar cambios
         }
-        selectedUri = uri.toString() // Actualizar la URI seleccionada
         Toast.makeText(context, "PDF guardado correctamente", Toast.LENGTH_SHORT).show()
     }
 

@@ -40,6 +40,7 @@ class BusquedaFragment : Fragment() {
     lateinit var listaDeBusqueda: RecyclerView
 
 
+    // Variable para la barra de título
     lateinit var topBar: ConstraintLayout
 
     var grado: Int = 0
@@ -51,6 +52,7 @@ class BusquedaFragment : Fragment() {
     companion object {
         fun newInstance() = BusquedaFragment()
     }
+// Método onCreate
 
     private val viewModel: BusquedaViewModel by viewModels()
 
@@ -58,7 +60,7 @@ class BusquedaFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-
+    // Método onCreateView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,7 +72,7 @@ class BusquedaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//aqui llamamos las variables de la lista de busqueda
+ // Inicializamos las variables de la lista de busqueda
         devolver = view.findViewById(R.id.devolver)
         materia = view.findViewById(R.id.materia)
         fecha = view.findViewById(R.id.fecha)
@@ -78,7 +80,7 @@ class BusquedaFragment : Fragment() {
         apunte = view.findViewById(R.id.apunte)
         listaDeBusqueda = view.findViewById(R.id.ListaDeBusqueda)
         topBar = view.findViewById(R.id.topBar)
-
+// Configuramos la RecyclerView
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(requireContext())
 
         busquedaAdapter = BusquedaAdapter(context)
@@ -89,7 +91,7 @@ class BusquedaFragment : Fragment() {
             adapter = busquedaAdapter
         }
 
-
+// Cargamos los datos desde el archivo raw "grupos"
         val jsonString = readJsonFromRaw(requireContext(), R.raw.grupos)
         var jsonObject = JSONObject(jsonString)
 
@@ -98,7 +100,7 @@ class BusquedaFragment : Fragment() {
         val data: SchoolData = gson.fromJson(jsonString, object : TypeToken<SchoolData>() {}.type)
 
         var busqueda = ""
-
+// Configuramos el campo de búsqueda
         buscador.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 busqueda = query.toString()
@@ -112,17 +114,17 @@ class BusquedaFragment : Fragment() {
                 return true
             }
         })
-
+        // Evento al seleccionar el botón "Volver"
         devolver.setOnClickListener {
             (activity as MainActivity).abrirHomeFragment()
 
         }
-//aqui se hace el codigo para poder filtar las materias
+        // Evento al seleccionar el botón "Materia"
         materia.setOnClickListener {
             filtrarMateria(data.grados[grado])
             (activity as MainActivity).abrirHomeFragment()
         }
-
+        // Evento al seleccionar el botón "fecha"
         fecha.setOnClickListener {
             filtrarFecha(data.grados[grado])
 
@@ -134,21 +136,21 @@ class BusquedaFragment : Fragment() {
         }
     }
 
-    //aqui es para que el buscador busque los elementos
+    // Método para buscar elementos
     private fun buscar(busqueda: String, data: SchoolData) {
         Log.d("busqueda", "buscar: " + busqueda)
         val grado = data.grados[grado]
 
-
+        // Limpia la lista de resultados y la adaptador
         objetos.clear()
 
         busquedaAdapter.apply {
             this.resultados.clear()
             notifyDataSetChanged()
         }
-
+        // Crea una lista de resultados
         val resultados = mutableListOf<Resultados>()
-
+        // Recorre las materias del grado seleccionado
         grado.materias.map {
             val materia = it.nombre.toLowerCase().replaceAccents()
             Log.d("OscarNoHaceNada", "materia: " + materia)
@@ -156,13 +158,13 @@ class BusquedaFragment : Fragment() {
                 val resultado = Resultados(it.nombre, Tipo.MATERIA)
                 resultados.add(resultado)
             }
-
+            // Recorre los profesores de las materias
             val profesor = it.profesor.toLowerCase().replaceAccents()
             if (profesor.contains(busqueda)) run {
                 val resultado = Resultados(it.profesor, Tipo.PROFESOR)
                 resultados.add(resultado)
             }
-
+            // Recorre los apuntes de los periodos
             if (it.periodos.isNotEmpty()) {
                 it.periodos.map {
                     it.apuntes.map {
@@ -183,7 +185,7 @@ class BusquedaFragment : Fragment() {
                 }
             }
         }
-
+        // Actualiza la lista de resultados y el adaptador
         busquedaAdapter.apply {
             this.resultados.addAll(resultados)
             notifyDataSetChanged()
@@ -192,25 +194,25 @@ class BusquedaFragment : Fragment() {
         Log.d("busqueda", "buscar: " + resultados)
     }
 
-    //aqui es para que cuando busque el ususario aparesca enseguida su resultado
+    // Método para reemplazar caracteres con acentos
     fun String.replaceAccents(): String {
         val chars = Normalizer.normalize(this, Normalizer.Form.NFD)
         return chars.replace("[\\p{InCombiningDiacriticalMarks}]".toRegex(), "")
     }
-
+    // Método para leer el archivo raw "grupos"
     private fun readJsonFromRaw(context: Context, resourceId: Int): String {
         val inputStream: InputStream = context.resources.openRawResource(resourceId)
         return inputStream.bufferedReader().use { it.readText() }
     }
 
-    //esto es para que los filtros busquen exactamente el lugar y lo que les corresponde
+    // Método para filtrar materia
     fun filtrarMateria(grado: Grado) {
         grado.materias.map {
             it.nombre
             objetos.add(it.nombre)
         }
     }
-
+    // Método para filtrar apunte
     fun filtrarApunte(grado: Grado) {
         for (materia in grado.materias) {
             for (periodo in materia.periodos) {
@@ -222,14 +224,14 @@ class BusquedaFragment : Fragment() {
         }
     }
 
-
+    // Método para filtrar profesor
     fun filtrarProfesor(grado: Grado) {
         grado.materias.map {
             it.profesor
             objetos.add(it.profesor)
         }
     }
-
+    // Método para filtrar fechas
     fun filtrarFecha(grado: Grado) {
         for (materia in grado.materias) {
             for (periodo in materia.periodos) {
