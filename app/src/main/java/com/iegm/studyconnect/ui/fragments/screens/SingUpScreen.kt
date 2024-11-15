@@ -183,13 +183,14 @@ fun SignUpScreen(
             colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
             onClick = {
                 sharedPreferences!!.edit().putInt("GRADO_USUARIO", gradoSeleccionado).apply() // Guardar el grado seleccionado en SharedPreferences
-                if (isButtonEnabled) authViewModel.createUser(email, password) // Crear el usuario si el botón está habilitado
+                if (isButtonEnabled) authViewModel.createUser(email, password, ) // Crear el usuario si el botón está habilitado
             },
             enabled = isButtonEnabled // Habilitar o deshabilitar el botón según la validación de los campos
         ) {
             Text(text = "Registrarse", color = Color.White)
         }
     }
+    
 }
 
 // Función de previsualización para la pantalla de registro

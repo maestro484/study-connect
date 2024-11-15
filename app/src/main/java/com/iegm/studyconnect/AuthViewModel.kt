@@ -62,6 +62,7 @@ class AuthViewModel : ViewModel() {
         }
     }
 
+
     private val _googleSignInResult = MutableLiveData<Result<GoogleSignInAccount>>()  // Resultado del inicio con Google
     val googleSignInResult: LiveData<Result<GoogleSignInAccount>> = _googleSignInResult  // LiveData público del resultado
 
@@ -109,7 +110,10 @@ class AuthViewModel : ViewModel() {
         firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    _authState.value = firebaseAuth.currentUser  // Usuario autenticado exitosamente
+
+                    _authState.value = firebaseAuth.currentUser
+                // Usuario autenticado exitosamente
+
                 } else {
                     _authState.value = null  // Error en la autenticación
                 }

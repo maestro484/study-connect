@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     fun abrirPdfFragment(nombre: String) {
         val pdfFragment: PdfFragment = PdfFragment(nombre)  // Crea un nuevo fragmento PDF
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView, PdfFragment(nombre))  // Reemplaza el fragmento actual por el nuevo
+            .replace(R.id.fragmentContainerView, pdfFragment) // Reemplaza el fragmento actual por el nuevo
             .commitAllowingStateLoss()
     }
 

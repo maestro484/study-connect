@@ -2,6 +2,7 @@ package com.iegm.studyconnect.adapter
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
+import android.icu.text.Transliterator.Position
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
+import com.iegm.studyconnect.utils.DataManager
 import de.hdodenhof.circleimageview.CircleImageView
 
 // Clase adaptadora para el RecyclerView que muestra las materias
@@ -114,6 +116,7 @@ class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdap
         val viewLayout = LayoutInflater.from(parent.context).inflate(
             R.layout.item_materias, // Layout que se utilizará para cada ítem
             parent, false
+
         )
         return MateriaViewModel(viewLayout) // Devuelve el ViewHolder con la vista inflada
     }
@@ -124,6 +127,7 @@ class MateriasAdapter(val context: Context?) : RecyclerView.Adapter<MateriasAdap
 
         // Configura el listener para el botón (manteniendo el código original)
         holder.materiaBtn.setOnClickListener {
+            DataManager.materia = position
             (context as MainActivity).apply {
                 abrirPeriodoFragment()
             }

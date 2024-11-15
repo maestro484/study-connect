@@ -14,6 +14,7 @@ import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.iegm.studyconnect.AppTheme
+import com.iegm.studyconnect.DataManager
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 
@@ -89,12 +90,15 @@ class PeriodoFragment: Fragment() {
 
         // Configuración de los listeners para cada botón
         periodo1.setOnClickListener {
+            DataManager.periodo = 0
             (activity as MainActivity).abrirApuntesFragment()  // Abre el fragmento de apuntes
         }
         periodo2.setOnClickListener {
+            DataManager.periodo = 1
             (activity as MainActivity).abrirApuntesFragment()  // Abre el fragmento de apuntes
         }
         periodo3.setOnClickListener {
+            DataManager.periodo = 2
             (activity as MainActivity).abrirApuntesFragment()  // Abre el fragmento de apuntes
         }
 

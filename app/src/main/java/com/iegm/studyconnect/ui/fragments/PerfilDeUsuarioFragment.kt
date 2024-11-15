@@ -59,7 +59,6 @@ class PerfilDeUsuarioFragment : Fragment(), OnAvatarSelected {
         editar_correo = view.findViewById(R.id.editar_correo)
         topBar = view.findViewById(R.id.constraintLayout)
 
-
         // Configuración del color de fondo del botón "cerrar sesión"
         val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.shape_background)
         drawable?.mutate()?.colorFilter =

@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.iegm.studyconnect.AppTheme
+import com.iegm.studyconnect.DataManager
 import com.iegm.studyconnect.MainActivity
 import com.iegm.studyconnect.R
 import com.iegm.studyconnect.adapter.MateriasAdapter
@@ -124,6 +125,7 @@ class HomeFragment : Fragment() {
         requireActivity().apply {
             val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
             grado = sharedPreferences.getInt("GRADO_USUARIO", 0)
+            DataManager.grado = grado
             when(grado){
                 0 -> gradoG.text = "Grado 11"
                 1 -> gradoG.text = "Grado 10"

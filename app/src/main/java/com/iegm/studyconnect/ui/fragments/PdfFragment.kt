@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.RelativeLayout
@@ -26,39 +27,35 @@ import com.iegm.studyconnect.R
 import com.rajat.pdfviewer.PdfRendererView
 
 class PdfFragment(private val nombre: String) : Fragment() {
-
-    // Inicialización perezosa de vistas para mejorar el rendimiento
-    private val pdfView by lazy { view?.findViewById<PdfRendererView>(R.id.pdfView) }
-    private val descripcion by lazy { view?.findViewById<EditText>(R.id.descripcion) }
-    private val atras by lazy { view?.findViewById<ImageView>(R.id.Atras) }
-    private val fileTitleTextView by lazy { view?.findViewById<TextView>(R.id.fileTitleTextView) }
-    private val relativeLayout by lazy { view?.findViewById<RelativeLayout>(R.id.relative)
-         val topBar by lazy { view?.findViewById<ConstraintLayout>(R.id.topBar) }
-
-        topBar?.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
-
-    }
+    lateinit var Atras: ImageView
+    lateinit var fileTitleTextView: TextView
+    lateinit var relative: RelativeLayout
+    lateinit var descripcion: TextView
+    lateinit var topBar: ConstraintLayout
+    lateinit var pdfView: PdfRendererView
 
     private var selectedUri: String? = null // URI del PDF seleccionado
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflar el layout del fragmento
         return inflater.inflate(R.layout.fragment_pdf2, container, false)
-
-
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // Establecer el título del archivo en el TextView
-        fileTitleTextView?.text = nombre
+       // fileTitleTextView?.text = nombre
 
+        Atras = view.findViewById(R.id.Atras)
+        descripcion = view.findViewById(R.id.descripcion)
+        fileTitleTextView = view.findViewById(R.id.fileTitleTextView)
+        relative = view.findViewById(R.id.relative)
+        topBar = view.findViewById(R.id.topBar)
+        pdfView = view.findViewById(R.id.pdfView)
+
+        topBar?.setBackgroundColor(Color.parseColor(AppTheme.obtenerTema(requireActivity())))
 
         // Recuperar la URI guardada del PDF
         selectedUri = getSavedPdfUri()
@@ -72,14 +69,14 @@ class PdfFragment(private val nombre: String) : Fragment() {
         pdfView?.setOnClickListener { launchFilePicker() }
 
         // Navegar al fragmento anterior al presionar "Atrás"
-        atras?.setOnClickListener { (activity as MainActivity).abrirApuntesFragment() }
+        Atras?.setOnClickListener { (activity as MainActivity).abrirApuntesFragment() }
 
         // Inicializar el PDF view
         pdfView?.initWithUrl(url = pdfView.toString(), lifecycleCoroutineScope = lifecycleScope, lifecycle = lifecycle)
 
         requireActivity().apply {
             val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
-            val representantes = sharedPreferences.getBoolean("REPRESENTANTE", false)
+            /*val representantes = sharedPreferences.getBoolean("REPRESENTANTE", false)
 
             if (representantes) {
                 // Si es representante, habilitar la edición de descripción y PDF view
@@ -91,7 +88,7 @@ class PdfFragment(private val nombre: String) : Fragment() {
                     isEnabled = false
                 }
                 pdfView?.isEnabled = false
-            }
+            } */
         }
     }
 

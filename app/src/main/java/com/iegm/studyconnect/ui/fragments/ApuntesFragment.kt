@@ -83,13 +83,15 @@ class ApuntesFragment : Fragment() {
             val sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE)
             val representantes = sharedPreferences.getBoolean("REPRESENTANTE", false)
 
-            if (representantes) {
+            /*if (representantes) {
                 addsBtn.isEnabled = true
                 addsBtn.visibility = View.VISIBLE
             } else {
                 addsBtn.isEnabled = false
                 addsBtn.visibility = View.GONE
-            }
+            }*/
+            addsBtn.isEnabled = true
+            addsBtn.visibility = View.VISIBLE
         }
 
         // Configuración de la referencia a Firebase para obtener los apuntes

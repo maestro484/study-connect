@@ -5,5 +5,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="default_web_client_id">445197493672-rfhgv8cga8eb03ikkn9b5coffs5t6tmu.apps.googleusercontent.com,
+            <string name="preference_file_key">com.iegm.studyconnect.preferences</string>
+
     </string>
 </resources>
